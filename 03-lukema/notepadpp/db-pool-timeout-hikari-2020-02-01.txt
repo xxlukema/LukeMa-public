@@ -1,0 +1,508 @@
+### 2020-02-01 20:12:05 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](180) log() 
+Initializing Spring FrameworkServlet 'dispatcherServlet'
+### 2020-02-01 20:12:05 INFO  org.springframework.web.servlet.DispatcherServlet(488) initServletBean() 
+FrameworkServlet 'dispatcherServlet': initialization started
+### 2020-02-01 20:12:05 INFO  org.springframework.web.servlet.DispatcherServlet(507) initServletBean() 
+FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(96) doFilter() 
+--------------------- BootRequestHeaderFilter2 begin ---------------------
+host: 	localhost:8090
+user-agent: 	curl/7.66.0
+accept: 	*/*
+No cookie.
+requestURL: 	http://localhost:8090/api/authbank/query
+method: 	GET
+Parameters: none
+
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.filter.BootAuthFilter9(154) doFilter() 
+--------------------- BootAuthFilter9 begin ---------------------
+requestURL: 	http://localhost:8090/api/authbank/query
+method: 	GET
+No cookies.
+Authentication is null.
+
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.web.filter.AuthenticationFilter(119) doFilter() 
+authToken set to: ACCESS
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['host']: localhost:8090
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['user-agent']: curl/7.66.0
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['accept']: */*
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.filter.LogAspect(81) pointcutSignature2Advise() 
+rest: ResponseEntity com.ecorrservices.web.controller.rest.AuthBankRestController.queryAuthBank(HttpServletRequest,String,String,String,HttpServletRequest)
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.web.controller.rest.AuthBankRestController(75) queryAuthBank() 
+Access to auth bank from IP: 0:0:0:0:0:0:0:1 by application: ACCESS
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.filter.LogAspect(74) pointcutSignature1Advise() 
+service impl: AuthBankResponse com.ecorrservices.service.AuthBankService.getAuthBankResponse(String,String,String,String,String)
+### 2020-02-01 20:12:05 DEBUG org.hibernate.SQL(109) logStatement() 
+Insert into  SMART_OWNER.audit_log(authcd_enc, activity, modified_by, ip, url) values(?,?,?,?,?)
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.filter.BootAuthFilter9(158) doFilter() 
+--------------------- BootAuthFilter9 end ---------------------
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(100) doFilter() 
+Response Status Code is: 200
+### 2020-02-01 20:12:05 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(102) doFilter() 
+--------------------- BootRequestHeaderFilter2 end ---------------------
+### 2020-02-01 20:12:21 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(96) doFilter() 
+--------------------- BootRequestHeaderFilter2 begin ---------------------
+host: 	localhost:8090
+user-agent: 	curl/7.66.0
+accept: 	*/*
+No cookie.
+requestURL: 	http://localhost:8090/api/banners
+method: 	GET
+Parameter displayApp: [class java.lang.String, ecorr]
+
+### 2020-02-01 20:12:21 DEBUG com.ecorrservices.filter.BootAuthFilter9(154) doFilter() 
+--------------------- BootAuthFilter9 begin ---------------------
+requestURL: 	http://localhost:8090/api/banners
+method: 	GET
+No cookies.
+Authentication is null.
+
+### 2020-02-01 20:12:21 DEBUG com.ecorrservices.web.filter.AuthenticationFilter(119) doFilter() 
+authToken set to: ACCESS
+### 2020-02-01 20:12:21 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['host']: localhost:8090
+### 2020-02-01 20:12:21 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['user-agent']: curl/7.66.0
+### 2020-02-01 20:12:21 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['accept']: */*
+### 2020-02-01 20:12:21 DEBUG com.ecorrservices.filter.LogAspect(81) pointcutSignature2Advise() 
+rest: ResponseEntity com.ecorrservices.web.controller.rest.WebappBannerRestController.getAllActiveBannersWithCategoryAndRefPeriod(String,HttpServletRequest)
+### 2020-02-01 20:12:21 DEBUG com.ecorrservices.filter.LogAspect(74) pointcutSignature1Advise() 
+service impl: List com.ecorrservices.service.WebappBannerService.getAllActiveBanners(String)
+### 2020-02-01 20:12:21 DEBUG org.hibernate.SQL(109) logStatement() 
+select webappbann0_.WEBAPP_BANNER_ID as WEBAPP_BANNER_ID1_39_, webappbann0_.CREATE_DTM as CREATE_DTM2_39_, webappbann0_.MAINT_DTM as MAINT_DTM3_39_, webappbann0_.MESSAGE_TYPE as MESSAGE_TYPE13_39_, webappbann0_.CLOSEABLE as CLOSEABLE4_39_, webappbann0_.DISPLAY_APP as DISPLAY_APP5_39_, webappbann0_.DISPLAY_LOCATION as DISPLAY_LOCATION6_39_, webappbann0_.EXPIRATION_DATE as EXPIRATION_DATE7_39_, webappbann0_.MESSAGE_CONTENT as MESSAGE_CONTENT8_39_, webappbann0_.REF_PERIOD as REF_PERIOD9_39_, webappbann0_.START_DATE as START_DATE10_39_, webappbann0_.STATUS_INDICATOR as STATUS_INDICATOR11_39_, webappbann0_.SURVEY_CATEGORY as SURVEY_CATEGORY12_39_ from ECOR_OWNER.webapp_banner webappbann0_ where webappbann0_.EXPIRATION_DATE>? and webappbann0_.START_DATE<? and webappbann0_.STATUS_INDICATOR=? and upper(webappbann0_.DISPLAY_APP)=upper(?)
+### 2020-02-01 20:12:22 DEBUG org.hibernate.SQL(109) logStatement() 
+select bannertype0_.BANNER_TYPE_ID as BANNER_TYPE_ID1_9_0_, bannertype0_.CREATE_DTM as CREATE_DTM2_9_0_, bannertype0_.MAINT_DTM as MAINT_DTM3_9_0_, bannertype0_.TYPE as TYPE4_9_0_ from ECOR_OWNER.banner_type bannertype0_ where bannertype0_.BANNER_TYPE_ID=?
+### 2020-02-01 20:12:22 DEBUG org.hibernate.SQL(109) logStatement() 
+select bannertype0_.BANNER_TYPE_ID as BANNER_TYPE_ID1_9_0_, bannertype0_.CREATE_DTM as CREATE_DTM2_9_0_, bannertype0_.MAINT_DTM as MAINT_DTM3_9_0_, bannertype0_.TYPE as TYPE4_9_0_ from ECOR_OWNER.banner_type bannertype0_ where bannertype0_.BANNER_TYPE_ID=?
+### 2020-02-01 20:12:22 DEBUG com.ecorrservices.filter.BootAuthFilter9(158) doFilter() 
+--------------------- BootAuthFilter9 end ---------------------
+### 2020-02-01 20:12:22 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(100) doFilter() 
+Response Status Code is: 200
+### 2020-02-01 20:12:22 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(102) doFilter() 
+--------------------- BootRequestHeaderFilter2 end ---------------------
+...
+...
+...
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.threads.LimitLatch(180) log() 
+Counting up[http-nio-8090-Acceptor-0] latch=1
+### 2020-02-01 20:57:44 DEBUG org.apache.coyote.http11.Http11NioProtocol(180) log() 
+Register Tomcat:type=RequestProcessor,worker="http-nio-8090",name=HttpRequest1
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.Registry(180) log() 
+Managed= Tomcat:type=RequestProcessor,worker="http-nio-8090",name=HttpRequest1
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.Registry(180) log() 
+Looking for descriptor 
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.Registry(180) log() 
+Introspecting 
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute virtualHost public java.lang.String org.apache.coyote.RequestInfo.getVirtualHost() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute bytesSent public long org.apache.coyote.RequestInfo.getBytesSent() public void org.apache.coyote.RequestInfo.setBytesSent(long)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute method public java.lang.String org.apache.coyote.RequestInfo.getMethod() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute remoteAddr public java.lang.String org.apache.coyote.RequestInfo.getRemoteAddr() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute requestBytesSent public long org.apache.coyote.RequestInfo.getRequestBytesSent() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute rpName public javax.management.ObjectName org.apache.coyote.RequestInfo.getRpName() public void org.apache.coyote.RequestInfo.setRpName(javax.management.ObjectName)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute contentLength public int org.apache.coyote.RequestInfo.getContentLength() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute workerThreadName public java.lang.String org.apache.coyote.RequestInfo.getWorkerThreadName() public void org.apache.coyote.RequestInfo.setWorkerThreadName(java.lang.String)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute bytesReceived public long org.apache.coyote.RequestInfo.getBytesReceived() public void org.apache.coyote.RequestInfo.setBytesReceived(long)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute requestProcessingTime public long org.apache.coyote.RequestInfo.getRequestProcessingTime() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute remoteAddrForwarded public java.lang.String org.apache.coyote.RequestInfo.getRemoteAddrForwarded() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute globalProcessor public org.apache.coyote.RequestGroupInfo org.apache.coyote.RequestInfo.getGlobalProcessor() public void org.apache.coyote.RequestInfo.setGlobalProcessor(org.apache.coyote.RequestGroupInfo)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute currentQueryString public java.lang.String org.apache.coyote.RequestInfo.getCurrentQueryString() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute protocol public java.lang.String org.apache.coyote.RequestInfo.getProtocol() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute maxRequestUri public java.lang.String org.apache.coyote.RequestInfo.getMaxRequestUri() public void org.apache.coyote.RequestInfo.setMaxRequestUri(java.lang.String)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute requestBytesReceived public long org.apache.coyote.RequestInfo.getRequestBytesReceived() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute serverPort public int org.apache.coyote.RequestInfo.getServerPort() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute stage public int org.apache.coyote.RequestInfo.getStage() public void org.apache.coyote.RequestInfo.setStage(int)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute requestCount public int org.apache.coyote.RequestInfo.getRequestCount() public void org.apache.coyote.RequestInfo.setRequestCount(int)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute maxTime public long org.apache.coyote.RequestInfo.getMaxTime() public void org.apache.coyote.RequestInfo.setMaxTime(long)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute processingTime public long org.apache.coyote.RequestInfo.getProcessingTime() public void org.apache.coyote.RequestInfo.setProcessingTime(long)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute currentUri public java.lang.String org.apache.coyote.RequestInfo.getCurrentUri() null
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute lastRequestProcessingTime public long org.apache.coyote.RequestInfo.getLastRequestProcessingTime() public void org.apache.coyote.RequestInfo.setLastRequestProcessingTime(long)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Introspected attribute errorCount public int org.apache.coyote.RequestInfo.getErrorCount() public void org.apache.coyote.RequestInfo.setErrorCount(int)
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.modules.MbeansDescriptorsIntrospectionSource(180) log() 
+Setting name: org.apache.coyote.RequestInfo
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.modeler.BaseModelMBean(180) log() 
+preRegister org.apache.coyote.RequestInfo@6d14731e Tomcat:type=RequestProcessor,worker="http-nio-8090",name=HttpRequest1
+### 2020-02-01 20:57:44 DEBUG org.apache.coyote.http11.InternalNioInputBuffer(180) log() 
+Received [GET /api/authbank/query HTTP/1.1
+Host: localhost:8090
+User-Agent: curl/7.66.0
+Accept: */*
+
+]
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.http.Parameters(180) log() 
+Set query string encoding to UTF-8
+### 2020-02-01 20:57:44 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [uriBC] has value [/api/authbank/query]
+### 2020-02-01 20:57:44 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [semicolon] has value [-1]
+### 2020-02-01 20:57:44 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [enc] has value [utf-8]
+### 2020-02-01 20:57:44 DEBUG org.apache.catalina.authenticator.AuthenticatorBase(180) log() 
+Security checking request GET /api/authbank/query
+### 2020-02-01 20:57:44 DEBUG org.apache.catalina.realm.RealmBase(180) log() 
+  No applicable constraints defined
+### 2020-02-01 20:57:44 DEBUG org.apache.catalina.authenticator.AuthenticatorBase(180) log() 
+ Not subject to any constraint
+### 2020-02-01 20:57:44 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](180) log() 
+Initializing Spring FrameworkServlet 'dispatcherServlet'
+### 2020-02-01 20:57:44 INFO  org.springframework.web.servlet.DispatcherServlet(488) initServletBean() 
+FrameworkServlet 'dispatcherServlet': initialization started
+### 2020-02-01 20:57:44 INFO  org.springframework.web.servlet.DispatcherServlet(507) initServletBean() 
+FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms
+### 2020-02-01 20:57:44 DEBUG org.apache.tomcat.util.http.Parameters(180) log() 
+Set encoding to UTF-8
+### 2020-02-01 20:57:44 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(96) doFilter() 
+--------------------- BootRequestHeaderFilter2 begin ---------------------
+host: 	localhost:8090
+user-agent: 	curl/7.66.0
+accept: 	*/*
+No cookie.
+requestURL: 	http://localhost:8090/api/authbank/query
+method: 	GET
+Parameters: none
+
+### 2020-02-01 20:57:44 DEBUG com.ecorrservices.filter.BootAuthFilter9(154) doFilter() 
+--------------------- BootAuthFilter9 begin ---------------------
+requestURL: 	http://localhost:8090/api/authbank/query
+method: 	GET
+No cookies.
+Authentication is null.
+
+### 2020-02-01 20:57:44 DEBUG com.ecorrservices.web.filter.AuthenticationFilter(119) doFilter() 
+authToken set to: ACCESS
+### 2020-02-01 20:57:44 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['host']: localhost:8090
+### 2020-02-01 20:57:44 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['user-agent']: curl/7.66.0
+### 2020-02-01 20:57:44 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['accept']: */*
+### 2020-02-01 20:57:44 DEBUG com.ecorrservices.filter.LogAspect(81) pointcutSignature2Advise() 
+rest: ResponseEntity com.ecorrservices.web.controller.rest.AuthBankRestController.queryAuthBank(HttpServletRequest,String,String,String,HttpServletRequest)
+### 2020-02-01 20:57:44 DEBUG com.ecorrservices.web.controller.rest.AuthBankRestController(75) queryAuthBank() 
+Access to auth bank from IP: 0:0:0:0:0:0:0:1 by application: ACCESS
+### 2020-02-01 20:57:44 DEBUG com.ecorrservices.filter.LogAspect(74) pointcutSignature1Advise() 
+service impl: AuthBankResponse com.ecorrservices.service.AuthBankService.getAuthBankResponse(String,String,String,String,String)
+### 2020-02-01 20:57:44 DEBUG org.hibernate.SQL(109) logStatement() 
+Insert into  SMART_OWNER.audit_log(authcd_enc, activity, modified_by, ip, url) values(?,?,?,?,?)
+### 2020-02-01 20:57:45 DEBUG com.ecorrservices.filter.BootAuthFilter9(158) doFilter() 
+--------------------- BootAuthFilter9 end ---------------------
+### 2020-02-01 20:57:45 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(100) doFilter() 
+Response Status Code is: 200
+### 2020-02-01 20:57:45 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(102) doFilter() 
+--------------------- BootRequestHeaderFilter2 end ---------------------
+### 2020-02-01 20:57:45 DEBUG org.apache.coyote.http11.Http11NioProtocol(180) log() 
+Socket: [org.apache.tomcat.util.net.NioEndpoint$KeyAttachment@28aa6517:org.apache.tomcat.util.net.NioChannel@5e4e26b1:java.nio.channels.SocketChannel[connected local=/0:0:0:0:0:0:0:1:8090 remote=/0:0:0:0:0:0:0:1:65487]], Status in: [OPEN_READ], State out: [OPEN]
+### 2020-02-01 20:57:45 DEBUG org.apache.coyote.http11.Http11NioProcessor(182) log() 
+Error parsing HTTP request header
+java.io.EOFException: Unexpected EOF read on the socket
+	at org.apache.coyote.http11.InternalNioInputBuffer.fill(InternalNioInputBuffer.java:152) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.http11.AbstractNioInputBuffer.parseRequestLine(AbstractNioInputBuffer.java:190) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1010) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:674) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_231]
+### 2020-02-01 20:57:45 DEBUG org.apache.coyote.http11.Http11NioProtocol(180) log() 
+Socket: [org.apache.tomcat.util.net.NioEndpoint$KeyAttachment@28aa6517:org.apache.tomcat.util.net.NioChannel@5e4e26b1:java.nio.channels.SocketChannel[connected local=/0:0:0:0:0:0:0:1:8090 remote=/0:0:0:0:0:0:0:1:65487]], Status in: [OPEN_READ], State out: [CLOSED]
+### 2020-02-01 20:57:45 DEBUG org.apache.tomcat.util.threads.LimitLatch(180) log() 
+Counting down[http-nio-8090-exec-2] latch=1
+### 2020-02-01 20:57:47 DEBUG org.apache.tomcat.util.threads.LimitLatch(180) log() 
+Counting up[http-nio-8090-Acceptor-0] latch=1
+### 2020-02-01 20:57:47 DEBUG org.apache.coyote.http11.InternalNioInputBuffer(180) log() 
+Received [GET /api/banners?displayApp=ecorr HTTP/1.1
+Host: localhost:8090
+User-Agent: curl/7.66.0
+Accept: */*
+
+]
+### 2020-02-01 20:57:47 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [uriBC] has value [/api/banners]
+### 2020-02-01 20:57:47 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [semicolon] has value [-1]
+### 2020-02-01 20:57:47 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [enc] has value [utf-8]
+### 2020-02-01 20:57:47 DEBUG org.apache.catalina.authenticator.AuthenticatorBase(180) log() 
+Security checking request GET /api/banners
+### 2020-02-01 20:57:47 DEBUG org.apache.catalina.realm.RealmBase(180) log() 
+  No applicable constraints defined
+### 2020-02-01 20:57:47 DEBUG org.apache.catalina.authenticator.AuthenticatorBase(180) log() 
+ Not subject to any constraint
+### 2020-02-01 20:57:47 DEBUG org.apache.tomcat.util.http.Parameters(180) log() 
+Set encoding to UTF-8
+### 2020-02-01 20:57:47 DEBUG org.apache.tomcat.util.http.Parameters(180) log() 
+Decoding query null UTF-8
+### 2020-02-01 20:57:47 DEBUG org.apache.tomcat.util.http.Parameters(180) log() 
+Start processing with input [displayApp=ecorr]
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(96) doFilter() 
+--------------------- BootRequestHeaderFilter2 begin ---------------------
+host: 	localhost:8090
+user-agent: 	curl/7.66.0
+accept: 	*/*
+No cookie.
+requestURL: 	http://localhost:8090/api/banners
+method: 	GET
+Parameter displayApp: [class java.lang.String, ecorr]
+
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.filter.BootAuthFilter9(154) doFilter() 
+--------------------- BootAuthFilter9 begin ---------------------
+requestURL: 	http://localhost:8090/api/banners
+method: 	GET
+No cookies.
+Authentication is null.
+
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.web.filter.AuthenticationFilter(119) doFilter() 
+authToken set to: ACCESS
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['host']: localhost:8090
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['user-agent']: curl/7.66.0
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['accept']: */*
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.filter.LogAspect(81) pointcutSignature2Advise() 
+rest: ResponseEntity com.ecorrservices.web.controller.rest.WebappBannerRestController.getAllActiveBannersWithCategoryAndRefPeriod(String,HttpServletRequest)
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.filter.LogAspect(74) pointcutSignature1Advise() 
+service impl: List com.ecorrservices.service.WebappBannerService.getAllActiveBanners(String)
+### 2020-02-01 20:57:47 DEBUG org.hibernate.SQL(109) logStatement() 
+select webappbann0_.WEBAPP_BANNER_ID as WEBAPP_BANNER_ID1_39_, webappbann0_.CREATE_DTM as CREATE_DTM2_39_, webappbann0_.MAINT_DTM as MAINT_DTM3_39_, webappbann0_.MESSAGE_TYPE as MESSAGE_TYPE13_39_, webappbann0_.CLOSEABLE as CLOSEABLE4_39_, webappbann0_.DISPLAY_APP as DISPLAY_APP5_39_, webappbann0_.DISPLAY_LOCATION as DISPLAY_LOCATION6_39_, webappbann0_.EXPIRATION_DATE as EXPIRATION_DATE7_39_, webappbann0_.MESSAGE_CONTENT as MESSAGE_CONTENT8_39_, webappbann0_.REF_PERIOD as REF_PERIOD9_39_, webappbann0_.START_DATE as START_DATE10_39_, webappbann0_.STATUS_INDICATOR as STATUS_INDICATOR11_39_, webappbann0_.SURVEY_CATEGORY as SURVEY_CATEGORY12_39_ from ECOR_OWNER.webapp_banner webappbann0_ where webappbann0_.EXPIRATION_DATE>? and webappbann0_.START_DATE<? and webappbann0_.STATUS_INDICATOR=? and upper(webappbann0_.DISPLAY_APP)=upper(?)
+### 2020-02-01 20:57:47 DEBUG org.hibernate.SQL(109) logStatement() 
+select bannertype0_.BANNER_TYPE_ID as BANNER_TYPE_ID1_9_0_, bannertype0_.CREATE_DTM as CREATE_DTM2_9_0_, bannertype0_.MAINT_DTM as MAINT_DTM3_9_0_, bannertype0_.TYPE as TYPE4_9_0_ from ECOR_OWNER.banner_type bannertype0_ where bannertype0_.BANNER_TYPE_ID=?
+### 2020-02-01 20:57:47 DEBUG org.hibernate.SQL(109) logStatement() 
+select bannertype0_.BANNER_TYPE_ID as BANNER_TYPE_ID1_9_0_, bannertype0_.CREATE_DTM as CREATE_DTM2_9_0_, bannertype0_.MAINT_DTM as MAINT_DTM3_9_0_, bannertype0_.TYPE as TYPE4_9_0_ from ECOR_OWNER.banner_type bannertype0_ where bannertype0_.BANNER_TYPE_ID=?
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.filter.BootAuthFilter9(158) doFilter() 
+--------------------- BootAuthFilter9 end ---------------------
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(100) doFilter() 
+Response Status Code is: 200
+### 2020-02-01 20:57:47 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(102) doFilter() 
+--------------------- BootRequestHeaderFilter2 end ---------------------
+### 2020-02-01 20:57:47 DEBUG org.apache.coyote.http11.Http11NioProtocol(180) log() 
+Socket: [org.apache.tomcat.util.net.NioEndpoint$KeyAttachment@61cb88d9:org.apache.tomcat.util.net.NioChannel@5e4e26b1:java.nio.channels.SocketChannel[connected local=/0:0:0:0:0:0:0:1:8090 remote=/0:0:0:0:0:0:0:1:65490]], Status in: [OPEN_READ], State out: [OPEN]
+### 2020-02-01 20:57:47 DEBUG org.apache.coyote.http11.Http11NioProcessor(182) log() 
+Error parsing HTTP request header
+java.io.EOFException: Unexpected EOF read on the socket
+	at org.apache.coyote.http11.InternalNioInputBuffer.fill(InternalNioInputBuffer.java:152) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.http11.AbstractNioInputBuffer.parseRequestLine(AbstractNioInputBuffer.java:190) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1010) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:674) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_231]
+### 2020-02-01 20:57:47 DEBUG org.apache.coyote.http11.Http11NioProtocol(180) log() 
+Socket: [org.apache.tomcat.util.net.NioEndpoint$KeyAttachment@61cb88d9:org.apache.tomcat.util.net.NioChannel@5e4e26b1:java.nio.channels.SocketChannel[connected local=/0:0:0:0:0:0:0:1:8090 remote=/0:0:0:0:0:0:0:1:65490]], Status in: [OPEN_READ], State out: [CLOSED]
+### 2020-02-01 20:57:47 DEBUG org.apache.tomcat.util.threads.LimitLatch(180) log() 
+Counting down[http-nio-8090-exec-4] latch=1
+### 2020-02-01 20:59:34 DEBUG org.apache.catalina.session.ManagerBase(180) log() 
+Start expire sessions StandardManager at 1580608774473 sessioncount 0
+### 2020-02-01 20:59:34 DEBUG org.apache.catalina.session.ManagerBase(180) log() 
+End expire sessions StandardManager processingTime 0 expired sessions: 0
+### 2020-02-01 21:02:34 DEBUG org.apache.catalina.session.ManagerBase(180) log() 
+Start expire sessions StandardManager at 1580608954479 sessioncount 0
+...
+...
+Start expire sessions StandardManager at 1580620114792 sessioncount 0
+### 2020-02-02 00:08:34 DEBUG org.apache.catalina.session.ManagerBase(180) log() 
+End expire sessions StandardManager processingTime 0 expired sessions: 0
+### 2020-02-02 00:11:34 DEBUG org.apache.catalina.session.ManagerBase(180) log() 
+Start expire sessions StandardManager at 1580620294796 sessioncount 0
+### 2020-02-02 00:11:34 DEBUG org.apache.catalina.session.ManagerBase(180) log() 
+End expire sessions StandardManager processingTime 0 expired sessions: 0
+### 2020-02-02 00:11:50 DEBUG org.apache.tomcat.util.threads.LimitLatch(180) log() 
+Counting up[http-nio-8090-Acceptor-0] latch=1
+### 2020-02-02 00:11:50 DEBUG org.apache.coyote.http11.InternalNioInputBuffer(180) log() 
+Received [GET /api/authbank/query HTTP/1.1
+Host: localhost:8090
+User-Agent: curl/7.66.0
+Accept: */*
+
+]
+### 2020-02-02 00:11:50 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [uriBC] has value [/api/authbank/query]
+### 2020-02-02 00:11:50 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [semicolon] has value [-1]
+### 2020-02-02 00:11:50 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [enc] has value [utf-8]
+### 2020-02-02 00:11:50 DEBUG org.apache.catalina.authenticator.AuthenticatorBase(180) log() 
+Security checking request GET /api/authbank/query
+### 2020-02-02 00:11:50 DEBUG org.apache.catalina.realm.RealmBase(180) log() 
+  No applicable constraints defined
+### 2020-02-02 00:11:50 DEBUG org.apache.catalina.authenticator.AuthenticatorBase(180) log() 
+ Not subject to any constraint
+### 2020-02-02 00:11:50 DEBUG org.apache.tomcat.util.http.Parameters(180) log() 
+Set encoding to UTF-8
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(96) doFilter() 
+--------------------- BootRequestHeaderFilter2 begin ---------------------
+host: 	localhost:8090
+user-agent: 	curl/7.66.0
+accept: 	*/*
+No cookie.
+requestURL: 	http://localhost:8090/api/authbank/query
+method: 	GET
+Parameters: none
+
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.filter.BootAuthFilter9(154) doFilter() 
+--------------------- BootAuthFilter9 begin ---------------------
+requestURL: 	http://localhost:8090/api/authbank/query
+method: 	GET
+No cookies.
+Authentication is null.
+
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.web.filter.AuthenticationFilter(119) doFilter() 
+authToken set to: ACCESS
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['host']: localhost:8090
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['user-agent']: curl/7.66.0
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['accept']: */*
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.filter.LogAspect(81) pointcutSignature2Advise() 
+rest: ResponseEntity com.ecorrservices.web.controller.rest.AuthBankRestController.queryAuthBank(HttpServletRequest,String,String,String,HttpServletRequest)
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.web.controller.rest.AuthBankRestController(75) queryAuthBank() 
+Access to auth bank from IP: 0:0:0:0:0:0:0:1 by application: ACCESS
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.filter.LogAspect(74) pointcutSignature1Advise() 
+service impl: AuthBankResponse com.ecorrservices.service.AuthBankService.getAuthBankResponse(String,String,String,String,String)
+### 2020-02-02 00:11:50 DEBUG org.hibernate.SQL(109) logStatement() 
+Insert into  SMART_OWNER.audit_log(authcd_enc, activity, modified_by, ip, url) values(?,?,?,?,?)
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.filter.BootAuthFilter9(158) doFilter() 
+--------------------- BootAuthFilter9 end ---------------------
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(100) doFilter() 
+Response Status Code is: 200
+### 2020-02-02 00:11:50 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(102) doFilter() 
+--------------------- BootRequestHeaderFilter2 end ---------------------
+### 2020-02-02 00:11:50 DEBUG org.apache.coyote.http11.Http11NioProtocol(180) log() 
+Socket: [org.apache.tomcat.util.net.NioEndpoint$KeyAttachment@67034512:org.apache.tomcat.util.net.NioChannel@5e4e26b1:java.nio.channels.SocketChannel[connected local=/0:0:0:0:0:0:0:1:8090 remote=/0:0:0:0:0:0:0:1:50167]], Status in: [OPEN_READ], State out: [OPEN]
+### 2020-02-02 00:11:50 DEBUG org.apache.coyote.http11.Http11NioProcessor(182) log() 
+Error parsing HTTP request header
+java.io.EOFException: Unexpected EOF read on the socket
+	at org.apache.coyote.http11.InternalNioInputBuffer.fill(InternalNioInputBuffer.java:152) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.http11.AbstractNioInputBuffer.parseRequestLine(AbstractNioInputBuffer.java:190) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1010) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:674) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_231]
+### 2020-02-02 00:11:50 DEBUG org.apache.coyote.http11.Http11NioProtocol(180) log() 
+Socket: [org.apache.tomcat.util.net.NioEndpoint$KeyAttachment@67034512:org.apache.tomcat.util.net.NioChannel@5e4e26b1:java.nio.channels.SocketChannel[connected local=/0:0:0:0:0:0:0:1:8090 remote=/0:0:0:0:0:0:0:1:50167]], Status in: [OPEN_READ], State out: [CLOSED]
+### 2020-02-02 00:11:50 DEBUG org.apache.tomcat.util.threads.LimitLatch(180) log() 
+Counting down[http-nio-8090-exec-6] latch=1
+### 2020-02-02 00:11:56 DEBUG org.apache.tomcat.util.threads.LimitLatch(180) log() 
+Counting up[http-nio-8090-Acceptor-0] latch=1
+### 2020-02-02 00:11:56 DEBUG org.apache.coyote.http11.InternalNioInputBuffer(180) log() 
+Received [GET /api/banners?displayApp=ecorr HTTP/1.1
+Host: localhost:8090
+User-Agent: curl/7.66.0
+Accept: */*
+
+]
+### 2020-02-02 00:11:56 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [uriBC] has value [/api/banners]
+### 2020-02-02 00:11:56 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [semicolon] has value [-1]
+### 2020-02-02 00:11:56 DEBUG org.apache.catalina.connector.CoyoteAdapter(180) log() 
+The variable [enc] has value [utf-8]
+### 2020-02-02 00:11:56 DEBUG org.apache.catalina.authenticator.AuthenticatorBase(180) log() 
+Security checking request GET /api/banners
+### 2020-02-02 00:11:56 DEBUG org.apache.catalina.realm.RealmBase(180) log() 
+  No applicable constraints defined
+### 2020-02-02 00:11:56 DEBUG org.apache.catalina.authenticator.AuthenticatorBase(180) log() 
+ Not subject to any constraint
+### 2020-02-02 00:11:56 DEBUG org.apache.tomcat.util.http.Parameters(180) log() 
+Set encoding to UTF-8
+### 2020-02-02 00:11:56 DEBUG org.apache.tomcat.util.http.Parameters(180) log() 
+Decoding query null UTF-8
+### 2020-02-02 00:11:56 DEBUG org.apache.tomcat.util.http.Parameters(180) log() 
+Start processing with input [displayApp=ecorr]
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(96) doFilter() 
+--------------------- BootRequestHeaderFilter2 begin ---------------------
+host: 	localhost:8090
+user-agent: 	curl/7.66.0
+accept: 	*/*
+No cookie.
+requestURL: 	http://localhost:8090/api/banners
+method: 	GET
+Parameter displayApp: [class java.lang.String, ecorr]
+
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.filter.BootAuthFilter9(154) doFilter() 
+--------------------- BootAuthFilter9 begin ---------------------
+requestURL: 	http://localhost:8090/api/banners
+method: 	GET
+No cookies.
+Authentication is null.
+
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.web.filter.AuthenticationFilter(119) doFilter() 
+authToken set to: ACCESS
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['host']: localhost:8090
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['user-agent']: curl/7.66.0
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.web.filter.EcorrCorsFilter(62) doFilter() 
+Header['accept']: */*
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.filter.LogAspect(81) pointcutSignature2Advise() 
+rest: ResponseEntity com.ecorrservices.web.controller.rest.WebappBannerRestController.getAllActiveBannersWithCategoryAndRefPeriod(String,HttpServletRequest)
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.filter.LogAspect(74) pointcutSignature1Advise() 
+service impl: List com.ecorrservices.service.WebappBannerService.getAllActiveBanners(String)
+### 2020-02-02 00:11:56 DEBUG org.hibernate.SQL(109) logStatement() 
+select webappbann0_.WEBAPP_BANNER_ID as WEBAPP_BANNER_ID1_39_, webappbann0_.CREATE_DTM as CREATE_DTM2_39_, webappbann0_.MAINT_DTM as MAINT_DTM3_39_, webappbann0_.MESSAGE_TYPE as MESSAGE_TYPE13_39_, webappbann0_.CLOSEABLE as CLOSEABLE4_39_, webappbann0_.DISPLAY_APP as DISPLAY_APP5_39_, webappbann0_.DISPLAY_LOCATION as DISPLAY_LOCATION6_39_, webappbann0_.EXPIRATION_DATE as EXPIRATION_DATE7_39_, webappbann0_.MESSAGE_CONTENT as MESSAGE_CONTENT8_39_, webappbann0_.REF_PERIOD as REF_PERIOD9_39_, webappbann0_.START_DATE as START_DATE10_39_, webappbann0_.STATUS_INDICATOR as STATUS_INDICATOR11_39_, webappbann0_.SURVEY_CATEGORY as SURVEY_CATEGORY12_39_ from ECOR_OWNER.webapp_banner webappbann0_ where webappbann0_.EXPIRATION_DATE>? and webappbann0_.START_DATE<? and webappbann0_.STATUS_INDICATOR=? and upper(webappbann0_.DISPLAY_APP)=upper(?)
+### 2020-02-02 00:11:56 DEBUG org.hibernate.SQL(109) logStatement() 
+select bannertype0_.BANNER_TYPE_ID as BANNER_TYPE_ID1_9_0_, bannertype0_.CREATE_DTM as CREATE_DTM2_9_0_, bannertype0_.MAINT_DTM as MAINT_DTM3_9_0_, bannertype0_.TYPE as TYPE4_9_0_ from ECOR_OWNER.banner_type bannertype0_ where bannertype0_.BANNER_TYPE_ID=?
+### 2020-02-02 00:11:56 DEBUG org.hibernate.SQL(109) logStatement() 
+select bannertype0_.BANNER_TYPE_ID as BANNER_TYPE_ID1_9_0_, bannertype0_.CREATE_DTM as CREATE_DTM2_9_0_, bannertype0_.MAINT_DTM as MAINT_DTM3_9_0_, bannertype0_.TYPE as TYPE4_9_0_ from ECOR_OWNER.banner_type bannertype0_ where bannertype0_.BANNER_TYPE_ID=?
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.filter.BootAuthFilter9(158) doFilter() 
+--------------------- BootAuthFilter9 end ---------------------
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(100) doFilter() 
+Response Status Code is: 200
+### 2020-02-02 00:11:56 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(102) doFilter() 
+--------------------- BootRequestHeaderFilter2 end ---------------------
+### 2020-02-02 00:11:56 DEBUG org.apache.coyote.http11.Http11NioProtocol(180) log() 
+Socket: [org.apache.tomcat.util.net.NioEndpoint$KeyAttachment@6241fbe1:org.apache.tomcat.util.net.NioChannel@5e4e26b1:java.nio.channels.SocketChannel[connected local=/0:0:0:0:0:0:0:1:8090 remote=/0:0:0:0:0:0:0:1:50170]], Status in: [OPEN_READ], State out: [OPEN]
+### 2020-02-02 00:11:56 DEBUG org.apache.coyote.http11.Http11NioProcessor(182) log() 
+Error parsing HTTP request header
+java.io.EOFException: Unexpected EOF read on the socket
+	at org.apache.coyote.http11.InternalNioInputBuffer.fill(InternalNioInputBuffer.java:152) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.http11.AbstractNioInputBuffer.parseRequestLine(AbstractNioInputBuffer.java:190) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1010) ~[tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:674) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.0.30.jar:8.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_231]
+### 2020-02-02 00:11:56 DEBUG org.apache.coyote.http11.Http11NioProtocol(180) log() 
+Socket: [org.apache.tomcat.util.net.NioEndpoint$KeyAttachment@6241fbe1:org.apache.tomcat.util.net.NioChannel@5e4e26b1:java.nio.channels.SocketChannel[connected local=/0:0:0:0:0:0:0:1:8090 remote=/0:0:0:0:0:0:0:1:50170]], Status in: [OPEN_READ], State out: [CLOSED]
+### 2020-02-02 00:11:56 DEBUG org.apache.tomcat.util.threads.LimitLatch(180) log() 
+Counting down[http-nio-8090-exec-8] latch=1

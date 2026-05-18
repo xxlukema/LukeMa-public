@@ -1,0 +1,17 @@
+{
+  "username": "xx.luke.ma@gmail.com",
+  "title": "My Title",
+  "condition": "new",
+  "brand": "sam",
+  "description": "My TEST<br>",
+  "price": 9.99,
+  "optionalAttributes": {
+    "model": "s23",
+    "californiaProp65Warn": "caution",
+    "country": "china",
+    "availableUnitQuantity": null,
+    "unitType": null,
+    "mpn": null,
+    "upc": null
+  }
+}

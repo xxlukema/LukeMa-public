@@ -1,0 +1,17 @@
+/target/
+/.idea/
+/test-output/
+/.classpath
+/.project
+/.svn
+*.log
+/bin
+/.settings/**
+!/.settings/org.eclipse.jdt.core.prefs
+/.springBeans
+**/*.iml
+/.apt_generated/
+/.apt_generated_tests/
+/.factorypath
+/.sts4-cache/
+.vscode/launch.json

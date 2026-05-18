@@ -1,0 +1,9 @@
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "classpath:testContext.xml")
+public class FooTest {
+	
+	@Autowired
+	private String foo;
+	
+}

@@ -1,0 +1,30 @@
+@import './test.scss';
+
+@mixin padding($values...) {
+    @each $var in $values {
+        padding: #{$var};
+    }
+}
+
+@mixin margin($values...) {
+    @each $var in $values {
+        margin: #{$var};
+    }
+}
+
+button {
+    @include padding(4px 10px 6px);
+    @include margin(10px 4px 6px);
+    background-color: lightblue;
+}
+
+textarea {
+    font: 0.8em $font-stack;
+    color: $primary-color;
+    @extend %bg-color;
+}
+
+.div-group {
+    margin: 2em;
+    border: 2px darkblue solid;
+}

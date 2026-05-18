@@ -1,0 +1,103 @@
+
+SftaReconConfig.xml
+
+1169:
+	<!-- begin -->
+	<ReconItemQueryConfig id-query="SFS1637A">            
+		<DSLTask name="recon.tds.fetchSecrLotBssAdditiveSrcCount">  
+		</DSLTask>
+	</ReconItemQueryConfig>
+	
+	<ReconItemQueryConfig id-query="SFS1637B">            
+		<DSLTask name="recon.tds.fetchSecrLotBssAdditiveSrcSum">  
+		</DSLTask>
+	</ReconItemQueryConfig>
+	<!-- end -->
+
+1279:
+	<!-- begin -->
+	<ReconItemQueryConfig id-query="SFT1637A">            
+		<DSLTask name="recon.cdw.fetchSecrLotBssAdditiveSrcCount">  
+		</DSLTask>
+	</ReconItemQueryConfig>
+	
+	<ReconItemQueryConfig id-query="SFT1637B">            
+		<DSLTask name="recon.cdw.fetchSecrLotBssAdditiveSrcSum">  
+		</DSLTask>
+	</ReconItemQueryConfig>
+	<!-- end -->
+	
+
+SftaRtmReconQueryConfig.xml
+
+5582:
+	<!-- begin  -->
+	<dslQueryConfig name="recon.tds.fetchSecrLotBssAdditiveSrcCount">
+		<sql>
+			<![CDATA[
+				select count(*) as RET_VAL  
+				from secr_lot_bss_rlf where dt_eop = ? with UR
+  			]]>
+		</sql>
+		<parameter name="glEndDate" static_seqno="0">
+			<dataType>date</dataType>
+		</parameter>
+		<dataSource>TdsContext</dataSource>
+		<persistenceService>JdbcPersistenceService</persistenceService>
+		<persistenceMethod>fetch</persistenceMethod>
+	</dslQueryConfig>	
+		
+	<dslQueryConfig name="recon.tds.fetchSecrLotBssAdditiveSrcSum">
+		<sql>
+			<![CDATA[
+				select sum(amt_fee_bs_rlf) as RET_VAL  
+				from secr_lot_bss_rlf where dt_eop = ? with UR
+  			]]>
+		</sql>
+		<parameter name="glEndDate" static_seqno="0">
+			<dataType>date</dataType>
+		</parameter>
+		<dataSource>TdsContext</dataSource>
+		<persistenceService>JdbcPersistenceService</persistenceService>
+		<persistenceMethod>fetch</persistenceMethod>
+	</dslQueryConfig>
+	<!-- end -->
+
+5950:
+	<!-- begin -->
+	<dslQueryConfig name="recon.cdw.fetchSecrLotBssAdditiveSrcCount">
+		<sql>
+			<![CDATA[
+				select count(*) as RET_VAL  
+				from secr_lot_bss_rlf_hst where dt_eop = ?  
+				and date(dt_srce_end) = '9999-01-01' AND  flag_del<>'Y' with UR
+  			]]>
+		</sql>
+		<parameter name="glEndDate" static_seqno="0">
+			<dataType>date</dataType>
+		</parameter>
+		<dataSource>CdwContext</dataSource>
+		<persistenceService>JdbcPersistenceService</persistenceService>
+		<persistenceMethod>fetch</persistenceMethod>
+	</dslQueryConfig>	
+		
+	<dslQueryConfig name="recon.cdw.fetchSecrLotBssAdditiveSrcSum">
+		<sql>
+			<![CDATA[
+				select sum(amt_fee_bs_rlf) as RET_VAL  
+				from secr_lot_bss_rlf_hst where dt_eop = ?  
+				and date(dt_srce_end) = '9999-01-01' AND  flag_del<>'Y' with UR
+  			]]>
+		</sql>
+		<parameter name="glEndDate" static_seqno="0">
+			<dataType>date</dataType>
+		</parameter>
+		<dataSource>CdwContext</dataSource>
+		<persistenceService>JdbcPersistenceService</persistenceService>
+		<persistenceMethod>fetch</persistenceMethod>
+	</dslQueryConfig>
+	<!-- end -->
+
+
+
+

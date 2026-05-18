@@ -1,0 +1,33 @@
+<h3 appHostlistener>Book Details with Observable </h3>
+
+<p [style.color]="'blue'" [style.backgroundColor]="'lightgray'" [hidden]=false >Directives are awesome</p>
+
+<button (click)="toggleAppIfValue()">Toggle appIf</button>
+
+<span *appIf="appIfValue" [ngStyle]="{'font-size': '1.4em', 'margin': '10px', 'font-weight': 'bold'}">
+  Inside if
+</span>
+
+<div [ngStyle]="{'margin-bottom': '1cm'}"></div>
+
+<ul>
+  <li *ngFor="let book of books" >
+    <span [style.color]="'blue'" [style.backgroundColor]="'lightgray'">Id: {{book.id}}</span>, 
+    Name: <span appHighlight [appHighlight]="'green'" [style.color]="'white'">{{book.name | capitalize}}</span>
+  </li>
+</ul>
+<div>
+  <div>
+     <label>Id: </label>
+     <input [(ngModel)]="book.id" appHostlistener />
+  </div>
+  <div>
+     <label>Name: </label>
+     <input [(ngModel)]="book.name" appHostlistener />
+  </div>
+  <div>
+     <button (click)="addBook()">Add</button>
+  </div>
+</div> 
+<div *ngIf="bookName" [ngClass] = "'success'"> {{bookName}} Added. </div>
+<div *ngIf="errorMessage" [ngClass] = "'error'"> {{errorMessage}} </div> 

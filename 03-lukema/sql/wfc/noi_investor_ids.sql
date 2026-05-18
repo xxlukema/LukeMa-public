@@ -1,0 +1,6 @@
+SELECT
+    INVESTOR_ID
+FROM
+    T_CMSA_INVESTOR
+WHERE
+    CLOSING_DT >= to_date('2011', 'yyyy');

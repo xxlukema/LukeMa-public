@@ -1,0 +1,9 @@
+html, body {
+    margin: 5px;
+    padding: 0;
+    background-color: lightgray;
+}
+
+div {
+    margin-left: 20px;
+}

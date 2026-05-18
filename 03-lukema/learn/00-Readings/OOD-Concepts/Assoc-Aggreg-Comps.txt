@@ -1,0 +1,36 @@
+
+
+Association: All objects have their own lifecycle and there is no owner. 
+Example: Teacher and Student. Multiple students can associate with single 
+         teacher and single student can associate with multiple 
+         teachers but there is no ownership between the objects and both 
+         have their own lifecycle. Both can create and delete independently.
+
+ 
+
+Aggregation: All objects have their own lifecycle but there is ownership 
+             and child object can not belongs to another parent object. 
+Example: Department and teacher. A single teacher can not belongs to multiple 
+         departments, but if we delete the department teacher object will 
+         not destroy. We can think about (has-a) relationship.
+
+ 
+
+Composition: A strong type of Aggregation. Child object dose not have their 
+             lifecycle and if parent object deletes all child object will 
+             also be deleted. 
+Example: House and rooms. House can contain multiple rooms there is no 
+         independent life of room and any room can not belongs to two 
+         different house. If we delete the house room will automatically 
+         delete. 
+
+ 
+
+The 5 Basic Concepts of Object Oriented Design:
+   Encapsulation
+   Inheritance
+   Polymorphism
+   Interface
+   Data Protection/Information Hiding
+   Object/Class
+

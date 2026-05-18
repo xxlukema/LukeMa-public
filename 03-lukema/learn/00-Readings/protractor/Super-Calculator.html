@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="calculator" class="ng-scope"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+  <script src="Super-Calculator_files/angular.js"></script>
+  <script src="Super-Calculator_files/calc.js"></script>
+  <link href="Super-Calculator_files/bootstrap.css" rel="stylesheet">
+  <title>Super Calculator</title>
+</head>
+<body class="">
+  <div ng-controller="CalcCtrl" class="container ng-scope">
+    <div>
+      <h3>Super Calculator</h3>
+      <form class="form-inline ng-pristine ng-valid">
+        <input ng-model="first" class="input-small ng-pristine ng-untouched ng-valid" type="text">
+        <select ng-model="operator" class="span1 ng-pristine ng-untouched ng-valid" ng-options="value for (key, value) in operators"><option value="ADDITION" selected="selected">+</option><option value="DIVISION">/</option><option value="MODULO">%</option><option value="MULTIPLICATION">*</option><option value="SUBTRACTION">-</option></select>
+        <input ng-model="second" class="input-small ng-pristine ng-untouched ng-valid" type="text">
+        <button ng-click="doAddition()" id="gobutton" class="btn">Go!</button>
+        <h2 class="ng-binding">0</h2>
+      </form>
+    </div>
+    <h4>History</h4>
+    <table class="table">
+      <thead><tr>
+        <th>Time</th>
+        <th>Expression</th>
+        <th>Result</th>
+      </tr></thead>
+      <tbody><!-- ngRepeat: result in memory -->
+    </tbody></table>
+  </div>
+
+
+</body></html>

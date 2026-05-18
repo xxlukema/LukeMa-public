@@ -1,0 +1,27 @@
+<nav>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row fxLayout="row" style="border: 2px yellow dotted;" fxLayoutAlign="start center">
+            <button fxFlex="none" mat-icon-button>
+                <!-- <mat-icon (click)="sidenav.toggle()">menu</mat-icon> -->
+                <mat-icon>menu</mat-icon>
+            </button>
+            <section fxFlex="none" style="background-color:green;">
+                <a mat-button [routerLink]="['/property-report']" [queryParams]="{user: 'luke'}">luke</a>
+                <a mat-button [routerLink]="['/property-report']" [queryParams]="{user: 'lender'}">lender</a>
+                <a mat-button [routerLink]="['/input']">Form Input</a>
+                &nbsp;
+                &nbsp;
+                <a mat-button [routerLink]="['/login']">Login</a>
+                <a mat-button [routerLink]="['/logout']">Logout</a>
+            </section>
+            <section fxFlex="auto" style="border: 2px yellow dotted; text-align: center;">D</section>
+            <section fxFlex="15" style="background-color: hotpink;">
+                <section fxLayout="row" fxLayoutAlign="end center">
+                    <section fxFlex="auto"></section>
+                    <mat-icon fxFlex="none">favorite</mat-icon>
+                    <mat-icon fxFlex="none">delete</mat-icon>
+                </section>
+            </section>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</nav>

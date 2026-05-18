@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-properties-boot
+spec:
+  selector:
+    matchLabels:
+      app: my-properties-boot
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: my-properties-boot
+    spec:
+      containers:
+      - name: my-properties-boot-alpine
+        image: xxlukema/my-properties-boot:0.0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8443
+        resources:
+            limits:
+              memory: 512Mi
+              cpu: "1"
+            requests:
+              memory: 256Mi
+              cpu: "0.2"

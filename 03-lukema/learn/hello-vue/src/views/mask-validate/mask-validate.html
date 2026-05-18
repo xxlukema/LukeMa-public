@@ -1,0 +1,41 @@
+<section class="mask-validate">
+
+  <h3>v-validate</h3>
+
+  <ValidationProvider rules="secret" v-slot="{ errors }">
+    <input v-model="email" type="text">
+    <div v-if="errors.length > 0">{{ errors[0] }}</div>
+  </ValidationProvider>
+
+  <br>
+  <br>
+
+  <ValidationProvider :rules="{between: {min:1, max:10}, required: true}" v-slot="{ errors }">
+    number: <input v-model="email2" v-mask="'##'" type="text" placeholder="number">
+    <div v-if="errors.length > 0">{{ errors[0] }}</div>
+  </ValidationProvider>
+
+  <br>
+  <br>
+
+  <div>
+    <label>File
+      <input type="file" multiple id="files" ref="files" @change="handleFileUploads" />
+    </label>
+    <button @click="submitFiles">Submit</button>
+    <div class="indi-form__input-row" v-if="files && files.length>0">
+      <span>Have another documents to give us?<button @click="$refs.files.click()" role="button">Upload another file.</button></span>
+    </div>
+  </div>
+
+  Files:
+
+  <ul>
+    <li v-for="(file, key) in files">
+      {{file.name}} - {{file.size}} - {{file.type}}
+    </li>
+  </ul>
+
+  <br>
+
+</section>

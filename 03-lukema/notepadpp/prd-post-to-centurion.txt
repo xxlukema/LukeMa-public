@@ -1,0 +1,10 @@
+<form action="https://respond.census.gov/saml/login" method="POST" target="_blank">
+	  
+	<input id="authCode" name="authCode" value="95b506b1a08b7ea82b6627332c251f85afe5c582bb453782ff00f4b0149ffc47" type="hidden">
+	  
+	<button ng-if="vm.survey.reportingEnabled !=='N'" ng-click="vm.accessCenturion()">
+        <h4 class="md-subhead">REPORT NOW</h4>
+    </button>
+	  
+</form>
+

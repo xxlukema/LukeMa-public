@@ -1,0 +1,388 @@
+#### 2020-01-02 02:50:12 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/](180) log() 
+Initializing Spring FrameworkServlet 'dispatcherServlet'
+#### 2020-01-02 02:50:12 INFO  org.springframework.web.servlet.DispatcherServlet(489) initServletBean() 
+FrameworkServlet 'dispatcherServlet': initialization started
+#### 2020-01-02 02:50:12 INFO  org.springframework.web.servlet.DispatcherServlet(508) initServletBean() 
+FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+#### 2020-01-02 02:50:12 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(84) doFilter() 
+--------------------- BootRequestHeaderFilter2 begin ---------------------
+host: 	localhost:8090
+connection: 	keep-alive
+sec-fetch-mode: 	cors
+access-control-request-method: 	GET
+origin: 	http://localhost:8080
+user-agent: 	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36
+access-control-request-headers: 	hiucoa,pragma
+accept: 	*/*
+sec-fetch-site: 	same-site
+referer: 	http://localhost:8080/gsr.html
+accept-encoding: 	gzip, deflate, br
+accept-language: 	en-US,en;q=0.9
+No cookie.
+requestURL: 	http://localhost:8090/api/pega/cases/topics
+method: 	OPTIONS
+#### 2020-01-02 02:50:12 DEBUG com.ecorrservices.filter.BootAuthFilter9(154) doFilter() 
+--------------------- BootAuthFilter9 begin ---------------------
+requestURL: 	http://localhost:8090/api/pega/cases/topics
+method: 	OPTIONS
+No cookies.
+Authentication is null.
+
+#### 2020-01-02 02:50:12 DEBUG com.ecorrservices.filter.BootAuthFilter9(158) doFilter() 
+--------------------- BootAuthFilter9 end ---------------------
+#### 2020-01-02 02:50:12 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(88) doFilter() 
+Response Status Code is: 200
+#### 2020-01-02 02:50:12 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(90) doFilter() 
+--------------------- BootRequestHeaderFilter2 end ---------------------
+#### 2020-01-02 02:50:12 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(84) doFilter() 
+--------------------- BootRequestHeaderFilter2 begin ---------------------
+host: 	localhost:8090
+connection: 	keep-alive
+pragma: 	no-cache
+accept: 	application/json, text/plain, */*
+origin: 	http://localhost:8080
+hiucoa: 	
+user-agent: 	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36
+sec-fetch-mode: 	cors
+sec-fetch-site: 	same-site
+referer: 	http://localhost:8080/support/case
+accept-encoding: 	gzip, deflate, br
+accept-language: 	en-US,en;q=0.9
+No cookie.
+requestURL: 	http://localhost:8090/api/pega/cases/topics
+method: 	GET
+#### 2020-01-02 02:50:12 DEBUG com.ecorrservices.filter.BootAuthFilter9(154) doFilter() 
+--------------------- BootAuthFilter9 begin ---------------------
+requestURL: 	http://localhost:8090/api/pega/cases/topics
+method: 	GET
+No cookies.
+Authentication is null.
+
+#### 2020-01-02 02:50:12 DEBUG com.ecorrservices.service.impl.EcorrHTTPServiceImpl(112) queryCRMAPI() 
+Request headers: {Authorization=[Basic d2VidGVhbTpydWxlcw==]}
+#### 2020-01-02 02:50:12 DEBUG com.ecorrservices.service.impl.EcorrHTTPServiceImpl(113) queryCRMAPI() 
+Request query: https://ecorrcrm.test.it.census.gov/prweb/api/v1/data/D_GetAllTopicsAndSubtopics?topicType=GENERAL
+#### 2020-01-02 02:50:13 DEBUG com.ecorrservices.filter.BootAuthFilter9(158) doFilter() 
+--------------------- BootAuthFilter9 end ---------------------
+#### 2020-01-02 02:50:13 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(88) doFilter() 
+Response Status Code is: 200
+#### 2020-01-02 02:50:13 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(90) doFilter() 
+--------------------- BootRequestHeaderFilter2 end ---------------------
+#### 2020-01-02 02:51:37 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(84) doFilter() 
+--------------------- BootRequestHeaderFilter2 begin ---------------------
+host: 	localhost:8090
+connection: 	keep-alive
+sec-fetch-mode: 	cors
+access-control-request-method: 	POST
+origin: 	http://localhost:8080
+user-agent: 	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36
+access-control-request-headers: 	hiucoa,pragma
+accept: 	*/*
+sec-fetch-site: 	same-site
+referer: 	http://localhost:8080/support/case
+accept-encoding: 	gzip, deflate, br
+accept-language: 	en-US,en;q=0.9
+No cookie.
+requestURL: 	http://localhost:8090/api/pega/cases/
+method: 	OPTIONS
+#### 2020-01-02 02:51:37 DEBUG com.ecorrservices.filter.BootAuthFilter9(154) doFilter() 
+--------------------- BootAuthFilter9 begin ---------------------
+requestURL: 	http://localhost:8090/api/pega/cases/
+method: 	OPTIONS
+No cookies.
+Authentication is null.
+
+#### 2020-01-02 02:51:37 DEBUG com.ecorrservices.filter.BootAuthFilter9(158) doFilter() 
+--------------------- BootAuthFilter9 end ---------------------
+#### 2020-01-02 02:51:37 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(88) doFilter() 
+Response Status Code is: 200
+#### 2020-01-02 02:51:37 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(90) doFilter() 
+--------------------- BootRequestHeaderFilter2 end ---------------------
+#### 2020-01-02 02:51:37 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(84) doFilter() 
+--------------------- BootRequestHeaderFilter2 begin ---------------------
+host: 	localhost:8090
+connection: 	keep-alive
+content-length: 	136
+pragma: 	no-cache
+origin: 	http://localhost:8080
+user-agent: 	Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36
+sec-fetch-mode: 	cors
+content-type: 	multipart/form-data; boundary=----WebKitFormBoundary6ZXt1onSVhPqAelv
+accept: 	application/json, text/plain, */*
+hiucoa: 	
+sec-fetch-site: 	same-site
+referer: 	http://localhost:8080/support/case
+accept-encoding: 	gzip, deflate, br
+accept-language: 	en-US,en;q=0.9
+No cookie.
+requestURL: 	http://localhost:8090/api/pega/cases/
+method: 	POST
+#### 2020-01-02 02:51:37 DEBUG com.ecorrservices.filter.BootAuthFilter9(154) doFilter() 
+--------------------- BootAuthFilter9 begin ---------------------
+requestURL: 	http://localhost:8090/api/pega/cases/
+method: 	POST
+No cookies.
+Authentication is null.
+
+#### 2020-01-02 02:51:37 INFO  org.springframework.scheduling.annotation.AnnotationAsyncExecutionInterceptor(249) getDefaultExecutor() 
+No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+#### 2020-01-02 02:51:37 DEBUG org.hibernate.SQL(92) logStatement() 
+select this_.USER_ACCOUNT_ID as USER_ACCOUNT_ID1_36_0_, this_.CREATE_DTM as CREATE_DTM2_36_0_, 
+       this_.MAINT_DTM as MAINT_DTM3_36_0_, this_.EMAIL as EMAIL4_36_0_, 
+	   this_.FIRST_NAME as FIRST_NAME5_36_0_, this_.LAST_NAME as LAST_NAME6_36_0_, 
+	   this_.PHONE_NBR as PHONE_NBR7_36_0_, this_.ROLE_TYPE_ID as ROLE_TYPE_ID8_36_0_ 
+from ecor_owner.user_account this_ where this_.EMAIL=?
+
+#### 2020-01-02 02:51:37 TRACE org.hibernate.type.descriptor.sql.BasicBinder(65) bind() 
+binding parameter [1] as [VARCHAR] - [x.luke.ma@gmail.com]
+#### 2020-01-02 02:51:37 DEBUG org.hibernate.SQL(92) logStatement() 
+select ecor_owner.PARADATA_EVENT_SEQ.nextval from dual
+#### 2020-01-02 02:51:37 DEBUG org.hibernate.SQL(92) logStatement() 
+insert into ecor_owner.PARADATA_EVENT (EVENT_DTM, PARADATA_EVENT_TYPE_ID, SESSION_ID, SURVEY_ID, PARADATA_EVENT_ID) 
+values (?, ?, ?, ?, ?)
+
+#### 2020-01-02 02:51:37 TRACE org.hibernate.type.descriptor.sql.BasicBinder(65) bind() 
+binding parameter [1] as [TIMESTAMP] - [Thu Jan 02 02:51:37 EST 2020]
+#### 2020-01-02 02:51:37 TRACE org.hibernate.type.descriptor.sql.BasicBinder(65) bind() 
+binding parameter [2] as [INTEGER] - [1]
+#### 2020-01-02 02:51:37 TRACE org.hibernate.type.descriptor.sql.BasicBinder(65) bind() 
+binding parameter [3] as [VARCHAR] - [39C7C1D9F24EF0A17AB2311120BDFE59]
+#### 2020-01-02 02:51:37 TRACE org.hibernate.type.descriptor.sql.BasicBinder(53) bind() 
+binding parameter [4] as [INTEGER] - [null]
+#### 2020-01-02 02:51:37 TRACE org.hibernate.type.descriptor.sql.BasicBinder(65) bind() 
+binding parameter [5] as [INTEGER] - [35168]
+#### 2020-01-02 02:51:37 DEBUG com.ecorrservices.service.impl.EcorrHTTPServiceImpl(244) submitCase() 
+Request headers: {Authorization=[Basic d2VidGVhbTpydWxlcw==]}
+#### 2020-01-02 02:51:37 DEBUG com.ecorrservices.service.impl.EcorrHTTPServiceImpl(245) submitCase() 
+Request body: {"caseTypeID":"USCB-ECORR-Work-Interaction-Web","processID":"CPMInteraction","CaseComments":[],"CaseAttachments":[],"content":{"UserAccountID":"6127","ServiceCaseType":"GeneralServiceRequest","GeneralServiceRequestTemplate":{"Description":"Luke B Desc","Email":"x.luke.ma@gmail.com","Name":"Luke Ma","Phone":"3011110000","Subject":"Luke B","Subtopic":"GST382","Type":"Question","Topic":"GT380"},"ServiceCaseAttachments":[]}}
+#### 2020-01-02 02:51:38 WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper(127) logExceptions() 
+SQL Error: 1, SQLState: 23000
+#### 2020-01-02 02:51:38 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper(129) logExceptions() 
+ORA-00001: unique constraint (ECOR_OWNER.PARADATA_EVENT_ID_PK) violated
+
+#### 2020-01-02 02:51:38 INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl(193) release() 
+HHH000010: On release of batch it still contained JDBC statements
+#### 2020-01-02 02:51:38 ERROR com.ecorrservices.service.impl.ParadataEventServiceImpl(31) LOG() 
+--- DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [ECOR_OWNER.PARADATA_EVENT_ID_PK]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+#### 2020-01-02 02:51:38 ERROR com.ecorrservices.filter.LogAspect(62) logAfterThrowingAllMethods1() 
+excpt: Exception thrown from: void com.ecorrservices.service.ParadataEventService.LOG(Integer,Integer,String). Exception message: could not execute statement; SQL [n/a]; constraint [ECOR_OWNER.PARADATA_EVENT_ID_PK]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [ECOR_OWNER.PARADATA_EVENT_ID_PK]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:278) ~[spring-orm-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:244) ~[spring-orm-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:521) ~[spring-orm-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:765) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:734) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:521) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:293) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:140) ~[spring-data-jpa-1.11.23.RELEASE.jar:?]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$ExposeRepositoryInvocationInterceptor.invoke(CrudMethodMetadataPostProcessor.java:347) ~[spring-data-jpa-1.11.23.RELEASE.jar:?]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.23.RELEASE.jar:?]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at com.sun.proxy.$Proxy278.save(Unknown Source) ~[?:?]
+	at com.ecorrservices.service.impl.ParadataEventServiceImpl.LOG(ParadataEventServiceImpl.java:29) ~[classes/:?]
+	at com.ecorrservices.service.impl.ParadataEventServiceImpl.LOG(ParadataEventServiceImpl.java:42) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_231]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_231]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_231]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_231]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62) [spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) [spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) [spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor$1.call(AsyncExecutionInterceptor.java:115) [spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_231]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:59) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:109) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:95) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:207) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:45) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2949) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3449) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:89) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517) ~[spring-orm-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	... 34 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (ECOR_OWNER.PARADATA_EVENT_ID_PK) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_231]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_231]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_231]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_231]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-8.5.50.jar:?]
+	at com.sun.proxy.$Proxy334.executeUpdate(Unknown Source) ~[?:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:204) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:45) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2949) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3449) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:89) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517) ~[spring-orm-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	... 34 more
+#### 2020-01-02 02:51:38 ERROR org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler(38) handleUncaughtException() 
+Unexpected error occurred invoking async method: public void com.ecorrservices.service.impl.ParadataEventServiceImpl.LOG(java.lang.Integer,java.lang.Integer,java.lang.String)
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [ECOR_OWNER.PARADATA_EVENT_ID_PK]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:278) ~[spring-orm-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:244) ~[spring-orm-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:521) ~[spring-orm-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:765) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:734) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:521) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:293) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:140) ~[spring-data-jpa-1.11.23.RELEASE.jar:?]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$ExposeRepositoryInvocationInterceptor.invoke(CrudMethodMetadataPostProcessor.java:347) ~[spring-data-jpa-1.11.23.RELEASE.jar:?]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57) ~[spring-data-commons-1.13.23.RELEASE.jar:?]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at com.sun.proxy.$Proxy278.save(Unknown Source) ~[?:?]
+	at com.ecorrservices.service.impl.ParadataEventServiceImpl.LOG(ParadataEventServiceImpl.java:29) ~[classes/:?]
+	at com.ecorrservices.service.impl.ParadataEventServiceImpl.LOG(ParadataEventServiceImpl.java:42) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_231]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_231]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_231]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_231]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor$1.call(AsyncExecutionInterceptor.java:115) [spring-aop-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_231]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:59) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:109) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:95) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:207) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:45) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2949) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3449) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:89) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517) ~[spring-orm-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	... 34 more
+Caused by: java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (ECOR_OWNER.PARADATA_EVENT_ID_PK) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361) ~[ojdbc6-11.2.0.jar:12.1.0.1.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_231]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_231]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_231]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_231]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-8.5.50.jar:?]
+	at com.sun.proxy.$Proxy334.executeUpdate(Unknown Source) ~[?:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:204) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:45) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2949) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3449) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:89) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517) ~[spring-orm-4.3.25.RELEASE.jar:4.3.25.RELEASE]
+	... 34 more
+#### 2020-01-02 02:51:39 DEBUG com.ecorrservices.filter.BootAuthFilter9(158) doFilter() 
+--------------------- BootAuthFilter9 end ---------------------
+#### 2020-01-02 02:51:39 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(88) doFilter() 
+Response Status Code is: 200
+#### 2020-01-02 02:51:39 DEBUG com.ecorrservices.filter.BootRequestHeaderFilter2(90) doFilter() 
+--------------------- BootRequestHeaderFilter2 end ---------------------

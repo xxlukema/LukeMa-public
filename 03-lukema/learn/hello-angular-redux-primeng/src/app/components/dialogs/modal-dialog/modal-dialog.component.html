@@ -1,0 +1,12 @@
+<section fxLayout="column" fxLayoutAlign="start center" style="margin: 1em;">
+    <div fxFlex>
+        <i class="fas fa-spinner fa-spin fa-4x"></i>
+    </div>
+
+    <div fxFlex class="my-bar-value center" style="margin: 0.5em 0;">{{value}}% <span *ngIf="value >= 100">&nbsp;Completing...</span></div>
+
+    <div fxFlex>
+        <mat-progress-bar class="my-progress-bar center" color="primary" mode="determinate" [value]="value">
+        </mat-progress-bar>
+    </div>
+</section>

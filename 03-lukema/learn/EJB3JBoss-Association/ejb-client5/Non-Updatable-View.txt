@@ -1,0 +1,14 @@
+A view is not updatable if any of the following conditions are true:
+
+    * the keyword DISTINCT is used in the view definition
+    * the select list contains components other than column specifications, or contains more than one 
+      specification of the same column
+    * the FROM clause specifies more than one table reference or refers to a non-updatable view
+    * the GROUP BY clause is used in the view definition
+    * the HAVING clause is used in the view definition 
+    
+For a view to be naturally updatable (without the need to write triggers for it), it should be a 
+subset of a single table or another updatable view, fields from the underlying tables that aren't 
+exposed through the view should allow NULL values and the SELECT clause that defines the VIEW is 
+not allowed to include DISTINCT, nested queries, HAVING, aggregate built-in 
+functions (AVG, SUM, MAX, MIN, COUNT), UDFs, procedures, JOIN or UNION and expressions.

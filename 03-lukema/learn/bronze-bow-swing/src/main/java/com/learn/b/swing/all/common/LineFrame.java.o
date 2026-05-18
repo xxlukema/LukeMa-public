@@ -1,0 +1,231 @@
+package common;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.*;
+
+public class LineFrame extends JFrame
+{
+   public  static final int WIDTH  = 980;
+   public  static final int HEIGHT = 600;
+   public  static final int EDGE   = 20;
+
+   private static Color [] colorArray = {Color.RED, Color.YELLOW, Color.BLUE, Color.BLACK, Color.PINK, Color.ORANGE};
+
+   public  static final int Y0 = (int)(HEIGHT/2+EDGE);
+   public  static final int X0 = (int)(EDGE);
+
+   private static int   [] x = null;
+
+   private static final Vector RAW_Y      = new Vector();
+   private static final Vector ADJUSTED_Y = new Vector();
+
+   private static final LineFrame FRAME = new LineFrame();
+
+   private static int MAX = -9999999;
+   private static int MIN =  9999999;
+
+   private static float [] tomorrowHigh = null;
+   private static float [] tomorrowLow  = null;
+   private static Color    tomorrowColor = null;
+   private static int   [] tomorrowHighInt = null;
+   private static int   [] tomorrowLowInt  = null;
+
+   private static String summary = null;
+
+   static 
+   {
+      FRAME.setDefaultCloseOperation(EXIT_ON_CLOSE);
+      FRAME.setSize(WIDTH+2*EDGE, HEIGHT+2*EDGE);
+   }
+
+   public static void setSummary(String sum)
+   {
+      summary = sum;
+   }
+
+   public static void newTitle(String title)
+   {
+      FRAME.setTitle(title);
+   }
+
+   public static void addPredict(float [] predictedHigh, float [] predictedLow, Color color)
+   {
+      tomorrowHigh   = predictedHigh;
+      tomorrowLow    = predictedLow;
+      tomorrowColor  = color;
+   }
+
+   public static void setColorArray(Color [] colors)
+   {
+      colorArray = colors;
+   }
+
+   public static void addX(float [] xx)
+   {
+      if(xx == null || xx.length == 0)
+      {
+         System.out.println("****** \"float [] x\" is null or empty.");
+      }
+      else
+      {
+         float minX = MIN;
+         float maxX = MAX;
+
+         for(int i=0; i<xx.length; i++)
+         {
+            minX = Math.min(xx[i], minX);
+            maxX = Math.max(xx[i], maxX);
+         }
+
+         float fx = (float) (WIDTH/(maxX-minX+1));
+
+         x = new int [xx.length];
+
+         for(int i=0; i<xx.length; i++)
+         {
+            x[i] = (int) (X0 + (xx[i]-minX) * fx);
+         }
+      }
+   }
+
+   public static void addY(float [] yy)
+   {
+      if(yy != null && yy.length == x.length)
+      {
+         RAW_Y.add(yy);
+      }
+      else
+      {
+         System.out.println("****** \"float [] y\" is null or size does not match with x.");
+      }
+   }
+
+   public void paint(Graphics g)
+   {
+      adjustY();
+
+      // Draw grid
+      g.setColor(Color.CYAN);
+
+      Stroke s = new BasicStroke(1);
+      ((Graphics2D) g).setStroke(s);
+      for(int i=0; i<x.length; i++)
+      {
+         g.drawLine(x[i], EDGE, x[i], HEIGHT+EDGE);
+      }
+
+      s = new BasicStroke(3);
+      ((Graphics2D) g).setStroke(s);
+      for (int i=x.length-1; i>=0; i -= Setting.HALF_CYCLE)
+      {
+         g.drawLine(x[i], EDGE, x[i], HEIGHT+EDGE);
+      }
+
+      // Tomorrow
+      int xtomorrow = WIDTH+EDGE;
+      g.drawLine(xtomorrow, EDGE, xtomorrow, HEIGHT+EDGE);
+
+      g.drawLine(X0, Y0, WIDTH+EDGE, Y0);
+
+      for(int v=0; v<ADJUSTED_Y.size(); v++)
+      {
+         int [] y = (int []) ADJUSTED_Y.get(v);
+
+         Color c = null;
+         if(v < colorArray.length)
+         {
+            c = colorArray[v];
+         }
+         else
+         {
+            c = Color.CYAN;
+         }
+
+         g.setColor(c);
+
+         // s = new BasicStroke((v+1)*2);
+         s = new BasicStroke(3);
+         ((Graphics2D) g).setStroke(s);
+
+         g.drawPolyline(x, y, x.length);
+      }
+
+      if(tomorrowHighInt != null)
+      {
+         g.setColor(tomorrowColor);
+         g.drawLine(x[x.length-1], tomorrowHighInt[0], xtomorrow, tomorrowHighInt[1]);
+         g.drawLine(x[x.length-1], tomorrowLowInt[0] , xtomorrow, tomorrowLowInt[1]);
+      }
+
+      if(summary != null)
+      {
+         g.setColor(Color.black);
+         g.setFont(new Font("Courier New", Font.BOLD, 12));
+         String [] lines = summary.split("\n");
+         for(int i=0; i<lines.length; i++)
+         {
+            g.drawString(lines[i], WIDTH/10, EDGE+16*(i+12));
+         }
+      }
+   }
+
+   public static void adjustY()
+   {
+      float minY = MIN;
+      float maxY = MAX;
+
+      for(int v=0; v<RAW_Y.size(); v++)
+      {
+         float [] yy = (float []) RAW_Y.get(v);
+
+         for(int i=0; i<yy.length; i++)
+         {
+            maxY = Math.max(yy[i], maxY);
+            minY = Math.min(yy[i], minY);
+         }
+      }
+
+      if(tomorrowHigh != null && tomorrowLow != null)
+      {
+         for(int i=0; i<tomorrowHigh.length; i++)
+         {
+            maxY = Math.max(tomorrowHigh[i], maxY);
+            minY = Math.min(tomorrowLow[i],  minY);
+         }
+      }
+
+      float fy = (float) (HEIGHT/(maxY-minY)/1.05);
+
+      ADJUSTED_Y.clear();
+      for(int v=0; v<RAW_Y.size(); v++)
+      {
+         float [] yy = (float []) RAW_Y.get(v);
+
+         int [] y = new int [yy.length];
+         for(int i=0; i<yy.length; i++)
+         {
+            y[i] = (int) (HEIGHT + EDGE - (yy[i]-minY) * fy);
+         }
+
+         ADJUSTED_Y.add(y);
+      }
+
+      if(tomorrowHigh != null)
+      {
+         tomorrowHighInt = new int [2];
+         tomorrowLowInt  = new int [2];
+
+         tomorrowHighInt[0] = (int) (HEIGHT + EDGE - (tomorrowHigh[0]-minY) * fy);
+         tomorrowHighInt[1] = (int) (HEIGHT + EDGE - (tomorrowHigh[1]-minY) * fy);
+         tomorrowLowInt[0]  = (int) (HEIGHT + EDGE - (tomorrowLow[0] -minY) * fy);
+         tomorrowLowInt[1]  = (int) (HEIGHT + EDGE - (tomorrowLow[1] -minY) * fy);
+      }
+   }
+
+   public static void draw()
+   {
+      FRAME.show();
+   }
+}
+

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+<!-- version 1.00 built 2006-10-25_1137 domain HulaEdm environment UAT-->
+<!-- APPENDERS FOR FRAMEWORK -->
+<!-- appender for STDOUT-->
+   <appender class="org.apache.log4j.ConsoleAppender" name="STDOUT">
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d %5p %20t](%c{1}) - %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for CORE-->
+   <appender class="org.apache.log4j.RollingFileAppender" name="CORE">
+      <param value="50MB" name="MaxFileSize" />
+
+      <param value="10" name="MaxBackupIndex" />
+
+      <param value="logs/core.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d %5p %20t](%c{1}) - %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- ADDITONAL APPENDERS FOR HulaEdm  DOMAIN  -->
+<!-- appender for AsyncPerf-->
+   <appender class="org.apache.log4j.AsyncAppender" name="AsyncPerf">
+      <param value="250" name="BufferSize" />
+
+      <appender-ref ref="FRAMEWORK" />
+   </appender>
+
+<!-- appender for AsyncSTDOUT-->
+   <appender class="org.apache.log4j.AsyncAppender" name="AsyncSTDOUT">
+      <param value="250" name="BufferSize" />
+
+      <appender-ref ref="STDOUT" />
+   </appender>
+
+<!-- appender for commons.http.Logger-->
+   <appender class="org.apache.log4j.RollingFileAppender" name="commons.http.Logger">
+      <param value="5MB" name="MaxFileSize" />
+
+      <param value="5" name="MaxBackupIndex" />
+
+      <param value="logs/http.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d %5p %20t](%c{1}) - %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for FRAMEWORK-->
+   <appender class="org.apache.log4j.FileAppender" name="FRAMEWORK">
+      <param value="logs/framework.perf.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d{yyyy/MM/dd HH:mm:ss,SSS}] [%5p] [%t] [%c{1}] %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for services.app.APUP-->
+   <appender class="org.apache.log4j.RollingFileAppender" name="services.app.APUP">
+      <param value="5MB" name="MaxFileSize" />
+
+      <param value="10" name="MaxBackupIndex" />
+
+      <param value="logs/apup.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="%d - %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for services.app.CASISG-->
+   <appender class="org.apache.log4j.RollingFileAppender" name="services.app.CASISG">
+      <param value="5MB" name="MaxFileSize" />
+
+      <param value="5" name="MaxBackupIndex" />
+
+      <param value="logs/casisg.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d %5p %20t](%c{1}) - %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for services.app.GetLendingTransactionStatusService-->
+   <appender class="org.apache.log4j.RollingFileAppender" name="services.app.GetLendingTransactionStatusService">
+      <param value="5MB" name="MaxFileSize" />
+
+      <param value="10" name="MaxBackupIndex" />
+
+      <param value="logs/getlendingtransactionstatus.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d %5p] - %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for services.app.OptWorkFlow-->
+   <appender class="org.apache.log4j.RollingFileAppender" name="services.app.OptWorkFlow">
+      <param value="5MB" name="MaxFileSize" />
+
+      <param value="5" name="MaxBackupIndex" />
+
+      <param value="logs/optworkflow.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d %5p%20t](%c{1}) - %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for services.app.PricingService-->
+   <appender class="org.apache.log4j.RollingFileAppender" name="services.app.PricingService">
+      <param value="5MB" name="MaxFileSize" />
+
+      <param value="10" name="MaxBackupIndex" />
+
+      <param value="logs/pricing.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d %5p] - %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for services.app.setlendingdata.FDR-->
+   <appender class="org.apache.log4j.RollingFileAppender" name="services.app.setlendingdata.FDR">
+      <param value="5MB" name="MaxFileSize" />
+
+      <param value="10" name="MaxBackupIndex" />
+
+      <param value="logs/services.setlendingdata.fdr.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d{yyyy/MM/dd HH:mm:ss,SSS}] [%5p] [%t] [%c{1}] %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for services.app.setlendingdata.FDR.perf-->
+   <appender class="org.apache.log4j.FileAppender" name="services.app.setlendingdata.FDR.perf">
+      <param value="logs/services.setlendingdata.fdr.perf.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d{yyyy/MM/dd HH:mm:ss,SSS}] [%5p] [%t] [%c{1}] %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for lbs-optin-->
+   <appender class="org.apache.log4j.DailyRollingFileAppender" name="lbs-optin">
+      <param value="'.'yyyy-MM-dd" name="DatePattern" />
+
+      <param value="logs/lbsOptIn.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="%m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for lbs-wff-->
+   <appender class="org.apache.log4j.RollingFileAppender" name="lbs-wff">
+      <param value="5MB" name="MaxFileSize" />
+
+      <param value="10" name="MaxBackupIndex" />
+
+      <param value="logs/lbsWff.log" name="File" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="%d{ISO8601} [%X{messageId}] [%t] [%-5p] %c - %m%n " name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- appender for SMTP-->
+   <appender class="org.apache.log4j.net.SMTPAppender" name="SMTP">
+      <param value="HulaUAT@wellsfargo.com" name="To" />
+
+      <param value="mail.wellsfargo.com" name="SMTPHost" />
+
+      <param value="Fatal Error in HULA UAT E-Domain" name="Subject" />
+
+      <param value="HulaUAT@wellsfargo.com" name="From" />
+
+      <param value="1" name="BufferSize" />
+
+      <param value="FATAL" name="Threshold" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param value="[%d %5p %20t](%c{1}) - %m%n" name="ConversionPattern" />
+      </layout>
+   </appender>
+
+<!-- CATEGORIES -->
+   <category name="performance">
+      <priority value="info" />
+
+      <appender-ref ref="AsyncPerf" />
+   </category>
+
+<!-- LOGGER FOR SERVICES -->
+   <logger name="com.wellsfargo.hula.service.getlendingdatastatus" additivity="true">
+      <level value="error" />
+
+      <appender-ref ref="services.app.GetLendingTransactionStatusService" />
+   </logger>
+
+   <logger name="com.wellsfargo.hula.service.pricing" additivity="true">
+      <level value="error" />
+
+      <appender-ref ref="services.app.PricingService" />
+   </logger>
+
+   <logger name="com.wellsfargo.service.provider.eai.apup" additivity="true">
+      <level value="error" />
+
+      <appender-ref ref="services.app.APUP" />
+   </logger>
+
+   <logger name="com.wellsfargo.service.provider.eai.casisg" additivity="true">
+      <level value="error" />
+
+      <appender-ref ref="services.app.CASISG" />
+   </logger>
+
+   <logger name="com.wellsfargo.service.provider.eai.optworkflow" additivity="true">
+      <level value="error" />
+
+      <appender-ref ref="services.app.OptWorkFlow" />
+   </logger>
+
+   <logger name="org.apache.axis" additivity="true">
+      <level value="error" />
+   </logger>
+
+   <logger name="org.apache.commons.httpclient" additivity="true">
+      <level value="error" />
+
+      <appender-ref ref="commons.http.Logger" />
+   </logger>
+
+   <logger name="services.SETLENDINGDATA.FDR" additivity="true">
+      <level value="error" />
+
+      <appender-ref ref="services.app.setlendingdata.FDR" />
+   </logger>
+
+   <logger name="services.SETLENDINGDATA.FDR.perf" additivity="true">
+      <level value="error" />
+
+      <appender-ref ref="services.app.setlendingdata.FDR.perf" />
+   </logger>
+
+   <logger name="com.wellsfargo.lbs" additivity="false">
+      <level value="error" />
+
+      <appender-ref ref="lbs-wff" />
+   </logger>
+
+   <logger name="timings" additivity="true">
+      <level value="error" />
+
+      <appender-ref ref="lbs-wff" />
+   </logger>
+
+   <logger name="WFOptInLogger" additivity="true">
+      <level value="error" />
+
+      <appender-ref ref="lbs-optin" />
+   </logger>
+
+   <root>
+      <level value="error" />
+
+      <appender-ref ref="CORE" />
+
+      <appender-ref ref="SMTP" />
+
+      <appender-ref ref="AsyncSTDOUT" />
+   </root>
+</log4j:configuration>

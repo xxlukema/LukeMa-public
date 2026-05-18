@@ -1,0 +1,36 @@
+
+============ vm.survey.centurionUrl 
+https://sso-chaud301.centurion-qa.ssd.census.gov/saml/login ae372c032188afe00ab533da743c434b4ea165edea7df11b36dc81475d7a0bf9
+============ surveyInstanceId getUserAccountId 5537502 6127
+
+
+
+
+=============== surveyInstanceId userAccountId 5537502 6127 
+surveys-view-instance-base onSubmit 2 pega url 
+
+https://sso-chaud301.centurion-qa.ssd.census.gov/saml/login ae372c032188afe00ab533da743c434b4ea165edea7df11b36dc81475d7a0bf9
+
+============= call accessCenturion success null 9.js:691:21
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at 
+https://sso-chaud301.centurion-qa.ssd.census.gov/saml/login?…2c032188afe00ab533da743c434b4ea165edea7df11b36dc81475d7a0bf9. 
+(Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
+
+Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at 
+https://sso-chaud301.centurion-qa.ssd.census.gov/saml/login?…2c032188afe00ab533da743c434b4ea165edea7df11b36dc81475d7a0bf9. 
+(Reason: CORS request did not succeed).
+
+surveys-view-instance-base error 
+Object { headers: {…}, 
+
+status: 0, 
+statusText: "Unknown Error", 
+url: "https://sso-chaud301.centurion-qa.ssd.census.gov/saml/login", 
+ok: false, 
+name: "HttpErrorResponse", 
+message: "Http failure response for https://sso-chaud301.centurion-qa.ssd.census.gov/saml/login: 0 Unknown Error", 
+error: error }
+
+surveys-view-instance onSubmit error Error-111111
+
+​

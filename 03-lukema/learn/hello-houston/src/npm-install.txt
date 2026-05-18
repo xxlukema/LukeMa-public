@@ -1,0 +1,13 @@
+
+	npm install -g typescript@'>=2.7.2 <2.10' --save-dev
+	npm install tslint rxjs rxjs-compat zone.js --save-dev
+	npm install @angular/common @angular/core --save-dev
+	npm install @angular/cli @angular/compiler @angular/compiler-cli --save-dev
+	npm install @angular/forms @angular/http --save-dev
+	npm install @angular/platform-browser-dynamic @angular/platform-server @angular/platform-browser --save-dev
+	npm install @angular/router @angular/animations --save-dev
+	npm install @angular-devkit/build-angular --save-dev
+	npm install ngx-filter-pipe --save-dev
+	npm install bootstrap jquery --save-dev
+    npm install protractor karma jasmine --save-dev
+

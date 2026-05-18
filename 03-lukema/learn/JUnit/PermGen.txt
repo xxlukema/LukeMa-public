@@ -1,0 +1,24 @@
+FAQ How do I increase the permgen size available to Eclipse?
+
+From Eclipsepedia
+Jump to: navigation, search
+
+If you see java.lang.OutOfMemoryError: PermGen space errors, you need to increase the permanent generation space available to Eclipse.
+
+PermGen is the permanent generation of objects in the VM (Class names, internalized strings, objects that will never get garbage-collected). An easy, if somewhat memory-hungry fix is to enlarge the maximum space for these objects by adding
+
+eclipse [normal arguments] -vmargs -XX:PermSize=64M -XX:MaxPermSize=128M [more VM args]
+
+The arguments after -vmargs are directly passed to the VM. Run java -X for the list of options your VM accepts. Options starting with -X are implementation-specific and may not be applicable to all VMs.
+
+You can also put the extra options in eclipse.ini.
+Eclipse and Sun VMs on Windows
+
+Eclipse 3.3 supports a new argument to the launcher: --launcher.XXMaxPermSize. On Windows, Eclipse 3.3 ships with the following lines in the eclipse.ini file:
+
+--launcher.XXMaxPermSize
+256m
+
+With the above arguments, if the VM being used is a Sun VM and there is not already a -XX:MaxPermSize= VM argument, then the launcher will automatically add -XX:MaxPermSize=256m to the list of VM arguments being used. The 3.3 launcher is only capable of identifying Sun VMs on Windows.
+
+Note: Eclipse 3.6 and below has a bug with Oracle/Sun JDK 1.6.0_21 (July 2010) where the launcher cannot detect a Oracle/Sun VM, and therefore does not use the correct PermGen size. If you are using either of this version, add the -XX flag to the eclipse.ini as described above. 

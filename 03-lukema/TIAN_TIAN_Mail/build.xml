@@ -1,0 +1,13 @@
+<project name="Care Tian-Tian" default="all" basedir=".">
+
+   <target name="all">
+      <mail from="luke.ma@cingular.com" 
+            tolist="nancyl@nortelnetworks.com,luke.ma@cingular.com"
+            subject="Is Tian-Tian at the nannan's home?"
+            message="Reply this mail to luke.ma@cingular.com"
+            mailhost="tsdwwi2"
+            files=""/>
+   </target>
+
+</project>
+

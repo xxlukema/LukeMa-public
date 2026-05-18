@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+
+/** @tailwind utilities; */
+
+@layer base {
+  /* Base styles */
+}
+
+@layer components {
+  /* Component styles */
+}
+
+@layer utilities {
+  /* Utility styles */
+
+  .legend-class {
+    border: solid 2px #61dafb;
+    border-radius: var(--radius-lg);
+    padding: 1em;
+    margin: 2em 0;
+    background-color: #282c34;
+    color: #61dafb;
+    font-size: var(--text-lg);
+    text-align: left;
+    box-shadow: 2px 3px 8px 2px #61dafb;
+    transition: all 0.3s ease;
+  }
+}
+
+
+

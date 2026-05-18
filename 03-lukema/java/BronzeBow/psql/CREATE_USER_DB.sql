@@ -1,0 +1,4 @@
+
+--CREATE USER luke WITH PASSWORD 'luke';
+--CREATE DATABASE mba OWNER luke;
+

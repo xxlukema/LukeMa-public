@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<DbVisualizer-Export>
+<ROWSET>
+  <ROW>
+    <id>1</id>
+    <symbol>amd</symbol>
+    <dateUpdated>2010-05-28 01:29:57</dateUpdated>
+    <accessCounter>7</accessCounter>
+  </ROW>
+  <ROW>
+    <id>2</id>
+    <symbol>aapl</symbol>
+    <dateUpdated>2012-06-07 00:17:15</dateUpdated>
+    <accessCounter>16</accessCounter>
+  </ROW>
+  <ROW>
+    <id>3</id>
+    <symbol>c</symbol>
+    <dateUpdated>2010-05-28 01:29:41</dateUpdated>
+    <accessCounter>4</accessCounter>
+  </ROW>
+  <ROW>
+    <id>4</id>
+    <symbol>ual</symbol>
+    <dateUpdated>2010-05-28 01:30:05</dateUpdated>
+    <accessCounter>13</accessCounter>
+  </ROW>
+  <ROW>
+    <id>5</id>
+    <symbol>cyd</symbol>
+    <dateUpdated>2010-05-28 01:30:01</dateUpdated>
+    <accessCounter>3</accessCounter>
+  </ROW>
+  <ROW>
+    <id>6</id>
+    <symbol>fro</symbol>
+    <dateUpdated>2010-05-28 01:30:07</dateUpdated>
+    <accessCounter>8</accessCounter>
+  </ROW>
+  <ROW>
+    <id>7</id>
+    <symbol>goog</symbol>
+    <dateUpdated>2010-05-28 01:30:10</dateUpdated>
+    <accessCounter>4</accessCounter>
+  </ROW>
+  <ROW>
+    <id>8</id>
+    <symbol>gs</symbol>
+    <dateUpdated>2010-05-28 01:30:12</dateUpdated>
+    <accessCounter>4</accessCounter>
+  </ROW>
+  <ROW>
+    <id>9</id>
+    <symbol>hov</symbol>
+    <dateUpdated>2010-05-28 01:30:14</dateUpdated>
+    <accessCounter>9</accessCounter>
+  </ROW>
+  <ROW>
+    <id>10</id>
+    <symbol>jpm</symbol>
+    <dateUpdated>2010-05-28 15:48:14</dateUpdated>
+    <accessCounter>16</accessCounter>
+  </ROW>
+  <ROW>
+    <id>11</id>
+    <symbol>lvs</symbol>
+    <dateUpdated>2010-05-28 01:30:19</dateUpdated>
+    <accessCounter>28</accessCounter>
+  </ROW>
+  <ROW>
+    <id>12</id>
+    <symbol>ms</symbol>
+    <dateUpdated>2010-03-07 23:52:09</dateUpdated>
+    <accessCounter>3</accessCounter>
+  </ROW>
+  <ROW>
+    <id>13</id>
+    <symbol>msft</symbol>
+    <dateUpdated>2009-12-31 05:07:41</dateUpdated>
+    <accessCounter>3</accessCounter>
+  </ROW>
+  <ROW>
+    <id>14</id>
+    <symbol>phm</symbol>
+    <dateUpdated>2010-05-28 15:49:31</dateUpdated>
+    <accessCounter>2</accessCounter>
+  </ROW>
+  <ROW>
+    <id>15</id>
+    <symbol>prft</symbol>
+    <dateUpdated>2010-05-28 01:30:28</dateUpdated>
+    <accessCounter>2</accessCounter>
+  </ROW>
+  <ROW>
+    <id>16</id>
+    <symbol>pvx</symbol>
+    <dateUpdated>2012-06-07 00:43:16</dateUpdated>
+    <accessCounter>34</accessCounter>
+  </ROW>
+  <ROW>
+    <id>17</id>
+    <symbol>amzn</symbol>
+    <dateUpdated>2009-12-23 12:50:37</dateUpdated>
+    <accessCounter>2</accessCounter>
+  </ROW>
+  <ROW>
+    <id>18</id>
+    <symbol>vale</symbol>
+    <dateUpdated>2010-05-28 01:32:14</dateUpdated>
+    <accessCounter>5</accessCounter>
+  </ROW>
+  <ROW>
+    <id>19</id>
+    <symbol>vlccf</symbol>
+    <dateUpdated>2010-05-28 01:30:41</dateUpdated>
+    <accessCounter>5</accessCounter>
+  </ROW>
+  <ROW>
+    <id>20</id>
+    <symbol>yhoo</symbol>
+    <dateUpdated>2009-11-12 15:29:09</dateUpdated>
+    <accessCounter>1</accessCounter>
+  </ROW>
+  <ROW>
+    <id>21</id>
+    <symbol>slb</symbol>
+    <dateUpdated>2010-03-07 23:52:03</dateUpdated>
+    <accessCounter>2</accessCounter>
+  </ROW>
+  <ROW>
+    <id>22</id>
+    <symbol>vlo</symbol>
+    <dateUpdated>2010-05-28 01:30:39</dateUpdated>
+    <accessCounter>3</accessCounter>
+  </ROW>
+  <ROW>
+    <id>23</id>
+    <symbol>gld</symbol>
+    <dateUpdated>2010-03-07 23:52:18</dateUpdated>
+    <accessCounter>12</accessCounter>
+  </ROW>
+  <ROW>
+    <id>24</id>
+    <symbol>spy</symbol>
+    <dateUpdated>2010-05-07 10:35:44</dateUpdated>
+    <accessCounter>7</accessCounter>
+  </ROW>
+  <ROW>
+    <id>25</id>
+    <symbol>dow</symbol>
+    <dateUpdated>2012-06-06 23:58:48</dateUpdated>
+    <accessCounter>3</accessCounter>
+  </ROW>
+  <ROW>
+    <id>26</id>
+    <symbol>pbt</symbol>
+    <dateUpdated>2010-03-26 02:53:48</dateUpdated>
+    <accessCounter>1</accessCounter>
+  </ROW>
+  <ROW>
+    <id>27</id>
+    <symbol>sbux</symbol>
+    <dateUpdated>2010-05-28 01:30:21</dateUpdated>
+    <accessCounter>1</accessCounter>
+  </ROW>
+  <ROW>
+    <id>28</id>
+    <symbol>smi</symbol>
+    <dateUpdated>2010-05-28 01:30:32</dateUpdated>
+    <accessCounter>1</accessCounter>
+  </ROW>
+  <ROW>
+    <id>29</id>
+    <symbol>sun</symbol>
+    <dateUpdated>2010-05-28 01:30:37</dateUpdated>
+    <accessCounter>1</accessCounter>
+  </ROW>
+  <ROW>
+    <id>30</id>
+    <symbol>db</symbol>
+    <dateUpdated>2012-06-07 00:46:19</dateUpdated>
+    <accessCounter>1</accessCounter>
+  </ROW>
+</ROWSET>
+</DbVisualizer-Export>

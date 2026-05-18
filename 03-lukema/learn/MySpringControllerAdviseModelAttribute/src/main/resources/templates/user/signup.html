@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>@ControllerAdvice Demo</title>
+</head>
+<body>
+	<form action="createUser" th:action="@{createUser}" method="post" th:object="${user}">
+		<table>
+			<tr>
+				<td>User Name:</td>
+				<td><input type="text" th:field="*{name}" /></td>
+				<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Title error message</td>
+			</tr>
+			<tr>
+				<td>Password :</td>
+				<td><input type="password" th:field="*{password}" /></td>
+			</tr>
+			<tr>
+				<td>Date of Birth :</td>
+				<td><input type="date" th:field="*{dob}" /></td>
+			</tr>
+			<tr>
+				<td colspan=3><input type="submit"></td>
+		</table>
+	</form>
+</body>
+</html>

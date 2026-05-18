@@ -1,0 +1,32 @@
+<section style="width: 30vw;">
+  <div mat-dialog-title style="text-align: right;"><i class="fa-solid fa-xmark fa-xl" mat-button cdkFocusInitial (click)="onNoClick()"
+      style="cursor: pointer;"></i></div>
+  <h1 mat-dialog-title>Confirm Details</h1>
+  <div mat-dialog-content style="height: 50vh;">
+    <p>Select the condition of your item</p>
+
+    <mat-radio-group class="condition-radio-group" [(ngModel)]="data.condition">
+      @for (condition of conditions; track condition) {
+      <mat-radio-button class="condition-radio-button" [value]="condition">{{condition}}</mat-radio-button>
+      }
+    </mat-radio-group>
+
+    <div></div>
+
+  </div>
+  <div mat-dialog-actions fxLayout fxLayoutAlign="center">
+    <button mat-button mat-raised-button color="primary" [disabled]="!data.condition" (click)="confirm()">
+      <div>
+        Continue to listing
+      </div>
+    </button>
+    <!--
+    <button mat-button mat-raised-button color="primary" [disabled]="!data.condition" [mat-dialog-close]="data.condition" cdkFocusInitial (click)="toDraft()">
+      <div>
+        Continue to listing
+      </div>
+    </button>
+    -->
+  </div>
+  <br>
+</section>

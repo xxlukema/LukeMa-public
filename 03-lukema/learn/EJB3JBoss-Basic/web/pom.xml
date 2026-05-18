@@ -1,0 +1,99 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>EJB3JBoss-web</artifactId>
+
+  <name>${project.artifactId}</name>
+
+  <packaging>war</packaging>
+
+  <parent>
+    <groupId>com.learn</groupId>
+
+    <artifactId>EJB3JBoss-Basic</artifactId>
+
+    <version>1.0</version>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss</maven.build.timestamp.format>
+    <maven.test.skip>false</maven.test.skip>
+    <maven.javadoc.skip>true</maven.javadoc.skip>
+    <java.version>21</java.version>
+    <maven.compiler.release>${java.version}</maven.compiler.release><!-- Java 9 and Beyond -->
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <!-- Other than boot -->
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.learn</groupId>
+
+      <artifactId>EJB3JBoss-ejbs</artifactId>
+
+      <version>1.0</version>
+
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>6.0-RC2</version>
+      <scope>provided</scope>
+    </dependency>22.2.200
+
+    <dependency>
+      <groupId>com.sun.faces</groupId>
+
+      <artifactId>jsf-api</artifactId>
+
+      <version>2.1.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.el</groupId>
+
+      <artifactId>javax.el-api</artifactId>
+
+      <version>2.2.3</version>
+
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>6.0-RC2</version>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+
+        <artifactId>maven-war-plugin</artifactId>
+
+        <version>2.1.1</version>
+
+        <configuration>
+          <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

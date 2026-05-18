@@ -1,0 +1,14 @@
+
+
+table.sample {
+	border-width: 0px;
+	border-spacing: 0px;
+}
+
+table.menubar td {
+	border-width: 2px;
+	padding: 0px 10px 0px 10px;
+	background-color: #6CC417;
+        font-size:11pt;
+        font-weight:bold;
+}

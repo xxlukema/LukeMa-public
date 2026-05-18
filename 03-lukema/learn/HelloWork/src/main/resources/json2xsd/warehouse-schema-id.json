@@ -1,0 +1,4 @@
+{
+  "$id-ERROR:PKIX-Path-Self-signed-certificate": "https://example.com/geographical-location.schema.json",
+  "$id-good-for-test": "file:///C:/D/03-lukema/LukeMa/03-lukema/learn/HelloWork/target/classes/json2xsd/warehouse-schema.json"
+}

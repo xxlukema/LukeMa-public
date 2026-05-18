@@ -1,0 +1,21 @@
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+/** vin */
+td:nth-child(2) {
+    text-align: right !important;
+    background: green !important;
+}
+
+/** The 4th column (Maker) */
+td:nth-child(4) {
+    text-align: center !important;
+    background: grey !important;
+}
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+<!-- ====================== -->
+   <import resource="SpringBeanConfig-Common.xml" />
+
+<!-- User Beans Start Here: -->
+   <bean id="customerDAO" class="com.learn.dao.impl.CustomerDAOImpl" parent="commonDAO">
+   </bean>
+
+   <bean id="customerService" class="com.learn.service.impl.CustomerServiceImpl">
+   </bean>
+
+   <bean id="applicationContextProvider" class="com.learn.util.ApplicationContextProvider">
+   </bean>
+   
+   <bean id="tradeService" class="com.learn.service.impl.TradeServiceImpl">
+   </bean>
+
+   <bean id="beanAspect" class="com.learn.aspect.BeanAspect">
+   </bean>
+
+<!-- User Beans End Here. -->
+<!-- ====================== -->
+<!-- AOP Starts Here. -->
+   <aop:config>
+      <aop:pointcut id="tradeServiceSellStockOperation" expression="execution(* com..service.TradeService.sellStock(..))" />
+
+      <aop:pointcut id="tradeServiceBuyStockOperation" expression="execution(* com..service.TradeService.buyStock(..))" />
+
+      <aop:pointcut id="customerServiceOperation" expression="execution(* com..service.CustomerService.*(..))" />
+
+      <aop:pointcut id="tradeServiceOperation" expression="execution(* com..service.TradeService.*(..))" />
+
+      <aop:advisor pointcut-ref="customerServiceOperation" advice-ref="txCustomerAdvice" />
+      
+      <aop:advisor pointcut-ref="tradeServiceOperation" advice-ref="txTradeAdvice" />
+      
+      <aop:aspect id="myAspect" ref="beanAspect">
+         <aop:before pointcut-ref="tradeServiceSellStockOperation" method="beforeEcho" />
+         
+         <aop:after-throwing pointcut-ref="tradeServiceBuyStockOperation" method="afterThrowingEcho" throwing="ex" />
+         
+         <aop:after pointcut-ref="tradeServiceBuyStockOperation" method="afterEcho" />
+      </aop:aspect>
+   </aop:config>
+
+   <tx:advice id="txCustomerAdvice" transaction-manager="transactionManager">
+      <tx:attributes>
+         <tx:method name="get" read-only="false" rollback-for="AppException" />
+
+         <tx:method name="*" rollback-for="AppException" />
+      </tx:attributes>
+   </tx:advice>
+
+   <tx:advice id="txTradeAdvice" transaction-manager="transactionManager">
+      <tx:attributes>
+         <tx:method name="sell*" read-only="false" rollback-for="AppException" />
+
+         <tx:method name="buy*" read-only="false" rollback-for="AppException" />
+
+         <tx:method name="*" read-only="true" rollback-for="AppException" />
+      </tx:attributes>
+   </tx:advice>
+
+<!-- AOP Ends Here. -->
+
+<!-- ====================== -->
+</beans>

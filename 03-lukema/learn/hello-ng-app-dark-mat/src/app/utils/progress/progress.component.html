@@ -1,0 +1,4 @@
+<div *ngIf="submitting" class="pgss" fxLayout="column" fxLayoutAlign="center center">
+  <div fxFlex>{{progressMsg}} <i *ngIf="progressValue == 100" class="fas fa-spinner fa-spin"></i></div>
+  <mat-progress-bar [value]="progressValue"></mat-progress-bar>
+</div>

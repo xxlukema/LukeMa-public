@@ -1,0 +1,11 @@
+SELECT
+    *
+FROM
+    PARADATA_EVENT
+WHERE
+    EVENT_DTM IS NOT NULL
+AND TO_CHAR(EVENT_DTM, 'yyyy-mm-dd') = TO_CHAR(SYSDATE, 'yyyy-mm-dd')
+ORDER BY
+    EVENT_DTM DESC
+FETCH
+    FIRST 100 rows only

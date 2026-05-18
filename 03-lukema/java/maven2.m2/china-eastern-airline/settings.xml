@@ -1,0 +1,133 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+
+   <localRepository>file:///repo</localRepository>
+
+   <interactiveMode>true</interactiveMode>
+
+<!--
+   <proxies>
+      <proxy>
+         <active>true</active>
+
+         <protocol>http</protocol>
+
+         <host>172.31.1.246</host>
+
+         <port>8080</port>
+
+         <nonProxyHosts>www.google.com|*.somewhere.com</nonProxyHosts>
+      </proxy>
+   </proxies>
+
+
+   <proxies>
+      <proxy>
+         <active>true</active>
+
+         <protocol>http</protocol>
+
+         <host>gateway.nam.coair.com</host>
+
+         <port>80</port>
+
+         <username>nam\se605</username>
+
+         <password>!teamnet1</password>
+
+         <nonProxyHosts>www.google.com|*.somewhere.com</nonProxyHosts>
+      </proxy>
+   </proxies>
+-->
+   <profiles>
+      <profile>
+         <id>myprofile</id>
+
+         <properties>
+            <webapps.dir>${env.TOMCAT_HOME}/webapps</webapps.dir>
+
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+            <ojdbc14.ver>10.2.0.3.0</ojdbc14.ver>
+
+            <mysql.ver>5.1.6</mysql.ver>
+
+            <log4j.ver>1.2.15</log4j.ver>
+
+            <junit.ver>4.5</junit.ver>
+
+            <hibernate.ver>3.2.6.ga</hibernate.ver>
+
+            <hibernate-annotations.ver>3.3.0.ga</hibernate-annotations.ver>
+
+            <hibernate-commons-annotations.ver>3.3.0.ga</hibernate-commons-annotations.ver>
+
+            <spring.ver>2.5.6</spring.ver>
+
+            <dom4j.ver>1.6.1</dom4j.ver>
+
+            <jaxen.ver>1.1.1</jaxen.ver>
+
+            <commons-io.ver>1.4</commons-io.ver>
+
+            <jaxen.ver>1.1.1</jaxen.ver>
+
+            <jaxb-api.ver>2.1</jaxb-api.ver>
+
+            <jaxb-impl.ver>2.1</jaxb-impl.ver>
+
+            <jmxri.ver>1.2</jmxri.ver>
+
+            <maven-plugin-api.ver>2.1.0</maven-plugin-api.ver>
+
+            <jmxri.ver>1.2</jmxri.ver>
+         </properties>
+
+         <repositories>
+            <repository>
+               <id>maven2-repository.dev.java.net</id>
+
+               <url>http://download.java.net/maven/2</url>
+            </repository>
+
+            <repository>
+               <id>maven-repository.dev.java.net</id>
+
+               <url>http://download.java.net/maven/1</url>
+
+               <layout>legacy</layout>
+            </repository>
+<!--
+            <repository>
+               <id>myrepository</id>
+
+               <url>http://localhost:8090/maven2</url>
+            </repository>
+            -->
+         </repositories>
+
+         <pluginRepositories>
+            <pluginRepository>
+               <id>codehaus</id>
+
+               <url>http://snapshots.repository.codehaus.org</url>
+            </pluginRepository>
+
+            <pluginRepository>
+               <id>maven2-repository.dev.java.net</id>
+
+               <url>http://download.java.net/maven/2</url>
+            </pluginRepository>
+         </pluginRepositories>
+      </profile>
+   </profiles>
+
+   <activeProfiles>
+      <activeProfile>myprofile</activeProfile>
+   </activeProfiles>
+
+   <pluginGroups>
+      <pluginGroup>com.learn</pluginGroup>
+   </pluginGroups>
+</settings>
+

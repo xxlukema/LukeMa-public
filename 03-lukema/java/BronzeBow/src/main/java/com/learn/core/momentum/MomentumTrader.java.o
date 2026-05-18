@@ -1,0 +1,262 @@
+package momentum;
+
+import java.io.*;
+import java.util.*;
+import common.*;
+import java.awt.Color;
+
+
+public class MomentumTrader extends TraderBase
+{
+   // private boolean isOriginalVersion = true;
+   private boolean isOriginalVersion = true;
+   private String tomorrowRanges = null;
+
+
+   public static Vector getDataVector()
+   {
+      return MomentumData.getDataVector();
+   }
+
+   public void doTrades()
+   {
+      int beginDay = 5;
+
+      MomentumData mdYesterdayData   = (MomentumData) getDataVector().get(beginDay-1);
+      MomentumData mdTodayData       = null;
+      RawData      rdTodayData       = null;
+
+      // start trade 5 days after init date to let EMA26 stablize.
+      for(int i=beginDay; i<getDataVector().size(); i++)
+      {
+         mdTodayData = (MomentumData) getDataVector().get(i);
+         rdTodayData = mdTodayData.getRawData();
+
+         closePositionOnTarget(mdYesterdayData, mdTodayData);
+         closePositionOnStop(  mdYesterdayData, mdTodayData);
+         applyCutLossRule(rdTodayData);
+
+         if (rdTodayData.getClose() > mdTodayData.getLowTBP())
+         {
+            if (isShorting())
+            {
+               buyToCloseShort(rdTodayData, Reason.REVERSAL);
+            }
+
+            if(!isLonging())
+            {
+               buyToEnterLong(rdTodayData);
+            }
+         }
+         else if (rdTodayData.getClose() < mdTodayData.getHighTBP())
+         {
+            if (isLonging())
+            {
+               sellToCloseLong(rdTodayData, Reason.REVERSAL);
+            }
+
+            if(!isShorting())
+            {
+               sellToEnterShort(rdTodayData);
+            }
+         }
+
+         mdYesterdayData = mdTodayData;
+      }
+
+      // Print Trading Summary
+      printTradingSummary();
+
+      MomentumData todayMD = null;
+      if (isVerbose())
+      {
+         todayMD = (MomentumData) getDataVector().get(getDataVector().size()-1);
+
+         System.out.println("\n"+todayMD.toString()+"\n");
+
+         tomorrowRanges = "High/Low Target/Stop: ("+Utility.float2str(todayMD.getLowStop(), 2)+" | "+
+                                                    Utility.float2str(todayMD.getLowTarget(), 2)+" ,  "+
+                                                    Utility.float2str(todayMD.getHighTarget(), 2)+" | "+
+                                                    Utility.float2str(todayMD.getHighStop(), 2)+")";
+
+         System.out.println(tomorrowRanges+"\n");
+      }
+
+      drawChart();
+   }
+
+   public void drawChart()
+   {
+      // Draw line
+      int nbr = 0;
+      String nbrStr = RawData.PROPS.getProperty("momentume.chart.days");
+      if (nbrStr != null)
+      {
+         try
+         {
+            nbr = Integer.parseInt(nbrStr.trim());
+         }
+         catch (Throwable t)
+         {
+            t.printStackTrace();
+         }
+      }
+
+      if (nbr == 0)
+      {
+         nbr = 60;
+      }
+
+      float [] xx            = new float [nbr];
+
+      float [] yRawOpen      = new float [nbr];
+      float [] yRawHigh      = new float [nbr];
+      float [] yRawLow       = new float [nbr];
+      float [] yRawClose     = new float [nbr];
+
+      float [] yHighTBP      = new float [nbr];
+      float [] yLowTBP       = new float [nbr];
+
+      float [] yHighTarget   = new float [nbr];
+      float [] yLowTarget    = new float [nbr];
+
+      float [] yHighStop     = new float [nbr];
+      float [] yLowStop      = new float [nbr];
+
+      int size = getDataVector().size();
+      for(int i=0; i<nbr; i++)
+      {
+         xx[i] = i;
+
+         int pos = size - nbr + i;
+         MomentumData md          = (MomentumData) getDataVector().get(pos);
+
+         yRawOpen[i]        = md.getRawData().getOpen();
+         yRawHigh[i]        = md.getRawData().getHigh();
+         yRawLow[i]         = md.getRawData().getLow();
+         yRawClose[i]       = md.getRawData().getClose();
+
+         yHighTBP[i]        = md.getHighTBP();
+         yLowTBP[i]         = md.getLowTBP();
+
+         MomentumData yesterdayMD = (MomentumData) getDataVector().get(pos-1);
+
+         yHighTarget[i]     = yesterdayMD.getHighTarget();
+         yLowTarget[i]      = yesterdayMD.getLowTarget();
+
+         yHighStop[i]       = yesterdayMD.getHighStop();
+         yLowStop[i]        = yesterdayMD.getLowStop();
+      }
+
+      // Tomorrow
+      float [] todayTomorrowHighTarget = new float [2];
+      float [] todayTomorrowLowTarget  = new float [2];
+      float [] todayTomorrowHighStop   = new float [2];
+      float [] todayTomorrowLowStop    = new float [2];
+
+      MomentumData yesterdayMD = (MomentumData) getDataVector().get(getDataVector().size()-2);
+      MomentumData md          = (MomentumData) getDataVector().get(getDataVector().size()-1);
+
+      todayTomorrowHighTarget[0] = yesterdayMD.getHighTarget();
+      todayTomorrowLowTarget[0]  = yesterdayMD.getLowTarget();
+      todayTomorrowHighStop[0]   = yesterdayMD.getHighStop();
+      todayTomorrowLowStop[0]    = yesterdayMD.getLowStop();
+      todayTomorrowHighTarget[1] = md.getHighTarget();
+      todayTomorrowLowTarget[1]  = md.getLowTarget();
+      todayTomorrowHighStop[1]   = md.getHighStop();
+      todayTomorrowLowStop[1]    = md.getLowStop();
+
+      MomentumLineFrame.newTitle(getSymbol()+"   white=HiTBP/LoTBP  yellow=HiTarget/LoTarget");
+
+      String dateInfo = checkDataUptodate();
+      String summaryMsg = null;
+      if(dateInfo == null)
+      {
+         summaryMsg = "\n\n\n\n"+md.toString();
+      }
+      else
+      {
+         summaryMsg = dateInfo + "\n" + md.toString();
+      }
+
+      if (tomorrowRanges != null)
+      {
+         summaryMsg += "\n\n"+tomorrowRanges;
+      }
+
+      MomentumLineFrame.setSummary(summaryMsg);
+
+      MomentumLineFrame.addX(xx);
+
+      MomentumLineFrame.addY(yRawOpen);
+      MomentumLineFrame.addY(yRawHigh);
+      MomentumLineFrame.addY(yRawLow);
+      MomentumLineFrame.addY(yRawClose);
+
+      MomentumLineFrame.addY(yHighTBP);
+      MomentumLineFrame.addY(yLowTBP);
+
+      MomentumLineFrame.addY(yHighTarget);
+      MomentumLineFrame.addY(yLowTarget);
+
+      MomentumLineFrame.addY(yHighStop);
+      MomentumLineFrame.addY(yLowStop);
+
+      MomentumLineFrame.addPredict(todayTomorrowHighTarget, 
+                                   todayTomorrowLowTarget, 
+                                   todayTomorrowHighStop,
+                                   todayTomorrowLowStop);
+
+      MomentumLineFrame.draw();
+   }
+
+   public void closePositionOnTarget(MomentumData mdYesterdayData, MomentumData mdTodayData)
+   {
+      if (isShorting() && mdTodayData.getRawData().getClose() <= mdYesterdayData.getLowTarget())
+      {
+         closePosition(mdTodayData.getRawData(), Reason.SHORT_TARGET);
+      } 
+      else if (isLonging() && mdTodayData.getRawData().getClose() >= mdYesterdayData.getHighTarget())
+      {
+         closePosition(mdTodayData.getRawData(), Reason.LONG_TARGET);
+      }
+   }
+
+   public void closePositionOnStop(MomentumData mdYesterdayData, MomentumData mdTodayData)
+   {
+      if (isShorting() && mdTodayData.getRawData().getClose() >= mdYesterdayData.getHighStop())
+      {
+         closePosition(mdTodayData.getRawData(), Reason.SHORT_STOP);
+      }
+      else if (isLonging() && mdTodayData.getRawData().getClose() <= mdYesterdayData.getLowStop())
+      {
+         closePosition(mdTodayData.getRawData(), Reason.LONG_STOP);
+      }
+   }
+
+   public void printQuote(String action, MomentumData momentumData)
+   {
+      if (isVerbose())
+      {
+         System.out.println(action + ": " + momentumData.getRawData().getDate() + "\t close: " + momentumData.getRawData().getClose() 
+                            + "\t HighTBP: " + momentumData.getHighTBP()
+                            + "\t LowTBP: " + momentumData.getLowTBP()
+                            );
+      }
+   }
+
+
+   public static void main(String [] args)
+   {
+      processCommandlimeArguments(args);
+
+      RawData.readDataFromFile(getFileName());
+
+      MomentumData.expendData();
+      // MomentumData.listData();
+
+      MomentumTrader momentumTrader = new MomentumTrader();
+      momentumTrader.doTrades();
+   }
+}
+

@@ -1,0 +1,9 @@
+<h3>form works!</h3>
+
+<div>"Button One Toggle": {{value}} --- {{buttonLabel}}</div>
+<br>
+<button #buttonOne (click)="buttonOneClick();whichButton(buttonOne);">Button One</button>
+<br>
+Hidden Button is here: <button hidden>Button Hidden</button>
+<br>
+<button #buttonTwo (click)="buttonTwoClick();whichButton(buttonTwo);">Button Two (Click Me To Trigger Click of "Button One")</button>

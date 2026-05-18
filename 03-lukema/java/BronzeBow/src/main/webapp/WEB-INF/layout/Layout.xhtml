@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="Another stock trend analysis tool." />
+	<meta name="keywords"
+		content="401k,IRA,stock chart, stock charts,middle term investment,long term investment,Financial Information,Investing,Investor,Stock Research,Stock Valuation,finance,investment tools,mutual funds,personal finance,stock,stocks,portfolio" />
+	<meta content="no-cache" http-equiv="Cache-Control" />
+	<meta content="no-cache" http-equiv="Pragma" />
+	<meta http-equiv="EXPIRES" content="0" />
+
+	<title><ui:insert name="title">Default Title</ui:insert></title>
+
+	<h:outputStylesheet name="main.css" library="css" />
+	<h:outputStylesheet name="css/menubarstyle.css" library="menubar" />
+	<h:outputScript name="js/PopMenuLib.js" library="menubar" target="head" />
+	<h:outputScript name="js/MyLib.js" library="menubar" target="head" />
+	<h:outputScript name="js/PopMenuData.js" library="menubar"
+		target="head" />
+	<h:outputScript name="EnterToSubmit.js" library="js" target="head" />
+	<h:outputScript name="StopEvent.js" library="js" target="head" />
+	
+	<!-- primefaces push -->
+	<script type="text/javascript">
+	    //<![CDATA[
+		function handleMessage(evt, data) {
+			$('.display').html(data);
+		}
+		//]]> 
+	</script>
+	
+</h:head>
+
+<h:body>
+	<f:view id="view">
+		<div id="header">
+			<ui:include src="Header.xhtml" />
+		</div>
+
+		<div class="menubar">
+			<ui:include src="/resources/menubar/MenuBar.xhtml" />
+		</div>
+
+		<div id="middle">
+			<div id="left">
+				<ui:include src="Left.xhtml" />
+			</div>
+
+            <!-- 
+			<div id="right">
+				<ui:include src="Right.xhtml" />
+			</div>
+			 -->
+
+			<div id="center">
+				<span class="titleText"> <ui:insert name="title" />
+				</span>
+
+				<ui:insert name="IndexesAjax">
+					<ui:include src="IndexesOilAjax.xhtml" />
+				</ui:insert>
+
+				<hr />
+
+				<div>
+					<ui:insert name="center">
+						<ui:include src="Center.xhtml" />
+					</ui:insert>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			<ui:include src="Footer.xhtml" />
+		</div>
+	</f:view>
+</h:body>
+</html>
+

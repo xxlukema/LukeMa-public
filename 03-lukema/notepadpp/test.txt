@@ -1,0 +1,20 @@
+
+1.	The web integration tools that you are using, and your recommendations.
+
+
+2.	The web unit coverage test tools that you are using, and your recommendations.
+
+
+3.	The license of the tools.
+
+
+4.	Your practice suggestions.
+
+
+5.	Any other recommendation.
+
+
+6.  Time costs to develop these test suite (In comparison with developing the page components)
+
+
+

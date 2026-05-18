@@ -1,0 +1,11 @@
+/target/
+/.idea/
+/test-output/
+/.classpath
+/.project
+/.settings/
+/.apt_generated/
+**/*.iml
+/.springBeans
+/.factorypath
+/.sts4-cache/

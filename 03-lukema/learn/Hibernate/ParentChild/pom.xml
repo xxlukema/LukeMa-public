@@ -1,0 +1,53 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <parent>
+      <groupId>com.learn</groupId>
+
+      <artifactId>Hibernate</artifactId>
+
+      <version>1.0</version>
+   </parent>
+
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.learn</groupId>
+
+   <artifactId>ParentChild</artifactId>
+
+   <version>1.0</version>
+
+   <packaging>pom</packaging>
+
+   <modules>
+      <module>Bidirectional-ForeignKey</module>
+
+      <module>Bidirectional-SamePrimaryKey-OneToOne-yes</module>
+
+      <module>Bidirectional-JoinTable</module>
+
+      <module>Unidirectional-ForeignKey</module>
+
+      <module>Unidirectional-JoinTable</module>
+
+      <module>ParentChild-Common-ManyToMany</module>
+
+      <module>ParentChild-Common-OneToMany-Set</module>
+
+      <module>ParentChild-Common-OneToMany-List</module>
+
+      <module>ParentChild-Common-OneToOne</module>
+
+      <module>ParentChild-Cascade</module>
+
+      <module>ParentChild-Inverse</module>
+   </modules>
+
+   <dependencies>
+      <dependency>
+         <groupId>com.learn</groupId>
+
+         <artifactId>HibernateUtils</artifactId>
+
+         <version>1.0</version>
+      </dependency>
+   </dependencies>
+</project>

@@ -1,0 +1,8 @@
+# server:
+#   servlet:
+#    context-path: /hello-drools-boot
+spring:
+  application:
+    name: hello-drools-boot
+  profiles:
+    active: local

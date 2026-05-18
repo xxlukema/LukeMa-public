@@ -1,0 +1,21 @@
+
+
+#centerColumn {
+    border: 2px dashed yellow;
+    background-color: burlywood;
+    padding: 0 1em 0 1em;
+}
+
+flank {
+    color: darkblue;
+    border: 2px dotted blue;
+    background-color:darkorange;
+}
+
+#leftFlank {
+    @extend flank;
+}
+
+#rightFlank {
+    @extend flank;
+}

@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-DataCenterMain<bronze-bow-swing>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.learn.a.swing.main.DataCenterMain",
+      "projectName": "bronze-bow-swing",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- 
+| For more configuration infromation and examples see the Jakarta Log4j 
+| owebsite: http://jakarta.apache.org/log4j 
+-->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+   <appender name="FILE_other" class="org.apache.log4j.RollingFileAppender">
+
+      <param name="File" value="logs/other.txt" />
+
+      <param name="Append" value="false" />
+
+      <param name="MaxFileSize" value="2MB" />
+
+      <param name="MaxBackupIndex" value="3" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="FILE_learn" class="org.apache.log4j.RollingFileAppender">
+
+      <param name="File" value="logs/learn.txt" />
+
+      <param name="Append" value="false" />
+
+      <param name="MaxFileSize" value="2MB" />
+
+      <param name="MaxBackupIndex" value="3" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="FILE_examples" class="org.apache.log4j.RollingFileAppender">
+
+      <param name="File" value="logs/examples.txt" />
+
+      <param name="Append" value="false" />
+
+      <param name="MaxFileSize" value="2MB" />
+
+      <param name="MaxBackupIndex" value="3" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+      <param name="Target" value="System.out" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+<!-- Buffer events and log them asynchronously -->
+<!-- If an appender-ref is not in this AsyncAppender list, it will be logged synchronously. -->
+   <appender name="ASYNC" class="org.apache.log4j.AsyncAppender">
+      <appender-ref ref="FILE_other" />
+
+      <appender-ref ref="FILE_learn" />
+
+      <appender-ref ref="FILE_examples" />
+
+      <appender-ref ref="CONSOLE" />
+   </appender>
+
+<!-- RULES for logging DEBUG < INFO < WARN < ERROR < FATAL. -->
+<!-- This defines which appender-ref the package is logged into. If the logger is not defined, -->
+<!-- the logs will go to every appender and the line numbers and function names might not be -->
+<!-- able to be displayed correctly. For example, logs from org.codehaus will be dumped into -->
+<!-- every log appender-ref and the line numbers and function names from org.codehaus might -->
+<!-- be messed up. -->
+   <logger name="com" additivity="false">
+      <level value="debug" />
+
+      <appender-ref ref="FILE_other" />
+
+      <appender-ref ref="CONSOLE" />
+   </logger>
+
+   <logger name="examples" additivity="false">
+      <level value="debug" />
+
+      <appender-ref ref="FILE_examples" />
+
+      <appender-ref ref="CONSOLE" />
+   </logger>
+
+   <logger name="com.learn" additivity="false">
+      <level value="debug" />
+
+      <appender-ref ref="FILE_learn" />
+
+      <appender-ref ref="CONSOLE" />
+   </logger>
+
+   <root>
+      <appender-ref ref="ASYNC" />
+   </root>
+</log4j:configuration>

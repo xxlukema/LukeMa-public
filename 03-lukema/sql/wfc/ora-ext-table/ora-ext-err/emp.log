@@ -1,0 +1,66 @@
+
+
+ LOG file opened at 04/18/12 10:52:55
+
+Field Definitions for table EXT_TABLE_EMP
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    ID                              CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    FNAME                           CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    LNAME                           CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+error processing column ID in row 4 for datafile C:\ora-ext-dir\ext_table_emp.txt
+ORA-01722: invalid number
+
+
+ LOG file opened at 04/18/12 22:00:08
+
+Field Definitions for table EXT_TABLE_EMP
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    ID                              CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    FNAME                           CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    LNAME                           CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+error processing column ID in row 4 for datafile C:\ora-ext-dir\ext_table_emp.txt
+ORA-01722: invalid number
+
+
+ LOG file opened at 04/23/12 15:23:03
+
+Field Definitions for table EXT_TABLE_EMP
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    ID                              CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    FNAME                           CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+    LNAME                           CHAR (255)
+      Terminated by "|"
+      Trim whitespace same as SQL Loader
+error processing column ID in row 4 for datafile C:\ora-ext-dir\ext_table_emp.txt
+ORA-01722: invalid number

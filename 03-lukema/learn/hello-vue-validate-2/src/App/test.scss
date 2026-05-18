@@ -1,0 +1,10 @@
+$font-stack: Helvetica,
+sans-serif;
+$primary-color: darkblue;
+
+%bg-color {
+    background-color: lightgreen;
+    border-style: dashed;
+    border-color: red;
+    border-width: 4px;
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+   <import resource="SpringBeanConfig-Common.xml" />
+
+<!--                    -->
+<!--     Bean Setup     -->
+<!--                    -->
+   <bean id="personDAO" class="com.learn.dao.impl.PersonDAOImpl">
+      <property name="sessionFactory">
+         <ref bean="sessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="personService" class="com.learn.service.impl.PersonServiceImpl" parent="commonService">
+      <property name="personDAO">
+         <ref bean="personDAO" />
+      </property>
+   </bean>
+
+</beans>
+

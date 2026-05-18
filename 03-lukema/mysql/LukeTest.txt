@@ -1,0 +1,2 @@
+1	luke 1	ma 2
+2	luke 2	\N

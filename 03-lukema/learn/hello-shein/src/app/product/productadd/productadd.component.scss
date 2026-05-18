@@ -1,0 +1,38 @@
+fieldset {
+  border: 1px lightgray solid;
+  border-radius: 0.5em;
+  padding: 1em;
+  margin: 1.8rem;
+}
+
+legend {
+  max-width: fit-content;
+  margin-left: 1em;
+  margin-top: -1em;
+  padding: 0.2em 0.8em;
+  font-size: 14px;
+}
+
+.vhead {
+  div {
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.vr,
+.vhead {
+  padding: 0.3em;
+}
+
+img {
+  height: 8em;
+  width: auto;
+  max-width: 16em;
+}
+
+button {
+  i {
+    margin-right: 0.2em;
+  }
+}

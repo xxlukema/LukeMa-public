@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+<!--  -->
+   <bean id="beanPointcut" class="com.learn.bean.BeanPointcut">
+   </bean>
+
+   <bean id="beanAspect" class="com.learn.aspect.BeanAspect">
+   </bean>
+
+<!-- before, after, after-returning, after-throwing, around -->
+   <aop:config>
+      <aop:pointcut id="before" expression="execution(* com..BeanPointcut.before(..))" />
+
+      <aop:pointcut id="after-returning" expression="execution(* com..BeanPointcut.afterReturning(..))" />
+
+      <aop:pointcut id="after-throwing" expression="execution(* com..BeanPointcut.afterThrowing(..))" />
+
+      <aop:pointcut id="after" expression="execution(* com..BeanPointcut.after(..))" />
+
+      <aop:pointcut id="around" expression="execution(* com..BeanPointcut.around(..))" />
+      
+      <aop:aspect id="myAspect" ref="beanAspect">
+         <aop:before pointcut-ref="before" method="beforeEcho" />
+
+         <aop:after-returning pointcut-ref="after-returning" method="afterReturningEcho" returning="retVal" />
+
+         <aop:after-throwing pointcut-ref="after-throwing" method="afterThrowingEcho" throwing="ex" />
+
+         <aop:after pointcut-ref="after" method="afterEcho" />
+
+         <aop:around pointcut-ref="around" method="aroundEcho" />
+         
+         <!-- Before around is invoked: -->
+         <aop:before pointcut-ref="around" method="beforeEcho" />
+         
+         <!-- After around returns: -->
+         <aop:after pointcut-ref="around" method="afterEcho" />
+      </aop:aspect>
+   </aop:config>
+</beans>

@@ -1,0 +1,112 @@
+<pluginMetadata>
+   <mojos>
+      <mojo>
+         <goal>appc</goal>
+
+         <call>appc</call>
+
+         <requiresProject>true</requiresProject>
+
+         <description>run wlappc</description>
+
+         <parameters>
+            <parameter>
+               <name>finalName</name>
+
+               <property>finalName</property>
+
+               <required>true</required>
+
+               <readonly>false</readonly>
+
+               <defaultValue>${project.artifactId}</defaultValue>
+
+               <type>java.lang.String</type>
+
+               <description>maven.final.name</description>
+            </parameter>
+         </parameters>
+      </mojo>
+
+      <mojo>
+         <goal>ear</goal>
+
+         <call>ear</call>
+
+         <requiresProject>true</requiresProject>
+
+         <description>run ear</description>
+
+         <parameters>
+            <parameter>
+               <name>finalName</name>
+
+               <property>finalName</property>
+
+               <required>true</required>
+
+               <readonly>false</readonly>
+
+               <defaultValue>${project.artifactId}</defaultValue>
+
+               <type>java.lang.String</type>
+
+               <description>maven.final.name</description>
+            </parameter>
+
+            <parameter>
+               <name>outputDirectory</name>
+
+               <property>outputDirectory</property>
+
+               <required>true</required>
+
+               <readonly>false</readonly>
+
+               <defaultValue>target</defaultValue>
+
+               <type>java.lang.String</type>
+
+               <description>Output Directory</description>
+            </parameter>
+
+            <parameter>
+               <name>localRepository</name>
+
+               <property>localRepository</property>
+
+               <required>true</required>
+
+               <expression>${settings.localRepository}</expression>
+
+               <type>java.lang.String</type>
+            </parameter>
+
+            <parameter>
+               <name>maven.compile.classpath</name>
+
+               <property>maven.compile.classpath</property>
+
+               <required>false</required>
+
+               <expression>${project.compileClasspathElements}</expression>
+
+               <type>java.lang.String</type>
+            </parameter>
+
+            <parameter>
+               <name>maven.dependency.classpath</name>
+
+               <property>maven.dependency.classpath</property>
+
+               <required>false</required>
+
+               <expression>${project.artifacts}qqq</expression>
+
+               <type>java.util.List</type>
+            </parameter>
+         </parameters>
+      </mojo>
+   </mojos>
+</pluginMetadata>
+

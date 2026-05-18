@@ -1,0 +1,43 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+   <title>Calendar</title>
+</head>
+
+<script type="text/javascript"
+        src="js/SetTabFocus.js">
+</script>
+<script type="text/javascript"
+        src="js/Calendar.js">
+</script>
+
+
+
+<body BGCOLOR="#FDF5E6" ONLOAD="setTabFocus();">
+
+<h2 ALIGN="CENTER">Calendar</h2>
+
+<form ACTION="http://localhost:8088/SomeProgram">
+   Field 1: 
+   <input TYPE="TEXT" ID="TabFocusA" NAME="field1" tabindex="1">
+   <br>
+   Date: 
+   <input type="text" 
+          ID="MyDateId"
+          value="dd/mm/yy" 
+          onfocus="this.select();showpop(this)" 
+          onclick="event.cancelBubble=true;this.select();showpop(this)"
+          onblur="closeCalendar();">
+   <br>
+   Field 3: 
+   <input ID="focusA" tabindex="1" TYPE="TEXT" NAME="field4" VALUE="enter your name here">
+   <br>
+   Field 4: 
+   <input ID="focusA" tabindex="1" TYPE="TEXT" NAME="field4" VALUE="enter your name here ba">
+   <br>
+</form>
+
+<a onfocus="setTabFocus();" HREF="">&nbsp;</a> <br>
+
+</body>
+</html>

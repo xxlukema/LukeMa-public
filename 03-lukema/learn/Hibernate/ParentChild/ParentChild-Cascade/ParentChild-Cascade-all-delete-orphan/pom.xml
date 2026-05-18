@@ -1,0 +1,19 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <parent>
+      <groupId>com.learn</groupId>
+
+      <artifactId>ParentChild-Cascade</artifactId>
+
+      <version>1.0</version>
+   </parent>
+
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.learn</groupId>
+
+   <artifactId>ParentChild-Cascade-all-delete-orphan</artifactId>
+
+   <packaging>jar</packaging>
+
+   <version>1.0</version>
+</project>

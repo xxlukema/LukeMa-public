@@ -1,0 +1,16 @@
+
+
+
+
+show dbs
+
+use testdb
+
+show collections
+
+db.getCollection("testdb").drop()
+
+db.user.find()
+db.user.find("x":3)
+db.user.remove("x":3)
+

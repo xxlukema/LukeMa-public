@@ -1,0 +1,79 @@
+<project>
+   <basename property="module" file="${basedir}" />
+
+   <property name="svndir" value="/coair/${module}" />
+
+   <target name="init">
+      <available file="${svndir}" type="dir" property="svndir.present">
+      </available>
+   </target>
+
+   <target name="save" depends="init" if="svndir.present">
+      <copy todir="${svndir}/src" verbose="true">
+         <fileset dir="src/main/java">
+            <include name="**/*.*" />
+         </fileset>
+      </copy>
+
+      <copy todir="${svndir}/config" failonerror="false" verbose="true">
+         <fileset dir="src/test/resources">
+            <include name="**/*.*" />
+         </fileset>
+      </copy>
+
+      <copy todir="${svndir}/config" failonerror="false" verbose="true">
+         <fileset dir="src/main/resources">
+            <include name="**/*.*" />
+         </fileset>
+      </copy>
+
+      <copy todir="${svndir}" failonerror="false" verbose="true">
+         <fileset dir="${basedir}">
+            <include name="**/*.sh" />
+
+            <include name="**/*.bat" />
+         </fileset>
+      </copy>
+
+      <copy todir="${svndir}" failonerror="false" verbose="true">
+         <fileset dir="src/main">
+            <include name="castor/**/*.*" />
+         </fileset>
+      </copy>
+
+      <mkdir dir="${svndir}/logs" />
+
+      <delete includeemptydirs="true">
+         <fileset dir="${svndir}/logs" includes="**/*.txt" />
+      </delete>
+   </target>
+
+   <target name="saveall" depends="init,save" if="svndir.present">
+      <copy todir="${svndir}" failonerror="false" verbose="true">
+         <fileset dir="target">
+            <include name="*.jar" />
+         </fileset>
+      </copy>
+
+      <mkdir dir="${svndir}/lib" />
+
+      <delete>
+         <fileset dir="${svndir}/lib" includes="**/*.jar" />
+      </delete>
+
+      <copy todir="${svndir}/lib" failonerror="false" flatten="true" verbose="true">
+         <fileset dir="target">
+            <include name="*/WEB-INF/lib/*.jar" />
+         </fileset>
+      </copy>
+   </target>
+
+   <target name="get" depends="init" if="svndir.present">
+      <copy todir="src/main/java" verbose="true">
+         <fileset dir="${svndir}/src">
+            <include name="**/*.*" />
+         </fileset>
+      </copy>
+   </target>
+</project>
+

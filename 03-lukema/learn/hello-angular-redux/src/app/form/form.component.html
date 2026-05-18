@@ -1,0 +1,51 @@
+<section>
+  <form [formGroup]="formGroup" fxLayout="column" fxLayoutGap="2em">
+    <mat-form-field fxFlex appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" name="email" [(ngModel)]="email" [errorStateMatcher]="myErrorStateMatcher"
+        placeholder="Ex. pat@example.com" [readonly]="submitting" (input)="change()" (keyup.enter)="onSubmit()">
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="formGroup.hasError('email') && !formGroup.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="formGroup.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field fxFlex>
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" name="email" [(ngModel)]="email" placeholder="Ex. pat@example.com"
+        [readonly]="submitting" (input)="change()" (keyup.enter)="onSubmit()">
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="formGroup.hasError('email') && !formGroup.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="formGroup.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <fieldset fxFlex>
+      <legend>Basic Input</legend>
+      <div fxLayout fxLayoutAlign="center center">
+        <span fxFlex="35" class="label required">
+          Email
+        </span>
+        <mat-form-field>
+          <input type="email" matInput formControlName="email" name="email" [(ngModel)]="email" placeholder="Ex. pat@example.com"
+            [readonly]="submitting" (input)="change()" (keyup.enter)="onSubmit()">
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error *ngIf="formGroup.hasError('email') && !formGroup.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="formGroup.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </fieldset>
+  </form>
+</section>

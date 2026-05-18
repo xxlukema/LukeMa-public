@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jstl/core" xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" xmlns:jsp="http://java.sun.com/JSP/Page">
+   <head>
+      <meta content="no-cache" http-equiv="Cache-Control" />
+
+      <meta content="no-cache" http-equiv="Pragma" />
+
+      <meta http-equiv="EXPIRES" content="0" />
+
+      <title>Default Title</title>
+
+      <link rel="stylesheet" type="text/css" href="../css/main.css" />
+   </head>
+
+   <body>
+      <div id="header">
+         <div class="top_row">
+            <div class="logo">
+               <img src="../images/askbuffett.jpg" alt="AskBuffett.com" />
+
+               <div>Header</div>
+            </div>
+         </div>
+      </div>
+
+      <div id="left">
+         <div style="background-color: #CCFF66;">Left</div>
+      </div>
+
+      <div id="center_applet">
+         <div style="background-color: #FFFFCC;">Center</div>
+
+         <div>
+            <object id="applet" classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" codebase="http://java.sun.com/products/plugin/1.2.2/jinstall-1_2_2-win.cab#Version=1,2,2,0">
+               <param name="java_code" value="gui.applet.test.ChartJApplet.class" />
+
+               <param name="java_codebase" value="applets" />
+
+               <param name="java_archive" value="mba-ui-common-by-webservice-1.0.jar,MbaWebServiceLib-1.0.jar" />
+
+               <param name="type" value="application/x-java-applet" />
+
+               <param name="symbol" value="#{taController.symbol}" />
+
+               <comment>
+                  <embed id="applet" type="application/x-java-applet" pluginspage="http://java.sun.com/products/plugin/" java_code="gui.applet.test.ChartJApplet.class" java_codebase="applets" java_archive="mba-ui-common-by-webservice-1.0.jar,MbaWebServiceLib-1.0.jar" symbol="#{taController.symbol}">
+                     <noembed>Unable to start plugin!</noembed>
+                  </embed>
+               </comment>
+            </object>
+         </div>
+
+         <div style="font-size:21px;">(21px absolut) 
+         <div style="font-size:0.9em;">(90% = 18px) 
+         <div style="font-size:0.9em;">(90% 16px) 
+         <div style="font-size:0.9em;">(90% 15px) 
+         <div style="font-size:0.9em;">(90% 13px) 
+         <div style="font-size:0.9em;">(90% 12px)</div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+      </div>
+
+      <div id="right_applet">
+         <div style="background-color: #FFCCFF;">Right</div>
+      </div>
+
+      <div id="footer">
+         <div style="background-color: #999999;">Footer</div>
+      </div>
+   </body>
+</html>
+

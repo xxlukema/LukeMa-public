@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+   <xsd:element name="PNRRemark">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="pnr" type="PNRType" />
+
+            <xsd:element name="remark1" type="RemarkType" />
+
+            <xsd:element name="remark2" type="RemarkType" />
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+
+   <xsd:simpleType name="PNRType">
+      <xsd:restriction base="xsd:string">
+         <xsd:minLength value="6" />
+
+         <xsd:maxLength value="6" />
+      </xsd:restriction>
+   </xsd:simpleType>
+
+   <xsd:simpleType name="RemarkType">
+      <xsd:restriction base="xsd:string">
+         <xsd:minLength value="1" />
+
+         <xsd:maxLength value="63" />
+      </xsd:restriction>
+   </xsd:simpleType>
+</xsd:schema>
+

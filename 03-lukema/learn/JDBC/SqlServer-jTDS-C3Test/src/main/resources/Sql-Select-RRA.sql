@@ -1,0 +1,10 @@
+SELECT
+    RowID,
+    PropertyID,
+    CalendarID,
+    eServicerUploadedDate,
+    AssignedVendor,
+    AssignmentDate,
+    LeaseReviewMixedUseOverride
+FROM
+    ETL_FionaToC3_Staging_RRA;

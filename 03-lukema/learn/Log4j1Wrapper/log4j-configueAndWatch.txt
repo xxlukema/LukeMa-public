@@ -1,0 +1,22 @@
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
+
+private static final Logger LOG = Logger.getLogger(VxMeter.class);
+
+DOMConfigurator.configure("log4j.xml");
+
+LOG.info("Test Log4j.");
+
+
+
+import org.apache.log4j.PropertyConfigurator;
+
+PropertyConfigurator.configure(fileName);
+
+
+
+DOMConfigurator.configureAndWatch("log4j.xml");
+PropertyConfigurator.configureAndWatch(fileName);
+
+

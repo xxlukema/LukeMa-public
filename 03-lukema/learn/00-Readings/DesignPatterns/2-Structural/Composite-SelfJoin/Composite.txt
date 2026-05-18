@@ -1,0 +1,11 @@
+
+Composite: Individual objects and also can be collection of objects. 
+In this pattern, use tree structures for representing part-whole hierarchies.
+
+
+Example: The employees of a company. In a hierarchy, the manager has 
+subordinates; also the Project Leader has subordinates, i.e. employees 
+reporting to him/her. The developer has no subordinates.
+
+In database, it represents self-join.
+

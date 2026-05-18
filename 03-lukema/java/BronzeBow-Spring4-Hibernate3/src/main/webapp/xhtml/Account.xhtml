@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition template="/WEB-INF/layout/Layout.xhtml">
+		<ui:define name="title">Account Page</ui:define>
+
+		<ui:define name="center">
+			<h3>Account</h3>
+			<f:view>
+				<h:form id="accountForm">
+					<h:panelGrid columns="2" styleClass="wgrid"
+						style="margin-left: 10px;">
+						<f:facet name="header">
+							<h:outputText value="Existing User Login" />
+						</f:facet>
+
+						<h:outputLabel for="username" value="Username"
+							styleClass="bold" />
+
+						<h:outputText id="username"
+							value="#{userLoginController.user.username}">
+						</h:outputText>
+
+						<h:outputLabel for="email" value="Email"
+							styleClass="bold" />
+
+						<h:outputText id="email"
+							value="#{userLoginController.user.email}">
+						</h:outputText>
+
+						<h:outputLabel for="stockList" value="My List"
+							styleClass="bold" />
+
+						<h:outputText id="stockList"
+							value="#{userLoginController.user.stockList}">
+						</h:outputText>
+					</h:panelGrid>
+					<div class="height1em"></div>
+					<h:panelGrid columns="3" styleClass="nogrid">
+						<h:commandLink
+							style="text-wrap: none; background-color: #0033FF;"
+							value="[ Change Password ]" immediate="true" styleClass="bold"
+							action="#{taController.toChangePassword}">
+						</h:commandLink>
+						<h:commandLink
+							style="text-wrap: none; background-color: #0033FF;"
+							value="[ Change Email ]" immediate="true" styleClass="bold"
+							action="#{taController.toChangeEmail}">
+						</h:commandLink>
+						<h:commandLink
+							style="text-wrap: none; background-color: #0033FF;"
+							value="[ Edit MyList ]" immediate="true" styleClass="bold"
+							action="#{taController.toMyListEditor}">
+						</h:commandLink>
+					</h:panelGrid>
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+
+</html>
+

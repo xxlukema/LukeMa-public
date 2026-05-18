@@ -1,0 +1,2441 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>DbVisualizer export output</title>
+    <meta http-equiv="content-type" content="text/html; charset=Cp1252">
+    <style type="text/css">
+      body { font-family: verdana, arial, helvetica, sans-serif;
+             font-size: smaller; }
+      h1 { font-size: large; }
+      tr { font-size: smaller; }
+      th, td { border-left: 1px solid #000000;
+               border-bottom: 1px solid #000000; padding: 2px; }
+      th { color: #000000; background: #e9e9f2; }
+      table { padding: 0px;  margin: 0px;
+              border-top: 1px solid #000000;
+              border-right: 1px solid #000000; }
+      table.info { color: #000000; background: #e9e9f2; }
+      table.data { color: #000000; background: #ffffff; }
+      td.label { text-align: right; }
+      td.value { font-weight: bold; }
+      tr.even { color: #000000; background: #ffffff; }
+      tr.odd { color: #000000; background: #eeeeee; }
+    </style>
+  </head>
+  <body>
+    <h1>DbVisualizer export output</h1>
+    <table class="info" cellspacing="0">
+      <tr>
+        <td class="label">Date:</td>
+        <td class="value"><b>2010-03-24 11:08:58</b></td>
+      </tr>
+      <tr>
+        <td class="label">Rows:</td>
+        <td class="value"><b>341</b></td>
+      </tr>
+      <tr>
+        <td class="label">Columns:</td>
+        <td class="value"><b>5</b></td>
+      </tr>
+    </table>
+    <br>
+    <table class="data" cellspacing="0">
+      <tr>
+        <th>TableName</th>
+        <th>ColumnName</th>
+        <th>ReferenceTableName</th>
+        <th>ReferenceColumnName</th>
+        <th>ForeignKey</th>
+      </tr>
+      <tr class="even">
+        <td>acct_dist_ext</td>
+        <td>invoice_id</td>
+        <td>invoice</td>
+        <td>invoice_id</td>
+        <td>fk_actdis_inv1</td>
+      </tr>
+      <tr class="odd">
+        <td>address</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_address_company</td>
+      </tr>
+      <tr class="even">
+        <td>asset_depreciation</td>
+        <td>asset_id</td>
+        <td>asset</td>
+        <td>asset_id</td>
+        <td>fk_assdep_assety</td>
+      </tr>
+      <tr class="odd">
+        <td>associate_product</td>
+        <td>associate_prod_id</td>
+        <td>product</td>
+        <td>product_id</td>
+        <td>fk_associate_prod</td>
+      </tr>
+      <tr class="even">
+        <td>associate_product</td>
+        <td>product_id</td>
+        <td>product</td>
+        <td>product_id</td>
+        <td>fk_prod</td>
+      </tr>
+      <tr class="odd">
+        <td>auditor_xref</td>
+        <td>auditor_user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_auditor_xref_auditor_user_id</td>
+      </tr>
+      <tr class="even">
+        <td>cards</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_cards_company</td>
+      </tr>
+      <tr class="odd">
+        <td>cards</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_cards_users</td>
+      </tr>
+      <tr class="even">
+        <td>category</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_cat_company</td>
+      </tr>
+      <tr class="odd">
+        <td>category_xref</td>
+        <td>from_category_id</td>
+        <td>category</td>
+        <td>category_id</td>
+        <td>fk_from_category_id</td>
+      </tr>
+      <tr class="even">
+        <td>category_xref</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_sys_company</td>
+      </tr>
+      <tr class="odd">
+        <td>category_xref</td>
+        <td>to_category_id</td>
+        <td>category</td>
+        <td>category_id</td>
+        <td>fk_to_category_id</td>
+      </tr>
+      <tr class="even">
+        <td>commission_split</td>
+        <td>manager_user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_manager_user_id</td>
+      </tr>
+      <tr class="odd">
+        <td>commission_split</td>
+        <td>opportunity_id</td>
+        <td>opportunity</td>
+        <td>opportunity_id</td>
+        <td>fk_opportunity_id</td>
+      </tr>
+      <tr class="even">
+        <td>commission_split</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_user_id</td>
+      </tr>
+      <tr class="odd">
+        <td>comp_cat_xref</td>
+        <td>category_id</td>
+        <td>category</td>
+        <td>category_id</td>
+        <td>fk_ccxref_category</td>
+      </tr>
+      <tr class="even">
+        <td>contact</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_contact_company</td>
+      </tr>
+      <tr class="odd">
+        <td>contact</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_contact_users</td>
+      </tr>
+      <tr class="even">
+        <td>contact_ext</td>
+        <td>contact_id</td>
+        <td>contact</td>
+        <td>contact_id</td>
+        <td>fk_contx_contact</td>
+      </tr>
+      <tr class="odd">
+        <td>education</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_education_users</td>
+      </tr>
+      <tr class="even">
+        <td>expense</td>
+        <td>category_id</td>
+        <td>category</td>
+        <td>category_id</td>
+        <td>fk_exp_category</td>
+      </tr>
+      <tr class="odd">
+        <td>expense</td>
+        <td>invoice_id</td>
+        <td>invoice</td>
+        <td>invoice_id</td>
+        <td>fk_exp_invoice</td>
+      </tr>
+      <tr class="even">
+        <td>expense</td>
+        <td>product_id</td>
+        <td>product</td>
+        <td>product_id</td>
+        <td>fk_exp_product</td>
+      </tr>
+      <tr class="odd">
+        <td>expense</td>
+        <td>project_id</td>
+        <td>project</td>
+        <td>project_id</td>
+        <td>fk_exp_project</td>
+      </tr>
+      <tr class="even">
+        <td>expense</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_exp_users</td>
+      </tr>
+      <tr class="odd">
+        <td>expense</td>
+        <td>vendor_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_vendor_id</td>
+      </tr>
+      <tr class="even">
+        <td>expense_ext</td>
+        <td>expense_id</td>
+        <td>expense</td>
+        <td>expense_id</td>
+        <td>fk_exp_ext</td>
+      </tr>
+      <tr class="odd">
+        <td>expense_vat</td>
+        <td>expense_id</td>
+        <td>expense</td>
+        <td>expense_id</td>
+        <td>fk_exp_vat</td>
+      </tr>
+      <tr class="even">
+        <td>hr_requests_ext</td>
+        <td>request_id</td>
+        <td>hr_requests</td>
+        <td>request_id</td>
+        <td>fk_hre_hr_request</td>
+      </tr>
+      <tr class="odd">
+        <td>inv_event</td>
+        <td>invoice_id</td>
+        <td>invoice</td>
+        <td>invoice_id</td>
+        <td>fk_invevnt_inv1</td>
+      </tr>
+      <tr class="even">
+        <td>inv_event</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_invevnt_comp1</td>
+      </tr>
+      <tr class="odd">
+        <td>inv_event</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_invevnt_user2</td>
+      </tr>
+      <tr class="even">
+        <td>inv_event</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_invevnt_user3</td>
+      </tr>
+      <tr class="odd">
+        <td>inv_event</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_invevnt_user1</td>
+      </tr>
+      <tr class="even">
+        <td>invoice</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_inv_company1</td>
+      </tr>
+      <tr class="odd">
+        <td>invoice</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_inv_users</td>
+      </tr>
+      <tr class="even">
+        <td>invoice_ext</td>
+        <td>invoice_id</td>
+        <td>invoice</td>
+        <td>invoice_id</td>
+        <td>fk_inv_ext</td>
+      </tr>
+      <tr class="odd">
+        <td>item_cmpy_xref</td>
+        <td>company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_item_cmpy_xref_company_id</td>
+      </tr>
+      <tr class="even">
+        <td>item_cmpy_xref</td>
+        <td>item_master_id</td>
+        <td>item_master</td>
+        <td>item_master_id</td>
+        <td>fk_item_cmpy_xref_item_master_id</td>
+      </tr>
+      <tr class="odd">
+        <td>item_code</td>
+        <td>item_master_id</td>
+        <td>item_master</td>
+        <td>item_master_id</td>
+        <td>fk_item_code_item_master_id</td>
+      </tr>
+      <tr class="even">
+        <td>lookup_tables</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_lt_company</td>
+      </tr>
+      <tr class="odd">
+        <td>lookup_tables_trl</td>
+        <td>code_up</td>
+        <td>lookup_tables</td>
+        <td>code_up</td>
+        <td>fk_lookup_tab_trl</td>
+      </tr>
+      <tr class="even">
+        <td>lookup_tables_trl</td>
+        <td>sys_company</td>
+        <td>lookup_tables</td>
+        <td>sys_company</td>
+        <td>fk_lookup_tab_trl</td>
+      </tr>
+      <tr class="odd">
+        <td>lookup_tables_trl</td>
+        <td>table_name</td>
+        <td>lookup_tables</td>
+        <td>table_name</td>
+        <td>fk_lookup_tab_trl</td>
+      </tr>
+      <tr class="even">
+        <td>metric</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_metric_status</td>
+      </tr>
+      <tr class="odd">
+        <td>metric</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_metric_company</td>
+      </tr>
+      <tr class="even">
+        <td>metric</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_metric_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>metric</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_metric_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>obj_creation_form</td>
+        <td>db_table_name</td>
+        <td>sys_tables</td>
+        <td>table_name</td>
+        <td>fk_ocf_systables</td>
+      </tr>
+      <tr class="odd">
+        <td>obj_creation_form</td>
+        <td>form_id</td>
+        <td>sys_forms</td>
+        <td>form_id</td>
+        <td>fk_ocf_sysforms</td>
+      </tr>
+      <tr class="even">
+        <td>opportunity</td>
+        <td>project_id</td>
+        <td>project</td>
+        <td>project_id</td>
+        <td>fk_proj_id</td>
+      </tr>
+      <tr class="odd">
+        <td>perdiem</td>
+        <td>location_id</td>
+        <td>location</td>
+        <td>location_id</td>
+        <td>fk_perd_location</td>
+      </tr>
+      <tr class="even">
+        <td>person_skill</td>
+        <td>person_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_psk_users</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skill</td>
+        <td>skill_id</td>
+        <td>skill</td>
+        <td>skill_id</td>
+        <td>fk_psk_skill</td>
+      </tr>
+      <tr class="even">
+        <td>person_skill</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_psk_status</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skill</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_psk_users_1</td>
+      </tr>
+      <tr class="even">
+        <td>person_skill</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_psk_users_2</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skill_group</td>
+        <td>person_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_psg_users</td>
+      </tr>
+      <tr class="even">
+        <td>person_skill_group</td>
+        <td>skill_group_id</td>
+        <td>skill_group</td>
+        <td>skill_group_id</td>
+        <td>fk_psg_skill_group</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skill_group</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_psg_status</td>
+      </tr>
+      <tr class="even">
+        <td>person_skill_group</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_psg_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skill_group</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_psg_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>person_skl_grp_met</td>
+        <td>metric_id</td>
+        <td>metric</td>
+        <td>metric_id</td>
+        <td>fk_pskgm_metric</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skl_grp_met</td>
+        <td>metric_id</td>
+        <td>skill_group_metric</td>
+        <td>metric_id</td>
+        <td>fk_pskgm_sklgrpmet</td>
+      </tr>
+      <tr class="even">
+        <td>person_skl_grp_met</td>
+        <td>person_id</td>
+        <td>person_skill_group</td>
+        <td>person_id</td>
+        <td>fk_pskgm_pers_sklg</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skl_grp_met</td>
+        <td>person_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_pskgm_users</td>
+      </tr>
+      <tr class="even">
+        <td>person_skl_grp_met</td>
+        <td>skill_group_id</td>
+        <td>person_skill_group</td>
+        <td>skill_group_id</td>
+        <td>fk_pskgm_pers_sklg</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skl_grp_met</td>
+        <td>skill_group_id</td>
+        <td>skill_group</td>
+        <td>skill_group_id</td>
+        <td>fk_pskgm_skill_grp</td>
+      </tr>
+      <tr class="even">
+        <td>person_skl_grp_met</td>
+        <td>skill_group_id</td>
+        <td>skill_group_metric</td>
+        <td>skill_group_id</td>
+        <td>fk_pskgm_sklgrpmet</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skl_grp_met</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_pskgm_status</td>
+      </tr>
+      <tr class="even">
+        <td>person_skl_grp_met</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_pskgm_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skl_grp_met</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_pskgm_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>person_skl_metric</td>
+        <td>metric_id</td>
+        <td>metric</td>
+        <td>metric_id</td>
+        <td>fk_pskm_metric</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skl_metric</td>
+        <td>metric_id</td>
+        <td>skill_metric</td>
+        <td>metric_id</td>
+        <td>fk_pskm_skl_met</td>
+      </tr>
+      <tr class="even">
+        <td>person_skl_metric</td>
+        <td>person_id</td>
+        <td>person_skill</td>
+        <td>person_id</td>
+        <td>fk_pskm_pers_skl</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skl_metric</td>
+        <td>person_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_pskm_users</td>
+      </tr>
+      <tr class="even">
+        <td>person_skl_metric</td>
+        <td>skill_id</td>
+        <td>person_skill</td>
+        <td>skill_id</td>
+        <td>fk_pskm_pers_skl</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skl_metric</td>
+        <td>skill_id</td>
+        <td>skill</td>
+        <td>skill_id</td>
+        <td>fk_pskm_skill</td>
+      </tr>
+      <tr class="even">
+        <td>person_skl_metric</td>
+        <td>skill_id</td>
+        <td>skill_metric</td>
+        <td>skill_id</td>
+        <td>fk_pskm_skl_met</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skl_metric</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_pskm_status</td>
+      </tr>
+      <tr class="even">
+        <td>person_skl_metric</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_pskm_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>person_skl_metric</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_pskm_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>phone</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_phone_company</td>
+      </tr>
+      <tr class="odd">
+        <td>product</td>
+        <td>category_id</td>
+        <td>category</td>
+        <td>category_id</td>
+        <td>fk_category_id</td>
+      </tr>
+      <tr class="even">
+        <td>product</td>
+        <td>is_kept_in_stock</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_prod_bool4</td>
+      </tr>
+      <tr class="odd">
+        <td>product</td>
+        <td>is_manufactured</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_prod_bool1</td>
+      </tr>
+      <tr class="even">
+        <td>product</td>
+        <td>is_purchased</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_prod_bool2</td>
+      </tr>
+      <tr class="odd">
+        <td>product</td>
+        <td>is_sold</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_prod_bool3</td>
+      </tr>
+      <tr class="even">
+        <td>product</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_prod_act_status</td>
+      </tr>
+      <tr class="odd">
+        <td>product</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_prod_company_1</td>
+      </tr>
+      <tr class="even">
+        <td>product</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_prod_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>product</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_prod_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>product_ext</td>
+        <td>product_id</td>
+        <td>product</td>
+        <td>product_id</td>
+        <td>fk_prodext_prod</td>
+      </tr>
+      <tr class="odd">
+        <td>proj_task_assign</td>
+        <td>project_id</td>
+        <td>project</td>
+        <td>project_id</td>
+        <td>fk_prj_task_assn1</td>
+      </tr>
+      <tr class="even">
+        <td>proj_task_assign</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_prj_task_assn7</td>
+      </tr>
+      <tr class="odd">
+        <td>proj_task_assign</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_prj_task_assn4</td>
+      </tr>
+      <tr class="even">
+        <td>proj_task_assign</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_prj_task_assn5</td>
+      </tr>
+      <tr class="odd">
+        <td>proj_task_assign</td>
+        <td>top_project_id</td>
+        <td>project</td>
+        <td>project_id</td>
+        <td>fk_prj_task_assn2</td>
+      </tr>
+      <tr class="even">
+        <td>project</td>
+        <td>assignable</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_proj_boolean</td>
+      </tr>
+      <tr class="odd">
+        <td>project</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_project_company</td>
+      </tr>
+      <tr class="even">
+        <td>project_ext</td>
+        <td>project_id</td>
+        <td>project</td>
+        <td>project_id</td>
+        <td>fk_projext_project</td>
+      </tr>
+      <tr class="odd">
+        <td>project_type_color</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_ptc_company</td>
+      </tr>
+      <tr class="even">
+        <td>purch_catalog_item</td>
+        <td>product_id</td>
+        <td>product</td>
+        <td>product_id</td>
+        <td>fk_pcat_product</td>
+      </tr>
+      <tr class="odd">
+        <td>purch_catalog_item</td>
+        <td>receiving_loc_id</td>
+        <td>location</td>
+        <td>location_id</td>
+        <td>fk_pcat_loc</td>
+      </tr>
+      <tr class="even">
+        <td>purch_catalog_item</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_pcat_act_status</td>
+      </tr>
+      <tr class="odd">
+        <td>purch_catalog_item</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_pcat_company1</td>
+      </tr>
+      <tr class="even">
+        <td>purch_catalog_item</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_pcat_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>purch_catalog_item</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_pcat_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>purch_catalog_item</td>
+        <td>v_is_manufacturer</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_pcat_bool1</td>
+      </tr>
+      <tr class="odd">
+        <td>purch_catalog_item</td>
+        <td>vendor_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_pcat_company</td>
+      </tr>
+      <tr class="even">
+        <td>recd_item_cond</td>
+        <td>received_item_id</td>
+        <td>received_item</td>
+        <td>received_item_id</td>
+        <td>fk_recitco_recitm</td>
+      </tr>
+      <tr class="odd">
+        <td>recd_item_cond</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_recitco_comp</td>
+      </tr>
+      <tr class="even">
+        <td>recd_item_cond</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_recitco_user1</td>
+      </tr>
+      <tr class="odd">
+        <td>recd_item_cond</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_recitco_user2</td>
+      </tr>
+      <tr class="even">
+        <td>recd_item_cond_ext</td>
+        <td>recd_item_cond_id</td>
+        <td>recd_item_cond</td>
+        <td>recd_item_cond_id</td>
+        <td>fk_rcitcoex_rcitco</td>
+      </tr>
+      <tr class="odd">
+        <td>received_item</td>
+        <td>inv_expense_id</td>
+        <td>expense</td>
+        <td>expense_id</td>
+        <td>fk_recditem_exp1</td>
+      </tr>
+      <tr class="even">
+        <td>received_item</td>
+        <td>invoice_id</td>
+        <td>invoice</td>
+        <td>invoice_id</td>
+        <td>fk_recditem_inv2</td>
+      </tr>
+      <tr class="odd">
+        <td>received_item</td>
+        <td>po_expense_id</td>
+        <td>expense</td>
+        <td>expense_id</td>
+        <td>fk_recditem_exp2</td>
+      </tr>
+      <tr class="even">
+        <td>received_item</td>
+        <td>product_id</td>
+        <td>product</td>
+        <td>product_id</td>
+        <td>fk_recditem_prod</td>
+      </tr>
+      <tr class="odd">
+        <td>received_item</td>
+        <td>purchase_order_id</td>
+        <td>invoice</td>
+        <td>invoice_id</td>
+        <td>fk_recditem_inv1</td>
+      </tr>
+      <tr class="even">
+        <td>received_item</td>
+        <td>recv_header_id</td>
+        <td>receiving_header</td>
+        <td>recv_header_id</td>
+        <td>fk_recditem_rechdr</td>
+      </tr>
+      <tr class="odd">
+        <td>received_item</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_recditem_comp</td>
+      </tr>
+      <tr class="even">
+        <td>received_item</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_recditem_user1</td>
+      </tr>
+      <tr class="odd">
+        <td>received_item</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_recditem_user2</td>
+      </tr>
+      <tr class="even">
+        <td>received_item_ext</td>
+        <td>received_item_id</td>
+        <td>received_item</td>
+        <td>received_item_id</td>
+        <td>fk_recitmex_recitm</td>
+      </tr>
+      <tr class="odd">
+        <td>receiving_hdr_ext</td>
+        <td>recv_header_id</td>
+        <td>receiving_header</td>
+        <td>recv_header_id</td>
+        <td>fk_rechdrex_rechdr</td>
+      </tr>
+      <tr class="even">
+        <td>receiving_header</td>
+        <td>invoice_id</td>
+        <td>invoice</td>
+        <td>invoice_id</td>
+        <td>fk_rechdr_inv2</td>
+      </tr>
+      <tr class="odd">
+        <td>receiving_header</td>
+        <td>purchase_order_id</td>
+        <td>invoice</td>
+        <td>invoice_id</td>
+        <td>fk_rechdr_inv1</td>
+      </tr>
+      <tr class="even">
+        <td>receiving_header</td>
+        <td>rec_location_id</td>
+        <td>location</td>
+        <td>location_id</td>
+        <td>fk_rechdr_loc</td>
+      </tr>
+      <tr class="odd">
+        <td>receiving_header</td>
+        <td>received_by_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_rechdr_user1</td>
+      </tr>
+      <tr class="even">
+        <td>receiving_header</td>
+        <td>shipper_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_rechdr_comp3</td>
+      </tr>
+      <tr class="odd">
+        <td>receiving_header</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_rechdr_comp2</td>
+      </tr>
+      <tr class="even">
+        <td>receiving_header</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_rechdr_user2</td>
+      </tr>
+      <tr class="odd">
+        <td>receiving_header</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_rechdr_user3</td>
+      </tr>
+      <tr class="even">
+        <td>receiving_header</td>
+        <td>vendor_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_rechdr_comp1</td>
+      </tr>
+      <tr class="odd">
+        <td>recurring_expense</td>
+        <td>category_id</td>
+        <td>category</td>
+        <td>category_id</td>
+        <td>fk_recexp_category</td>
+      </tr>
+      <tr class="even">
+        <td>recurring_expense</td>
+        <td>project_id</td>
+        <td>project</td>
+        <td>project_id</td>
+        <td>fk_recexp_project</td>
+      </tr>
+      <tr class="odd">
+        <td>recurring_expense</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_recexp_company</td>
+      </tr>
+      <tr class="even">
+        <td>res_group</td>
+        <td>parent_res_grp_id</td>
+        <td>res_group</td>
+        <td>res_group_id</td>
+        <td>fk_res_grp4</td>
+      </tr>
+      <tr class="odd">
+        <td>res_group</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_res_grp1</td>
+      </tr>
+      <tr class="even">
+        <td>res_group</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_res_grp2</td>
+      </tr>
+      <tr class="odd">
+        <td>res_group</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_res_grp3</td>
+      </tr>
+      <tr class="even">
+        <td>rules</td>
+        <td>form_id</td>
+        <td>sys_forms</td>
+        <td>form_id</td>
+        <td>fk_rules_sys_forms</td>
+      </tr>
+      <tr class="odd">
+        <td>rules</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_rules_company</td>
+      </tr>
+      <tr class="even">
+        <td>skill</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_skill_status</td>
+      </tr>
+      <tr class="odd">
+        <td>skill</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_skill_company</td>
+      </tr>
+      <tr class="even">
+        <td>skill</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_skill_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>skill</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_skill_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>skill_group</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_sgroup_status</td>
+      </tr>
+      <tr class="odd">
+        <td>skill_group</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_sgroup_company</td>
+      </tr>
+      <tr class="even">
+        <td>skill_group</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_sgroup_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>skill_group</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_sgroup_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>skill_group_member</td>
+        <td>skill_group_id</td>
+        <td>skill_group</td>
+        <td>skill_group_id</td>
+        <td>fk_sgmem_skill_grp</td>
+      </tr>
+      <tr class="odd">
+        <td>skill_group_member</td>
+        <td>skill_id</td>
+        <td>skill</td>
+        <td>skill_id</td>
+        <td>fk_sgmem_skill</td>
+      </tr>
+      <tr class="even">
+        <td>skill_group_member</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_sgmem_status</td>
+      </tr>
+      <tr class="odd">
+        <td>skill_group_member</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_sgmem_users_1</td>
+      </tr>
+      <tr class="even">
+        <td>skill_group_member</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_sgmem_users_2</td>
+      </tr>
+      <tr class="odd">
+        <td>skill_group_metric</td>
+        <td>metric_id</td>
+        <td>metric</td>
+        <td>metric_id</td>
+        <td>fk_sgmet_metric</td>
+      </tr>
+      <tr class="even">
+        <td>skill_group_metric</td>
+        <td>skill_group_id</td>
+        <td>skill_group</td>
+        <td>skill_group_id</td>
+        <td>fk_sgmet_skill_grp</td>
+      </tr>
+      <tr class="odd">
+        <td>skill_group_metric</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_sgmet_status</td>
+      </tr>
+      <tr class="even">
+        <td>skill_group_metric</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_sgmet_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>skill_group_metric</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_sgmet_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>skill_metric</td>
+        <td>metric_id</td>
+        <td>metric</td>
+        <td>metric_id</td>
+        <td>fk_sm_metric</td>
+      </tr>
+      <tr class="odd">
+        <td>skill_metric</td>
+        <td>skill_id</td>
+        <td>skill</td>
+        <td>skill_id</td>
+        <td>fk_sm_skill</td>
+      </tr>
+      <tr class="even">
+        <td>skill_metric</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_sm_status</td>
+      </tr>
+      <tr class="odd">
+        <td>skill_metric</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_sm_users_1</td>
+      </tr>
+      <tr class="even">
+        <td>skill_metric</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_sm_users_2</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_allowed_ctrl</td>
+        <td>is_customizable</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_sysac_bool1</td>
+      </tr>
+      <tr class="even">
+        <td>sys_allowed_ctrl</td>
+        <td>is_default</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_sysac_bool2</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_buttons_trl</td>
+        <td>button_name</td>
+        <td>sys_buttons</td>
+        <td>button_name</td>
+        <td>fk_sys_buttons_trl</td>
+      </tr>
+      <tr class="even">
+        <td>sys_buttons_trl</td>
+        <td>form_id</td>
+        <td>sys_buttons</td>
+        <td>form_id</td>
+        <td>fk_sys_buttons_trl</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_buttons_trl</td>
+        <td>sys_company</td>
+        <td>sys_buttons</td>
+        <td>sys_company</td>
+        <td>fk_sys_buttons_trl</td>
+      </tr>
+      <tr class="even">
+        <td>sys_control_dflt</td>
+        <td>allow_negatives</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscd_bool3</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_control_dflt</td>
+        <td>checkbox_dflt_yes</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscd_bool5</td>
+      </tr>
+      <tr class="even">
+        <td>sys_control_dflt</td>
+        <td>dflt_use_label</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscd_bool</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_control_dflt</td>
+        <td>disp_zero_as_null</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscd_bool2</td>
+      </tr>
+      <tr class="even">
+        <td>sys_control_dflt</td>
+        <td>show_calendar</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscd_bool4</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_control_dflt</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_syscd_users_1</td>
+      </tr>
+      <tr class="even">
+        <td>sys_control_dflt</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_syscd_users_2</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_control_dflt</td>
+        <td>textfld_no_wrap</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscd_bool1</td>
+      </tr>
+      <tr class="even">
+        <td>sys_control_param</td>
+        <td>allow_negatives</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscp_bool3</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_control_param</td>
+        <td>checkbox_dflt_yes</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscp_bool5</td>
+      </tr>
+      <tr class="even">
+        <td>sys_control_param</td>
+        <td>disp_zero_as_null</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscp_bool2</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_control_param</td>
+        <td>show_calendar</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscp_bool4</td>
+      </tr>
+      <tr class="even">
+        <td>sys_control_param</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_syscp_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_control_param</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_syscp_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>sys_control_param</td>
+        <td>sys_layout_id</td>
+        <td>sys_layouts</td>
+        <td>layout_id</td>
+        <td>fk_syscp_layout</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_control_param</td>
+        <td>textfld_no_wrap</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscp_bool1</td>
+      </tr>
+      <tr class="even">
+        <td>sys_control_param</td>
+        <td>use_label_flag</td>
+        <td>boolean</td>
+        <td>boolean_value</td>
+        <td>fk_syscp_bool</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_fields</td>
+        <td>table_name</td>
+        <td>sys_tables</td>
+        <td>table_name</td>
+        <td>fk_sfld_sys_tables</td>
+      </tr>
+      <tr class="even">
+        <td>sys_forms_trl</td>
+        <td>form_id</td>
+        <td>sys_forms</td>
+        <td>form_id</td>
+        <td>fk_sys_forms_trl</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_layouts</td>
+        <td>field_id</td>
+        <td>sys_fields</td>
+        <td>field_id</td>
+        <td>fk_layouts_fields</td>
+      </tr>
+      <tr class="even">
+        <td>sys_layouts</td>
+        <td>form_id</td>
+        <td>sys_forms</td>
+        <td>form_id</td>
+        <td>fk_layouts_forms</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_layouts</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_layouts_comp</td>
+      </tr>
+      <tr class="even">
+        <td>sys_layouts</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_layouts_users1</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_layouts</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_layouts_users2</td>
+      </tr>
+      <tr class="even">
+        <td>sys_layouts_trl</td>
+        <td>field_id</td>
+        <td>sys_layouts</td>
+        <td>field_id</td>
+        <td>fk_sys_layouts_trl</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_layouts_trl</td>
+        <td>form_id</td>
+        <td>sys_layouts</td>
+        <td>form_id</td>
+        <td>fk_sys_layouts_trl</td>
+      </tr>
+      <tr class="even">
+        <td>sys_layouts_trl</td>
+        <td>profile_id</td>
+        <td>sys_layouts</td>
+        <td>profile_id</td>
+        <td>fk_sys_layouts_trl</td>
+      </tr>
+      <tr class="odd">
+        <td>sys_layouts_trl</td>
+        <td>sys_company</td>
+        <td>sys_layouts</td>
+        <td>sys_company</td>
+        <td>fk_sys_layouts_trl</td>
+      </tr>
+      <tr class="even">
+        <td>sys_layouts_trl</td>
+        <td>user_type</td>
+        <td>sys_layouts</td>
+        <td>user_type</td>
+        <td>fk_sys_layouts_trl</td>
+      </tr>
+      <tr class="odd">
+        <td>time_detail</td>
+        <td>time_tran_id</td>
+        <td>time_trans</td>
+        <td>time_tran_id</td>
+        <td>fk_tdet_time_trans</td>
+      </tr>
+      <tr class="even">
+        <td>user_access_list</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_ualist_users</td>
+      </tr>
+      <tr class="odd">
+        <td>user_company_xref</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_ucompx_users</td>
+      </tr>
+      <tr class="even">
+        <td>user_location_xref</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_ulocx_users</td>
+      </tr>
+      <tr class="odd">
+        <td>user_privileges</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_upriv_users</td>
+      </tr>
+      <tr class="even">
+        <td>user_role_xref</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_urolex_users</td>
+      </tr>
+      <tr class="odd">
+        <td>user_template</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_utemp_users</td>
+      </tr>
+      <tr class="even">
+        <td>users</td>
+        <td>company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_users_comp_2</td>
+      </tr>
+      <tr class="odd">
+        <td>users</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_users_comp_1</td>
+      </tr>
+      <tr class="even">
+        <td>vendor_account</td>
+        <td>activation_status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_va_act_status</td>
+      </tr>
+      <tr class="odd">
+        <td>vendor_account</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_va_company_1</td>
+      </tr>
+      <tr class="even">
+        <td>vendor_account</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_va_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>vendor_account</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_va_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>vendor_account</td>
+        <td>vendor_company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_va_company_2</td>
+      </tr>
+      <tr class="odd">
+        <td>vendor_acct_asset</td>
+        <td>account_id</td>
+        <td>vendor_account</td>
+        <td>account_id</td>
+        <td>fk_vaa_vend_acct</td>
+      </tr>
+      <tr class="even">
+        <td>vendor_acct_asset</td>
+        <td>asset_id</td>
+        <td>asset</td>
+        <td>asset_id</td>
+        <td>fk_vaa_asset</td>
+      </tr>
+      <tr class="odd">
+        <td>vendor_acct_extn</td>
+        <td>account_id</td>
+        <td>vendor_account</td>
+        <td>account_id</td>
+        <td>fk_vae_vend_acct</td>
+      </tr>
+      <tr class="even">
+        <td>vendor_prod_price</td>
+        <td>product_id</td>
+        <td>product</td>
+        <td>product_id</td>
+        <td>fk_vpp_product</td>
+      </tr>
+      <tr class="odd">
+        <td>vendor_prod_price</td>
+        <td>receiving_loc_id</td>
+        <td>location</td>
+        <td>location_id</td>
+        <td>fk_vpp_loc</td>
+      </tr>
+      <tr class="even">
+        <td>vendor_prod_price</td>
+        <td>status</td>
+        <td>act_status_type</td>
+        <td>type_id</td>
+        <td>fk_vpp_act_status</td>
+      </tr>
+      <tr class="odd">
+        <td>vendor_prod_price</td>
+        <td>sys_company</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_vpp_company1</td>
+      </tr>
+      <tr class="even">
+        <td>vendor_prod_price</td>
+        <td>sys_create_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_vpp_users_1</td>
+      </tr>
+      <tr class="odd">
+        <td>vendor_prod_price</td>
+        <td>sys_edit_user</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_vpp_users_2</td>
+      </tr>
+      <tr class="even">
+        <td>vendor_prod_price</td>
+        <td>vendor_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_vpp_company</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_asn</td>
+        <td>carrier_company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_asn_carrier_company_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_asn</td>
+        <td>fac_door_id</td>
+        <td>wms_fac_door</td>
+        <td>fac_door_id</td>
+        <td>fk_wms_asn_fac_door_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_asn</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_asn_facility_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_asn</td>
+        <td>sup_company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_asn_sup_company_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_asn_item</td>
+        <td>asn_id</td>
+        <td>wms_asn</td>
+        <td>asn_id</td>
+        <td>fk_wms_asn_asn_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_asn_item</td>
+        <td>item_inv_id</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_asn_item_inv_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_company_ext</td>
+        <td>company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_company_ext_company_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_fac_aisle_area</td>
+        <td>fac_aisle_rng_id</td>
+        <td>wms_fac_aisle_rng</td>
+        <td>fac_aisle_rng_id</td>
+        <td>fk_wms_fac_aisle_area_fac_aisle_rng_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_fac_aisle_area</td>
+        <td>fac_area_id</td>
+        <td>wms_fac_area</td>
+        <td>fac_area_id</td>
+        <td>fk_wms_fac_aisle_area_fac_area_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_fac_aisle_loc</td>
+        <td>fac_aisle_rng_id</td>
+        <td>wms_fac_aisle_rng</td>
+        <td>fac_aisle_rng_id</td>
+        <td>fk_wms_fac_aisle_loc_fac_aisle_rng_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_fac_aisle_loc</td>
+        <td>fac_location_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_fac_aisle_loc_fac_location_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_fac_aisle_rng</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_fac_aisle_rng_facility_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_fac_area</td>
+        <td>dflt_door_id</td>
+        <td>wms_fac_door</td>
+        <td>fac_door_id</td>
+        <td>fk_wms_fac_area_dflt_door_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_fac_area</td>
+        <td>dflt_loc_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_fac_area_dflt_loc_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_fac_area</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_fac_area_facility_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_fac_door</td>
+        <td>fac_location_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_fac_door_fac_location_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_fac_door</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_fac_door_facility_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_fac_evnt_dtl</td>
+        <td>wms_evnt_id</td>
+        <td>wms_fac_evnt</td>
+        <td>wms_evnt_id</td>
+        <td>fk_wms_evnt_dtl_wms_evnt_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_fac_location</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_fac_location_facility</td>
+      </tr>
+      <tr class="even">
+        <td>wms_fac_num_rng</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_fac_num_rng_facility_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_fac_user</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_fac_user_facility</td>
+      </tr>
+      <tr class="even">
+        <td>wms_fac_user</td>
+        <td>user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_wms_fac_user_users</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_facility</td>
+        <td>company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_facility_company</td>
+      </tr>
+      <tr class="even">
+        <td>wms_facility</td>
+        <td>default_rma_loc_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_facility_default_rma_loc_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_facility</td>
+        <td>default_twi_loc_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_facility_default_twi_loc_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_facility</td>
+        <td>owner_company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_facility_owner_company_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_item_inv</td>
+        <td>ded_res_loc_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_item_inv_ded_res_loc_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_item_inv</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_item_inv_facility_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_item_inv</td>
+        <td>item_master_id</td>
+        <td>item_master</td>
+        <td>item_master_id</td>
+        <td>fk_wms_item_inv_item_master_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_item_inv</td>
+        <td>pri_pick_loc_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_item_inv_pri_pick_loc_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_item_inv</td>
+        <td>rule_hdr_id</td>
+        <td>wms_rule_hdr</td>
+        <td>rule_hdr_id</td>
+        <td>fk_wms_item_inv_rule_hdr_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_item_inv</td>
+        <td>sec_pick_loc_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_item_inv_sec_pick_loc_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_item_loc</td>
+        <td>fac_location_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_item_loc_fac_location_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_item_loc</td>
+        <td>item_inv_id</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_item_loc_item_inv_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_lic_item</td>
+        <td>allocated_order_id</td>
+        <td>wms_order_out</td>
+        <td>order_out_id</td>
+        <td>fk_wms_lic_item_allocated_order_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_lic_item</td>
+        <td>item_inv_id</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_lic_item_item_inv_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_lic_item</td>
+        <td>lic_plate_id</td>
+        <td>wms_lic_plate</td>
+        <td>lic_plate_id</td>
+        <td>fk_wms_lic_item_lic_plate_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_lic_item</td>
+        <td>order_out_id</td>
+        <td>wms_order_out</td>
+        <td>order_out_id</td>
+        <td>fk_wms_lic_item_order_out_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_lic_item</td>
+        <td>receipt_dtl_id</td>
+        <td>wms_receipt_dtl</td>
+        <td>receipt_dtl_id</td>
+        <td>fk_wms_lic_item_receipt_dtl_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_lic_item</td>
+        <td>wave_id</td>
+        <td>wms_wave</td>
+        <td>wave_id</td>
+        <td>fk_wms_lic_item_wave_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_lic_plate</td>
+        <td>fac_loc_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_lic_plate_fac_loc_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_lic_plate</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_lic_plate_facility_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_lic_plate</td>
+        <td>owner_company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_lic_plate_owner_company_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_lic_plate</td>
+        <td>rf_loading_user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_wms_lic_plate_rf_loading_user_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_lic_plate</td>
+        <td>rf_picking_user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_wms_lic_plate_rf_picking_user_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_lic_plate</td>
+        <td>rf_putaway_user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_wms_lic_plate_rf_putaway_user_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_lic_plate</td>
+        <td>rf_replen_user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_wms_lic_plate_rf_replen_user_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_load</td>
+        <td>carrier_company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_load_carrier_company_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_load</td>
+        <td>fac_door_id</td>
+        <td>wms_fac_door</td>
+        <td>fac_door_id</td>
+        <td>fk_wms_load_fac_door_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_load</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_load_facility_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_load_in</td>
+        <td>load_id</td>
+        <td>wms_load</td>
+        <td>load_id</td>
+        <td>fk_wms_load_in_load_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_load_in</td>
+        <td>order_in_id</td>
+        <td>wms_order_in</td>
+        <td>order_in_id</td>
+        <td>fk_wms_load_in_order_in_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_load_out</td>
+        <td>load_id</td>
+        <td>wms_load</td>
+        <td>load_id</td>
+        <td>fk_wms_load_out_load_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_load_out</td>
+        <td>order_out_id</td>
+        <td>wms_order_out</td>
+        <td>order_out_id</td>
+        <td>fk_wms_load_out_order_out_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order</td>
+        <td>order_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_order_facility_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order</td>
+        <td>owner_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_owner_comp_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_detail</td>
+        <td>dtl_owner_com_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_detail_dtl_owner_com_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_detail</td>
+        <td>item_inv_id</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_order_detail_item_inv_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_detail</td>
+        <td>order_id</td>
+        <td>wms_order</td>
+        <td>order_id</td>
+        <td>fk_wms_order_detail_order_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_in</td>
+        <td>carrier_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_in_carrier_comp</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_in</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_order_in_wms_facility</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_in</td>
+        <td>owner_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_in_owner_comp</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_in</td>
+        <td>vendor_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_in_vendor_comp</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_in_dtl</td>
+        <td>item_inv_id</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_order_in_dtl_wms_inv_item</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_in_dtl</td>
+        <td>order_in_id</td>
+        <td>wms_order_in</td>
+        <td>order_in_id</td>
+        <td>fk_wms_order_in_dtl_wms_order_in</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_in_dtl</td>
+        <td>owner_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_in_dtl_owner_comp</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_out</td>
+        <td>carrier_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_out_carrier_comp</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_out</td>
+        <td>customer_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_out_customer_comp</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_out</td>
+        <td>fac_door_id</td>
+        <td>wms_fac_door</td>
+        <td>fac_door_id</td>
+        <td>fk_wms_order_out_wms_fac_door</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_out</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_order_out_wms_facility</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_out</td>
+        <td>owner_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_out_owner_comp</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_out</td>
+        <td>stage_loc_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_order_out_wms_fac_location</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_out</td>
+        <td>wave_id</td>
+        <td>wms_wave</td>
+        <td>wave_id</td>
+        <td>fk_wms_order_out_wave_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_out</td>
+        <td>xfer_facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_order_out_wms_x_facility</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_out_dtl</td>
+        <td>customer_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_out_dtl_customer_comp</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_out_dtl</td>
+        <td>item_inv_id</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_order_out_dtl_wms_inv_item</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_out_dtl</td>
+        <td>order_out_id</td>
+        <td>wms_order_out</td>
+        <td>order_out_id</td>
+        <td>fk_wms_order_out_dtl_wms_order_out</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_out_dtl</td>
+        <td>owner_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_out_dtl_owner_comp</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_out_dtl</td>
+        <td>sub_item_inv_id_1</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_order_out_dtl_sub_inv_item1</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_out_dtl</td>
+        <td>sub_item_inv_id_2</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_order_out_dtl_sub_inv_item2</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_out_dtl</td>
+        <td>sub_item_inv_id_3</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_order_out_dtl_sub_inv_item3</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_wrk</td>
+        <td>customer_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_wrk_customer_comp_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_wrk</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_order_wrk_wms_facility</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_wrk</td>
+        <td>order_wrk_id</td>
+        <td>wms_order</td>
+        <td>order_id</td>
+        <td>fk_wms_order_wrk_order_wrk_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_wrk</td>
+        <td>owner_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_wrk_owner_comp</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_wrk_dtl</td>
+        <td>customer_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_wrk_dtl_customer_comp</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_wrk_dtl</td>
+        <td>item_inv_id</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_order_wrk_dtl_wms_inv_item</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_wrk_dtl</td>
+        <td>order_wrk_id</td>
+        <td>wms_order_wrk</td>
+        <td>order_wrk_id</td>
+        <td>fk_wms_order_wrk_dtl_wms_order_wrk</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_wrk_dtl</td>
+        <td>owner_comp_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_order_wrk_dtl_owner_comp_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_wrk_dtl</td>
+        <td>sub_item_inv_id_1</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_order_wrk_dtl_sub_item_inv_id_1</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_wrk_dtl</td>
+        <td>sub_item_inv_id_2</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_order_wrk_dtl_sub_item_inv_id_2</td>
+      </tr>
+      <tr class="even">
+        <td>wms_order_wrk_dtl</td>
+        <td>sub_item_inv_id_3</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_order_wrk_dtl_sub_item_inv_id_3</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_order_wrk_dtl</td>
+        <td>wrk_dtl_id</td>
+        <td>wms_order_detail</td>
+        <td>order_detail_id</td>
+        <td>fk_wms_order_wrk_dtl_wrk_dtl_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_receipt</td>
+        <td>carrier_company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_receipt_carrier_company_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_receipt</td>
+        <td>fac_door_id</td>
+        <td>wms_fac_door</td>
+        <td>fac_door_id</td>
+        <td>fk_wms_receipt_fac_door_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_receipt</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_receipt_facility_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_receipt</td>
+        <td>order_in_id</td>
+        <td>wms_order_in</td>
+        <td>order_in_id</td>
+        <td>fk_wms_receipt_order_in_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_receipt</td>
+        <td>vendor_company_id</td>
+        <td>company</td>
+        <td>company_id</td>
+        <td>fk_wms_receipt_vendor_company_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_receipt_dtl</td>
+        <td>item_inv_id</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_receipt_dtl_item_inv_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_receipt_dtl</td>
+        <td>order_in_dtl_id</td>
+        <td>wms_order_in_dtl</td>
+        <td>order_in_dtl_id</td>
+        <td>fk_wms_receipt_dtl_order_in_dtl_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_receipt_dtl</td>
+        <td>receipt_id</td>
+        <td>wms_receipt</td>
+        <td>receipt_id</td>
+        <td>fk_wms_receipt_dtl_receipt_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_receipt_dtl</td>
+        <td>subs_item_inv_id</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_receipt_dtl_subs_item_inv_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_rule_dtl_put</td>
+        <td>rule_hdr_id</td>
+        <td>wms_rule_hdr</td>
+        <td>rule_hdr_id</td>
+        <td>fk_wms_rule_dtl_put_wms_rule_hdr</td>
+      </tr>
+      <tr class="even">
+        <td>wms_rule_dtl_put</td>
+        <td>section_area_id</td>
+        <td>wms_fac_area</td>
+        <td>fac_area_id</td>
+        <td>fk_wms_rule_dtl_put_wms_fac_area</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_rule_dtl_put</td>
+        <td>zone_area_id</td>
+        <td>wms_fac_area</td>
+        <td>fac_area_id</td>
+        <td>fk_wms_rule_dtl_put_zone_area_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_rule_hdr</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_rule_hdr_facility_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_rule_hdr</td>
+        <td>twilight_zone</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_rule_hdr_twilight_zone</td>
+      </tr>
+      <tr class="even">
+        <td>wms_task</td>
+        <td>assgn_user_id</td>
+        <td>users</td>
+        <td>user_id</td>
+        <td>fk_wms_task_assgn_user_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_task</td>
+        <td>fac_area_id</td>
+        <td>wms_fac_area</td>
+        <td>fac_area_id</td>
+        <td>fk_wms_task_fac_area_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_task</td>
+        <td>fac_loc_id</td>
+        <td>wms_fac_location</td>
+        <td>fac_location_id</td>
+        <td>fk_wms_task_fac_loc_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_task</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_task_facility_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_task</td>
+        <td>item_inv_id</td>
+        <td>wms_item_inv</td>
+        <td>item_inv_id</td>
+        <td>fk_wms_task_item_inv_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_task</td>
+        <td>lic_plate_id</td>
+        <td>wms_lic_plate</td>
+        <td>lic_plate_id</td>
+        <td>fk_wms_task_lic_plate_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_task</td>
+        <td>receipt_dtl_id</td>
+        <td>wms_receipt_dtl</td>
+        <td>receipt_dtl_id</td>
+        <td>fk_wms_task_receipt_dtl_id</td>
+      </tr>
+      <tr class="odd">
+        <td>wms_uom</td>
+        <td>facility_id</td>
+        <td>wms_facility</td>
+        <td>facility_id</td>
+        <td>fk_wms_uom_facility_id</td>
+      </tr>
+      <tr class="even">
+        <td>wms_uom</td>
+        <td>item_master_id</td>
+        <td>item_master</td>
+        <td>item_master_id</td>
+        <td>fk_wms_uom_item_master_id</td>
+      </tr>
+    </table>
+    <p><i>[ Generated by: DbVisualizer Free 7.0.5 - <a href="http://www.dbvis.com">http://www.dbvis.com</a> ]</i></p>
+    <hr>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<section fxLayout="column" fxLayoutAlign="start center">
+  <app-loading [loading]="loading"></app-loading>
+  <div fxFlex>
+    @if(!router.url.endsWith('/home')) {
+    <img src="assets/imgs/click-to-home.png" alt="" style="height: 2em;">
+    }
+    <img src="assets/imgs/prove-it.png" (click)="gohome()" style="cursor: pointer; height: 2em;" alt="">
+    <!--
+    <i class="fa-solid fa-house-chimney fa-xl"></i>
+    -->
+  </div>
+  <div fxFlex fxLayout fxFlexFill>
+    <hr fxFlex="100">
+  </div>
+  <!-- end of header for /sell** -->
+
+  <div fxFlex fxLayout fxFlexFill fxLayoutAlign="start start">
+    <div fxFlex="auto"></div>
+    <div fxFlex="60" fxLayout="column">
+      <h1>
+        Start your listing
+      </h1>
+      <form fxFlex="auto" [formGroup]="formGroup" fxLayout fxLayoutAlign="start center" fxLayoutGap="0.5em">
+
+        <input fxFlex="auto" type="text" matInput appearance="outline" formControlName="title"
+          (keyup.enter)="onSubmit()">
+
+        <button mat-raised-button color="primary" (click)="onSubmit()">
+          <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+        </button>
+
+      </form>
+      <div>
+        <div style="font-size: large; font-weight: bold;">Can you be more specific?</div>
+        <div>Extra details will optimize your listing</div>
+        <div>auto complete (TODO) 111</div>
+        <div>auto complete (TODO) 222</div>
+        <div>auto complete (TODO) 333</div>
+        <div style="font-size: large; font-weight: bold;">We've run out of suggestions</div>
+        <div>Click <a href="" (click)="onSubmit(); false;"><i class="fa-solid fa-magnifying-glass fa-sm"></i></a> to
+          view possible matches
+        </div>
+      </div>
+    </div>
+    <div fxFlex="auto"></div>
+  </div>
+
+</section>

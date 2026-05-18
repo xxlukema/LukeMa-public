@@ -1,0 +1,58 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/dist
+/bin
+/target
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+**/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+.ncurc.json
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/
+.history/*
+
+# Miscellaneous
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+.ncurc.json
+*.txt
+tmp.*
+/cypress/reports
+/cypress/videos
+/cypress/screenshots
+
+# Angular
+.anular
+yarn-error.log
+.ncurc.json
+**/package-lock.json
+**/environment.prod.ts
+node_modules
+
+
+# System files
+.DS_Store
+Thumbs.db
+pom2.xml
+build

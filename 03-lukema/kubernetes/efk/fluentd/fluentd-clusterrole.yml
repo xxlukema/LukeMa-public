@@ -1,0 +1,16 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: fluentd-clusterrole
+  # "namespace" omitted since ClusterRoles are not namespaced. On the contrary, Roles are namespaced
+  labels:
+    app: fluentd-clusterrole
+rules:
+  - apiGroups: [""]
+    resources:
+      - pods
+      - namespaces
+    verbs:
+      - get
+      - list
+      - watch

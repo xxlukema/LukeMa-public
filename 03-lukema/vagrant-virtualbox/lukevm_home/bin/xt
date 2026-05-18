@@ -1,0 +1,5 @@
+
+
+/usr/X11R6/bin/xterm -title localhost -fg Yellow -bg Black -cr Pink -fn 10x20 -sl 2000 -sb -geometry 80X31 -display $DISPLAY -e /usr/bin/bash &
+
+

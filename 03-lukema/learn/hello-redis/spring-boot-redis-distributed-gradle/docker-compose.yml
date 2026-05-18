@@ -1,0 +1,82 @@
+version: "3.3"
+
+services:
+  postgres:
+    container_name: sbs_postgres
+    image: "postgres:13.3"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: spring_boot_simple
+    ports:
+      - 5433:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - spring-boot-simple
+    command: ["postgres", "-c", "log_statement=all", "-c", "log_destination=stderr"]
+  redis:
+    container_name: sbs_redis
+    image: redis:6.2.3
+    ports:
+      - 6380:6379
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+    networks:
+      - spring-boot-simple
+
+  app:
+    container_name: spring_boot_simple_persistence
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    networks:
+      - spring-boot-simple
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+
+  prometheus:
+    container_name: sbs_prometheus
+    image: prom/prometheus:v2.27.1
+    ports:
+      - 9090:9090
+    networks:
+      - spring-boot-simple
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9090" ]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    container_name: sbs_grafana
+    image: grafana/grafana:7.5.7
+    ports:
+      - 3000:3000
+    networks:
+      - spring-boot-simple
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:3030" ]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+
+networks:
+  spring-boot-simple:

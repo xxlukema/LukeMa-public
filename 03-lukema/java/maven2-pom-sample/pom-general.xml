@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.learn</groupId>
+
+   <artifactId>learn-maven</artifactId>
+
+   <packaging>war</packaging>
+
+   <version>1.0</version>
+
+   <name>Maven Webapp Archetype</name>
+
+   <url>http://maven.apache.org</url>
+
+   <properties>
+      <jboss_deploy.dir>${env.JBOSS_HOME}/server/apptricityerm50/deploy</jboss_deploy.dir>
+
+      <maven.build.timestamp.format>MM/dd/yyyy HH:mm</maven.build.timestamp.format>
+   </properties>
+
+   <dependencies>
+      <dependency>
+         <groupId>javax.sql</groupId>
+
+         <artifactId>jdbc-stdext</artifactId>
+
+         <version>2.0</version>
+
+         <scope>system</scope>
+
+         <systemPath>${java.home}/lib/rt.jar</systemPath>
+      </dependency>
+
+      <dependency>
+         <groupId>sun.jdk</groupId>
+
+         <artifactId>tools</artifactId>
+
+         <version>1.5.0</version>
+
+         <scope>system</scope>
+
+         <systemPath>${java.home}/../lib/tools.jar</systemPath>
+      </dependency>
+
+      <dependency>
+         <groupId>junit</groupId>
+
+         <artifactId>junit</artifactId>
+
+         <version>3.8.1</version>
+
+         <scope>test</scope>
+      </dependency>
+   </dependencies>
+
+   <distributionManagement>
+      <repository>
+         <id>my-repo</id>
+
+         <name>My Repository Name</name>
+
+         <url>/my-temp</url>
+      </repository>
+   </distributionManagement>
+
+   <build>
+      <finalName>WS-JAXM</finalName>
+
+      <plugins>
+         <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+
+            <configuration>
+               <source>1.5</source>
+
+               <target>1.5</target>
+
+               <excludes>
+                  <exclude>**/*Point*.java</exclude>
+               </excludes>
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+
+            <artifactId>maven-war-plugin</artifactId>
+
+            <configuration>
+               <outputDirectory>${webapps.dir}</outputDirectory>
+            </configuration>
+
+            <executions>
+               <execution>
+                  <id>generate-sources</id>
+
+                  <phase>compile</phase>
+
+                  <goals>
+                     <goal>war</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+</project>
+

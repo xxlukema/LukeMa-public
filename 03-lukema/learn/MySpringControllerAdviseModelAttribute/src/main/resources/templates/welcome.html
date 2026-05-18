@@ -1,0 +1,31 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Luke Ma Properties</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" th:href="@{/css/main.css}" />
+
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="starter-template">
+			<h1>Spring Boot Web Thymeleaf Example</h1>
+
+			<h2>
+				<span th:text="${message}?:_">There is no such message in the model.</span>
+			</h2>
+
+			<h2>
+				<span th:text="'Advice Message: ' + ${advice_msg}">There is no such message in the advise.</span>
+			</h2>
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+</body>
+</html>

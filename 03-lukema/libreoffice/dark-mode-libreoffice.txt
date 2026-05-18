@@ -1,0 +1,7 @@
+
+1/3. Tools -> Options -> General -> Theme: Breeze (dark)
+ 
+2/3. Tools -> Options -> Application Colors -> Color Scheme: LibreOffice Dark
+ 
+3/3. Tools -> Options -> Application Colors -> Custom Colors: Document background: Black (Default: Black 4)
+

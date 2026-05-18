@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+   <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="file.other" class="org.apache.log4j.DailyRollingFileAppender">
+      <param name="File" value="./logs/common.log" />
+      <param name="Append" value="false" />
+      <param name="BufferedIO" value="true"/>
+      <param name="DatePattern" value="-yyyy-MM-dd-HH"/>
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="file.sfta" class="org.apache.log4j.DailyRollingFileAppender">
+      <param name="File" value="./logs/sfta.log" />
+      <param name="Append" value="false" />
+      <param name="BufferedIO" value="true"/>
+      <param name="DatePattern" value="-yyyy-MM-dd-HH"/>
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="file.rds" class="org.apache.log4j.DailyRollingFileAppender">
+      <param name="File" value="./logs/rds.log" />
+      <param name="Append" value="false" />
+      <param name="BufferedIO" value="true"/>
+      <param name="DatePattern" value="-yyyy-MM-dd-HH"/>
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="file.ruleservices" class="org.apache.log4j.DailyRollingFileAppender">
+      <param name="File" value="./logs/ruleservices.log" />
+      <param name="Append" value="false" />
+      <param name="BufferedIO" value="true"/>
+      <param name="DatePattern" value="-yyyy-MM-dd-HH"/>
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="file.sfva" class="org.apache.log4j.DailyRollingFileAppender">
+      <param name="File" value="./logs/sfva.log" />
+      <param name="Append" value="false" />
+      <param name="BufferedIO" value="true"/>
+      <param name="DatePattern" value="-yyyy-MM-dd-HH"/>
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+<!-- Buffer events and log them asynchronously -->
+<!-- If an appender-ref is not in this AsyncAppender list, it will be logged synchronously. -->
+   <appender name="ASYNC" class="org.apache.log4j.AsyncAppender">
+      <appender-ref ref="CONSOLE" />
+      <appender-ref ref="file.other" />
+      <appender-ref ref="file.sfta" />
+      <appender-ref ref="file.rds" />
+      <appender-ref ref="file.ruleservices" />
+      <appender-ref ref="file.sfva" />
+   </appender>
+
+   <logger name="com.freddiemac.msof.fire.common" additivity="false">
+      <level value="error" />
+      <appender-ref ref="file.other" />
+   </logger>
+    
+   <logger name="com.freddiemac.msof.fire.vae" additivity="false">
+      <level value="error" />
+      <appender-ref ref="file.other" />
+   </logger>
+
+   <logger name="com.freddiemac.msof.fire.sfta" additivity="false">
+      <level value="error" />
+      <appender-ref ref="file.sfta" />
+      <appender-ref ref="CONSOLE" />
+   </logger>
+
+   <logger name="com.freddiemac.msof.fire.rds" additivity="false">
+      <level value="error" />
+      <appender-ref ref="file.rds" />
+   </logger>
+
+   <logger name="com.freddiemac.msof.fire.sfva" additivity="false">
+      <level value="error" />
+      <appender-ref ref="file.sfva" />
+   </logger>
+
+   <logger name="rule-coreengine" additivity="false">
+      <level value="error" />
+      <appender-ref ref="file.ruleservices" />
+   </logger>
+
+   <logger name="org.hibernate" additivity="false">
+      <level value="error" />
+      <appender-ref ref="file.other" />
+   </logger>
+
+   <logger name="STDOUT" additivity="false">
+      <level value="INFO" />
+      <appender-ref ref="CONSOLE" />
+      <appender-ref ref="file.other" />
+   </logger>
+
+   <logger name="STDERR" additivity="false">
+      <level value="INFO" />
+      <appender-ref ref="CONSOLE" />
+      <appender-ref ref="file.other" />
+   </logger>
+
+   <!-- ############## Begin ############## -->
+   <logger name="com.freddiemac.msof.fire.sfta.process.report.recon" additivity="false">
+      <level value="debug" />
+      <appender-ref ref="CONSOLE" />
+      <appender-ref ref="file.sfta" />
+   </logger>
+   
+   <logger name="com.freddiemac.msof.fire.common.admin.ui.action" additivity="false">
+      <level value="debug" />
+      <appender-ref ref="CONSOLE" />
+      <appender-ref ref="file.sfta" />
+   </logger>
+   
+   
+   
+   <!-- ############## End ############## -->
+
+   <root>
+      <priority value="error" />
+      <appender-ref ref="ASYNC" />
+   </root>
+</log4j:configuration>

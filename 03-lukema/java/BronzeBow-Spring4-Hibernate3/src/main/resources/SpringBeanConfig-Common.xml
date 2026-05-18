@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+<!--                             -->
+<!--       My Common Setup       -->
+<!--                             -->
+   <bean id="commonDAO" parent="baseProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.persistence.dao.CommonDAO</value>
+      </property>
+
+      <property name="target">
+         <ref bean="commonDAOTarget" />
+      </property>
+   </bean>
+
+   <bean id="commonDAOTarget" class="com.learn.persistence.dao.impl.CommonDAOImpl">
+      <property name="sessionFactory">
+         <ref bean="sessionFactory" />
+      </property>
+   </bean>
+   
+<!--                             -->
+<!--     Spring Common Setup     -->
+<!--                             -->
+   <bean id="baseProxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+      <property name="interceptorNames">
+         <list>
+            <value>hibernateInterceptor</value>
+         </list>
+      </property>
+   </bean>
+
+   <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+      <property name="sessionFactory">
+         <ref bean="sessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="hibernateInterceptor" class="org.springframework.orm.hibernate3.HibernateInterceptor">
+      <property name="sessionFactory">
+         <ref bean="sessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+      <property name="dataSource">
+         <ref bean="dataSource" />
+      </property>
+      
+      <property name="configLocation">
+         <value>classpath:hibernate.cfg.xml</value>
+      </property>
+   </bean>
+ 
+<!-- dataSource to be used for StoredProcedureDAO -->
+   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+<!-- 
+      <property name="driverClassName">
+         <value>oracle.jdbc.driver.OracleDriver</value>
+      </property>
+       
+      <property name="url">
+         <value>jdbc:oracle:thin:@localhost:1521:</value>
+      </property>
+
+      <property name="username">
+         <value>luke</value>
+      </property>
+
+      <property name="password">
+         <value>luke</value>
+      </property>
+ -->      
+      <property name="driverClassName">
+         <value>com.mysql.jdbc.Driver</value>
+      </property>
+       
+      <property name="url">
+         <value>jdbc:mysql://localhost:3306/test</value>
+      </property>
+      
+      <property name="username">
+         <value>root</value>
+      </property>
+
+      <property name="password">
+         <value></value>
+      </property>       
+   </bean>      
+
+</beans>
+

@@ -1,0 +1,11 @@
+#map {
+  min-height: 75vh;
+  width: 100%;
+}
+
+/** For the tranparent angle protractor */
+img {
+  position: absolute;
+  top: 20em;
+  z-index: 1000;
+}

@@ -1,0 +1,65 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.learn</groupId>
+
+   <artifactId>EJB3JBoss-packaging</artifactId>
+
+   <name>${artifactId}</name>
+
+   <version>1.0</version>
+
+   <packaging>ear</packaging>
+
+   <parent>
+      <groupId>com.learn</groupId>
+
+      <artifactId>EJB3JBoss-Association</artifactId>
+
+      <version>1.0</version>
+   </parent>
+
+   <properties>
+      <jboss_deploy.dir>${env.JBOSS_HOME}/server/default/deploy</jboss_deploy.dir>
+   </properties>
+
+   <dependencies>
+      <dependency>
+         <groupId>com.learn</groupId>
+
+         <artifactId>EJB3JBoss-ejbs</artifactId>
+
+         <version>1.0</version>
+
+         <type>ejb</type>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <finalName>${artifactId}</finalName>
+
+      <plugins>
+         <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+
+            <configuration>
+               <archive>
+                  <addMavenDescriptor>false</addMavenDescriptor>
+               </archive>
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <artifactId>maven-ear-plugin</artifactId>
+
+            <configuration>
+               <archive>
+                  <addMavenDescriptor>false</addMavenDescriptor>
+               </archive>
+
+               <outputDirectory>${jboss_deploy.dir}</outputDirectory>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+</project>

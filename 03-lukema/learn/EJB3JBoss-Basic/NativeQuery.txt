@@ -1,0 +1,2 @@
+
+You cannot use named parameters in native queries. Named parameters are supported only for JPQL queries.

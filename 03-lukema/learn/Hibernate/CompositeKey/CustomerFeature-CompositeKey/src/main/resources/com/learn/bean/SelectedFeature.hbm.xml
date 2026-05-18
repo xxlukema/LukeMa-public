@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.learn.bean">
+   <class name="SelectedFeature" lazy="false">
+      <composite-id name="selectedFeatureCompositeKey" class="SelectedFeatureCompositeKey">
+         <key-many-to-one name="customer" class="Customer" />
+
+         <key-many-to-one name="feature" class="Feature" />
+      </composite-id>
+
+      <version name="version" unsaved-value="negative" />
+   </class>
+</hibernate-mapping>
+

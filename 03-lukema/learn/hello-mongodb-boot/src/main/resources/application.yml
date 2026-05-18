@@ -1,0 +1,47 @@
+server:
+  servlet:
+    context-path: /hello-mongodb-boot
+spring:
+  application:
+    name: hello-mongodb-boot
+  data:
+    jpa:
+      repositories:
+        enabled: true
+    mongodb:
+      # !!! Trick !!!
+      # If uri is provided, uri will take presendence or other properties
+      host: localhost
+      port: 27017
+      # (correct with warn! do not use uri, becuase jaspyt does not work.) uri: mongodb://<username>:<password>@<host>:<port>/<database>
+      # (correct with warn! do not use uri, becuase jaspyt does not work.) uri: mongodb://luke:luke@localhost:27017/?authSource=lukedb
+      # (correct with warn! do not use uri, becuase jaspyt does not work.) uri: mongodb://luke:luke@localhost:27017/lukedb
+      # (wrong. jasypt does not work here) uri: mongodb://ENC(zjpIoh+5DcY+QGRUOxINeA==):ENC(DIM8/d6v+5pS57wfdRfgaA==)@localhost:27017/lukedb (because `jasypt` does not work this way.)
+      database: lukedb
+      # username: luke
+      # password: luke
+      username: ENC(zjpIoh+5DcY+QGRUOxINeA==)
+      password: ENC(DIM8/d6v+5pS57wfdRfgaA==)
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    # username: luke
+    # password: luke
+    username: ENC(//0WoVkmWvulnznZxey00g==)
+    password: ENC(szibjzsbUyD242hgIAl8Xw==)
+  jpa:
+    open-in-view: false
+    generate-ddl: true
+    hibernate.ddl-auto: none
+    show-sql: false
+  jta:
+    enabled: true
+jasypt:
+  encryptor:
+    password: ${JASYPT_ENCRYPTOR_PASSWORD:}
+    algorithm: ${JASYPT_ENCRYPTOR_ALGORITHM:}
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+springdoc:
+  api-docs:
+    enabled: true

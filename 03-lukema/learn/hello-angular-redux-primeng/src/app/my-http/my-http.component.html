@@ -1,0 +1,60 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align: center;">
+
+    <!-- GET -->
+    <div class="div-group">
+        <div>
+            GET URL: {{getUrl}}
+        </div>
+        <textarea rows="4" cols="50">{{getResult}}</textarea>
+        <div>
+            <button (click)="doGetTypedPromise()">Get Text</button>
+        </div>
+    </div>
+
+    <!-- POST -->
+    <div class="div-group">
+        <div>
+            POST URL: {{postUrl}}
+        </div>
+        <div>
+            <textarea rows="4" cols="50">{{postInput}}</textarea>
+        </div>
+        <div style="margin: 10px;"></div>
+        <div>
+            <textarea rows="4" cols="50">{{postResult}}</textarea>
+        </div>
+        <div>
+            <button (click)="doPost()">Post Data</button>
+        </div>
+    </div>
+
+    <div class="div-group">
+        <div>
+            Streaming GET URL: {{lukeStreamingGetUrl}}
+        </div>
+        <textarea rows="4" cols="50">{{lukeStreaming}}</textarea>
+        <div>
+            <button (click)="doGetLukeStreaming()">Get Luke Streaming</button>
+        </div>
+    </div>
+
+    <!-- Completed Message -->
+    <div class="div-group">
+        <div>
+            <textarea rows="2" cols="50">{{completeMsg}}</textarea>
+        </div>
+        <div style="margin: 10px;"></div>
+        <div>
+            <textarea rows="2" cols="50">{{errorMsg}}</textarea>
+        </div>
+    </div>
+
+    <!-- Clear All -->
+    <div class="div-group">
+        <div>
+            <button (click)="clearAll()">Clear All</button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-SpringBootRedisHazelcastApplication<spring-boot-cache-redis-hazelcast>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.learn.eshop.SpringBootRedisHazelcastApplication",
+      "projectName": "spring-boot-cache-redis-hazelcast",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

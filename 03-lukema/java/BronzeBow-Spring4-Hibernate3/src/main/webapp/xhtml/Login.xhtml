@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/layout/Layout.xhtml">
+	<ui:define name="title">Login Page</ui:define>
+
+	<ui:define name="center">
+		<h3>Login Page</h3>
+		<f:view>
+			<h:form id="loginForm">
+				<h:panelGrid columns="1" style="margin-left: 10px;">
+					<h:panelGroup>
+						<h:panelGrid columns="2" styleClass="wgrid">
+							<f:facet name="header">
+								<h:outputText value="Existing User Login" />
+							</f:facet>
+
+							<h:outputLabel for="username" value="Username or Email Address"
+								styleClass="bold" />
+
+							<h:inputText id="username" name="username"
+								value="#{userLoginController.user.username}" size="20" required="true"
+								styleClass="required">
+								<f:validator validatorId="usernameValidator" />
+							</h:inputText>
+
+							<h:outputLabel for="password" value="Password" styleClass="bold" />
+
+							<h:inputSecret id="password" name="Password"
+								value="#{userLoginController.user.password}" size="20" required="true"
+								styleClass="required">
+								<f:validator validatorId="passwordValidator" />
+							</h:inputSecret>
+
+							<h:outputLabel for="autoLogin" value="Auto Login"
+								styleClass="bold" />
+
+							<h:selectBooleanCheckbox title="autoLogin"
+								value="#{userLoginController.autoLogin}">
+							</h:selectBooleanCheckbox>
+						</h:panelGrid>
+						<h:panelGrid columns="1" styleClass="nogrid">
+							<h:outputText value="#{userLoginController.errorMessage}" styleClass="warning" />
+
+							<h:message for="username" styleClass="warning" />
+							<h:message for="password" styleClass="warning" />
+
+							<h:commandButton value="Submit" action="#{userLoginController.doLogin}" />
+						</h:panelGrid>
+					</h:panelGroup>
+					<h:panelGroup styleClass="bold">
+						<div class="height2em"></div>
+						<div>
+							<h:outputLabel for="resetPassword"
+								value="If you forgot username or password, " styleClass="bold">
+							</h:outputLabel>
+							<h:commandLink id="resetPassword" immediate="true"
+								action="#{userLoginController.toResetPassword}"
+								value="Click Here">
+							</h:commandLink>
+						</div>
+					</h:panelGroup>
+					<h:panelGroup>
+						<div class="height2em"></div>
+						<h:commandButton immediate="true" value="New User: Create Account"
+							action="#{userLoginController.toUserRegister}">
+						</h:commandButton>
+						<div class="height2em"></div>
+					</h:panelGroup>
+				</h:panelGrid>
+			</h:form>
+		</f:view>
+	</ui:define>
+</ui:composition>
+
+</html>
+

@@ -1,0 +1,43 @@
+<section class="mask-validate">
+
+  <h3>v-mask</h3>
+  Phone: <input type="text" v-mask="'(###) ###-####'" v-model="phone" v-validate="{ required: true, length: 14 }" name="phone"> {{phone}}
+  <div>{{ errors.first('phone') }}</div>
+  <br>
+
+  <h3>v-validate</h3>
+  <p>For v-validate, all you need is to add the v-validate directive to the input you wish to validate and make sure
+    your input has a 'name' attribute for error messages generation.</p>
+
+  regex: <input v-validate="{ required: true, min: 2, max: 10, regex: /^([0-9]+)$/ }" name="regex" placeholder="Numbers only">
+  <div>{{ errors.first('regex') }}</div>
+  <br>
+  Email: <input v-validate="'required|email'" name="email" type="text" placeholder="email">
+  <div>{{ errors.first('email') }}</div>
+  <br>
+  text1: <input v-validate="{ required: true, min: 6 }" type="text" name="text1" placeholder="text1">
+  <div>{{ errors.first('text1') }}</div>
+  <br>
+  between:09/10/2016,09/20/2016: <input v-validate="'date_format:MM/dd/yyyy|date_between:09/10/2016,09/20/2016'" name="date_between_field"
+    type="text" placeholder="between:10/09/2016,20/09/2016" size="40">
+  <div>{{ errors.first('date_between_field') }}</div>
+  <br>
+  <span class="select">
+    <select v-validate="'excluded:1,2,3'" name="not_in_field" data-vv-as="selected">
+      <option value="1">One - Invalid</option>
+      <option value="2">Two - Invalid</option>
+      <option value="3">Three - Invalid</option>
+      <option value="4">Four - Valid</option>
+    </select>
+  </span>
+
+  <div>{{ errors.first('not_in_field') }}</div>
+  <br>
+
+
+  <br>
+  <ul>
+    <li v-for="error in errors.all()">{{ error }}</li>
+  </ul>
+
+</section>

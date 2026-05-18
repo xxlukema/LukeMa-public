@@ -1,0 +1,9 @@
+As for the code, you are close but not quite there, I put in a few comments
+
+As for the automation policy, you are missing a lot of actions that can be forwarded.
+The KMS ones are right, but there are more event policies other than the KMS,
+you need to find the non-forwarded counterpart of these events and add them to the automation policy
+
+Along with that, the policy needs to be Systems and also need to includes other devices. like the JH managers since events can be from there
+
+Also includes systems (there is a checkbox that said includes events from other organizations/events/etc if i remember correctly)

@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>@ControllerAdvice Demo</title>
+</head>
+<body>
+	<h1>Success Page</h1>
+	<h3>
+		<span th:text="${message}?:_">If you see this text, <span style="background-color:yellow">you are NOT navigated from create user page.</span></span>
+	</h3>
+</body>
+</html>

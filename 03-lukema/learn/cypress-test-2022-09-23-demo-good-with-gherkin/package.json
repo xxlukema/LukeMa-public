@@ -1,0 +1,51 @@
+{
+  "name": "activedash-ws",
+  "version": "2.11.2",
+  "license": "MIT",
+  "scripts": {
+    "e2e": "ng e2e",
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --configuration=production",
+    "prebuild": "npm run updateBuild",
+    "preupdateBuild": "npm run preupdateBuildCommon && npm run preupdateBuild5g && npm run preupdateBuildNms",
+    "preupdateBuildCommon": "cp projects/common/src/environments/environment.ts projects/common/src/environments/environment.prod.ts",
+    "preupdateBuild5g": "cp projects/5g/src/environments/environment.ts projects/5g/src/environments/environment.prod.ts",
+    "preupdateBuildNms": "cp projects/nms/src/environments/environment.ts projects/nms/src/environments/environment.prod.ts",
+    "updateBuild": "node ./replace.build.js",
+    "xpostinstall": "ngcc",
+    "lint": "npx eslint .",
+    "lint_fix": "npx eslint . --fix",
+    "it": "npx cypress open",
+    "test1": "rm -rf cypress/reports && npx cypress run --spec cypress/integration/5g/reports/generate-reports.feature",
+    "test": "npx cypress run & npm run xposttest",
+    "xposttest": "node cypress/cucumber-html-report.ts",
+    "test:all": "npx cypress run & npm run xposttest"
+  },
+  "private": true,
+  "devDependencies": {
+    "cypress": "^10.5.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "eslint": "^8.23.1",
+    "multiple-cucumber-html-reporter": "^2.0.0",
+    "replace-in-file": "^6.3.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "browser": {
+    "child_process": false
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "bundleDependencies": [
+    "@nms/common",
+    "@nms/core"
+  ]
+}

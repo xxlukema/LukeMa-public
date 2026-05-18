@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+<!-- Common Beans Start Here: -->
+   <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+      <property name="configLocations">
+         <list>
+            <value>classpath*:hibernate.cfg.xml</value>
+         </list>
+      </property>
+
+      <property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration" />
+   </bean>
+
+   <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager ">
+      <property name="sessionFactory" ref="sessionFactory" />
+   </bean>
+
+   <bean id="baseTransactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+      <property name="transactionManager" ref="transactionManager" />
+
+      <property name="transactionAttributeSource">
+         <bean class="org.springframework.transaction.annotation.AnnotationTransactionAttributeSource" />
+      </property>
+   </bean>
+
+   <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
+
+   <tx:advice id="txAdvice" transaction-manager="transactionManager">
+      <tx:attributes>
+         <tx:method name="get*" read-only="true" />
+
+         <tx:method name="*" read-only="false" rollback-for="RuntimeException" />
+      </tx:attributes>
+   </tx:advice>
+
+<!-- Common Beans End Here. -->
+<!-- ====================== -->
+<!-- User Beans Start Here: -->
+   <bean id="customerDAOTarget" class="com.learn.hibernate.dao.CustomerDAOHibernateImpl">
+      <property name="sessionFactory">
+         <ref bean="sessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="customerDAO" parent="baseTransactionProxy">
+      <property name="proxyInterfaces">
+         <value>com.learn.hibernate.dao.CustomerDAO</value>
+      </property>
+
+      <property name="target">
+         <ref bean="customerDAOTarget" />
+      </property>
+   </bean>
+
+   <bean id="portfolioDAOTarget" class="com.learn.hibernate.dao.PortfolioDAOHibernateImpl">
+      <property name="sessionFactory">
+         <ref bean="sessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="portfolioDAO" parent="baseTransactionProxy">
+      <property name="proxyInterfaces">
+         <value>com.learn.hibernate.dao.PortfolioDAO</value>
+      </property>
+
+      <property name="target">
+         <ref bean="portfolioDAOTarget" />
+      </property>
+   </bean>
+
+   <bean id="portfolioItemDAOTarget" class="com.learn.hibernate.dao.PortfolioItemDAOHibernateImpl">
+      <property name="sessionFactory">
+         <ref bean="sessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="portfolioItemDAO" parent="baseTransactionProxy">
+      <property name="proxyInterfaces">
+         <value>com.learn.hibernate.dao.PortfolioItemDAO</value>
+      </property>
+
+      <property name="target">
+         <ref bean="portfolioItemDAOTarget" />
+      </property>
+   </bean>
+
+   <aop:config>
+      <aop:pointcut id="myHibernateOperation" expression="execution(* com.learn.hibernate.*(..))" />
+
+      <aop:advisor advice-ref="txAdvice" pointcut-ref="myHibernateOperation" />
+   </aop:config>
+
+<!-- User Beans End Here. -->
+</beans>

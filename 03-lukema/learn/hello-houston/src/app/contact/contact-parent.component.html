@@ -1,0 +1,21 @@
+<div class="app-contract-parent">
+
+    <h3>Contact-Parent</h3>
+
+    <div>
+        Parent Input:
+        <input type="text" style="color: yellow; background-color: red;" size=40 [(ngModel)]="parentInputValue"
+            placeholder="For @Input of child 1" />
+        <p>Child 1 text:
+            <span style="background-color: yellow;">{{child1TextValue}}</span>
+        </p>
+    </div>
+
+    <app-contact-child1 (child1TextChanged)="myChild1TextValue=$event;myChild1TextValueChanged($event);" [parentKeyStrikesValue]="parentInputValue">
+    </app-contact-child1>
+
+    <div style="margin-top: 10px;"></div>
+
+    <app-contact-child2 [child1TextValue]="myChild1TextValue"></app-contact-child2>
+
+</div>

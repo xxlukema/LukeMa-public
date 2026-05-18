@@ -1,0 +1,35 @@
+{
+  "name": "hello-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "codegen": "npx playwright codegen",
+    "install:browsers": "npx playwright install",
+    "lint": "npx eslint /tests --ext .ts",
+    "lint:fix": "npx eslint /tests --ext .ts --fix",
+    "test1": "npx playwright test tests/example1.spec.ts",
+    "test1h": "npx playwright test tests/example1.spec.ts --headed",
+    "test1u": "npx playwright test tests/example1.spec.ts --ui",
+    "test173": "npx playwright test -g \"API Auth ID Tests\"",
+    "test173h": "npx playwright test -g \"API Auth ID Tests\" --headed",
+    "test173u": "npx playwright test -g \"API Auth ID Tests\" --ui",
+    "report": "npx playwright show-report",
+    "list": "npx playwright test --list"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.9",
+    "allure-playwright": "^3.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}

@@ -1,0 +1,37 @@
+<section>
+  <form [formGroup]="formGroup" class="flex flex-col gap-8">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input type="text" matInput formControlName="username" name="username" placeholder="Ex. pat@example.com"
+        [readonly]="submitting" (input)="change()" (keyup.enter)="onSubmit()">
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="formGroup.hasError('username') && !formGroup.hasError('required')">
+        Please enter a valid Username
+      </mat-error>
+      <mat-error *ngIf="formGroup.hasError('required')">
+        Username is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field fxFlex>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" name="password" placeholder="" [readonly]="submitting"
+        (input)="change()" (keyup.enter)="onSubmit()">
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="formGroup.hasError('password') && !formGroup.hasError('required')">
+        Please enter a valid Password
+      </mat-error>
+      <mat-error *ngIf="formGroup.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+
+  </form>
+  <div class="flex flex-col gap-4">
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="submitting">Login</button>
+    <button mat-raised-button color="warn" (click)="onReset()" [disabled]="submitting">Reset</button>
+  </div>
+
+</section>

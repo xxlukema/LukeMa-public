@@ -1,0 +1,19 @@
+SELECT
+    *
+FROM
+    T_CMSA_FEE;
+--
+SELECT
+    *
+FROM
+    T_CMSA_FEE_ADVANCE;
+--
+SELECT
+    *
+FROM
+    T_CMSA_FEE_RECOVERY;
+--
+SELECT
+    *
+FROM
+    T_CMSA_FEE_TYPE;

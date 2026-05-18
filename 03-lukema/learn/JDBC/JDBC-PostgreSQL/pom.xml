@@ -1,0 +1,109 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.learn</groupId>
+  <artifactId>JDBC-PostgreSQL</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0.0</version>
+  <name>${project.artifactId}</name>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss</maven.build.timestamp.format>
+    <buildDateTime>${maven.build.timestamp}</buildDateTime>
+    <maven.test.skip>false</maven.test.skip>
+    <maven.javadoc.skip>true</maven.javadoc.skip>
+    <java.version>21</java.version>
+    <maven.compiler.release>${java.version}</maven.compiler.release><!-- Java 9 and Beyond -->
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+  </properties>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.3.5</version>
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-log4j2</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- tag::tests[] -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <!-- These settings only work with `mvn spring-boot:run` command. -->
+        <!-- These settings do not work with `Spring Boot Dashboard` extension. -->
+        <!-- for `log.debug("sys foo: {}", () -> System.getProperty("foo"));` -->
+        <configuration>
+          <jvmArguments>
+            -Dserver2.port=8088
+            -Dfoo=FOOO111
+          </jvmArguments>
+          <systemPropertyVariables>
+            <!-- These settings here have lower priority than inside `<jvmArguments>-Dfoo=FOOO111</jvmArguments>` -->
+            <!-- These settings have higher priority than `mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Dfoo=FOOO000 -Dbar=BARRR000 -Xdebug"` -->
+            <server2.port>9099</server2.port>
+            <foo>FOOOO2222</foo>
+            <bar>BARRRR2222</bar>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

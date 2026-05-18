@@ -1,0 +1,173 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.learn</groupId>
+  <artifactId>leetcode</artifactId>
+  <version>0.0.1</version>
+  <name>${project.artifactId}</name>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>4.0.1</version>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss</maven.build.timestamp.format>
+    <buildDateTime>${maven.build.timestamp}</buildDateTime>
+    <maven.test.skip>false</maven.test.skip>
+    <maven.javadoc.skip>true</maven.javadoc.skip>
+    <java.version>23</java.version>
+    <maven.compiler.release>${java.version}</maven.compiler.release><!-- Java 9 and Beyond -->
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <!-- Other than boot -->
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-log4j2</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Start Microbenchmark -->
+    <!--
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+		  <artifactId>jmh-core</artifactId>
+      <version>1.35</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.openjdk.jmh</groupId>
+      <artifactId>jmh-generator-annprocess</artifactId>
+		  <version>1.35</version>
+		</dependency>
+     -->
+
+    <!-- End Microbenchmark -->
+
+    <!-- junit -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- mvn enforcer:enforce -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <configuration>
+          <rules>
+            <dependencyConvergence />
+          </rules>
+        </configuration>
+      </plugin>
+      <plugin>
+        <!-- Override: -->
+        <!-- -->
+        <!-- mvn exec:java -Dexec.cleanupDaemonThreads=false > tmp.txt -->
+        <!-- Or -->
+        <!-- mvn compile exec:java -Dexec.mainClass="ccom.learn.backtrack.MinSumPath"
+        -Dexec.args="First Second" -Dexec.cleanupDaemonThreads=false > tmp.txt -->
+        <!-- -->
+        <!-- [Run a Java Main Method in
+				Maven]<https://www.baeldung.com/maven-java-main-method> -->
+        <!-- mvn compile exec:java -Dexec.cleanupDaemonThreads=false > tmp.txt -->
+        <!-- mvn compile exec:java -Dexec.mainClass="ccom.learn.backtrack.MinSumPath"
+        -Dexec.args="First Second" -Dexec.cleanupDaemonThreads=false -->
+        <!-- mvn exec:java -Dexec.cleanupDaemonThreads=false > tmp.txt -->
+        <!-- mvn exec:java -Dexec.mainClass="com.learn.backtrack.MinSumPath"
+				-Dexec.args="First
+        Second" -Dexec.cleanupDaemonThreads=false -->
+        <!-- Q: "How to clear WARNING Couldn't destroy threadgroup
+        org.codehaus.mojo.exec.ExecJavaMojo?" A: -Dexec.cleanupDaemonThreads=false -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.5.0</version>
+        <executions>
+          <execution>
+            <id>run-benchmarks</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <classpathScope>test</classpathScope>
+              <executable>java</executable>
+              <arguments>
+                <argument>-classpath</argument>
+                <classpath />
+                <argument>org.openjdk.jmh.Main</argument>
+                <argument>.*</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <!-- <mainClass>com.learn.backtrack.MinSumPath</mainClass> -->
+          <!-- <mainClass>com.learn.tree.FlattenBinaryTreeToLinkedList</mainClass> -->
+          <!-- <mainClass>com.learn.other.MyScanner</mainClass> -->
+          <!-- <mainClass>com.learn.interview.amzn.QuickSort</mainClass> -->
+          <mainClass>com.learn.other.RecursionToInteration</mainClass>
+          <arguments>
+            <argument>First</argument>
+            <argument>Second</argument>
+          </arguments>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.42</version>
+            </path>
+          </annotationProcessorPaths>
+          <annotationProcessors>
+            <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
+          </annotationProcessors>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

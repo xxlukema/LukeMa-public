@@ -1,0 +1,64 @@
+---- Step 6 of 6 ----
+INSERT
+INTO
+    spring_security_authority
+    (
+        authority_id,
+        user_id,
+        username,
+        authority,
+        insert_timestamp,
+        last_update_timestamp
+    )
+    VALUES
+    (
+        nextval('spring_security_authority_pk_sequence'),
+        1,
+        'admin',
+        'ROLE_ADMIN',
+        now(),
+        now()
+    );
+--
+INSERT
+INTO
+    spring_security_authority
+    (
+        authority_id,
+        user_id,
+        username,
+        authority,
+        insert_timestamp,
+        last_update_timestamp
+    )
+    VALUES
+    (
+        nextval('spring_security_authority_pk_sequence'),
+        1,
+        'admin',
+        'ROLE_USER',
+        now(),
+        now()
+    );
+--
+INSERT
+INTO
+    spring_security_authority
+    (
+        authority_id,
+        user_id,
+        username,
+        authority,
+        insert_timestamp,
+        last_update_timestamp
+    )
+    VALUES
+    (
+        nextval('spring_security_authority_pk_sequence'),
+        2,
+        'user',
+        'ROLE_USER',
+        now(),
+        now()
+    );
+--

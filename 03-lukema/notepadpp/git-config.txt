@@ -1,0 +1,13 @@
+
+
+git config --system http.sslCAPath C:/D/git-census/git-cert.cer
+
+
+git --version
+
+git config --global --unset core.excludesfile
+git config --global --edit
+
+
+gti branch -r
+git checkout ma000020

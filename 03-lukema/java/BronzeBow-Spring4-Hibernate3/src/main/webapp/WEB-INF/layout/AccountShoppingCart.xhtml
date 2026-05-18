@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition>
+		<h:form id="accountShoppingCartForm">
+			<h:panelGrid columns="4" styleClass="nogrid">
+				<h:panelGroup>
+					<h:commandLink id="loggedOut" immediate="true"
+						rendered="#{!userLoginController.userLoggedIn}"
+						action="#{userLoginController.toggleLoginLogout}"
+						value="[ Login ]">
+					</h:commandLink>
+					<h:commandLink id="userLoggedIn" immediate="true"
+						rendered="#{userLoginController.userLoggedIn}"
+						action="#{userLoginController.toggleLoginLogout}"
+						value="[ Logout ]">
+					</h:commandLink>
+				</h:panelGroup>
+				<h:outputText rendered="#{userLoginController.userLoggedIn}"
+					value="#{userLoginController.user.username} " styleClass="bold">
+				</h:outputText>
+				<h:commandLink style="text-wrap: none;"
+					rendered="#{userLoginController.userLoggedIn} " value="[ Edit MyList ]"
+					immediate="true" action="#{taController.toMyListEditor}">
+				</h:commandLink>
+				<h:commandLink
+					style="text-wrap: none; position: absolute; right: 5px;"
+					value="[ My Account ]" immediate="true"
+					action="#{taController.toLoginOrAccount}">
+				</h:commandLink>
+			</h:panelGrid>
+		</h:form>
+	</ui:composition>
+
+</html>
+

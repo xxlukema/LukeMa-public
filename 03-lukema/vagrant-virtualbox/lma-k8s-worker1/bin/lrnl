@@ -1,0 +1,34 @@
+
+
+dir=$HOME/ospfd
+dir=.
+dir=$HOME/../src_20030226
+
+myfind="find . -type f"
+myfind="find . -name \"*.java\""
+
+mygrep="grep -i"
+mygrep="grep"
+
+args=$*
+
+if [ ! $# -eq 1 ]
+then
+   exit
+fi
+
+gg
+
+cd $dir
+
+   # for i in `$myfind`
+   for i in `find . -name "*.java"`
+   do
+      $mygrep "$args" $i > /dev/null
+      if [ $? -eq 0 ]
+      then
+         echo -------------------------------------------------------------
+         echo $i
+         $mygrep "$args" $i
+      fi
+   done

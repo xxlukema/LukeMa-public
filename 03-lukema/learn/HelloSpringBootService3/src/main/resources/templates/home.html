@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+<title>Thymeleaf + Security - Home</title>
+<div th:insert="fragments/header :: header-meta"></div>
+<div th:insert="fragments/header :: header-css"></div>
+</head>
+
+<body>
+
+    <div th:insert="fragments/header :: header-nav"></div>
+
+    <div class="container">
+
+        <div class="starter-template">
+            <h1>Spring Boot Web Thymeleaf + Spring Security</h1>
+            <h2>
+                1. Visit <a th:href="@{/admin}">Admin page (Spring Security protected, Need Admin Role)</a>
+            </h2>
+            <h2>
+                2. Visit <a th:href="@{/user}">User page (Spring Security protected, Need User Role)</a>
+            </h2>
+            <h2>
+                3. Visit <a th:href="@{/about}">Normal page. No need login</a>
+            </h2>
+            <h2>
+                3. Visit <a th:href="@{/formvalidation}">jQurey Form Validation (Normal page. No need login)</a>
+            </h2>
+            <h2>
+                3. Visit <a th:href="@{/datatable}">jQurey Data Table (Normal page. No need login)</a>
+            </h2>
+        </div>
+
+    </div>
+
+    <br>
+
+    <section class="container">
+        <div sec:authorize="hasRole('USER')">
+            <h3>Text visible to user.</h3>
+        </div>
+        <div sec:authorize="hasRole('ADMIN')">
+            <h3>Text visible to admin.</h3>
+        </div>
+        <div style="font-size: 1.4em;">
+            <div>
+                Authenticated username: <span sec:authentication="name">Place holder for username</span>
+            </div>
+            <div>
+                Authenticated username: <span th:text="${#authentication.name}">Place holder of "name" property of the authentication object should appear here.</span>
+            </div>
+            <div>
+                #authentication: <span th:text="${#authentication}">Place holder of #authentication.</span>
+            </div>
+            <div>
+                #authorization: <span th:text="${#authorization}">Place holder of #authorization.</span>
+            </div>
+        </div>
+        <div sec:authorize="isAuthenticated()">
+            <h3>Text visible only to authenticated users.</h3>
+            <div>
+                <h3>
+                    Authenticated user roles (Must be inside sec:authorize="isAuthenticated()". Only authenticated user has "principal.authorities"):
+                    <ul th:each="item: ${#authentication.authorities}">
+                        <li th:text="${item.authority}"></li>
+                    </ul>
+                    <!-- 
+                    Authenticated user roles (Must be inside sec:authorize="isAuthenticated()". Only authenticated user has "principal.authorities"): <span sec:authentication="principal.authorities"></span>
+                     -->
+                </h3>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <div class="container">
+        <div th:insert="fragments/footer :: footer"></div>
+    </div>
+
+</body>
+
+</html>

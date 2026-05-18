@@ -1,0 +1,5 @@
+/desktop.ini
+**/.~lock.*
+**/.gradle
+__pycache__
+src/__pycache__

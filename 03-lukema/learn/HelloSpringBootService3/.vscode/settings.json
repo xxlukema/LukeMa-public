@@ -1,0 +1,19 @@
+{
+  "java.format.settings.url": ".vscode/eclipse-java-formatter-z-latest.xml",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "json.schemaDownload.enable": true,
+  "[java]": {
+    "editor.formatOnSave": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    ".angular/cache": true
+  },
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx8G -Xms100m -Xshare:off -XX:+EnableDynamicAgentLoading"
+}

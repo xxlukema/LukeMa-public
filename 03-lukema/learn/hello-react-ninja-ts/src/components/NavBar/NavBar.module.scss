@@ -1,0 +1,52 @@
+.NavBar {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    border-bottom: 1px solid #f2f2f2;
+
+    background-color: bisque;
+
+    h1 {
+        color: #f1356d;
+    }
+
+    .links {
+        margin-left: auto;
+    }
+
+    a {
+        margin-left: 16px;
+        text-decoration: none;
+        padding: 6px;
+    }
+
+    a:hover {
+        color: #f1356d;
+    }
+
+
+
+
+    svg {
+        animation: spin infinite 5s linear;
+    }
+
+    .spinner {
+        border: 2px blue dotted;
+        background-color: yellowgreen;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+
+}

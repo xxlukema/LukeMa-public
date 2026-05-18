@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build_maven" default="install" basedir=".">
+   <property environment="env" />
+
+   <target name="clean">
+      <clean_macrodef dir="." />
+   </target>
+
+   <target name="install">
+      <install_macrodef dir="." />
+   </target>
+   
+   <target name="clean_install">
+      <install_macrodef dir="." />
+   </target>   
+
+   <target name="deploy_web">
+      <deploy_web_macrodef dir="." />
+   </target>
+
+   <target name="clean_compile">
+      <clean_compile_macrodef dir="." />
+   </target>
+
+   <macrodef name="clean_macrodef">
+      <attribute name="dir" default="." />
+
+      <sequential>
+         <exec dir="@{dir}" executable="mvn.bat">
+            <arg line="clean" />
+         </exec>
+      </sequential>
+   </macrodef>
+
+   <macrodef name="clean_compile_macrodef">
+      <attribute name="dir" default="." />
+
+      <sequential>
+         <exec dir="@{dir}" executable="mvn.bat">
+            <arg line="clean compile" />
+         </exec>
+      </sequential>
+   </macrodef>
+
+   <macrodef name="install_macrodef">
+      <attribute name="dir" default="." />
+
+      <sequential>
+         <exec dir="@{dir}" executable="mvn.bat" failonerror="true" resultproperty="result">
+            <arg line="clean install -Dmaven.test.skip=true" />
+         </exec>
+      </sequential>
+   </macrodef>
+
+   <macrodef name="deploy_web_macrodef">
+      <attribute name="dir" default="." />
+
+      <sequential>
+         <exec dir="@{dir}" executable="mvn.bat">
+            <arg line="clean package -Dmaven.test.skip=true" />
+         </exec>
+      </sequential>
+   </macrodef>
+</project>
+

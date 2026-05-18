@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<div th:fragment="homeContent">
+	<div class="container">
+
+		<div class="starter-template">
+			<h1>Spring Boot Web Thymeleaf + Spring Security</h1>
+			<h2>
+				1. Visit <a th:href="@{/admin}">Admin page (Spring Security protected, Need Admin Role)</a>
+			</h2>
+			<h2>
+				2. Visit <a th:href="@{/user}">User page (Spring Security protected, Need User Role)</a>
+			</h2>
+			<h2>
+				3. Visit <a th:href="@{/about}">Normal page</a>
+			</h2>
+		</div>
+
+		<div style="margin-top: 40px;">
+			<h3>Spring Boot + Thymeleaf Integration:</h3>
+			<section style="margin-left: 10px;">
+				<table>
+					<tr>
+						<td>Text visible to admin:</td>
+						<td><span sec:authorize="hasRole('ADMIN')">Text visible to admin.</span> <span sec:authorize="!hasRole('ADMIN')">(There is hidden text here.)</span></td>
+					</tr>
+					<tr>
+						<td>Text visible to user:</td>
+						<td><span sec:authorize="hasRole('USER')">Text visible to user.</span><span sec:authorize="!hasRole('USER')">(There is hidden text here.)</span></td>
+					</tr>
+					<tr>
+						<td>Text visible to authenticated users:</td>
+						<td><span sec:authorize="isAuthenticated()">Text visible to authenticated user.</span><span sec:authorize="!isAuthenticated()">(There is hidden text here.)</span></td>
+					</tr>
+					<tr>
+						<td>Authenticated username:</td>
+						<td><span sec:authentication="name"></span></td>
+					</tr>
+					<tr>
+						<td>Authenticated user roles:</td>
+						<td><span sec:authentication="authorities"></span></td>
+					</tr>
+				</table>
+			</section>
+		</div>
+
+	</div>
+</div>
+
+</html>

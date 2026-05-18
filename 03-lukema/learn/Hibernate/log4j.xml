@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- 
+| For more configuration infromation and examples see the Jakarta Log4j 
+| owebsite: http://jakarta.apache.org/log4j 
+-->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+   <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+      <param name="Target" value="System.out" />
+
+      <param name="Threshold" value="debug" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="file.other" class="org.apache.log4j.RollingFileAppender">
+      <param name="Threshold" value="debug" />
+
+      <param name="File" value="target/other.txt" />
+
+      <param name="Append" value="false" />
+
+      <param name="MaxFileSize" value="2MB" />
+
+      <param name="MaxBackupIndex" value="5" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="file.hibernate" class="org.apache.log4j.RollingFileAppender">
+      <param name="Threshold" value="warn" />
+
+      <param name="File" value="target/hibernate.txt" />
+
+      <param name="Append" value="false" />
+
+      <param name="MaxFileSize" value="2MB" />
+
+      <param name="MaxBackupIndex" value="5" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="file.springframework" class="org.apache.log4j.RollingFileAppender">
+      <param name="Threshold" value="warn" />
+
+      <param name="File" value="target/springframework.txt" />
+
+      <param name="Append" value="false" />
+
+      <param name="MaxFileSize" value="10MB" />
+
+      <param name="MaxBackupIndex" value="5" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="file.jpmorgan" class="org.apache.log4j.RollingFileAppender">
+      <param name="Threshold" value="debug" />
+
+      <param name="File" value="target/jpmorgan.txt" />
+
+      <param name="Append" value="false" />
+
+      <param name="MaxFileSize" value="10MB" />
+
+      <param name="MaxBackupIndex" value="5" />
+
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+      </layout>
+   </appender>
+
+   <appender name="ASYNC" class="org.apache.log4j.AsyncAppender">
+      <appender-ref ref="CONSOLE" />
+
+      <appender-ref ref="file.other" />
+
+      <appender-ref ref="file.jpmorgan" />
+   </appender>
+
+   <logger name="org" additivity="false">
+      <level value="info" />
+
+      <appender-ref ref="file.other" />
+
+      <appender-ref ref="CONSOLE" />
+   </logger>
+
+   <logger name="org.hibernate" additivity="false">
+      <level value="warn" />
+
+      <appender-ref ref="file.hibernate" />
+
+      <appender-ref ref="CONSOLE" />
+   </logger>
+
+   <!-- 
+   <logger name="org.hibernate.SQL" additivity="false">
+      <level value="debug" />
+
+      <appender-ref ref="file.hibernate" />
+
+      <appender-ref ref="CONSOLE" />
+   </logger>
+   -->
+    
+   <logger name="org.hibernate.engine" additivity="false">
+      <level value="debug" />
+
+      <appender-ref ref="file.hibernate" />
+
+      <appender-ref ref="CONSOLE" />
+   </logger>
+
+   <logger name="org.hibernate.type" additivity="false">
+      <level value="trace" />
+
+      <appender-ref ref="file.hibernate" />
+
+      <appender-ref ref="CONSOLE" />
+   </logger>
+
+   <logger name="org.springframework" additivity="false">
+      <level value="info" />
+
+      <appender-ref ref="file.springframework" />
+   </logger>
+
+   <logger name="com" additivity="false">
+      <level value="info" />
+
+      <appender-ref ref="file.other" />
+
+      <appender-ref ref="CONSOLE" />
+   </logger>
+
+   <logger name="com.jpmorgan" additivity="false">
+      <level value="debug" />
+
+      <appender-ref ref="file.jpmorgan" />
+
+      <appender-ref ref="CONSOLE" />
+   </logger>
+
+   <logger name="STDOUT" additivity="false">
+      <level value="INFO" />
+
+      <appender-ref ref="CONSOLE" />
+
+      <appender-ref ref="file.other" />
+   </logger>
+
+   <logger name="STDERR" additivity="false">
+      <level value="INFO" />
+
+      <appender-ref ref="CONSOLE" />
+
+      <appender-ref ref="file.other" />
+   </logger>
+
+   <root>
+      <appender-ref ref="ASYNC" />
+   </root>
+</log4j:configuration>

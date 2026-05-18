@@ -1,0 +1,66 @@
+package com.learn.rest.resource;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.learn.pojo.Book;
+
+import jakarta.validation.Valid;
+
+
+@RequestMapping("/spring/book")
+@RestController
+public class BookResource {
+
+    private static final Logger log = LogManager.getLogger();
+
+    private static final List<Book> BOOKS = new ArrayList<>();
+
+    static {
+        BOOKS.add(new Book(1, "Core Java"));
+        BOOKS.add(new Book(2, "Angular 2"));
+        BOOKS.add(new Book(3, "Hibernate"));
+    }
+
+    @ResponseStatus(value = HttpStatus.OK)
+    @RequestMapping(value = "books", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+    public List<Book> getBooks()
+        throws Exception {
+        log.debug(() -> "Enter...");
+
+        try {
+            return BOOKS;
+        } finally {
+            log.debug(() -> "Leave.");
+        }
+    }
+
+    @ResponseStatus(value = HttpStatus.OK)
+    @RequestMapping(value = "add", method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE }, produces = {
+            MediaType.APPLICATION_JSON_VALUE })
+    public List<Book> addBook(@Valid @RequestBody Book book) {
+        log.debug(() -> "Enter...");
+
+        log.debug("Input: {}", () -> book.toString());
+
+        BOOKS.add(book);
+
+        try {
+            return BOOKS;
+        } finally {
+            log.debug(() -> "Leave.");
+        }
+    }
+
+}

@@ -1,0 +1,16 @@
+<section fxLayout="row" fxLayoutAlign="space-around center">
+
+    <button fxFlex="20" mat-raised-button color="primary" type="button" [disabled]="loading" (click)="openAckDialog()">
+        <span *ngIf="!loading">Acknowledge</span>
+        <span *ngIf="loading"> PLEASE WAIT... &nbsp;&nbsp; <i class="fas fa-spinner fa-spin"></i>
+        </span>
+    </button>
+
+    <button fxFlex="20" mat-raised-button color="primary" type="button" [disabled]="loading"
+        (click)="openCancelConfirmDialog()">Cancel/Confirm</button>
+
+    <button fxFlex="20" mat-raised-button color="primary" type="button" [disabled]="loading"
+        (click)="openModalDialog()">Modal</button>
+
+
+</section>

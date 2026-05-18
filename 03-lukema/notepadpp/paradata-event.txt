@@ -1,0 +1,46 @@
+#### 2020-12-02 19:29:45,771 INFO  c.e.web.filter.AuthenticationFilter(80) doFilter() - [POST] http://ecorr.test.it.census.gov:80/ecorr/api/secure/sessions
+#### 2020-12-02 19:29:45,774 TRACE c.e.web.filter.EcorrCorsFilter(94) doFilter() - [POST] http://ecorr.test.it.census.gov:80/ecorr/api/secure/sessions
+Parameter paradataEventJson: [[
+{"paradataEventTypeId":24,"surveyId":null,"eventDtm":"2020-12-03T00:29:26.973Z"},
+{"paradataEventTypeId":22,"surveyId":null,"eventDtm":"2020-12-03T00:29:38.004Z"},
+{"paradataEventTypeId":6,"surveyId":null,"eventDtm":"2020-12-03T00:29:38.113Z"},
+{"paradataEventTypeId":14,"surveyId":null,"eventDtm":"2020-12-03T00:29:39.374Z"},
+{"paradataEventTypeId":23,"surveyId":null,"eventDtm":"2020-12-03T00:29:45.679Z"}
+]]
+
+#### 2020-12-02 19:29:45,775 DEBUG c.e.web.filter.ParadataEventFilter(77) lambda$null$0() - Before saving new paradata-event: 
+ParadataEventDTO [paradataEventTypeId=24, sessionId=null, surveyId=null, eventDtm=Wed Dec 02 19:29:26 EST 2020]. paradataEventService == null ? false
+#### 2020-12-02 19:29:45,775 WARN  c.e.web.filter.ParadataEventFilter(82) lambda$null$0() - Exception saving paradata-event to database null.
+java.lang.NullPointerException: null
+#### 2020-12-02 19:29:45,775 DEBUG c.e.web.filter.ParadataEventFilter(77) lambda$null$0() - Before saving new paradata-event: 
+ParadataEventDTO [paradataEventTypeId=22, sessionId=null, surveyId=null, eventDtm=Wed Dec 02 19:29:38 EST 2020]. paradataEventService == null ? false
+#### 2020-12-02 19:29:45,775 WARN  c.e.web.filter.ParadataEventFilter(82) lambda$null$0() - Exception saving paradata-event to database null.
+java.lang.NullPointerException: null
+#### 2020-12-02 19:29:45,775 DEBUG c.e.web.filter.ParadataEventFilter(77) lambda$null$0() - Before saving new paradata-event: 
+ParadataEventDTO [paradataEventTypeId=6, sessionId=null, surveyId=null, eventDtm=Wed Dec 02 19:29:38 EST 2020]. paradataEventService == null ? false
+#### 2020-12-02 19:29:45,775 WARN  c.e.web.filter.ParadataEventFilter(82) lambda$null$0() - Exception saving paradata-event to database null.
+java.lang.NullPointerException: null
+#### 2020-12-02 19:29:45,775 DEBUG c.e.web.filter.ParadataEventFilter(77) lambda$null$0() - Before saving new paradata-event: 
+ParadataEventDTO [paradataEventTypeId=14, sessionId=null, surveyId=null, eventDtm=Wed Dec 02 19:29:39 EST 2020]. paradataEventService == null ? false
+#### 2020-12-02 19:29:45,775 WARN  c.e.web.filter.ParadataEventFilter(82) lambda$null$0() - Exception saving paradata-event to database null.
+java.lang.NullPointerException: null
+#### 2020-12-02 19:29:45,775 DEBUG c.e.web.filter.ParadataEventFilter(77) lambda$null$0() - Before saving new paradata-event: 
+ParadataEventDTO [paradataEventTypeId=23, sessionId=null, surveyId=null, eventDtm=Wed Dec 02 19:29:45 EST 2020]. paradataEventService == null ? false
+#### 2020-12-02 19:29:45,775 WARN  c.e.web.filter.ParadataEventFilter(82) lambda$null$0() - Exception saving paradata-event to database null.
+java.lang.NullPointerException: null
+#### 2020-12-02 19:29:48,598 INFO  c.e.web.filter.AuthenticationFilter(80) doFilter() - [POST] http://ecorr.test.it.census.gov:80/ecorr/api/secure/sessions
+#### 2020-12-02 19:29:48,600 TRACE c.e.web.filter.EcorrCorsFilter(94) doFilter() - [POST] http://ecorr.test.it.census.gov:80/ecorr/api/secure/sessions
+Parameter paradataEventJson: [[
+{"paradataEventTypeId":28,"surveyId":null,"eventDtm":"2020-12-03T00:29:48.613Z"}
+]]
+#### 2020-12-02 19:29:48,600 DEBUG c.e.web.filter.ParadataEventFilter(77) lambda$null$0() - Before saving new paradata-event: 
+ParadataEventDTO [paradataEventTypeId=28, sessionId=null, surveyId=null, eventDtm=Wed Dec 02 19:29:48 EST 2020]. paradataEventService == null ? false
+#### 2020-12-02 19:29:48,604 DEBUG c.e.s.impl.ParadataEventServiceImpl(38) saveNew() - Saving paradataEvent: ParadataEvent [paradataEventId=null, paradataEventTypeId=28, surveyId=null, sessionId=4fsl_4-b9yGhmYPBdMW1rsoRsShMSETGKGNgc6ywoi3NDk3E9egH!1942445750!1606955274139, eventDtm=Wed Dec 02 19:29:48 EST 2020]...
+#### 2020-12-02 19:29:48,608 DEBUG c.e.s.impl.ParadataEventServiceImpl(42) saveNew() - Saved paradataEvent: ParadataEvent [paradataEventId=61261, paradataEventTypeId=28,
+
+{"paradataEventTypeId":23,"surveyId":null,"eventDtm":"2020-12-03T00:29:45.679Z"} --- bad
+{"paradataEventTypeId":28,"surveyId":null,"eventDtm":"2020-12-03T00:29:48.613Z"} --- good
+ParadataEventDTO [paradataEventTypeId=23, sessionId=null, surveyId=null, eventDtm=Wed Dec 02 19:29:45 EST 2020]. paradataEventService == null ? false -------- bad
+ParadataEventDTO [paradataEventTypeId=28, sessionId=null, surveyId=null, eventDtm=Wed Dec 02 19:29:48 EST 2020]. paradataEventService == null ? false -------- good
+
+

@@ -1,0 +1,13 @@
+create sequence portfolio_id start with 1 increment by 50;
+create sequence portfolio_user_id start with 1 increment by 50;
+create sequence portfolio_item_id start with 1 increment by 50;
+create sequence spring_security_authority_pk_seq start with 1 increment by 1;
+create sequence spring_security_user_pk_seq start with 1 increment by 1;
+create table portfolio (create_date timestamp(6), portfolio_id bigint not null, update_date timestamp(6), primary key (portfolio_id));
+create table portfolio_user (create_date timestamp(6), portfolio_portfolio_id bigint unique, update_date timestamp(6), user_id bigint not null, password varchar(20) not null, phone varchar(20) unique, firstname varchar(40), lastname varchar(40), middlename varchar(40), email varchar(60) not null unique, username varchar(60) unique, primary key (user_id));
+create table portfolio_item (actived boolean, price float(24), create_date timestamp(6), portfolio_id bigint, portfolio_item_id bigint not null, update_date timestamp(6), address varchar(255), city varchar(255), description varchar(255), state varchar(255), title varchar(255), zip varchar(255), primary key (portfolio_item_id));
+create table spring_security_authority (authority_id bigint not null, insert_timestamp timestamp(6) not null, last_update_timestamp timestamp(6) not null, user_id bigint, authority varchar(255), username varchar(255) not null, primary key (authority_id));
+create table spring_security_user (enabled boolean not null, is_buy_only boolean, insert_timestamp timestamp(6) not null, last_update_timestamp timestamp(6) not null, user_id bigint not null, business_name varchar(255), first_name varchar(255), last_name varchar(255), password varchar(255), phone varchar(255), username varchar(255) not null, primary key (user_id));
+alter table portfolio_user add constraint FKa6smf9apujm6gp788y1vurugy foreign key (portfolio_portfolio_id) references portfolio;
+alter table portfolio_item add constraint FKdlgpfr12wdukodaavox0sq7fv foreign key (portfolio_id) references portfolio;
+alter table spring_security_authority add constraint FK22oxboxgr2g3livdnryxsbi0p foreign key (user_id) references spring_security_user;

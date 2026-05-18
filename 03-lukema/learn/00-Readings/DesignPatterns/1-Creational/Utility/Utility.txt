@@ -1,0 +1,10 @@
+
+Utility Pattern: A creational pattern that is used for utility classes 
+that do not require instantiation and ONLY have STATIC methods. 
+
+It uses a private constructor so that no instances can be created. 
+
+Good candidates for utility classes are convenience methods that can be 
+grouped together functionally.
+
+

@@ -1,0 +1,82 @@
+
+
+body {
+	font-size: 10pt;
+	/* font-family: "Arial"; */
+}
+
+div.spacer {
+	height: 20px;
+}
+
+footer {
+	page-break-after: always;
+}
+
+div#container {
+    /* border: 3px solid blue; */
+}
+
+header, footer {
+	width: 100%;
+    background-color: lightgrey;
+    /* border: 3px solid yellow; */
+}
+
+span.title1 {
+	position: static;
+	width: 80%;
+	display: inline-block;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+span.title2 {
+	position: static;
+	width: 20%;
+	display: inline-block;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.grey {
+	background-color: lightgrey;
+}
+
+div.spanValue {
+	margin: 10px;
+	border: 3px solid black;
+	display: inline;
+}
+
+label.lableAlignRight {
+	text-align: right;
+	width: 300px;
+	display: inline-block;
+}
+
+label:after {
+    content: ":";
+}
+
+span.spanValue {
+	text-align: right;
+	margin-left: 10px;
+}
+
+span.currency::before {
+    content: "$";
+}
+
+.payment {
+	color: red;
+}
+
+.percent::after {
+    content: "%";
+}
+

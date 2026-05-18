@@ -1,0 +1,26 @@
+<section style="text-align: center;">
+  <h3>Contact works!</h3>
+
+  @if (refreshing) {
+  <div>
+    <button type="button" class="btn btn-primary btn-lg">
+      Please wait. Loading
+      <i class="fas fa-spinner fa-spin"></i>
+    </button>
+  </div>
+  }
+
+  <div class="duplicated-class">
+    Hello class!
+  </div>
+
+  <p>
+    email: {{email}}
+  </p>
+
+  <div>
+    <input type="text" [value]="data" (keydown)="keydown($event)" (keyup)="keyup($event)" (keypress)="keypress($event)"
+      (change)="change($event)" (focusout)="focusout($event)" placeholder="Numbers and - . only">
+  </div>
+
+</section>

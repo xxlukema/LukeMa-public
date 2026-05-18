@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>http://juliemr.github.io/protractor-demo/</title><link rel="stylesheet" type="text/css" href="http%20_juliemr.github.io_protractor-demo__files/viewsource.css"></head><body id="viewsource" class="highlight" style="-moz-tab-size: 4" contextmenu="actions"><pre id="line1"><span></span><span class="doctype">&lt;!DOCTYPE HTML&gt;</span><span>
+<span id="line2"></span></span><span>&lt;<span class="start-tag">html</span> <span class="attribute-name">ng-app</span>="<a class="attribute-value">calculator</a>"&gt;</span><span>
+<span id="line3"></span></span><span>&lt;<span class="start-tag">head</span>&gt;</span><span>
+<span id="line4"></span>  </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js">https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line5"></span>  </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:http://juliemr.github.io/protractor-demo/calc.js">./calc.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line6"></span>  </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://juliemr.github.io/protractor-demo/bootstrap.css">./bootstrap.css</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">stylesheet</a>"&gt;</span><span>
+<span id="line7"></span>  </span><span>&lt;<span class="start-tag">title</span>&gt;</span><span>Super Calculator</span><span>&lt;/<span class="end-tag">title</span>&gt;</span><span>
+<span id="line8"></span></span><span>&lt;/<span class="end-tag">head</span>&gt;</span><span>
+<span id="line9"></span></span><span>&lt;<span class="start-tag">body</span> <span class="attribute-name">class</span>="<a class="attribute-value">ng-cloak</a>"&gt;</span><span>
+<span id="line10"></span>  </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">ng-controller</span>="<a class="attribute-value">CalcCtrl</a>" <span class="attribute-name">class</span>="<a class="attribute-value">container</a>"&gt;</span><span>
+<span id="line11"></span>    </span><span>&lt;<span class="start-tag">div</span>&gt;</span><span>
+<span id="line12"></span>      </span><span>&lt;<span class="start-tag">h3</span>&gt;</span><span>Super Calculator</span><span>&lt;/<span class="end-tag">h3</span>&gt;</span><span>
+<span id="line13"></span>      </span><span>&lt;<span class="start-tag">form</span> <span class="attribute-name">class</span>="<a class="attribute-value">form-inline</a>"&gt;</span><span>
+<span id="line14"></span>        </span><span>&lt;<span class="start-tag">input</span> <span class="attribute-name">ng-model</span>="<a class="attribute-value">first</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text</a>" <span class="attribute-name">class</span>="<a class="attribute-value">input-small</a>"<span>/</span>&gt;</span><span>
+<span id="line15"></span>        </span><span>&lt;<span class="start-tag">select</span> <span class="attribute-name">ng-model</span>="<a class="attribute-value">operator</a>" <span class="attribute-name">class</span>="<a class="attribute-value">span1</a>"
+<span id="line16"></span>                <span class="attribute-name">ng-options</span>="<a class="attribute-value">value for (key, value) in operators</a>"&gt;</span><span>
+<span id="line17"></span>        </span><span>&lt;/<span class="end-tag">select</span>&gt;</span><span>
+<span id="line18"></span>        </span><span>&lt;<span class="start-tag">input</span> <span class="attribute-name">ng-model</span>="<a class="attribute-value">second</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text</a>" <span class="attribute-name">class</span>="<a class="attribute-value">input-small</a>"<span>/</span>&gt;</span><span>
+<span id="line19"></span>        </span><span>&lt;<span class="start-tag">button</span> <span class="attribute-name">ng-click</span>="<a class="attribute-value">doAddition()</a>" <span class="attribute-name">id</span>="<a class="attribute-value">gobutton</a>" <span class="attribute-name">class</span>="<a class="attribute-value">btn</a>"&gt;</span><span>Go!</span><span>&lt;/<span class="end-tag">button</span>&gt;</span><span>
+<span id="line20"></span>        </span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>{{latest}}</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line21"></span>      </span><span>&lt;/<span class="end-tag">form</span>&gt;</span><span>
+<span id="line22"></span>    </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line23"></span>    </span><span>&lt;<span class="start-tag">h4</span>&gt;</span><span>History</span><span>&lt;/<span class="end-tag">h4</span>&gt;</span><span>
+<span id="line24"></span>    </span><span>&lt;<span class="start-tag">table</span> <span class="attribute-name">class</span>="<a class="attribute-value">table</a>"&gt;</span><span>
+<span id="line25"></span>      </span><span>&lt;<span class="start-tag">thead</span>&gt;</span><span></span><span>&lt;<span class="start-tag">tr</span>&gt;</span><span>
+<span id="line26"></span>        </span><span>&lt;<span class="start-tag">th</span>&gt;</span><span>Time</span><span>&lt;/<span class="end-tag">th</span>&gt;</span><span>
+<span id="line27"></span>        </span><span>&lt;<span class="start-tag">th</span>&gt;</span><span>Expression</span><span>&lt;/<span class="end-tag">th</span>&gt;</span><span>
+<span id="line28"></span>        </span><span>&lt;<span class="start-tag">th</span>&gt;</span><span>Result</span><span>&lt;/<span class="end-tag">th</span>&gt;</span><span>
+<span id="line29"></span>      </span><span>&lt;/<span class="end-tag">tr</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">thead</span>&gt;</span><span>
+<span id="line30"></span>      </span><span>&lt;<span class="start-tag">tr</span> <span class="attribute-name">ng-repeat</span>="<a class="attribute-value">result in memory</a>"&gt;</span><span>
+<span id="line31"></span>        </span><span>&lt;<span class="start-tag">td</span>&gt;</span><span>
+<span id="line32"></span>          {{result.timestamp | date:'mediumTime'}}
+<span id="line33"></span>        </span><span>&lt;/<span class="end-tag">td</span>&gt;</span><span>
+<span id="line34"></span>        </span><span>&lt;<span class="start-tag">td</span>&gt;</span><span>
+<span id="line35"></span>          </span><span>&lt;<span class="start-tag">span</span>&gt;</span><span>{{result.first}}</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line36"></span>          </span><span>&lt;<span class="start-tag">span</span>&gt;</span><span>{{result.operator}}</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line37"></span>          </span><span>&lt;<span class="start-tag">span</span>&gt;</span><span>{{result.second}}</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line38"></span>        </span><span>&lt;/<span class="end-tag">td</span>&gt;</span><span>
+<span id="line39"></span>        </span><span>&lt;<span class="start-tag">td</span>&gt;</span><span>{{result.value}}</span><span>&lt;/<span class="end-tag">td</span>&gt;</span><span>
+<span id="line40"></span>      </span><span>&lt;/<span class="end-tag">tr</span>&gt;</span><span>
+<span id="line41"></span>    </span><span>&lt;/<span class="end-tag">table</span>&gt;</span><span>
+<span id="line42"></span>  </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line43"></span></span><span>&lt;/<span class="end-tag">body</span>&gt;</span><span>
+<span id="line44"></span></span><span>&lt;/<span class="end-tag">html</span>&gt;</span><span>
+<span id="line45"></span></span></pre><menu type="context" id="actions"><menuitem id="goToLine" label="Go to Line…" accesskey="L"></menuitem><menuitem id="wrapLongLines" label="Wrap Long Lines" type="checkbox"></menuitem><menuitem id="highlightSyntax" label="Syntax Highlighting" type="checkbox" checked="true"></menuitem></menu></body></html>

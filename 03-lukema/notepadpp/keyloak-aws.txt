@@ -1,0 +1,19 @@
+Here are some details you will need for the UI to integrate with the login server:
+•	Server: https://ec2-18-253-51-232.us-gov-east-1.compute.amazonaws.com:8443/auth/ 
+•	Realm: nms
+•	Client ID: nms-client
+•	Client Secret: Empty.  It is configured in “public” mode, which doesn’t require a client secret.  It’s easy to add a Client Secret.  Just let me know when you’re ready for it.
+
+The login server has an endpoint that describes everything a client would need.  That endpoint is here: GET https://ec2-18-253-51-232.us-gov-east-1.compute.amazonaws.com:8444/auth/realms/nms/.well-known/openid-configuration .  I’m not sure how “standard” this endpoint is, and the Angular OIDC+OAuth2 client you use might not support it.  If it doesn’t, then I can help you get the information you’ll need.  The most important pieces of information it would typically need from it are:
+•	Authentication endpoint: https://ec2-18-253-51-232.us-gov-east-1.compute.amazonaws.com:8444/auth/realms/nms/protocol/openid-connect/auth 
+•	Token endpoint: https://ec2-18-253-51-232.us-gov-east-1.compute.amazonaws.com:8444/auth/realms/nms/protocol/openid-connect/token 
+•	Logout endpoint: https://ec2-18-253-51-232.us-gov-east-1.compute.amazonaws.com:8444/auth/realms/nms/protocol/openid-connect/logout 
+•	User Info endpoint: https://ec2-18-253-51-232.us-gov-east-1.compute.amazonaws.com:8444/auth/realms/nms/protocol/openid-connect/userinfo 
+•	Certificates for signing keys: https://ec2-18-253-51-232.us-gov-east-1.compute.amazonaws.com:8444/auth/realms/nms/protocol/openid-connect/certs 
+
+I have some proof-of-concept HTML+JS code that I used earlier on.  I can use it to show you what the authentication exchange looks like, so you know what to expect.  Let’s discuss tomorrow.
+
+
+
+
+

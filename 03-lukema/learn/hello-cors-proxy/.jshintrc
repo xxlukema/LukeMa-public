@@ -1,0 +1,12 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "esnext": true,
+  "latedef": false,
+  "validthis": true,
+  "noarg": true,
+  "node": true,
+  "strict": false,
+  "undef": true,
+  "unused": "vars"
+}

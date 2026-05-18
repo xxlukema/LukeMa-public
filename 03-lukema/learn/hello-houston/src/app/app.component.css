@@ -1,0 +1,30 @@
+
+.navbar-custom {
+    background-color: #ff5500;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-item {
+    color: white;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav {
+    color: yellowgreen;
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active {
+    color: white;
+    background-color: green;
+}
+
+.navbar-custom .nav-item:hover {
+    color: yellow;
+    background-color: limegreen;
+}
+
+
+
+

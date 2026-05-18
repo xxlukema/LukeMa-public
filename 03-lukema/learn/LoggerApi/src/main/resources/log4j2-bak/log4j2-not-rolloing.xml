@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Configuration status="WARN" monitorInterval="30" strict="true">
+	<Properties>
+		<Property name="learn">target/learn-log4j2.log</Property>
+	</Properties>
+	<Appenders>
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="#### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</Console>
+		<File name="file.learn" fileName="${learn}">
+			<PatternLayout
+				pattern="#### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</File>
+		<Async name="ASYNC">
+			<AppenderRef ref="file.learn" />
+			<AppenderRef ref="CONSOLE" />
+		</Async>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.learn" level="trace" additivity="false">
+			<AppenderRef ref="file.learn" />
+			<AppenderRef ref="CONSOLE" />
+		</Logger>
+		
+		<Logger name="com.learn.util" level="info" additivity="false">
+			<AppenderRef ref="file.learn" />
+			<AppenderRef ref="CONSOLE" />
+		</Logger>
+		
+		<Logger name="com.learn.api" level="info" additivity="false">
+			<AppenderRef ref="file.learn" />
+			<AppenderRef ref="CONSOLE" />
+		</Logger>
+		
+		<Root level="error">
+			<AppenderRef ref="ASYNC" />
+		</Root>
+	</Loggers>
+</Configuration>

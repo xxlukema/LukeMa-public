@@ -1,0 +1,22 @@
+<project>
+   <property file="project.properties" />
+
+   <target name="init">
+      <echo>Hello, World????? 1111111111</echo>
+
+      <echo>${symbols.hot}</echo>
+   </target>
+
+   <target name="get" depends="init">
+      <echo>Hello, World????? 2222222222${name}</echo>
+
+<!--
+      <get src="http://www.alwaysnetworks.com/luke_ma/bm.htm" 
+           dest="data/bm.htm" 
+           verbose="true" 
+           usetimestamp="false" 
+           ignoreerrors="false" />
+-->
+   </target>
+</project>
+

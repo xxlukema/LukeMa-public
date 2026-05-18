@@ -1,0 +1,61 @@
+<section fxLayout="column" fxLayoutAlign="start center">
+  <app-loading [loading]="loading"></app-loading>
+  <div fxFlex>
+    @if(!router.url.endsWith('/home')) {
+    <img src="assets/imgs/click-to-home.png" alt="" style="height: 2em;">
+    }
+    <img src="assets/imgs/prove-it.png" (click)="gohome()" style="cursor: pointer; height: 2em;" alt="">
+  </div>
+  <div fxFlex fxLayout fxFlexFill>
+    <hr fxFlex="100">
+  </div>
+
+  <div fxFlex fxLayout fxFlexFill fxLayoutAlign="start start">
+    <div fxFlex="auto"></div>
+
+    <div fxFlex="60" fxLayout="column">
+
+      @if(categoryConditions.length != 0 && category !== '') {
+      <form [formGroup]="formGroup" fxFlex fxLayout fxLayoutAlign="end center">
+        <span fxFlex="none" class="label required" style="width: 8em;">
+          Category
+        </span>
+        <select fxFlex="18em" [compareWith]="nmsService.compareObjects" formControlName="category" name="category"
+          (change)="changeCategory(); onKeyUp()" [class.invalid]="category == ''">
+          @for(item of categoryConditions; track item) {
+          <!-- ======== default dropdown is set in component.ts ======== -->
+          <!-- this.formGroup.get('category')?.setValue(this.category); -->
+          <!-- ======== default dropdown is set in component.ts ======== -->
+          <option [value]="item.category" [selected]="item.category === category">
+            {{item.category | titlecase}}
+          </option>
+          }
+        </select>
+        <dir style="width: 6em;"></dir>
+      </form>
+      }
+
+      <h1>
+        Find a match
+      </h1>
+
+      <div>for "{{title}}"</div>
+
+      @if (!condition) {
+      <div>&nbsp;</div>
+      } @else {
+      <div>You chose: <em>{{condition}}</em></div>
+      }
+
+      <div fxLayout fxLayoutAlign="space-around">
+        <button fxFlex="50" mat-raised-button color="primary" (click)="onSubmit()">
+          <div>Continue without match</div>
+        </button>
+      </div>
+
+    </div>
+
+    <div fxFlex="auto"></div>
+  </div>
+
+</section>

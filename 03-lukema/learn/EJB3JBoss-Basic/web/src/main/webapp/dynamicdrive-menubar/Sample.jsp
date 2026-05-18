@@ -1,0 +1,15 @@
+
+<table border=0>
+   <tr>
+      <td>
+         <img src="<c:url value="/image/logo.jpg" />" >
+      </td>
+   </tr>
+</table>
+
+<%@ include file="/dynamicdrive-menubar/MenuBar.jsp" %>
+
+<div></div>
+<div></div>
+<hr />
+

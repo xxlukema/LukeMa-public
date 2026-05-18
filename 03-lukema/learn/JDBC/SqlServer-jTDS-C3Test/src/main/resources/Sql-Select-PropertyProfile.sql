@@ -1,0 +1,10 @@
+SELECT
+    RowID,
+    InvestorNumber,
+    LoanNumber,
+    PropertyNumber,
+    Source_East_West,
+    ProspectusID,
+    SpreadInstructions
+FROM
+    ETL_FionaToC3_Staging_PropertyProfile; 

@@ -1,0 +1,28 @@
+<pluginMetadata>
+   <mojos>
+      <mojo>
+         <goal>get</goal>
+
+         <call>get</call>
+
+         <description>Get Yahoo data.</description>
+
+         <parameters>
+            <parameter>
+               <name>name</name>
+
+               <property>name</property>
+
+               <required>true</required>
+
+               <readonly>true</readonly>
+
+               <defaultValue>John Doe</defaultValue>
+
+               <type>java.lang.String</type>
+            </parameter>
+         </parameters>
+      </mojo>
+   </mojos>
+</pluginMetadata>
+

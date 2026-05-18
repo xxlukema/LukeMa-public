@@ -1,0 +1,6 @@
+/Installs/
+/.vagrant/
+/lma/*_*
+/lma/*.war
+/.Vagrantfile.swp
+**/*.log

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE cache-config SYSTEM "cache-config.dtd">
+<cache-config>
+   <caching-scheme-mapping>
+      <cache-mapping>
+         <cache-name>VirtualCache</cache-name>
+
+         <scheme-name>default-distributed</scheme-name>
+      </cache-mapping>
+
+      <cache-mapping>
+         <cache-name>DBBacked*</cache-name>
+
+         <scheme-name>distributed-db-backed</scheme-name>
+      </cache-mapping>
+   </caching-scheme-mapping>
+
+   <caching-schemes>
+      <distributed-scheme>
+         <scheme-name>default-distributed</scheme-name>
+
+         <service-name>DistributedCache</service-name>
+
+         <backing-map-scheme>
+            <class-scheme>
+               <scheme-ref>default-backing-map</scheme-ref>
+            </class-scheme>
+         </backing-map-scheme>
+      </distributed-scheme>
+
+      <class-scheme>
+         <scheme-name>default-backing-map</scheme-name>
+
+         <class-name>com.tangosol.util.SafeHashMap</class-name>
+      </class-scheme>
+
+      <distributed-scheme>
+         <scheme-name>distributed-db-backed</scheme-name>
+
+         <service-name>DistributedCache</service-name>
+
+         <backing-map-scheme>
+            <read-write-backing-map-scheme>
+               <internal-cache-scheme>
+                  <class-scheme>
+                     <class-name>com.tangosol.util.ObservableHashMap</class-name>
+                  </class-scheme>
+               </internal-cache-scheme>
+
+               <cachestore-scheme>
+                  <class-scheme>
+                     <class-name>com.learn.DBCacheStore</class-name>
+
+                     <init-params>
+                        <init-param>
+                           <param-type>java.lang.String</param-type>
+
+                           <param-value>CATALOG</param-value>
+                        </init-param>
+                     </init-params>
+                  </class-scheme>
+               </cachestore-scheme>
+
+               <read-only>false</read-only>
+
+<!--
+        To make this a write-through cache just change the value below to 0 (zero)
+        -->
+               <write-delay-seconds>0</write-delay-seconds>
+            </read-write-backing-map-scheme>
+         </backing-map-scheme>
+
+         <listener />
+
+         <autostart>true</autostart>
+      </distributed-scheme>
+   </caching-schemes>
+</cache-config>
+

@@ -1,0 +1,10 @@
+
+
+Strategy: (also known as Policy) Algorithms can be selected at runtime.
+
+In java, it is done by Polymorphism.
+
+In some programming languages, such as those without polymorphism, the issues 
+addressed by this pattern are handled through forms of reflection, such as 
+the native function pointer or function delegate syntax.
+

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="https://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.0.2</version>
+  </parent>
+
+  <groupId>com.learn</groupId>
+  <artifactId>my-properties-boot</artifactId>
+  <packaging>war</packaging>
+  <version>1.0.0</version>
+  <name>${project.artifactId}</name>
+
+  <profiles>
+    <!-- https://www.baeldung.com/maven-profiles -->
+    <!-- default file -->
+    <!-- mvn help:active-profiles -Denv=dev -->
+    <profile>
+      <id>laptop</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <os>
+          <!-- active on Windows -->
+          <family>Windows</family>
+        </os>
+      </activation>
+      <properties>
+        <filter.file.suffix>laptop</filter.file.suffix>
+      </properties>
+    </profile>
+
+    <!-- mvn -P fluentd clean package -->
+    <!-- mvn help:active-profiles -Denv=dev -P fluentd -->
+    <profile>
+      <id>fluentd</id>
+      <activation>
+        <os>
+          <!-- active on Linux -->
+          <family>Linux</family>
+        </os>
+      </activation>
+      <properties>
+        <filter.file.suffix>fluentd</filter.file.suffix>
+      </properties>
+    </profile>
+
+    <!-- mvn -P k8s clean package -->
+    <!-- mvn help:active-profiles -Denv=dev -P k8s -->
+    <!--
+    <profile>
+      <id>k8s</id>
+      <activation>
+        <os>
+          <family>Linux</family>
+        </os>
+      </activation>
+      <properties>
+        <filter.file.suffix>k8s</filter.file.suffix>
+      </properties>
+    </profile>
+     -->
+
+    <!-- mvn -P AWS-Tomcat clean package -->
+    <!-- mvn help:active-profiles -Denv=dev -P AWS-Tomcat -->
+    <!--
+    <profile>
+      <id>AWS-Tomcat</id>
+      <activation>
+        <os>
+          <family>Linux</family>
+        </os>
+      </activation>
+      <properties>
+        <filter.file.suffix>aws-tomcat</filter.file.suffix>
+      </properties>
+    </profile>
+     -->
+
+    <!-- mvn -P AWS-ec2-Docker clean package -->
+    <!-- mvn help:active-profiles -Denv=dev -->
+    <!-- mvn help:active-profiles -Denv=dev -P AWS-ec2-Docker -->
+    <!--
+    <profile>
+      <id>AWS-ec2-Docker</id>
+      <activation>
+        <os>
+          <family>Linux</family>
+        </os>
+      </activation>
+      <properties>
+        <filter.file.suffix>aws-ec2-docker</filter.file.suffix>
+      </properties>
+    </profile>
+     -->
+
+    <!-- mvn -P AWS-eb-Docker clean package -->
+    <!-- mvn help:active-profiles -Denv=dev -->
+    <!-- mvn help:active-profiles -Denv=dev -P AWS-eb-Docker -->
+    <!--
+    <profile>
+      <id>AWS-eb-Docker</id>
+      <activation>
+        <os>
+          <family>Linux</family>
+        </os>
+      </activation>
+      <properties>
+        <filter.file.suffix>aws-eb-docker</filter.file.suffix>
+      </properties>
+    </profile>
+     -->
+  </profiles>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss</maven.build.timestamp.format>
+    <buildDateTime>${maven.build.timestamp}</buildDateTime>
+    <maven.test.skip>true</maven.test.skip>
+    <maven.javadoc.skip>true</maven.javadoc.skip>
+    <java.version>21</java.version>
+    <maven.compiler.release>${java.version}</maven.compiler.release><!-- Java 9 and Beyond -->
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <!-- Other than boot -->
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-log4j2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <!-- tag::tests[] -->
+    <!-- Needed for junit tests -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+    <!--
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-rest-hal-browser</artifactId>
+    </dependency>
+     -->
+    <!-- tag::actuator[] -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <!-- end::actuator[] -->
+
+    <!-- Needed for import of javax.ws.rs.* -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>8.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Needed for json -->
+    <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>javax.json</artifactId>
+      <version>1.1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse</groupId>
+      <artifactId>yasson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Swagger OpenAPI -->
+    <!--
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
+      <version>1.6.14</version>
+    </dependency>
+     -->
+
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+      <version>2.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.0.2</version>
+    </dependency>
+
+    <!-- Swagger 3 -->
+    <dependency>
+      <groupId>org.thingsboard</groupId>
+      <artifactId>springfox-boot-starter</artifactId>
+      <version>3.0.4</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+
+    <filters>
+      <filter>filter/filter-values-${filter.file.suffix}.properties</filter>
+    </filters>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <excludes>
+          <exclude>**/keystore/**</exclude>
+        </excludes>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+        <includes>
+          <include>**/keystore/**</include>
+        </includes>
+      </resource>
+    </resources>
+    <!--
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+    <filtering>true</filtering>
+        <excludes>
+          <exclude>nvca-logback.xml</exclude>
+    </excludes>
+      </testResource>
+      <testResource>
+    <directory>src/test/resources</directory>
+        <filtering>false</filtering>
+        <includes>
+    <include>nvca-logback.xml</include>
+        </includes>
+      </testResource>
+    </testResources>
+     -->
+
+    <!-- Alternatively, Use global settings -->
+    <!-- Eclipse > Window > Preferences > Maven > Lifecycle Mappings > Browser... -->
+    <!-- >
+    C:/D/03-lukema/LukeMa/03-lukema/java/eclipse-lifecycle-mapping/lifecycle-mapping-metadata.xml -->
+    <!-- > (Do not forget press "Reload workspace lifecycle mappings
+            metadata" after
+    each change of this file!) -->
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <versionRange>[3.3.0,)</versionRange>
+                    <goals>
+                      <goal>resources</goal>
+                      <goal>testResources</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <execute>
+                      <runOnIncremental>true</runOnIncremental>
+                      <runOnConfiguration>true</runOnConfiguration>
+                    </execute>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <nonFilteredFileExtensions>
+            <nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+            <nonFilteredFileExtension>swf</nonFilteredFileExtension>
+            <nonFilteredFileExtension>jks</nonFilteredFileExtension>
+            <nonFilteredFileExtension>js</nonFilteredFileExtension>
+            <nonFilteredFileExtension>css</nonFilteredFileExtension>
+          </nonFilteredFileExtensions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connection-factories>
+   <mbean code="org.jboss.jms.jndi.JMSProviderLoader" name="jboss.messaging:service=JMSProviderLoader,name=MyRemoteJMSProvider">
+      <depends-list>
+         <depends-list-element>jboss.messaging.destination:service=Topic,name=GreetingsTopic</depends-list-element>
+         <depends-list-element>jboss.messaging.destination:service=Topic,name=ChangeNotificationTopic</depends-list-element>
+      </depends-list>   
+      <attribute name="ProviderName">RemoteXAConnectionFactory</attribute>
+      <attribute name="ProviderAdapterClass">org.jboss.jms.jndi.JNDIProviderAdapter</attribute>
+      <attribute name="FactoryRef">XAConnectionFactory</attribute>
+      <attribute name="QueueFactoryRef">XAConnectionFactory</attribute>
+      <attribute name="TopicFactoryRef">XAConnectionFactory</attribute>
+      <attribute name="Properties">
+         java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory
+         java.naming.factory.url.pkgs=org.jboss.naming:org.jnp.interfaces
+         java.naming.provider.url=jnp://loneqessappd1.uk.db.com:1199
+      </attribute>
+   </mbean>
+
+   <mbean code="org.jboss.jms.server.bridge.BridgeService" name="jboss.messaging:service=Bridge,name=TestBridge" xmbean-dd="xmdesc/Bridge-xmbean.xml">
+      <depends optional-attribute-name="SourceProviderLoader">jboss.messaging:service=JMSProviderLoader,name=MyRemoteJMSProvider</depends>
+      <depends optional-attribute-name="TargetProviderLoader">jboss.messaging:service=JMSProviderLoader,name=JMSProvider</depends>
+      <attribute name="SourceDestinationLookup">/topic/ChangeNotificationTopic</attribute>
+      <attribute name="TargetDestinationLookup">/topic/ChangeNotificationTopic</attribute>
+      <attribute name="QualityOfServiceMode">0</attribute>
+      <attribute name="MaxBatchSize">1</attribute>
+      <attribute name="MaxBatchTime">-1</attribute>
+      <attribute name="FailureRetryInterval">5000</attribute>
+      <attribute name="MaxRetries">-1</attribute>
+      <attribute name="AddMessageIDInHeader">false</attribute>
+   </mbean>
+</connection-factories>
+

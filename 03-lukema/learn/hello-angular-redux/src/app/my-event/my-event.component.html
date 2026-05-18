@@ -1,0 +1,28 @@
+<section>
+
+  <h3>My Events</h3>
+
+  <h5>Resolve</h5>
+
+  You will see "from Home Page" in next line if you navigate to this page from home.
+
+  <div *ngIf="from === ''">Not from Home Page</div>
+  <div *ngIf="from !== ''">from {{from}}</div>
+
+  <br>
+
+  <div>
+    Counter: {{eventCounter}}, Name: {{eventName}}
+  </div>
+
+  <br>
+
+  <div>
+    <button type="button" (click)="deduct()">Subtract (-)</button>
+    <button type="button" (click)="add()" style="margin-left: 2em;">Add (+)</button>
+    <button type="button" (click)="changeNameOnly()" style="margin-left: 2em;">Change Name Only</button>
+  </div>
+
+  <br>
+
+</section>

@@ -1,0 +1,68 @@
+{
+  "surveyId": 1145,
+  "surveyInstanceId": 5685865,
+  "smartId": "22d4c2db1e77f45d130669af3a48a10005079d76df5ec6efaaa496ccb240b2db",
+  "descr": "Annual Business Survey",
+  "displayName": "Annual Business Survey",
+  "abbr": "ABS",
+  "phoneNbr": "1-888-824-9001",
+  "status": "DELINQUENT",
+  "surveyStartDate": "05/15/2020",
+  "surveyEndDate": "01/01/2021",
+  "originalDueDate": "07/21/2020",
+  "mostRecentSurveyExtendedDate": "07/21/2020",
+  "organizationNameLine1": "YZ COMPANY 292650",
+  "organizationNameLine2": "LAW OFFICE 292650",
+  "infoUrl": "https://www.census.gov/programs-surveys/abs.html",
+  "faqUrl": "https://www.census.gov/programs-surveys/abs/about/faq.html",
+  "surveyInformation": "The Annual Business Survey (ABS) is a new survey being conducted starting in the 2017 reference year. The ABS replaces the five-year Survey of Business Owners (SBO) for employer businesses, the Annual Survey of Entrepreneurs (ASE), and the Business R&D and Innovation Survey for Microbusinesses (BRDI-M). Visit the ABS website via the ‘More Information’ link below to view the type of data the ABS collects and who is eligible to report.",
+  "brOrganizationId": "4000292650",
+  "centurionUrl": "https://sso-chaud301.centurion-qa.ssd.census.gov/saml/login",
+  "statusIndicator": "2",
+  "timeExtensionIndicator": "Y",
+  "surveyCategory": "ABS",
+  "refPeriod": "2019A1",
+  "surveyTypeName": "ABS",
+  "extensionWindow": "21"
+}
+
+------------- new:
+
+[
+  {
+    "surveyId": 1,
+    "surveyInstanceId": 2302164,
+    "smartId": "2ba8a5c855332ef0924209ab84eebc2f3acf90fa4c865dc5d788e93f075f3c77",
+    "descr": "Annual Services Report",
+    "displayName": "2017 Annual Services Report",
+    "abbr": "SAS17",
+    "phoneNbr": "1-877-787-9990",
+    "status": "DELINQUENT",
+    "surveyStartDate": "09/05/2017",
+    "surveyEndDate": "05/10/2020",
+    "originalDueDate": "05/10/2020",
+    "mostRecentSurveyExtendedDate": "05/10/2020",
+    "organizationNameLine1": "Rockne Fitness & Recreation SOI50M",
+    "infoUrl": "https://www.census.gov/programs-surveys/sas/about.html",
+    "faqUrl": "https://www.census.gov/programs-surveys/sas/about/faq.html",
+    "surveyInformation": "The Service Annual Survey provides data that help to measure America's current economic performance. Using a sample of approximately 78,000 selected service businesses, the Service Annual Survey collects revenue, expenses, e-commerce sales, and, for some industries, exports, inventories, class of customer, and detail product lines based on the North American Product Classification System (NAPCS). The government uses the data to determine economic policy; private industry relies on these data for planning and research. Information from businesses like yours also provides reliable data for your industry and your community.",
+    "brOrganizationId": "2157567169",
+    "centurionUrl": "https://sso-chaud301.centurion-qa.ssd.census.gov/saml/login",
+    "statusIndicator": "2",
+    "timeExtensionIndicator": "Y",
+    "surveyCategory": "SAS",
+    "refPeriod": "2017A1",
+    "surveyTypeName": "SAS17"
+  }
+]
+
+
+---------- add-survey-dialog response.length 1
+---------- add-survey-dialog response 
+Object { surveyId: 1, surveyInstanceId: 2324034, smartId: "0006f64a043f07da5b84689aeb8fdef719f4c44f018fa439477f3a18bc2041bc", descr: "Annual Services Report", displayName: "2017 Annual Services Report", abbr: "SAS17", phoneNbr: "1-877-787-9990", status: "DELINQUENT", surveyStartDate: "09/05/2017", surveyEndDate: "05/10/2020", … }
+
+---------- add-survey-dialog this.isPaperless true 
+------------------11111 res paperless 
+------------- updating flag false 
+------------------ emitting refresh event. 
+

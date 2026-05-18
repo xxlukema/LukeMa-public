@@ -1,0 +1,10 @@
+select count(*) "      OA_DIGITAL" from OA_DIGITAL;
+select count(*) "OA_PH_CAPABILITY" from OA_PH_CAPABILITY;
+select count(*) "      OA_SE_INFO" from OA_SE_INFO;
+select count(*) "       OA_SE_REF" from OA_SE_REF;
+select count(*) " OA_MARKET_STATE" from OA_MARKET_STATE;
+select count(*) "     OA_SE_ASSOC" from OA_SE_ASSOC;
+select count(*) "  OA_MARKET_CITY" from OA_MARKET_CITY;
+select count(*) "OA_SE_AGENT_INFO" from OA_AGENT_INFO;
+select count(*) "   OA_IMEI_RANGE" from OA_IMEI_RANGE;
+select count(*) "OA_MKT_FREQUENCY" from OA_MKT_FREQUENCY;

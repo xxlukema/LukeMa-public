@@ -1,0 +1,85 @@
+
+02Mar2023        Luke Ma             PTESNMS-5321: SonarQube issue fixes
+
+nms-sample-collection-lib SNAPSHOT to 1.3.4+1
+
+Updated copyright date
+
+pod lock. force trigger build
+
+https://jira.apps.dev.pcloud.io/browse/PTESNMS-5321
+
+PTESNMS-5321 SonarQube code smell fixes
+
+bugfix/PTESNMS-5321-code-smell
+
+
+
+https://sonarqube-cicd.apps.dev.pcloud.io/sonar/project/issues?resolved=false&branch=bugfix%2FPTESNMS-5321-code-smell&id=com.hughes.ptes.mms.sample%3Anms-sample-collection-lib&open=AYaU-cQOM5KvJNatVkjC
+
+https://sonarqube-cicd.apps.dev.pcloud.io/sonar/project/issues?id=com.hughes.ptes.mms.sample%3Anms-sample-collection-lib&branch=bugfix%2FPTESNMS-5321-code-smell&resolved=false
+
+https://bitbucket.apps.dev.pcloud.io/projects/NMS/repos/nms-sample-collection-lib/pull-requests/24/overview
+
+nms-sample-collection-lib: src/main/java/com/hughes/ptes/mms/sample/AbstractSampleStatProcessor.java
+                           (subclass) src/main/java/com/hughes/ptes/mms/sample/edge/AbstractEdgeSampleStatProcessor.java
+
+
+1. Subclasses of AbstractSampleStatProcessor:
+(done) nms-core-sample-stat-svc — src/main/java/com/hughes/ptes/mms/coresamplestat/JhCoreSampleStatManager.java
+(done) nms-tmlru-term-sample-stat-svc — src/main/java/com/hughes/ptes/mms/tmlrutermsamplestat/TmlruTermSampleStatManager.java
+
+2. Subclasses of AbstractEdgeSampleStatProcessor.java:
+(done) nms-edge-sample-stat-svc — src/main/java/com/hughes/ptes/mms/edgesamplestat/EdgeSampleStatManager.java
+(done) nms-tmlru-edge-sample-stat-svc — src/main/java/com/hughes/ptes/mms/tmlruedgesamplestat/TmlruEdgeSampleStatManager.java
+
+3. Search which Dockerfile is using "nms-core-sample-svc":
+   https://bitbucket.apps.dev.pcloud.io/projects/NMS --> (Top Right Corner) Search "NMS nms-core-sample-svc Dockerfile"
+
+Rancher (search which module is using nms-core-sample-stat-svc):
+(tested) nms-core-queue-sample-stat-svc: Dockerfile 1.1.7.2
+(tested) nms-fl-beam-sample-stat-svc: Dockerfile 1.1.7.2
+(tested) nms-rl-beam-sample-stat-svc: Dockerfile 1.1.7.2
+(tested) nms-sc-beam-sample-stat-svc: Dockerfile 1.1.7.2
+
+Rancher (search which module is using nms-tmlru-term-sample-stat-svc):
+(tested) nms-term-fl-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-term-rl-sample-stat-svc: Dockerfile 1.2.4.1
+
+Rancher (search which module is using nms-edge-sample-stat-svc):
+(tested) nms-tmlru-edge-if-sample-stat-svc: Dockerfile 1.2.4.1
+(???) nms-tmlru-modem-cng-fl-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-tmlru-edge-ingress-queue-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-tmlru-modem-cng-rl-sample-stat-svc: Dockerfile 1.2.4.1
+(???) nms-if-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-tmlru-edge-egress-queue-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-tmlru-edge-cng-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-egress-queue-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-ingress-queue-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-cng-sample-stat-svc: Dockerfile 1.2.4.1
+
+Rancher (search which module is using nms-tmlru-edge-sample-stat-svc):
+
+
+
+project:NMS nms-core-sample-svc Dockerfile
+
+
+(tested) nms-core-queue-sample-stat-svc: Dockerfile 1.1.7.2
+(tested) nms-fl-beam-sample-stat-svc: Dockerfile 1.1.7.2
+(tested) nms-rl-beam-sample-stat-svc: Dockerfile 1.1.7.2
+(tested) nms-sc-beam-sample-stat-svc: Dockerfile 1.1.7.2
+(tested) nms-term-fl-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-term-rl-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-tmlru-edge-if-sample-stat-svc: Dockerfile 1.2.4.1
+(fail=============) nms-tmlru-modem-cng-fl-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-tmlru-edge-ingress-queue-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-tmlru-modem-cng-rl-sample-stat-svc: Dockerfile 1.2.4.1
+(fail=============) nms-if-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-tmlru-edge-egress-queue-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-tmlru-edge-cng-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-egress-queue-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-ingress-queue-sample-stat-svc: Dockerfile 1.2.4.1
+(tested) nms-cng-sample-stat-svc: Dockerfile 1.2.4.1
+
+

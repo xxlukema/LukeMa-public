@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+
+/** '@tailwind base' is no longer available in v4. Use '@import "tailwindcss/preflight"' instead. */
+/** @tailwind base; */
+/** '@tailwind components' is no longer available in v4. Use '@tailwind utilities' instead. */
+/** @tailwind components; */
+@tailwind utilities;
+
+/* DaisyUI is a Tailwind CSS plugin that adds a set of pre-designed components. */
+/* It is not necessary to import daisyui here as it should be configured in tailwind.config.js. */
+/** @import "daisyui"; */
+
+/* The @import directive is used to import CSS files. */
+/* The @use directive is (in sass) used to load a module and make its contents available in the current file. */
+
+@import "tailwindcss/preflight";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+
+  padding: 1rem;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-chestnut: #a0522d;
+}
+
+fieldset {
+  border: solid 2px #61dafb;
+  border-radius: 0.5em;
+  padding: 1em;
+  margin: 1em 0;
+  background-color: #282c34;
+  color: #61dafb;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  box-shadow: 2px 3px 8px 2px #61dafb;
+  transition: all 0.3s ease;
+}
+
+fieldset>div {
+  margin-bottom: 1em;
+}
+
+fieldset>div>label {
+  display: flex;
+  align-items: center;
+}
+
+fieldset>div>label>input {
+  margin-right: 1em;
+}
+
+fieldset>div>label>input[type="checkbox"] {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+fieldset>div>label>input[type="checkbox"]:checked {
+  background-color: #61dafb;
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connection-factories>
+   <mbean code="org.jboss.jms.jndi.JMSProviderLoader" name="jboss.messaging:service=JMSProviderLoader,name=MyRemoteJMSProvider">
+      <depends-list>
+         <depends-list-element>jboss.messaging.destination:service=Queue,name=MyQueue</depends-list-element>
+         <depends-list-element>jboss.messaging.destination:service=Topic,name=ChangeNotificationTopic</depends-list-element>
+         <depends-list-element>jboss.messaging.destination:service=Topic,name=GreetingsTopic</depends-list-element>
+      </depends-list>
+      <attribute name="ProviderName">RemoteXAConnectionFactory</attribute>
+      <attribute name="ProviderAdapterClass">org.jboss.jms.jndi.JNDIProviderAdapter</attribute>
+      <attribute name="FactoryRef">XAConnectionFactory</attribute>
+      <attribute name="QueueFactoryRef">XAConnectionFactory</attribute>
+      <attribute name="TopicFactoryRef">XAConnectionFactory</attribute>
+      <attribute name="Properties">
+         java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory
+         java.naming.factory.url.pkgs=org.jboss.naming:org.jnp.interfaces
+         java.naming.provider.url=jnp://127.0.0.1:1099
+      </attribute>       
+   </mbean>
+
+   <mbean code="org.jboss.jms.server.bridge.BridgeService" name="jboss.messaging:service=Bridge,name=TestBridge" xmbean-dd="xmdesc/Bridge-xmbean.xml">
+      <depends optional-attribute-name="SourceProviderLoader">jboss.messaging:service=JMSProviderLoader,name=JMSProvider</depends>
+      <depends optional-attribute-name="TargetProviderLoader">jboss.messaging:service=JMSProviderLoader,name=MyRemoteJMSProvider</depends>
+      <attribute name="SourceDestinationLookup">/topic/GreetingsTopic</attribute>
+      <attribute name="TargetDestinationLookup">/topic/ChangeNotificationTopic</attribute>
+      <!-- Optional: The Quality Of Service mode to use, one of: QOS_AT_MOST_ONCE = 0; QOS_DUPLICATES_OK = 1; QOS_ONCE_AND_ONLY_ONCE = 2; -->
+      <attribute name="QualityOfServiceMode">0</attribute>
+      <!-- The maximum number of messages to consume from the source before sending to the target -->
+      <attribute name="MaxBatchSize">1</attribute>
+      <attribute name="MaxBatchTime">-1</attribute>
+      <attribute name="FailureRetryInterval">5000</attribute>
+      <attribute name="MaxRetries">-1</attribute>
+      <!-- If true then the message id of the message before bridging will be added
+          as a header to the message so it is available to the receiver. Can then be
+          sent as correlation id to correlate in a distributed request-response -->
+      <attribute name="AddMessageIDInHeader">false</attribute>
+      <!-- If consuming from a durable subscription this is the subscription name
+      <attribute name="SubName">mysub</attribute>
+      -->
+      <!-- If consuming from a durable subscription this is the client ID to use
+      <attribute name="ClientID">myClientID</attribute>
+      -->
+      <!-- JMS selector to use for consuming messages from the source
+      <attribute name="Selector">specify jms selector here</attribute>
+      -->
+   </mbean>
+</connection-factories>
+

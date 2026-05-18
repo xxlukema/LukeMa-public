@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by ELIU (Aviall Services, Inc.) -->
+<!--
+  Aviall RequestForQuotation-1.0.xsd
+
+  Copyright (C) Aviall Serices, Inc. (2006). All Rights Reserved.
+
+ 
+  Document Type:    RequestForQuotation-1.0.xsd
+  Generated On:      Wed, March 15, 2006
+   
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-1.0" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-1.0" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-1.0" xmlns:res="urn:oasis:names:specification:ubl:schema:xsd:AcknowledgementResponseCode-1.0" xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnspecializedDatatypes-1.0" xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-1.0" xmlns:cur="urn:oasis:names:specification:ubl:schema:xsd:CurrencyCode-1.0" targetNamespace="urn:aviall:names:specification:ubl:schema:xsd:RequestForQuotation-1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns="urn:aviall:names:specification:ubl:schema:xsd:RequestForQuotation-1.0">
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-1.0" schemaLocation="../common/UBL-CoreComponentParameters-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-1.0" schemaLocation="../common/UBL-CommonBasicComponents-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-1.0" schemaLocation="../common/UBL-CommonAggregateComponents-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:AcknowledgementResponseCode-1.0" schemaLocation="../codelist/UBL-CodeList-AcknowledgementResponseCode-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnspecializedDatatypes-1.0" schemaLocation="../common/UBL-UnspecializedDatatypes-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-1.0" schemaLocation="../common/UBL-SpecializedDatatypes-1.0.xsd"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CurrencyCode-1.0" schemaLocation="../codelist/UBL-CodeList-CurrencyCode-1.0.xsd"/>
+	<xsd:element name="RequestForQuotation" type="RequestForQuotationType">
+		<xsd:annotation>
+			<xsd:documentation>This element MUST be conveyed as the root element in any instance document based on this Schema expression</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="RequestForQuotationType">
+		<xsd:annotation>
+			<xsd:documentation>
+				<ccts:Component>
+					<ccts:ComponentType>ABIE</ccts:ComponentType>
+					<ccts:DictionaryEntryName>RequestForQuotation. Details</ccts:DictionaryEntryName>
+					<ccts:Definition>a document that contains information directly relating to the economic event of RequestForQuotationing products.</ccts:Definition>
+					<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+					<ccts:AlternativeBusinessTerms>Purchase RequestForQuotation</ccts:AlternativeBusinessTerms>
+				</ccts:Component>
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="TransactionHeader" type="TransactionHeaderType"/>
+			<xsd:element ref="cac:BuyerParty" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>ASBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Buyer Party</ccts:DictionaryEntryName>
+							<ccts:Definition>associates the RequestForQuotation with information about the buyer involved in the transaction.</ccts:Definition>
+							<ccts:Cardinality>1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTerm>Buyer Party</ccts:PropertyTerm>
+							<ccts:AssociatedObjectClass>Buyer Party</ccts:AssociatedObjectClass>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="cac:SellerParty" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>ASBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Seller Party</ccts:DictionaryEntryName>
+							<ccts:Definition>associates the RequestForQuotation with information about the seller involved in the transaction.</ccts:Definition>
+							<ccts:Cardinality>1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTerm>Seller Party</ccts:PropertyTerm>
+							<ccts:AssociatedObjectClass>Seller Party</ccts:AssociatedObjectClass>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RFQLineItem" type="RFQLineItemType" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>ASBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. QuoteItem</ccts:DictionaryEntryName>
+							<ccts:Definition>associates the Order with one or more Line items.</ccts:Definition>
+							<ccts:Cardinality>1..n</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation.QuoteItem</ccts:ObjectClass>
+							<ccts:PropertyTerm>RequestForQuotation.QuoteItem</ccts:PropertyTerm>
+							<ccts:AssociatedObjectClass>RequestForQuotation. QuoteItem</ccts:AssociatedObjectClass>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="ValidityDurationMeasure" type="ValidityDurationMeasureType"/>
+    <xsd:element name="QuoteDocumentReference" type="cac:DocumentReferenceType"/>
+	<xsd:element name="AdditionalDocumentReference" type="cac:DocumentReferenceType"/>
+	<xsd:complexType name="ValidityDurationMeasureType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:MeasureType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="TransactionHeaderType">
+		<xsd:sequence>
+			<xsd:element name="ResponseType" type="udt:IdentifierType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Globally Unique_ Identifier. Identifier</ccts:DictionaryEntryName>
+							<ccts:Definition>a computer generated unique identifier for the document, which is guaranteed to be unique</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTermQualifier>Globally Unique</ccts:PropertyTermQualifier>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+							<ccts:DataType>Identifier. TransactionType</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+            <xsd:element name="ResponseCode" type="udt:CodeType" minOccurs="0"/>
+			<xsd:element name="BuyersID" type="udt:IdentifierType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Buyers_ Identifier. Identifier</ccts:DictionaryEntryName>
+							<ccts:Definition>a unique identification assigned to the RequestForQuotation in respect to the Buyer party</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTermQualifier>Buyers</ccts:PropertyTermQualifier>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+							<ccts:DataType>Identifier. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SellersID" type="udt:IdentifierType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Sellers_ Identifier. Identifier</ccts:DictionaryEntryName>
+							<ccts:Definition>the identification given to an RequestForQuotation by the seller.</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTermQualifier>Sellers</ccts:PropertyTermQualifier>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+							<ccts:DataType>Identifier. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="UrgencyIndicator" type="cbc:IndicatorType" minOccurs="0"/>
+			<xsd:element name="GUID" type="udt:IdentifierType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Globally Unique_ Identifier. Identifier</ccts:DictionaryEntryName>
+							<ccts:Definition>a computer generated unique identifier for the document, which is guaranteed to be unique</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTermQualifier>Globally Unique</ccts:PropertyTermQualifier>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+							<ccts:DataType>Identifier. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TransactionID" type="udt:IdentifierType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Globally Unique_ Identifier. Identifier</ccts:DictionaryEntryName>
+							<ccts:Definition>a computer generated unique identifier for the document, which is guaranteed to be unique</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTermQualifier>Globally Unique</ccts:PropertyTermQualifier>
+							<ccts:PropertyTerm>Identifier</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Identifier</ccts:RepresentationTerm>
+							<ccts:DataType>Identifier. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="cbc:IssueDate">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Issue Date. Date</ccts:DictionaryEntryName>
+							<ccts:Definition>a date (and potentially time) stamp denoting when the RequestForQuotation was issued.</ccts:Definition>
+							<ccts:Cardinality>1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTerm>Issue Date</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Date</ccts:RepresentationTerm>
+							<ccts:DataType>Date_Date Time. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="cbc:Note" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Note. Text</ccts:DictionaryEntryName>
+							<ccts:Definition>contains any free form text pertinent to the entire document or to the document message itself. This element may contain notes or any other similar information that is not contained explicitly in another structure.</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTerm>Note</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Text</ccts:RepresentationTerm>
+							<ccts:DataType>Text. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="cbc:ExpiryDate" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Expiry Date. Date</ccts:DictionaryEntryName>
+							<ccts:Definition>the date on or after which RequestForQuotation should be cancelled if not satisfied.</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTerm>Expiry Date</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Date</ccts:RepresentationTerm>
+							<ccts:DataType>Date_Date Time. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="ValidityDurationMeasure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Validity Duration. Measure</ccts:DictionaryEntryName>
+							<ccts:Definition>the period for which the RequestForQuotation is valid.</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTerm>Validity Duration</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Measure</ccts:RepresentationTerm>
+							<ccts:DataType>Measure. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="QuoteDocumentReference" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>ASBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Quote_ Document Reference. Document Reference</ccts:DictionaryEntryName>
+							<ccts:Definition>associates the RequestForQuotation with a prior quote.</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTermQualifier>Quote</ccts:PropertyTermQualifier>
+							<ccts:PropertyTerm>Document Reference</ccts:PropertyTerm>
+							<ccts:AssociatedObjectClass>Document Reference</ccts:AssociatedObjectClass>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PricingCurrencyCode" type="cur:CurrencyCodeType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>Order. Pricing Currency. Code</ccts:DictionaryEntryName>
+							<ccts:Definition>the currency in which all pricing on the transaction will be specified.</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>Order</ccts:ObjectClass>
+							<ccts:PropertyTerm>Pricing Currency</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Code</ccts:RepresentationTerm>
+							<ccts:DataType>Currency_ Code. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ExchangeRate" type="cac:ExchangeRateType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						<ccts:Component>
+							<ccts:ComponentType>BBIE</ccts:ComponentType>
+							<ccts:DictionaryEntryName>RequestForQuotation. Exchange Rate. Code</ccts:DictionaryEntryName>
+							<ccts:Definition>the exchange rate will be specified.</ccts:Definition>
+							<ccts:Cardinality>0..1</ccts:Cardinality>
+							<ccts:ObjectClass>RequestForQuotation</ccts:ObjectClass>
+							<ccts:PropertyTerm>Exchange Rate</ccts:PropertyTerm>
+							<ccts:RepresentationTerm>Exchange Rate</ccts:RepresentationTerm>
+							<ccts:DataType>Exchange Rate. Type</ccts:DataType>
+						</ccts:Component>
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RFQLineItemType">
+		<xsd:complexContent>
+			<xsd:extension base="cac:LineItemType">
+				<xsd:sequence>
+					<xsd:element name="DeliveryDays" type="udt:NumericType" minOccurs="0"/>
+					<xsd:element name="DiscountInformation" type="udt:TextType" minOccurs="0"/>
+					<xsd:element name="MSDS" type="cbc:IndicatorType" minOccurs="0"/>
+					<xsd:element name="FAA_APPROVAL" type="cbc:IndicatorType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

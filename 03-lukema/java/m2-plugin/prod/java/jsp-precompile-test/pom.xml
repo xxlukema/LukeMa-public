@@ -1,0 +1,31 @@
+<project>
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.learn</groupId>
+
+   <artifactId>testdir</artifactId>
+
+   <packaging>jar</packaging>
+
+   <version>1.0</version>
+
+   <dependencies>
+   </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>com.myproject.plugin.java</groupId>
+
+            <artifactId>maven-jsp-plugin</artifactId>
+
+            <configuration>
+               <targetBaseURL>http://localhost:7001/apsmonitor</targetBaseURL>
+
+               <localJspDir>src/main/webapp</localJspDir>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+</project>
+

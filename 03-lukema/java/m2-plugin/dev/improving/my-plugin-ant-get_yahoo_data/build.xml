@@ -1,0 +1,34 @@
+<project>
+   <property file="project.properties" />
+
+   <target name="echo1">
+      <echo>##${symbol}##</echo>
+   </target>
+
+   <target name="set_proxy">
+<!--
+     <setproxy 
+      proxyhost="${maven.proxy.host}" 
+      proxyport="${maven.proxy.port}" 
+      proxyuser="${maven.proxy.username}" 
+      proxypassword="${maven.proxy.password}"/>
+      -->
+   </target>
+
+   <taskdef name="forEach" classname="net.sf.antcontrib.logic.ForEach" />
+
+   <target name="get" depends="set_proxy">
+      <echo>Getting data for symbol: ${symbols.hot}</echo>
+
+      <forEach list="${symbols.hot}" target="echo1" param="symbol" inheritall="true" />
+
+      <mkdir dir="data" />
+
+<!--
+      <get src="${href.0}${symbol}${href.1}" 
+           dest="data/${symbol}.csv" 
+           verbose="true" usetimestamp="false" ignoreerrors="false" />
+           -->
+   </target>
+</project>
+

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<!-- 
+   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">
+      <property name="driverClassName">
+         <value>com.mysql.jdbc.Driver</value>
+      </property>
+      
+      <property name="url">
+         <value>jdbc:mysql:///test</value>
+      </property>
+
+      <property name="username">
+         <value>root</value>
+      </property>
+   </bean>
+ -->
+ 
+   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">  
+      <property name="driverClassName">
+         <value>oracle.jdbc.driver.OracleDriver</value>
+      </property>
+       
+      <property name="url">
+         <value>jdbc:oracle:thin:@localhost:1521:</value>
+      </property>
+
+      <property name="username">
+         <value>luke</value>
+      </property>
+
+      <property name="password">
+         <value>luke</value>
+      </property>
+   </bean>
+ 
+    <bean id="personJTATarget" class="com.learn.jta.PersonJTAImpl">
+      <property name="dataSource">
+         <ref bean="dataSource" />
+      </property>
+   </bean>
+
+   <bean id="personJTA" parent="baseTransactionProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.jta.PersonJTA</value>
+      </property>
+   
+      <property name="target">
+         <ref bean="personJTATarget" />
+      </property>
+   </bean>
+
+    <bean id="personJDBCTarget" class="com.learn.jdbc.PersonJDBCImpl">
+      <property name="dataSource">
+         <ref bean="dataSource" />
+      </property>
+   </bean>
+
+   <bean id="personJDBC" parent="baseTransactionProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.jdbc.PersonJDBC</value>
+      </property>
+   
+      <property name="target">
+         <ref bean="personJDBCTarget" />
+      </property>
+   </bean>
+   
+   <bean id="baseTransactionProxyFactoryBean" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+      <property name="transactionManager">
+         <ref bean="transactionManager" />
+      </property>
+
+      <property name="transactionAttributes">
+         <props>
+            <prop key="list*">PROPAGATION_REQUIRED,readOnly</prop>
+         </props>
+      </property>
+   </bean>
+     
+   <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+      <property name="dataSource">
+         <ref local="dataSource" />
+      </property>
+   </bean>
+
+</beans>
+

@@ -1,0 +1,332 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.db.ess</groupId>
+
+   <artifactId>ObjectModel</artifactId>
+
+   <name>${project.artifactId}</name>
+
+   <version>1.0.0</version>
+
+   <packaging>jar</packaging>
+
+   <repositories>
+      <repository>
+         <id>repository.jboss.org</id>
+
+         <name>JBoss Repository</name>
+
+         <url>http://repository.jboss.org/maven2</url>
+      </repository>
+   </repositories>
+
+   <dependencies>
+      <dependency>
+         <groupId>com.db.ess</groupId>
+
+         <artifactId>EssCommon</artifactId>
+
+         <version>UNKNOWN</version>
+
+         <scope>system</scope>
+
+         <systemPath>${basedir}/lib/EssCommon.jar</systemPath>
+      </dependency>
+
+      <dependency>
+         <groupId>com.db.ess</groupId>
+
+         <artifactId>GeneosJMX</artifactId>
+
+         <version>2_4_181</version>
+
+         <scope>system</scope>
+
+         <systemPath>${basedir}/lib/GeneosJMX-2_4_181.jar</systemPath>
+      </dependency>
+
+      <dependency>
+         <groupId>com.oracle</groupId>
+
+         <artifactId>coherence</artifactId>
+
+         <version>3.6.1</version>
+
+         <scope>system</scope>
+
+         <systemPath>${basedir}/lib/coherence-3.6.1.jar</systemPath>
+      </dependency>
+
+      <dependency>
+         <groupId>com.oracle</groupId>
+
+         <artifactId>coherence-commandpattern</artifactId>
+
+         <version>2.5.0</version>
+
+         <scope>system</scope>
+
+         <systemPath>${basedir}/lib/coherence-commandpattern-2.5.0.jar</systemPath>
+      </dependency>
+
+      <dependency>
+         <groupId>com.oracle</groupId>
+
+         <artifactId>coherence-common</artifactId>
+
+         <version>1.5.0</version>
+
+         <scope>system</scope>
+
+         <systemPath>${basedir}/lib/coherence-common-1.5.0.jar</systemPath>
+      </dependency>
+
+      <dependency>
+         <groupId>javax.jms</groupId>
+
+         <artifactId>jms</artifactId>
+
+         <version>1.1</version>
+      </dependency>
+
+      <dependency>
+         <groupId>jaxen</groupId>
+
+         <artifactId>jaxen</artifactId>
+
+         <version>1.1.1</version>
+      </dependency>
+
+      <dependency>
+         <groupId>log4j</groupId>
+
+         <artifactId>log4j</artifactId>
+
+         <version>1.2.14</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.sybase</groupId>
+
+         <artifactId>jconn3</artifactId>
+
+         <version>UNKNOWN</version>
+
+         <scope>system</scope> <!-- for test phase only -->
+
+         <systemPath>${basedir}/lib/jconn3.jar</systemPath>
+      </dependency>
+
+      <dependency>
+         <groupId>org.jmock</groupId>
+
+         <artifactId>jmock</artifactId>
+
+         <version>2.5.1</version>
+
+         <scope>test</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>org.jmock</groupId>
+
+         <artifactId>jmock-junit4</artifactId>
+
+         <version>2.5.1</version>
+
+         <scope>test</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>emma</groupId>
+
+         <artifactId>emma</artifactId>
+
+         <version>2.0.5312</version>
+
+         <scope>test</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>com.ibm.icu</groupId>
+
+         <artifactId>icu4j</artifactId>
+
+         <version>4.0.1</version>
+
+         <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+         <groupId>junit</groupId>
+
+         <artifactId>junit</artifactId>
+
+         <version>4.7</version>
+
+         <scope>test</scope>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <sourceDirectory>src</sourceDirectory>
+
+      <testSourceDirectory>test</testSourceDirectory>
+
+      <testResources>
+         <testResource>
+            <directory>testResources</directory>
+         </testResource>
+      </testResources>
+
+      <plugins>
+         <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+
+            <configuration>
+               <archive>
+                  <addMavenDescriptor>false</addMavenDescriptor>
+               </archive>
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+
+            <configuration>
+               <source>1.6</source>
+
+               <target>1.6</target>
+
+               <encoding>ISO-8859-1</encoding>
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+
+            <artifactId>maven-checkstyle-plugin</artifactId>
+
+            <version>2.5</version>
+
+            <configuration>
+               <enableRulesSummary>false</enableRulesSummary>
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+
+            <artifactId>maven-pmd-plugin</artifactId>
+
+            <version>2.5</version>
+         </plugin>
+
+         <plugin>
+            <groupId>org.sonatype.maven.plugin</groupId>
+
+            <artifactId>emma-maven-plugin</artifactId>
+
+            <version>1.2</version>
+
+            <inherited>true</inherited>
+
+            <executions>
+               <execution>
+                  <phase>process-classes</phase>
+
+                  <goals>
+                     <goal>instrument</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+          
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+
+            <artifactId>maven-surefire-plugin</artifactId>
+
+            <inherited>true</inherited>
+
+            <configuration>
+               <skip>false</skip>
+               
+               <testFailureIgnore>true</testFailureIgnore>
+            
+               <forkMode>once</forkMode>
+
+               <reportFormat>xml</reportFormat>
+
+               <classesDirectory>${project.build.directory}/generated-classes/emma/classes</classesDirectory>
+            </configuration>
+         </plugin>
+         
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+
+            <artifactId>cobertura-maven-plugin</artifactId>
+
+            <version>2.4</version>
+
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>clean</goal>
+
+                     <goal>check</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+
+   <reporting>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+
+            <artifactId>maven-pmd-plugin</artifactId>
+
+            <version>2.5</version>
+         </plugin>
+
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+
+            <artifactId>maven-checkstyle-plugin</artifactId>
+
+            <version>2.5</version>
+         </plugin>
+          
+         <plugin>         
+            <groupId>org.sonatype.maven.plugin</groupId>
+
+            <artifactId>emma-maven-plugin</artifactId>
+
+            <version>1.2</version>
+
+            <inherited>true</inherited>
+         </plugin>
+ 
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+
+            <artifactId>surefire-report-maven-plugin</artifactId>
+
+            <inherited>true</inherited>
+         </plugin>
+         
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+
+            <artifactId>cobertura-maven-plugin</artifactId>
+
+            <version>2.4</version>
+         </plugin>         
+      </plugins>
+   </reporting>
+</project>
+

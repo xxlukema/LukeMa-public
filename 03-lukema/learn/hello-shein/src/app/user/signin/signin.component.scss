@@ -1,0 +1,29 @@
+input[type=button] {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.eye {
+  height: 1.8em;
+  width: 2.2em;
+  background-color: cyan;
+  padding: 0.5em;
+  margin: 0;
+  z-index: 100;
+}
+
+.pill2 {
+  border: 1px lightblue solid;
+  border-radius: 20px;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+/** If move `input.ng-invalid` to global it will not work. */
+input.ng-invalid {
+  border-color: #c24641;
+  border-width: 2px;
+}

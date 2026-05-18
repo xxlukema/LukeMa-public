@@ -1,0 +1,26 @@
+<section class="confirm-dialog">
+  <div class="indi-modal" :class="{'indi-modal--is-open': active}">
+    <div class="indi-modal__content">
+      <div class="indi-modal__header">
+        <div>{{title}}</div>
+      </div>
+      <div class="indi-modal__body">
+        <div>{{body}}</div>
+        <ol style="text-align: left; padding-left: 10px;">Modal is actually a DIV element with
+          <div style="padding-left: 40px;">
+            <li>100% height to cover body element</li>
+            <li>100% width to cover body element</li>
+            <li>When active: display: block, and z-index: 800 (high) to cover body element</li>
+            <li>When inactive: display is none</li>
+            <li>opacity: 1 for modal content. opacity: 0.59 between modal border and modal content</li>
+          </div>
+        </ol>
+      </div>
+      <hr>
+      <div class="indi-modal__footer">
+        <button class="indi-button--primary" type=button @click="confirm">{{confirmLabel}}</button>
+        <button class="indi-button--primary" type=button @click="cancel">{{cancelLabel}}</button>
+      </div>
+    </div>
+  </div>
+</section>

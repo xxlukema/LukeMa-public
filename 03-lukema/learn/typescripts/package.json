@@ -1,0 +1,27 @@
+{
+  "name": "typescripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/js/$.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint src --fix --ignore-pattern \"src/lib\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "eslint": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "tsx": "^4.19.2"
+  },
+  "dependencies": {
+    "typescript": "^3.7.2",
+    "typescripts": "file:"
+  }
+}

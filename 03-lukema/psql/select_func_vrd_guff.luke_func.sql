@@ -1,0 +1,1 @@
+select vrd_guff.luke_func('Hello', 'world');

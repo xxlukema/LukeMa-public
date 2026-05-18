@@ -1,0 +1,20 @@
+<section style="text-align: center;">
+  <app-loading [loading]="loading"></app-loading>
+  <h3>Product Details {{productId}}</h3>
+
+  <mat-card class="full-width-table">
+    @if(product) {
+    <mat-card-content fxLayout fxLayoutAlign="center">
+      <div fxFlex="70">
+        {{product.name}}
+      </div>
+
+      <div>
+        <div fxLayout fxLayoutAlign="start center" fxLayoutGap="0.5em">
+          <img fxFlex="none" *ngFor="let prod of product.imageLinks" [src]="prod" style="height: 4em;">
+        </div>
+      </div>
+    </mat-card-content>
+    }
+  </mat-card>
+</section>

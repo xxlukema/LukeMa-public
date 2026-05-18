@@ -1,0 +1,250 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "hello-ng-lib": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        }
+      },
+      "root": "projects/hello-ng-lib",
+      "sourceRoot": "projects/hello-ng-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/hello-ng-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/hello-ng-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/hello-ng-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hello-ng-lib/src/test.ts",
+            "tsConfig": "projects/hello-ng-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/hello-ng-lib/karma.conf.js"
+          }
+        }
+      }
+    },
+    "hello-ng-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        }
+      },
+      "root": "projects/hello-ng-app",
+      "sourceRoot": "projects/hello-ng-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/hello-ng-app",
+            "index": "projects/hello-ng-app/src/index.html",
+            "main": "projects/hello-ng-app/src/main.ts",
+            "polyfills": "projects/hello-ng-app/src/polyfills.ts",
+            "tsConfig": "projects/hello-ng-app/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/hello-ng-app/src/favicon.ico",
+              "projects/hello-ng-app/src/assets"
+            ],
+            "styles": [
+              "projects/hello-ng-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/hello-ng-app/src/environments/environment.ts",
+                  "with": "projects/hello-ng-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "hello-ng-app:build:production"
+            },
+            "development": {
+              "browserTarget": "hello-ng-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "hello-ng-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hello-ng-app/src/test.ts",
+            "polyfills": "projects/hello-ng-app/src/polyfills.ts",
+            "tsConfig": "projects/hello-ng-app/tsconfig.spec.json",
+            "karmaConfig": "projects/hello-ng-app/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/hello-ng-app/src/favicon.ico",
+              "projects/hello-ng-app/src/assets"
+            ],
+            "styles": [
+              "projects/hello-ng-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "hello-ng-web": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        }
+      },
+      "root": "projects/hello-ng-web",
+      "sourceRoot": "projects/hello-ng-web/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/hello-ng-web",
+            "index": "projects/hello-ng-web/src/index.html",
+            "main": "projects/hello-ng-web/src/main.ts",
+            "polyfills": "projects/hello-ng-web/src/polyfills.ts",
+            "tsConfig": "projects/hello-ng-web/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/hello-ng-web/src/favicon.ico",
+              "projects/hello-ng-web/src/assets"
+            ],
+            "styles": [
+              "projects/hello-ng-web/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/hello-ng-web/src/environments/environment.ts",
+                  "with": "projects/hello-ng-web/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "hello-ng-web:build:production"
+            },
+            "development": {
+              "browserTarget": "hello-ng-web:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "hello-ng-web:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/hello-ng-web/src/test.ts",
+            "polyfills": "projects/hello-ng-web/src/polyfills.ts",
+            "tsConfig": "projects/hello-ng-web/tsconfig.spec.json",
+            "karmaConfig": "projects/hello-ng-web/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/hello-ng-web/src/favicon.ico",
+              "projects/hello-ng-web/src/assets"
+            ],
+            "styles": [
+              "projects/hello-ng-web/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "hello-ng-web",
+  "cli": {
+    "analytics": false
+  }
+}

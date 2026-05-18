@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.learn.bean" default-lazy="true" default-cascade="all-delete-orphan">
+   <class name="Child" table="Child">
+      <id name="id" type="long" column="id">
+         <generator class="native">
+            <param name="sequence">Child_Id_Seq</param>
+         </generator>
+      </id>
+
+      <property name="name" unique="true" />
+
+      <!--  If you use a List (or other indexed collection) you need to set the key column --> 
+      <!--  of the foreign key to not null, and let Hibernate manage the association from  -->
+      <!--  the collections side to maintain the index of each element (making the other   -->
+      <!--  side virtually inverse by setting update="false" and insert="false").          -->
+      <many-to-one name="parent" 
+          column="parent_id" 
+          not-null="true"
+          insert="false"
+          update="false" >
+      </many-to-one>
+   </class>
+</hibernate-mapping>
+

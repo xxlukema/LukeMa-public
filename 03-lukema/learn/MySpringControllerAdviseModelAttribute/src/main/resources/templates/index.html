@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/security/tags">
+<head>
+<title>Welcome Page</title>
+<link rel="stylesheet" th:href="@{/css/mystyle.css}" />
+</head>
+<body>
+	<h2>Welcome Page</h2>
+
+	<h2>
+		<span th:text="${message}?:_">There is no such message in the model.</span>
+	</h2>
+
+	<h2>
+		<span th:text="'Advice Message: ' + ${advice_msg}">There is no such message in the advise.</span>
+	</h2>
+
+	<p>
+		Today is: <span th:text="${#calendars.format(today,'dd MMMM yyyy')}">13 May 2011</span>
+	</p>
+	
+	<p>
+		Today is: <span th:text="${#calendars.format(todayNotFound,'dd MMMM yyyy')}?:_">13 May 2011</span>
+	</p>
+
+</body>
+</html>

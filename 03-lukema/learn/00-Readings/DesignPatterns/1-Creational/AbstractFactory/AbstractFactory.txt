@@ -1,0 +1,7 @@
+
+Abstract Factory: One level higher than Factory Pattern. Factory Pattern 
+creates concrete subclasses to be created. Abstract Factory creates  
+subclasses factories of this abstract factory. These subclass factories 
+create concrete subclass objects.
+
+

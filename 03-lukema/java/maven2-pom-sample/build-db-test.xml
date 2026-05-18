@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ESSIntegrationTestBase" default="install" basedir=".">
+   <macrodef name="maven">
+      <attribute name="dir" default="." />
+
+      <attribute name="args" default="clean compile" />
+
+      <sequential>
+         <exec dir="@{dir}" executable="mvn.bat">
+            <arg line="@{args}" />
+         </exec>
+      </sequential>
+   </macrodef>
+
+   <target name="clean">
+      <maven args="clean" />
+   </target>
+
+   <target name="compile">
+      <maven args="clean compile" />
+   </target>
+
+   <target name="test-compile">
+      <maven args="clean compile test-compile" />
+   </target>
+
+   <target name="test">
+      <maven args="clean test" />
+   </target>
+
+   <target name="install">
+      <maven args="clean install" />
+   </target>
+   
+   <target name="javadoc">
+      <maven args="javadoc:javadoc" />
+   </target>   
+
+   <target name="site">
+      <maven args="clean site" />
+   </target>   
+
+   <target name="install-skip.test">
+      <maven args="m clean install -Dmaven.test.skip=true" />
+   </target>
+</project>
+

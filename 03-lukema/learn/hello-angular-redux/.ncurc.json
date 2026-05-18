@@ -1,0 +1,8 @@
+{
+    "reject": [
+        "primeng2",
+        "typescript",
+        "keycloak-angular",
+        "keycloak-js"
+    ]
+}

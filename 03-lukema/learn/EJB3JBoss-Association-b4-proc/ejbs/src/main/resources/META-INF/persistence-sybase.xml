@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0"> 
+
+   <persistence-unit name="lab-entity-demo4" transaction-type="JTA">
+      <jta-data-source>java:/MySybase</jta-data-source>
+            
+      <properties>
+         <property name="javax.persistence.jdbc.driver" value="net.sourceforge.jtds.jdbc.Driver"/>
+         <property name="hibernate.dialect" value="org.hibernate.dialect.SybaseDialect" />
+         <property name="javax.persistence.jdbc.user" value="ess_batch"/>
+         <property name="javax.persistence.jdbc.password" value="ess_batch01"/>
+         <property name="javax.persistence.jdbc.url" value="jdbc:jtds:sybase://esssybd1.uk.db.com:5000;DatabaseName=ETS_ESS_TEST"/>      
+      
+         <!-- Options for 'hbm2ddl.auto': validate, create-drop, create, update, drop, none. -->
+         <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+         <property name="hibernate.hbm2ddl.auto.1" value="create-drop" />
+         <property name="hibernate.hbm2ddl.auto.2" value="create" />
+         <property name="hibernate.hbm2ddl.auto.3" value="none" />
+         
+         <property name="hibernate.max_fetch_depth" value="4"/>        
+         <property name="hibernate.connection.release_mode" value="auto" />
+         <property name="hibernate.connection.autocommit" value="false"/>        
+         
+      </properties>
+   </persistence-unit>
+</persistence>

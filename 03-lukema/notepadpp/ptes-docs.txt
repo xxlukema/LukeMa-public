@@ -1,0 +1,23 @@
+
+\\expdisd01\Advanced Systems Programs\Programs\USAF SMC PTES\Product Engineering\System Engineering\System ICDs\MMS-to-Network Elements\MMS-NE ICD Rev C
+
+Altitude Help Desk (Mon – Fri, 0900 - 1700 EST) - premium service level agreement → one hour response within normal working hours
+    support@altitude.cloud
+    (833) 720-1065
+    https://self-service.us.boeing.altitude.cloud (support website)
+	
+	Code Word: PTES
+	
+Display Units:
+https://sl1-us-gov-west-1a-02.pcloud.io/em7/index.em7?exec=admin_dynamic_app_present&function=edit&presentation_id=7683&sortx=&app_id=1876
+
+Satellite Transport (per Hub) :: Channelo Group Port Assignment and Time Slot Assignment
+Terminal Monitoring::Joint Hun Core Manager:: Terminal Resources
+
+Boeing
+
+
+
+
+
+

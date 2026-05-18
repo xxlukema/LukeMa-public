@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PNRRemark>
+   <pnr>123456</pnr>
+
+   <remark>reamark 1</remark>
+
+   <remark1 />
+
+   <remark>reamark 2</remark>
+</PNRRemark>
+

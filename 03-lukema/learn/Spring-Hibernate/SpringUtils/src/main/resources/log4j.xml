@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- | For more configuration infromation and examples see the Jakarta Log4j 
+	| owebsite: http://jakarta.apache.org/log4j -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+
+		<param name="Threshold" value="debug" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="file.other" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="debug" />
+
+		<param name="File" value="target/other.txt" />
+
+		<param name="Append" value="false" />
+
+		<param name="MaxFileSize" value="2MB" />
+
+		<param name="MaxBackupIndex" value="3" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="file.hibernate" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="debug" />
+
+		<param name="File" value="target/hibernate.txt" />
+
+		<param name="Append" value="false" />
+
+		<param name="MaxFileSize" value="2MB" />
+
+		<param name="MaxBackupIndex" value="3" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="file.httpclient" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="debug" />
+
+		<param name="File" value="target/httpclient.txt" />
+
+		<param name="Append" value="false" />
+
+		<param name="MaxFileSize" value="2MB" />
+
+		<param name="MaxBackupIndex" value="3" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="file.springframework" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="debug" />
+
+		<param name="File" value="target/springframework.txt" />
+
+		<param name="Append" value="false" />
+
+		<param name="MaxFileSize" value="10MB" />
+
+		<param name="MaxBackupIndex" value="3" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="file.examples" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="debug" />
+
+		<param name="File" value="target/examples.txt" />
+
+		<param name="Append" value="false" />
+
+		<param name="MaxFileSize" value="10MB" />
+
+		<param name="MaxBackupIndex" value="3" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="file.learn" class="org.apache.log4j.RollingFileAppender">
+		<param name="Threshold" value="debug" />
+
+		<param name="File" value="target/learn.txt" />
+
+		<param name="Append" value="false" />
+
+		<param name="MaxFileSize" value="10MB" />
+
+		<param name="MaxBackupIndex" value="3" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="ASYNC" class="org.apache.log4j.AsyncAppender">
+		<appender-ref ref="CONSOLE" />
+
+		<appender-ref ref="file.examples" />
+
+		<appender-ref ref="file.other" />
+
+		<appender-ref ref="file.learn" />
+	</appender>
+
+	<logger name="org" additivity="false">
+		<level value="warn" />
+
+		<appender-ref ref="file.other" />
+
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="org.hibernate" additivity="false">
+		<level value="warn" />
+
+		<appender-ref ref="file.hibernate" />
+
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="org.hibernate.engine" additivity="false">
+		<level value="warn" />
+
+		<appender-ref ref="file.hibernate" />
+
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="org.hibernate.type" additivity="false">
+		<level value="warn" />
+
+		<appender-ref ref="file.hibernate" />
+
+		<appender-ref ref="CONSOLE" />
+	</logger>
+		
+	<logger name="examples" additivity="false">
+		<level value="debug" />
+
+		<appender-ref ref="file.examples" />
+
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="com" additivity="false">
+		<level value="warn" />
+
+		<appender-ref ref="file.other" />
+
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="com.learn" additivity="false">
+		<level value="debug" />
+
+		<appender-ref ref="file.learn" />
+
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="STDOUT" additivity="false">
+		<level value="info" />
+
+		<appender-ref ref="CONSOLE" />
+
+		<appender-ref ref="file.other" />
+	</logger>
+
+	<logger name="STDERR" additivity="false">
+		<level value="info" />
+
+		<appender-ref ref="CONSOLE" />
+
+		<appender-ref ref="file.other" />
+	</logger>
+
+	<root>
+		<appender-ref ref="ASYNC" />
+	</root>
+</log4j:configuration>

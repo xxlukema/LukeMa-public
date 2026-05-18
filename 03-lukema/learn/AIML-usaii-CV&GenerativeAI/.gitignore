@@ -1,0 +1,4 @@
+.venv/
+**/*.zip
+code-from-instructor/SelfDrivingCar.v3-fixed-small.coco
+code-from-instructor/images

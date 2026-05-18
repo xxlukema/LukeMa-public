@@ -1,0 +1,105 @@
+/************************************************/
+1. Angular Routing Eager Loading:
+/************************************************/
+
+	1.1 app.module.ts
+	
+		(1) Import the feature modules. 
+		(2) Add the feature module into @NgModule imports array.
+		
+	1.2 app-routing.module.ts
+	
+		(1) DO NOT add feature module path to routers array.
+		
+	1.3 feature-routing.module.ts
+	
+		(1) Add feature path here.
+		
+				const routes: Routes = [
+					  {
+					    path: 'feature',
+					    component: ContactComponent,
+					    data: { email: 'x.luke.ma@gmail.com' }
+					  }
+					];
+
+/************************************************/
+2. Angular Routing Lazy Loading:
+/************************************************/
+
+	2.1 app.module.ts
+	
+		(1) DO NOT import the feature modules. 
+		(2) DO NOT add the feature module into @NgModule imports array.
+		
+	2.2 app-routing.module.ts
+	
+		(1) ADD feature module path to routers array here:
+		
+				const routes: Routes = [
+				  {
+				    /**
+				     * Default page --- Eager Loading
+				     */
+				    path: '',
+				    redirectTo: '/home',
+				    pathMatch: 'full'
+				  },
+				  {
+				    /**
+				     * Lazy loading.
+				     *
+				     * path: 'Provide path here'
+				     * loadChildren: 'prefer expression to string literal for type safe.'
+				     * loadChildren: './contact/contact.module#ContactModule' --- String literal is NOT type safe!
+				     */
+				    path: 'contact',
+				    loadChildren: () => ContactModule
+				  },
+				  {
+				    /**
+				     * Lazy loading.
+				     *
+				     * path: 'Provide path here'
+				     * loadChildren: 'prefer expression to string literal for type safe.'
+				     */
+				    path: 'my-http',
+				    loadChildren: () => MyHttpModule
+				  },
+				  {
+				    /**
+				     * Lazy loading.
+				     *
+				     * path: 'Provide path here'
+				     * loadChildren: 'prefer expression to string literal for type safe.'
+				     * loadChildren: './my-primeng-table/my-primeng-table.module#MyPrimengTableModul' --- String literal is NOT type safe!
+				     */
+				    path: 'my-primeng-table',
+				    loadChildren: () => MyPrimengTableModule
+				  },
+				  {
+				    path: '**',
+				    component: PageNotFoundComponent
+				  }
+				];
+
+	2.3 feature-routing.module.ts
+	
+		(1) Add feature path here, but leave the path value empty:
+		
+				const routes: Routes = [
+					  {
+					    /**
+					     * path: '' Empty!
+					     */
+					    path: '',
+					    component: ContactComponent,
+					  }
+					];
+
+/************************************************/
+3. Observations
+/************************************************/
+
+If a feature is eagerly loaded, the module's constructor and router's constructor will be called on 
+initial access of the website.

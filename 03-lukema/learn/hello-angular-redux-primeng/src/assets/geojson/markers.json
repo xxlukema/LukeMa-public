@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+    "type": "Feature",
+    "properties": {
+      "name": "Marker 1"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.1581001281738, 51.53248173242774]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "name": "Marker 2"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.1522636413574, 51.53245503603458]
+    }
+  }, {
+    "type": "Feature",
+    "properties": {
+      "name": "Marker 3"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-0.15586853027344, 51.530853223793514]
+    }
+  }]
+}

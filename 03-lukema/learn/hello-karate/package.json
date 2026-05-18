@@ -1,0 +1,16 @@
+{
+  "name": "hello-karate",
+  "version": "1.0.0",
+  "description": "Quotes from <https://cucumber.io/docs/cucumber/api/> :",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress-tags"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.2",
+    "cypress": "^13.7.1",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+}

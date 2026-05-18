@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-properties-boot
+spec:
+  selector:
+    app: my-properties-boot
+  # type: NodePort
+  type: LoadBalancer
+  ports:
+    - port: 8443
+      protocol: TCP
+      targetPort: 8443
+  externalIPs:      # without `externalIPs`, service will be only accessible by http://localhost:8080 only
+                    # with `externalIPs`, service will be accessible from outside by "http://192.168.1.201:8080" or "http://ubuntu-k8s-master:8080"
+    - 192.168.1.240

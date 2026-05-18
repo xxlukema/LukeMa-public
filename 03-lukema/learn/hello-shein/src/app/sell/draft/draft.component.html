@@ -1,0 +1,422 @@
+<section fxLayout="column" fxLayoutAlign="start center">
+  <div fxFlex fxLayout fxLayoutAlign="center center" fxLayoutGap="space-around" style="width: 60%;">
+    <div fxFlex>
+      @if(!router.url.endsWith('/home')) {
+      <img src="assets/imgs/click-to-home.png" alt="" style="height: 2em;">
+      }
+      <img src="assets/imgs/prove-it.png" (click)="gohome()" style="cursor: pointer; height: 2em;" alt="">
+    </div>
+
+    <button mat-stroked-button color="primary">Switch to business tool</button>
+  </div>
+
+  <div fxFlex fxLayout fxFlexFill>
+    <hr fxFlex="46em">
+  </div>
+
+  <mat-divider inset=true></mat-divider>
+
+  <div fxFlex fxLayout fxFlexFill fxLayoutAlign="start start">
+    <div fxFlex="auto"></div>
+    <div fxFlex="46em" fxLayout="column">
+
+      <!-- breadcrumbs -->
+
+      @if(category == "other") {
+      <div>
+        breadcrumb of item category (
+        <span>Toys & Hobbies</span>
+        <span>Collectible Card Games</span>
+        <span>CCG Individual Cards</span>
+        <span>Change your category</span>
+        )
+      </div>
+      } @else if (category == "tool") {
+      <span>Adhesives, Sealants & Tapes</span>
+      <span>Adhesive Guns & Dispensers</span>
+      <span>Caulk Guns</span>
+      <span>Change your category</span>
+      } @else if (category == "cloth"){
+      <span>Women</span>
+      <span>Women's Clothing</span>
+      <span>Dresses</span>
+      <span>Change your category</span>
+      } @else if (category == "electronics"){
+      <span>Electronics</span>
+      }
+
+
+      <h1>
+        Title
+      </h1>
+      <div>
+        Use words people would search for when looking for your item.
+      </div>
+      <form fxFlex="auto" [formGroup]="formGroup" fxLayout="column" fxFlexFill fxLayoutAlign="start stecth"
+        fxLayoutGap="0.5em">
+
+        <input type="text" matInput appearance="outline" formControlName="title" maxlength="120"
+          (keyup.enter)="onSubmit()">
+
+        <div fxFlex>
+          <!-- // @formatter:off -->
+          @if(title.length >= 56) {
+          <span>
+            Good length. Don't stop here. Add more details to help sell it.
+          </span>
+          }
+          @else if (title.length > 26 && title.length < 56) { <!-- placeholder to prevent next line come here. -->
+            <span>
+              Medium length. Don't forget to include details like brand, color, size, specs, condition, etc.
+            </span>
+            }
+            @else if (title.length < 26) { <!-- placeholder to prevent next line come here. -->
+              <span>
+                Too short. Include details such as brand, color, size, specs, condition, etc.
+              </span>
+              }
+              {{title.length}}/80
+              <!-- // @formatter:on -->
+        </div>
+
+        <div style="height: 1em;"></div>
+        <mat-divider></mat-divider>
+
+        <!-- Add Search Tags (idea from YouTube video) -->
+        <h1>
+          Add search tags (Placeholder)
+        </h1>
+
+        <div style="height: 1em;"></div>
+        <mat-divider></mat-divider>
+
+        <!-- required fields -->
+        <h1>
+          Required
+        </h1>
+        <div>
+          Buyers need these details to find your item
+        </div>
+
+        <div fxFlex fxLayout fxLayoutGap="2em">
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+            <span fxFlex="none" class="label required" style="text-align: left;">
+              Condition
+            </span>
+            <select fxFlex [compareWith]="nmsService.compareObjects" formControlName="condition" name="condition"
+              (change)="changeCondition(); onKeyUp()" [class.invalid]="condition == ''">
+              @for(item of conditions; track $index) {
+              <!-- ======== default dropdown is set in component.ts ======== -->
+              <!-- this.formGroup.get('category')?.setValue(this.category); -->
+              <!-- ======== default dropdown is set in component.ts ======== -->
+              <option [value]="item" [selected]="item === condition">
+                {{item | titlecase}}
+              </option>
+              }
+            </select>
+          </div>
+
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+            <span fxFlex="none" class="label required" style="text-align: left;">
+              Brand
+            </span>
+            <input type="text" matInput appearance="outline" formControlName="brand" (keyup.enter)="onSubmit()"
+              (keyup)="onKeyUp()">
+          </div>
+        </div>
+
+        <div fxFlex fxLayout fxLayoutGap="2em">
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+            <span fxFlex="none" class="label required" style="text-align: left;">
+              Price
+            </span>
+            <input type="text" matInput appearance="outline" formControlName="price" (keyup.enter)="onSubmit()" maxlength="20"
+              (keyup)="onKeyUpPrice($event)">
+          </div>
+        </div>
+
+        <!-- addtional fields -->
+        <h1>
+          Additional
+        </h1>
+        <div>
+          Buyers also search for these details
+        </div>
+
+        <div fxFlex fxLayout fxLayoutGap="2em">
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+            <span fxFlex="none" class="label" style="text-align: left; width: 20em;">
+              Model
+            </span>
+            <input type="text" matInput appearance="outline" formControlName="model" (keyup.enter)="onSubmit()"
+              (keyup)="onKeyUp()">
+          </div>
+
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+            <span fxFlex="none" class="label" style="text-align: left; width: 20em;">
+              California Prop 65 Warning
+            </span>
+            <input type="text" matInput appearance="outline" formControlName="californiaProp65Warn"
+              (keyup.enter)="onSubmit()" (keyup)="onKeyUp()">
+          </div>
+        </div>
+        <div fxFlex fxLayout fxLayoutGap="2em">
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+            <span fxFlex="none" class="label" style="text-align: left; width: 20em;">
+              Country/Region of Manufacture
+            </span>
+            <input type="text" matInput appearance="outline" formControlName="country" (keyup.enter)="onSubmit()"
+              (keyup)="onKeyUp()">
+          </div>
+
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+            <span fxFlex="none" class="label" style="text-align: left; width: 20em;">
+              Available Unit Quantity
+            </span>
+            <input type="text" matInput appearance="outline" formControlName="availableUnitQuantity"
+              (keyup.enter)="onSubmit()" (keyup)="onKeyUp()">
+          </div>
+        </div>
+
+        <!-- more details -->
+
+        @if (!showMoreDetails) {
+        <div style="text-align: center;">
+          <a style="cursor: pointer; margin-top: 1em;" href="" (click)="showMoreDetails = !showMoreDetails; false;">
+            More details
+          </a>
+        </div>
+        }
+        @else {
+        <div style="height: 0.5em;"></div>
+
+        <div fxFlex fxLayout fxLayoutGap="2em">
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+            <span fxFlex="none" class="label" style="text-align: left; width: 20em;">
+              Unit Type
+            </span>
+            <input type="text" matInput appearance="outline" formControlName="unitType" (keyup.enter)="onSubmit()"
+              (keyup)="onKeyUp()">
+          </div>
+
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+            <span fxFlex="none" class="label" style="text-align: left; width: 20em;">
+              MPN
+            </span>
+            <input type="text" matInput appearance="outline" formControlName="mpn" (keyup.enter)="onSubmit()"
+              (keyup)="onKeyUp()">
+          </div>
+        </div>
+
+        <div fxFlex fxLayout fxLayoutGap="2em">
+          <div fxFlex="50" fxLayout="column" fxLayoutAlign="start stretch">
+            <span fxFlex="none" class="label" style="text-align: left; width: 20em;">
+              UPC
+            </span>
+            <input type="text" matInput appearance="outline" formControlName="upc" (keyup.enter)="onSubmit()"
+              (keyup)="onKeyUp()">
+          </div>
+          <div fxFlex="50">
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a style="cursor: pointer; margin-top: 1em;" href="" (click)="showMoreDetails = !showMoreDetails; false;">
+            Collapse more details
+          </a>
+        </div>
+        }
+      </form>
+
+      <div style="height: 1em;"></div>
+      <mat-divider></mat-divider>
+
+      <!-- add a photo -->
+
+      <h1>Add a phto</h1>
+      <div>
+        Improve your buyer’s confidence by including as many as possible.
+      </div>
+
+      <input hidden type="file" multiple (change)="fileChanged($event)" #imagesInput accept=".webp,.jpg,.jpeg,.png,.svg"
+        id="images" name="images">
+
+      <div corpImgUpload (dropFiles)="onDropFiles($event)">
+        <div cdkDropList (cdkDropListDropped)="drop($event)">
+          <div>{{imageBase64Data.length}} of 24 photos</div>
+          <section>
+            <div fxLayout>
+              <div fxFlex="none" class="bigger-photo" fxLayout="column" fxLayoutAlign="center center">
+                <!-- bigger image -->
+                @if (selectedIndex < imageBase64Data.length) { <!-- placeholder -->
+                  <!--
+                    <img src="data:image/jpeg;base64,{{base64}}" alt="My Image Here" style="width: 100%;" />
+                  -->
+                  <img fxFlex="none" style="cursor: pointer;" [src]="imageBase64Data[selectedIndex]"
+                    matTooltipPosition="above" matTooltip="Click to magnify" (click)="magnify(selectedIndex)">
+                  }
+                  @else { <!-- placeholder -->
+                  <div fxFlex="50" fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="0.5em">
+                    <div fxFlex="none" matTooltipPosition="above" matTooltip="Drag and drop your photos">
+                      <i class="fa-solid fa-image fa-xl"></i>
+                    </div>
+                    <div fxFlex="none" matTooltipPosition="above" matTooltip="Drag and drop your photos">
+                      Drag and drop your photos
+                    </div>
+                    <button mat-raised-button color="primary" (click)="imagesInput.click()" matTooltipPosition="above"
+                      matTooltip="Add photos">Add
+                      from computer</button>
+                    <button mat-stroked-button color="primary" disabled="true" matTooltipPosition="above"
+                      matTooltip="Add photos">Add from mobile
+                      device</button>
+                  </div>
+                  }
+
+              </div>
+              <!-- first 9 images -->
+              <div fxFlex fxLayout="flow wrap">
+                @for (i of photoIndexes; track i) { <!-- placeholder -->
+                @if(i < 9) { <!-- placeholder -->
+                  @if( i < imageBase64Data.length) { <!-- placeholder -->
+                    <!-- Trick -->
+                    <!-- `css` display close icon on top-right corner of each image -->
+                    <!-- 1. The parent element must use `position: relative;`. -->
+                    <!-- 2. The child element must use `position: absolute; top: 0px; right: 0px;`. -->
+                    <div (click)="select(i)" class="photo {{'photo' + i}}" matTooltipPosition="above"
+                      [matTooltip]="photoNames[i]" fxLayout="column" fxLayoutAlign="center center"
+                      style="background-image: none;" cdkDrag style="position: relative;">
+                      <img fxFlex="none" [src]="imageBase64Data[i]">
+                      <i class="fa-regular fa-circle-xmark fa-xl iclose isquare" matTooltipPosition="above"
+                        matTooltip="Delete" (click)="removeFile(i);$event.preventDefault();false;"></i>
+                    </div>
+                    }
+                    @else { <!-- placeholder -->
+                    <div (click)="imagesInput.click()" class="photo {{'photo' + i}}" fxLayout="column"
+                      matTooltipPosition="above" matTooltip="Add photos" fxLayoutAlign="start center">
+                      <div fxFlex="auto"></div>
+                      <div fxFlex="33">{{photoNames[i]}}</div>
+                    </div>
+                    }
+                    }
+                    }
+              </div>
+            </div>
+          </section>
+          <!-- after first 9 images -->
+          <section>
+            <div fxFlex fxLayout="flow wrap">
+              @for (i of photoIndexes; track i) { <!-- placeholder -->
+              @if(i >= 9) { <!-- placeholder -->
+              @if(i < imageBase64Data.length) { <!-- placeholder -->
+                <!-- Trick -->
+                <!-- `css` display close icon on top-right corner of each image -->
+                <!-- 1. The parent element must use `position: relative;`. -->
+                <!-- 2. The child element must use `position: absolute; top: 0px; right: 0px;`. -->
+                <div (click)="select(i)" class="photo" fxLayout="column" fxLayoutAlign="center center"
+                  style="background-image: none;" cdkDrag style="position: relative;">
+                  <img fxFlex="none" [src]="imageBase64Data[i]">
+                  <i class="fa-regular fa-circle-xmark fa-xl iclose isquare" matTooltipPosition="above"
+                    matTooltip="Delete" (click)="removeFile(i);$event.preventDefault();false;"></i>
+                </div>
+                }
+                @else {
+                <div class="photo" (click)="imagesInput.click()" matTooltipPosition="above" matTooltip="Add photos">
+                </div>
+                }
+                }
+                }
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div style="height: 1em;"></div>
+      <mat-divider></mat-divider>
+
+      <!-- description -->
+
+      <section>
+        <h1>
+          Description
+        </h1>
+        <st-editor [(ngModel)]="description" [config]="editorConfig"></st-editor>
+
+        <!--
+          <h1>Description Preview</h1>
+          <div [innerHTML]="description"></div>
+           -->
+      </section>
+
+      <div style="height: 2em;"></div>
+      <mat-divider></mat-divider>
+
+      <div fxFlex style="text-align: center; padding: 1em 1em;">
+        <div>
+          <strong>List it for free.</strong>
+          A
+          <a target="_blank"
+            href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees?id=4822#section2"
+            matTooltipPosition="above" matTooltip="Final value fee - opens in a new window or tab">final value fee</a>
+          applies
+          when your item sells.
+        </div>
+        <div>
+          By selecting List it, you agree to accept the <a target="_blank"
+            href="https://www.ebay.com/help/policies/member-behaviour-policies/user-agreement?id=4259"
+            matTooltipPosition="above" matTooltip="Prove You Can User Agreement - opens in a new window or tab">Prove You Can User
+            Agreement</a> and
+          <a target="_blank" href="https://pages.ebay.com/payment/2.0/terms.html" matTooltipPosition="above"
+            matTooltip="Payments Terms of Use - opens in a new window or tab">
+            Payments Terms of Use
+          </a>,
+          acknowledge reading the
+          <a target="_blank"
+            href="https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy?id=4260"
+            matTooltipPosition="above" matTooltip="User Privacy Notice - opens in a new window or tab">
+            User Privacy Notice
+          </a>
+          and assume full responsibility for the item offered and the content of your listing.
+        </div>
+      </div>
+
+      <div style="height: 0.2em;"></div>
+
+      <!-- submit button -->
+
+      <div fxLayout="column" fxLayoutGap="0.5em" fxLayoutAlign="start center">
+        <button style="width: 50%;" mat-raised-button color="primary" (click)="listIt();$event.preventDefault();false;"
+          [disabled]="formGroup.invalid">
+          List it
+        </button>
+        <button style="width: 50%;" mat-raised-button color="primary"
+          (click)="preview();$event.preventDefault();false;" [disabled]="true">
+          Preview
+        </button>
+        <button style="width: 50%;" mat-raised-button color="primary"
+          (click)="saveForLater();$event.preventDefault();false;">
+          Save for later
+        </button>
+      </div>
+
+      <div fxFlex style="text-align: left; font-size: small; padding: 1em 1em; margin: 1em;">
+        <div>
+          To improve your chances of selling, we may send you offers from buyers that you can choose to accept or
+          decline.
+        </div>
+        <div>
+          Auctions will be automatically relisted up to 8 times for free and do not count towards your monthly listings
+          balance. Auctions with a 1 or 3-day duration will be relisted with a 7-day duration.
+        </div>
+        <div>
+          Funds from your sales may be unavailable and show as on hold for a period of time. <a target="_blank"
+            href="https://www.ebay.com/help/selling/getting-paid/getting-paid-items-youve-sold/pending-payments?id=4816"
+            matTooltipPosition="above"
+            matTooltip="Learn more about pending payments - opens in a new window or tab">Learn more</a>
+        </div>
+      </div>
+
+    </div>
+    <div fxFlex="auto"></div>
+  </div>
+
+</section>

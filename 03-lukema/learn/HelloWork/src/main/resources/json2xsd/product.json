@@ -1,0 +1,17 @@
+{
+  "productId": 1,
+  "productName": "iPhone",
+  "price": 1200.12,
+  "dimensions": {
+    "length": 12,
+    "width": 8,
+    "height": 4
+  },
+  "tags": [
+    "v1", "v2"
+  ],
+  "warehouseLocation": {
+    "latitude": 20,
+    "longitude": 20
+  }
+}

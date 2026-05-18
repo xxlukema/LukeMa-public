@@ -1,0 +1,479 @@
+body {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	background-color: #CCCCCC;
+	color: #000000;
+	font-size: 1.2em;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+/* Header is the section at the top of the pages. It is same for all pages. */
+#header {
+	margin: 0px;
+	height: 86px;
+	width: 1100px;
+	background-image: url("#{resource['images:zhanwang.jpg']}");
+	background-repeat: repeat-x;
+	background-position: left top;;
+	
+	/* border: 4px dashed yellow; */
+}
+
+/* Menubar is the section at the top of the pages but below the header. It is same for all pages. */
+div.menubar {
+	width: 100%;
+
+	padding-top:    3px;
+	padding-bottom: 3px;
+	
+	background-color: #CCCCCC;
+	
+	/* border: 4px dashed yellow; */
+}
+
+div.menubar a.hover {
+   color: #00FF00;
+}
+
+/* Content is the section at the top of the pages. It is the changing part of the pages. */
+#middle {
+	position: relative;
+	
+	/* border: 4px dashed red; */
+}
+
+
+#left {
+	float: left;
+	width: 155px;
+	background-color: #0033CC;
+	
+	/* border: 2px solid #3B6CFF; */
+}
+
+#right {
+	float: right;
+	width: 2px;
+	font-size: 12px;
+	background-color: #CCFF99;
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	
+	/* border: 2px solid #3B6CFF; */
+}
+
+#center {
+	margin-left:  157px;
+	margin-right: 0px;
+	min-height: 400px;
+	width: 940px;
+	overflow: visible;
+	background-color: #C0C0C0;
+	padding-right: 0px;
+	padding-left: 2px;
+	
+	/* border: 2px solid #3B6CFF; */
+}
+
+/* Footer is the section at the bottom of the pages. It is same for all pages. */
+#footer {
+	clear: both;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 1100px;
+	font-size: 12px;
+	/* color: #FFFFFF; */
+	text-align: center;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #3B6CFF;
+	border-bottom-color: #3B6CFF;
+	vertical-align: bottom;
+}
+
+#footer ul {
+	margin-left: 0;
+	margin-bottom: 5px;
+	padding-left: 0;
+	display: inline;
+}
+
+#footer ul li {
+	margin-left: 0;
+	padding: 4px 9px 4px 8px;
+	list-style: none;
+	display: inline;
+	border-right: 1px dotted #066;
+}
+
+#footer ul li.last {
+	border-right: 0px;
+}
+
+#footer a:link, #footer a:visited {
+	color: #FF3300;
+	text-decoration: underline;
+	font-weight: bolder;
+}
+
+#footer a:hover {
+	color: #330066;
+	font-weight: bolder;
+}
+
+#footer div.padded_container {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.applet {
+	width: 100%;
+	min-height: 960px;
+	
+    /* border: 2px solid #3B6CFF; */ 
+}
+
+/* general anchor colors */
+a:link,a:visited {
+	color: #333333;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #6C99FF;
+	text-decoration: underline;
+}
+
+/* Experiment */
+
+div.height1em {
+	height: 1em;
+}
+
+div.height2em {
+	height: 2em;
+}
+
+div.height4em {
+	height: 4em;
+}
+
+div.top-row {
+	clear: both;
+	padding-top: 0px;
+}
+
+div.top-row div.logo {
+	float: left;
+	width: 49%;
+}
+
+div.top-row div.accountController {
+	position: absolute;
+	top: 0px;
+	left: 600px;
+	text-align: left;
+	min-width: 34em;
+	height: 1.3em;
+    font-size: 0.75em;
+	font-weight: bold;	
+	margin-top: 2px;
+	margin-right: 5px;
+	padding-left: 5px;
+	color: #FFFFFF;
+	background-color: #FF99CC;
+}
+
+div.top-row div.logo img {
+	margin-top: 0px;
+	margin-bottom: 25px;
+	margin-left: 0px;
+}
+
+div.top-row div.top-nav {
+	float: right;
+	width: 30%;
+	text-align: right;
+	vertical-align: top;
+	text-transform: capitalize;
+	font-size: 0.75em;
+	font-weight: bold;
+}
+
+div.top-row div.top-nav ul {
+	margin-left: 0;
+	margin-top: 35px;
+	padding-left: 0;
+}
+
+div.top-row div.top-nav ul li {
+	margin-left: 0;
+	padding: 0 9px 0 8px;
+	list-style: none;
+	border-right-width: 2px;
+	border-right-style: solid;
+	border-right-color: #666666;
+}
+
+div.top-row div.top-nav a:link {
+	color: #000;
+	text-decoration: none;
+}
+
+div.top-row div.top-nav a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+
+div.top-row div.top-nav a:hover {
+	color: #00FF00;
+	text-decoration: none;
+}
+
+.errorText {
+	color: red;
+}
+
+/* MyStyles */
+span.attention {
+	background-color: #0000ff;
+}
+
+label {
+	font-weight: normal;
+}
+
+label.required {
+	font-weight: bold;
+}
+
+label.error {
+	font-weight: bold;
+	background-color: red;
+}
+
+th,td,pre,code {
+	font-size: 14px;
+}
+
+P.warning {
+	font-weight: bolder;
+	color: red;
+	background-color: white
+}
+
+P.warn {
+	font-weight: bolder;
+	color: red;
+	background-color: white
+}
+
+.warning {
+	font-weight: bolder;
+	color: red;
+	background-color: lime
+}
+
+.warn {
+	font-weight: bolder;
+	color: red;
+	background-color: lime
+}
+
+.tableheader {
+	font-weight: bolder;
+	background-color: #87CEFA
+}
+
+.menu {
+	background-color: #FAF0E6
+}
+
+.top {
+	background-color: #7B68EE
+}
+
+.bottom {
+	background-color: #FFEFD5
+}
+
+table.wgrid {
+	border-width: 1px;
+	border-style: none;
+	border-color: grey;
+	border-collapse: collapse;
+}
+
+table.wgrid th {
+	font-size: 14px;
+	border-width: 1px;
+	border-style: inset;
+	border-color: grey;
+	background-color: #87CEFA;
+	vertical-align: top;
+	text-align: center;
+}
+
+table.wgrid td {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-width: 1px;
+	border-style: inset;
+	border-color: grey;
+	vertical-align: top;
+	text-align: left;
+}
+
+table.wgrid td.right {
+	text-align: right;
+}
+
+table.wgrid a:link {
+	color: #FFFFFF;
+	border-color: blue;
+	text-decoration: none;
+}
+
+table.wgrid a:hover {
+	color: #00FF00;
+}
+
+
+table.nogrid {
+	border-width: 0px;
+	border-style: none;
+}
+
+table.nogrid th {
+	font-size: 14px;
+	border-width: 0px;
+	border-style: inset;
+	background-color: #87CEFA;
+	vertical-align: top;
+	text-align: center;
+}
+
+table.nogrid td {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-width: 0px;
+	border-style: inset;
+	vertical-align: top;
+	text-align: left;
+}
+
+table.nogrid td.right {
+	text-align: right;
+}
+
+table.nogrid a:link {
+	color: #FFFFFF;
+	border-color: blue;
+	text-decoration: none;
+}
+
+table.nogrid a:hover {
+	color: #00FF00;
+}
+
+.required {
+	background-color: #CCFFCC;
+}
+
+.changed {
+	background-color: #FF9933;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.highlight {
+	background-color: yellow;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.right {
+	text-align: right;
+}
+
+tr.nowrap {
+	white-space: nowrap;
+}
+
+td {
+	white-space: inherit;
+}
+
+.up {
+	color: green; 
+}
+
+.down {
+	color: #CC0000; 
+}
+
+.symbol {
+	color: black; 
+	text-align: left;
+}
+
+table.indexesAjax {
+	border-width: 1px;
+	border-style: none;
+	border-color: grey;
+	border-collapse: collapse;
+}
+
+table.indexesAjax th {
+	font-size: 14px;
+	border-width: 1px;
+	border-style: inset;
+	border-color: grey;
+	background-color: #87CEFA;
+	vertical-align: top;
+	text-align: center;
+}
+
+table.indexesAjax td {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-width: 1px;
+	border-style: inset;
+	border-color: grey;
+	vertical-align: top;
+	text-align: right;
+	font-weight: bold;
+}
+
+h3 {
+    margin-left: 6px;
+}
+
+span.headline {
+	font-weight: bolder;
+}

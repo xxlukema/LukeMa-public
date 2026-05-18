@@ -1,0 +1,39 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": ["node"]
+  },
+  "files": [
+    "src/main.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/app/flux2/flux2-reducers-2.ts",
+    "e2e/**/*.ts",
+    "environments/environment.*.ts",
+
+    "e2e/protractor.conf.js",
+    "src/app/my-leaflet/geojson/markers.ts",
+    "src/app/my-leaflet/geojson/shapes-lines.ts",
+    "src/app/my-leaflet/my-leaflet.component-no-layers.ts",
+    "src/app/shared/breadcrumb/breadcrumb.component.ts",
+    "src/app/shared/user/user.action.ts",
+    "src/app/shared/user/user.reducer.ts",
+    "src/app/shared/user/user.selector.ts",
+    "src/app/shared/user/user.state.ts",
+    "src/app/shared/user/user.type.ts",
+    "src/app/utils/guard/nms.guard.ts",
+    "src/app/utils/loading/loading.component.ts",
+    "src/app/utils/loading/loading.module.ts",
+    "src/app/utils/progress/progress.component.ts",
+    "src/app/utils/progress/progress.module.ts",
+    "src/app/utils/utils.ts",
+    "src/environments/environment.prod.ts",
+    "src/karma.conf.js",
+    "src/polyfills.ts"
+  ]
+}

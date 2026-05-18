@@ -1,0 +1,13 @@
+<div>
+	<h4>New For Rent</h4>
+	<div>
+		<div>
+			<label for="summary">Summary Line</label>
+			<input type="text" id="summary" name="summary" style="width: 80%;" [(ngModel)]="rentProperty.summary" placeholder="Add brief summary of the renting property" />
+		</div>
+		<textarea name="details" id="details" style="width: 90%;" rows="10" cols="30" [(ngModel)]="rentProperty.details" placeholder="Details of The Renting Rroperty"></textarea>
+	</div>
+	
+	<button id="save" (click)="save()">Save</button> <button id="cancel" (click)="cancel()">Cancel</button>
+
+</div>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build_tomcat" default="deploy_web" basedir=".">
+	<import file="./build_maven.xml" />
+
+	<property environment="env" />
+
+	<property name="TOMCAT_LOCALHOST" value="${env.TOMCAT_HOME}/work/Catalina/localhost" />
+	<property name="TOMCAT_WEBAPPS" value="${env.TOMCAT_HOME}/webapps" />
+	<property name="TOMCAT_LOGS" value="${env.TOMCAT_HOME}/logs" />
+	<property name="TOMCAT_TARGET" value="${env.TOMCAT_HOME}/target" />
+	<property name="TOMCAT_BIN_TARGET" value="${env.TOMCAT_HOME}/bin/target" />
+
+	<property name="webapp" value="${ant.project.name}" />
+	
+	<target name="deploy_web" depends="clean_tomcat">
+		<deploy_web_macrodef dir="." />
+	</target>
+
+	<target name="tomcat_clean" depends="clean_tomcat">
+	</target>
+
+	<target name="check_clean_webapp">
+		<fail message="Usage: ant -f ${ant.file} ${ant.project.invoked-targets} -Dwebapp=[${ant.project.name}]">
+			<condition>
+				<not>
+					<isset property="webapp" />
+				</not>
+			</condition>
+		</fail>
+	</target>
+
+	<target name="clean_tomcat" depends="check_clean_webapp">
+		<echo>Cleaning webapp: ${webapp}...</echo>
+		<delete verbose="false" includeemptydirs="true" quiet="true">
+			<fileset refid="webapps" />
+			<fileset refid="localhost" />
+		</delete>
+		<echo>Clean webapp: ${webapp} completed.</echo>
+	</target>
+
+	<target name="tomcat_clean_all" depends="clean_tomcat_all">
+	</target>
+
+	<target name="clean_tomcat_all" depends="check_clean_webapp">
+		<echo>Cleaning webapp: ${webapp} and logs...</echo>
+		<delete verbose="false" includeemptydirs="true" quiet="true">
+			<fileset refid="webapps" />
+			<fileset refid="localhost" />
+			<fileset refid="logs" />
+			<fileset refid="target" />
+			<fileset refid="bin.target" />
+		</delete>
+		<echo>Clean webapp: ${webapp} and logs completed.</echo>
+	</target>
+
+	<fileset id="localhost" dir="${TOMCAT_LOCALHOST}">
+		<include name="${webapp}/" />
+	</fileset>
+
+	<fileset id="logs" dir="${TOMCAT_LOGS}">
+		<include name="**/*.log" />
+	</fileset>
+
+	<fileset id="target" dir="${TOMCAT_TARGET}">
+		<include name="**/*.txt" />
+		<include name="**/*.txt.*" />
+	</fileset>
+
+	<fileset id="bin.target" dir="${TOMCAT_BIN_TARGET}">
+		<include name="**/*.txt" />
+		<include name="**/*.txt.*" />
+	</fileset>
+
+	<fileset id="webapps" dir="${TOMCAT_WEBAPPS}">
+		<include name="${webapp}/" />
+		<include name="${webapp}.war" />
+	</fileset>
+</project>
+

@@ -1,0 +1,113 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.learn</groupId>
+
+   <artifactId>HttpServerJsp</artifactId>
+
+   <packaging>war</packaging>
+
+   <version>1.0</version>
+
+   <dependencies>
+      <dependency>
+         <groupId>com.learn</groupId>
+
+         <artifactId>CommonUtils</artifactId>
+
+         <version>1.0</version>
+      </dependency>
+
+      <dependency>
+         <groupId>javax.servlet</groupId>
+
+         <artifactId>servlet-api</artifactId>
+
+         <version>2.4</version>
+
+         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>javax.servlet</groupId>
+
+         <artifactId>jstl</artifactId>
+
+         <version>1.1.2</version>
+      </dependency>
+
+      <dependency>
+         <groupId>taglibs</groupId>
+
+         <artifactId>standard</artifactId>
+
+         <version>1.1.2</version>
+      </dependency>
+
+      <dependency>
+         <groupId>junit</groupId>
+
+         <artifactId>junit</artifactId>
+
+         <version>4.5</version>
+
+         <scope>test</scope>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <finalName>HttpServerJsp</finalName>
+
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+
+            <artifactId>maven-war-plugin</artifactId>
+
+            <configuration>
+               <outputDirectory>${tomcat_deploy.dir}</outputDirectory>
+
+               <archive>
+                  <addMavenDescriptor>false</addMavenDescriptor>
+               </archive>
+            </configuration>
+
+            <executions>
+               <execution>
+                  <phase>package</phase>
+
+                  <goals>
+                     <goal>war</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+
+         <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+
+            <executions>
+               <execution>
+                  <phase>compile</phase>
+
+                  <configuration>
+                     <tasks>
+                        <echo>Copying *Applets to applets directory......</echo>
+
+                        <copy todir="${project.build.directory}/${project.build.finalName}/applets">
+                           <fileset dir="${project.build.directory}/classes">
+                              <include name="**/*Applet.class" />
+                           </fileset>
+                        </copy>
+                     </tasks>
+                  </configuration>
+
+                  <goals>
+                     <goal>run</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+</project>

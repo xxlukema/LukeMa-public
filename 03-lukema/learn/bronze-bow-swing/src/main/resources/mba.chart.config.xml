@@ -1,0 +1,13 @@
+<Config>
+   <BeginYear>2023</BeginYear>
+
+   <MomentumDays>60</MomentumDays>
+
+   <Zoom>
+      <FarDays>290</FarDays>
+
+      <MediumDays>190</MediumDays>
+
+      <CloseDays>66</CloseDays>
+   </Zoom>
+</Config>

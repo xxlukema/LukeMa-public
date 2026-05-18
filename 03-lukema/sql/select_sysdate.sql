@@ -1,0 +1,7 @@
+SELECT
+    SYSDATE
+FROM
+    dual
+WHERE
+    100 != 1
+AND SYSDATE != to_date('2017-07-06 14:47:49', 'YYYY-MM-DD HH24:MI:SS');

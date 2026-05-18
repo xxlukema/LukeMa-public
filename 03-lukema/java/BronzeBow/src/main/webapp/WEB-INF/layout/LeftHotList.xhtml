@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition>
+		<h:dataTable value="#{taController.hotListRowList}"
+			var="hotListRow" styleClass="wgrid">
+
+			<f:facet name="header">
+				<h:outputText value="Hot List" />
+			</f:facet>
+
+			<h:column>
+				<h:commandLink value="#{hotListRow.symbol1}"
+					actionListener="#{taController.symbolLinkClickedActionListener}"
+					action="#{taController.drawChart}">
+					<f:attribute name="#{taController.symbolString}"
+						value="#{hotListRow.symbol1}" />
+				</h:commandLink>
+			</h:column>
+
+			<h:column>
+				<h:commandLink value="#{hotListRow.symbol2}"
+					actionListener="#{taController.symbolLinkClickedActionListener}"
+					action="#{taController.drawChart}">
+					<f:attribute name="#{taController.symbolString}"
+						value="#{hotListRow.symbol2}" />
+				</h:commandLink>
+			</h:column>
+
+			<h:column>
+				<h:commandLink value="#{hotListRow.symbol3}"
+					actionListener="#{taController.symbolLinkClickedActionListener}"
+					action="#{taController.drawChart}">
+					<f:attribute name="#{taController.symbolString}"
+						value="#{hotListRow.symbol3}" />
+				</h:commandLink>
+			</h:column>
+		</h:dataTable>
+	</ui:composition>
+
+</html>
+

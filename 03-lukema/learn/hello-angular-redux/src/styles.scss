@@ -1,0 +1,112 @@
+/**
+ * 1. You can add global styles to this file, and also import other style files.
+ * 2. Or, you can also import other style files in angular.json file.
+ * 3. Or, you can add <link ...> tag in index.html
+ * 4. @import '...' statement should be above global styles section.
+ *
+ * For bootstrap:
+ * https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b
+ */
+
+/** @import '~bootstrap/scss/bootstrap-reboot';  */
+/** @import '~bootstrap/scss/bootstrap-grid';  */
+
+
+
+@use '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/** All @import '...' should be above this line. */
+/** All syle declarations should be below this line. */
+
+@use "app/components/dialogs/cancel-confirm-dialog/cancel-confirm-dialog.component";
+@use "app/components/dialogs/modal-dialog/modal-dialog.component";
+
+@use './assets/scss/variable' as *;
+
+body {
+  transform: scaleX(1);
+  transform: scaleY(1);
+  /* font-family: "Source Sans Pro", sans-serif !important; */
+  /* color: white !important; */
+  /* background-color: black !important; */
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.center {
+  margin: 0 auto;
+}
+
+/** $white: #ffffff !default; */
+/** $black: #000000 !default; */
+/** $gray-400: #b0b0b0 !default; */
+/** $gray-500: #999999 !default; */
+/** $gray-600: #666666 !default; */
+
+/** This has to bo be in global def */
+.dark-mode {
+  color: $white !important;
+  background-color: $black !important;
+
+  hr {
+    border-top-color: lightblue;
+  }
+}
+
+.normal-mode {
+  color: $black !important;
+  background-color: $gray-400 !important;
+
+  hr {
+    border-top-color: rgba(0, 0, 0, .3);
+  }
+}
+
+table {
+  tr:nth-child(even) {
+    background: #EEEEEE;
+  }
+
+  tr:nth-child(odd) {
+    background: #FFFFFF;
+  }
+
+  tr:hover {
+    background: #c7d4dd;
+    cursor: pointer;
+  }
+
+  .highlighted {
+    background-color: lightgreen !important;
+  }
+}
+
+$muted: #99abb4 !default;
+
+.label {
+  text-transform: capitalize;
+  width: 8em;
+  text-align: right;
+  margin-right: 0.5em;
+
+  &.invalid {
+    color: #c24641;
+    font-weight: bold;
+  }
+
+  &.required {
+    &::after {
+      content: "*"
+    }
+  }
+
+  &.disabled {
+    color: $muted;
+  }
+}
+
+/**
+.ng-pristine:not(.ng-touched) {
+  border-color: #0095a8 !important;
+  border-width: 1px !important;
+}
+*/

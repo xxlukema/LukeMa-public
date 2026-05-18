@@ -1,0 +1,10 @@
+-- WITH to be processed as an inline view or resolved as a temporary table 
+WITH dept_count AS (
+  SELECT deptno, COUNT(*) AS dept_count
+  FROM   emp
+  GROUP BY deptno)
+SELECT e.ename AS employee_name,
+       dc.dept_count AS emp_dept_count
+FROM   emp e,
+       dept_count dc
+WHERE  e.deptno = dc.deptno;

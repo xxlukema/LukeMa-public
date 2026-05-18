@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  db_host: https://database.example.com
+  default_user_status: suspended user
+  max_invoice_date: "2022-12-31"
+  default_command: date
+binaryData:
+  demo: ZXhhbXBsZQo=
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-pod
+spec:
+  containers:
+    - name: app-container
+      command: ["/bin/sh", "-c", "echo key:db_host, value:$db_host"]
+      image: busybox:latest
+      resources:
+        limits:
+          memory: 512Mi
+          cpu: "1"
+        requests: # <== If not specified, default will be `limits` values
+          memory: 256Mi
+          cpu: "0.2"
+      envFrom:
+        - configMapRef:
+            name: app-config

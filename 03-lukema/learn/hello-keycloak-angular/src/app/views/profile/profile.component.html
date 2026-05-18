@@ -1,0 +1,33 @@
+<section>
+  <p>Hi {{user}}</p>
+
+  <div>
+    <button (click)="logout()">Call logout()</button>
+  </div>
+
+  <ng-container *ngIf="keycloakProfile">
+    <h2>User information</h2>
+    <table>
+      <tr *ngIf="keycloakProfile.username">
+        <th scope="row">Username</th>
+        <td>{{ keycloakProfile.username }}</td>
+      </tr>
+      <tr *ngIf="keycloakProfile.firstName">
+        <th scope="row">First name</th>
+        <td>{{ keycloakProfile.firstName }}</td>
+      </tr>
+      <tr *ngIf="keycloakProfile.lastName">
+        <th scope="row">First name</th>
+        <td>{{ keycloakProfile.lastName }}</td>
+      </tr>
+      <tr *ngIf="keycloakProfile.email">
+        <th scope="row">E-mail</th>
+        <td>{{ keycloakProfile.email }}</td>
+      </tr>
+      <tr>
+        <th scope="row">E-mail verified</th>
+        <td>{{ keycloakProfile.emailVerified ? 'Yes' : 'No' }}</td>
+      </tr>
+    </table>
+  </ng-container>
+</section>

@@ -1,0 +1,21 @@
+<div class="app-contract-child1">
+
+    <h3>app-contact-child1</h3>
+
+    <div>
+        Child 1 Input for event:
+        <input type="text" style="background-color: yellow;" size=40 
+                #child1Text (keyup)="onChange1(child1Text.value);" placeholder="For event @Output of child 1" />
+        <p>Parent text: <span style="color: yellow; background-color: red;">{{parentKeyStrikesValue}}</span>
+        </p>
+    </div>
+
+    <div>
+        Child 1 Input for injection:
+        <input type="text" style="color: yellow; background-color: blue;" size=35 
+                [(ngModel)]="appInjectable.globalString" placeholder="For injection" />
+        <p>You entered text: <span style="color: yellow; background-color: blue;">{{appInjectable.globalString}}</span>
+        </p>
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+{
+  "device": {
+    "id": 708,
+    "name": "Channel 121",
+    "ip": "10.200.3.151",
+    "category": "Satellite Transport",
+    "class": "PATS Forward Link Channels",
+    "organization": "PATS",
+    "health": "Minor",
+    "collectionState": "active"
+  }
+}

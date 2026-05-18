@@ -1,0 +1,30 @@
+.fieldset-class {
+  border: 5px brown solid;
+  border-radius: 1em;
+
+  padding: 0.5em;
+}
+
+.legend-class {
+  border: 0px blue solid;
+  max-width: fit-content;
+  margin-left: 1em;
+  margin-top: -1.5em;
+  padding: 0.2em 0.8em;
+  background-color: black;
+  color: white;
+}
+
+label {
+  text-transform: capitalize;
+  &:after {
+    content: ":"
+  }
+
+  /** align label text to right */
+  width: 8em;
+  text-align: right;
+
+  /** add space after label */
+  margin-right: 0.5em;
+}

@@ -1,0 +1,34 @@
+{
+  "strict": "global",
+
+  "undef": true,
+  "-W117": false,
+  "curly": true,
+  "eqeqeq": true,
+  "esnext": true,
+  "node": true,
+  "unused": "vars",
+  "devel": true,
+
+  "globals": {
+    "_AngularJS": true,
+    "angular": false,
+
+    "_AngularJS_mocks": true,
+    "module": false,
+    "inject": false,
+
+    "_Jasmine": true,
+    "jasmine": false,
+    "describe": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "it": false,
+    "expect": false,
+
+    "_Protractor": true,
+    "browser": false,
+    "element": false,
+    "by": false
+  }
+}

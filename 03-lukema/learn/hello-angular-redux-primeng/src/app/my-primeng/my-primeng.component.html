@@ -1,0 +1,39 @@
+<p>
+  my-primeng works!
+</p>
+
+<div style="border: 1px solid red;">
+  <p-message severity="info" text="PrimeNG Rocks"></p-message>
+  <p-message severity="success" text="Record Saved"></p-message>
+  <p-message severity="warn" text="Are you sure?"></p-message>
+  <p-message severity="error" text="Field is required"></p-message>
+</div>
+
+<div>
+  <p-button label="Click me label (2nd line)" (click)="click2()">p-button </p-button>
+
+  <button style="margin-left: 10px;" pButton type="button" label="Click me label (2nd line)" (click)="click1()">button
+    pButton</button>
+</div>
+
+<div>
+  Message Array Demo:
+  <button type="button" (click)="addOneWithMessageArray()">AddOne to Message Array</button>
+  <button type="button" (click)="clearMessageArray()">Clear Message Array</button>
+</div>
+
+<div>
+  MessageService Demo:
+  <button type="button" (click)="addSingleWithMessageService()">AddSingle with MessageService</button>
+  <button type="button" (click)="addMultipleWithMessageService()">AddMultiple with MessageService</button>
+  <button type="button" (click)="clearMessageService()">Clear MessageService</button>
+</div>
+
+<br>
+
+<div style="border: 1px dashed blue;">
+  <!-- '[(value)]="msgs"' is not needed if use MessageService. -->
+  <p-messages [(value)]="msgs" [showTransitionOptions]="'500ms'" [hideTransitionOptions]="'1000ms'"></p-messages>
+</div>
+
+<p-toast position="top-right" [showTransitionOptions]="'1000ms'" [hideTransitionOptions]="'2000ms'"></p-toast>

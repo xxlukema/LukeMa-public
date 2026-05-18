@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build_web" default="web" basedir=".">
+   <import file="../build_maven.xml" />
+
+   <import file="../build_tomcat.xml" />
+	
+   <target name="web" depends="clean_tomcat,deploy_web">
+   </target>
+</project>
+

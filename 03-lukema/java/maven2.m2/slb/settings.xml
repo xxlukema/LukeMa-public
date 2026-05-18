@@ -1,0 +1,114 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+
+   <localRepository>file:///D:/repo</localRepository>
+
+   <profiles>
+      <profile>
+         <id>myprofile</id>
+
+         <properties>
+            <my.eclipse.workspace>${env.WORKSPACE}</my.eclipse.workspace>
+
+            <webapps.dir>${env.TOMCAT_HOME}/webapps</webapps.dir>
+         </properties>
+
+         <repositories>
+            <repository>
+               <id>local</id>
+
+               <url>file:///myRemoteServerURL</url>
+            </repository>
+
+            <repository>
+               <id>tahiti_2_0</id>
+
+               <url>http://intrepid.houston.nam.slb.com/tahiti_2_0</url>
+            </repository>
+
+            <repository>
+               <id>rti</id>
+
+               <url>http://intrepid.houston.nam.slb.com/rti</url>
+            </repository>
+
+            <repository>
+               <id>rti_internal</id>
+
+               <url>http://intrepid.houston.nam.slb.com/rti_internal</url>
+            </repository>
+
+            <repository>
+               <id>rti_admin</id>
+
+               <url>http://intrepid.houston.nam.slb.com/rti_admin</url>
+            </repository>
+
+            <repository>
+               <id>central</id>
+
+               <url>http://repo1.maven.org/maven2/</url>
+            </repository>
+
+            <repository>
+               <id>maven2-repository.dev.java.net</id>
+
+               <name>Java.net Repository for Maven</name>
+
+               <url>http://download.java.net/maven/2/</url>
+
+               <layout>default</layout>
+            </repository>
+
+<!--
+            <repository>
+               <id>luke</id>
+
+               <name>Luke's Custom Repo</name>
+
+               <url>http://163.188.85.83:8090/maven2</url>
+
+               <snapshots>
+                  <enabled>true</enabled>
+               </snapshots>
+
+               <releases>
+                  <enabled>true</enabled>
+               </releases>
+            </repository>
+            -->
+         </repositories>
+
+         <pluginRepositories>
+            <pluginRepository>
+               <id>tahiti_2_0</id>
+
+               <url>http://intrepid.houston.nam.slb.com/tahiti_2_0</url>
+            </pluginRepository>
+
+            <pluginRepository>
+               <id>codehaus</id>
+
+               <url>http://snapshots.repository.codehaus.org</url>
+            </pluginRepository>
+         </pluginRepositories>
+      </profile>
+   </profiles>
+
+   <activeProfiles>
+      <activeProfile>myprofile</activeProfile>
+   </activeProfiles>
+
+   <pluginGroups>
+      <pluginGroup>com.learn</pluginGroup>
+
+      <pluginGroup>com.myproject.plugin.java</pluginGroup>
+
+      <pluginGroup>com.myproject.plugin.ant</pluginGroup>
+
+      <pluginGroup>com.slb.rti.mojo</pluginGroup>
+
+      <pluginGroup>com.slb.tahiti.maven.plugins</pluginGroup>
+   </pluginGroups>
+</settings>
+

@@ -1,0 +1,178 @@
+<html>
+<head>
+   <title>onClick Dependency</title>
+</head>
+
+<script type="text/javascript">
+
+   function getElement(id)
+   {
+      var e = document.getElementById(id);
+
+      if (e == null)
+      {
+         es = document.getElementsByName(id);
+
+         if (es.length > 0)
+         {
+            e = es[0];
+         }
+      }
+
+      return e;
+   }
+
+   function enable(id)
+   {
+      var e = getElement(id);
+
+      if (e != null)
+      {
+         e.disabled = false;
+      }
+   }
+
+   function disable(id)
+   {
+      var e = getElement(id);
+
+      if (e != null)
+      {
+         e.disabled = true;
+      }
+   }
+
+   function clearValue(id)
+   {
+      var e = getElement(id);
+
+      if (e != null)
+      {
+         if (e.type == "text")
+         {
+            e.value = "";
+         }
+         else if (e.type == "checkbox")
+         {
+            e.checked = false;
+         }
+         else
+         {
+            e.innerHTML = "&nbsp;";
+         }
+      }
+   }
+
+   function setValue(id, value)
+   {
+      var e = getElement(id);
+
+      if (e != null)
+      {
+         if (e.type == "text")
+         {
+            e.value = value;
+         }
+         if (e.type == "checkbox")
+         {
+            e.checked = value;
+         }
+         else
+         {
+            e.innerHTML = value;
+         }
+      }
+   }
+
+   function checkToEnable(me, id)
+   {
+      if (me.checked == true)
+      {
+         enable(id);
+      }
+      else
+      {
+         disable(id);
+      }
+   }
+
+   function checkToRequired(me, id, reqId)
+   {
+      if (me.checked == true)
+      {
+         enable(id);
+         setValue(reqId, "*");
+      }
+      else
+      {
+         disable(id);
+         setValue(reqId, "&nbsp;");
+      }
+   }
+
+
+   function showValue(me)
+   {
+      alert("checked: " + me.checked);
+      alert("value: " + me.value);
+      alert("disabled: " + me.disabled);
+   }
+
+
+</script>
+
+<body BGCOLOR="#FDF5E6" >
+
+<h2 ALIGN="CENTER">onClicks</h2>
+
+<table BORDER=1>
+
+   <tr>
+      <td>
+         <input TYPE="checkbox" id="c0" NAME="c0" ONCLICK="clearValue('c1');" >
+      </td>
+
+      <td>
+         Temporary Password Expiration: 
+      </td>
+
+      <td>
+         <input TYPE="TEXT" ID="t0" NAME="t0" >
+      </td>
+
+      <td>
+         <span ID="r0">*</span>
+      </td>
+
+      <td>
+         <span ID="u0">Days</span>
+      </td>
+   </tr>
+   
+   <tr>
+      <td>
+         <input TYPE="checkbox" NAME="c1" ONCLICK="" >
+      </td>
+
+      <td>
+         Temporary Password Expiration: 
+      </td>
+
+      <td>
+         <input TYPE="TEXT" ID="t1" NAME="t1" VALUE="t1" >
+      </td>
+
+      <td>
+         <span ID="r1">*</span>
+      </td>
+
+      <td>
+         <span ID="u1">Days</span>
+      </td>
+   </tr>
+   
+
+</table>
+
+</body>
+</html>

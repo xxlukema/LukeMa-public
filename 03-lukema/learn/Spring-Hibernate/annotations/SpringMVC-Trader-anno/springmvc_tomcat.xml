@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="springmvc_tomcat" default="deploy_web" basedir=".">
+   <import file="../../../build_tomcat.xml" />
+</project>
+

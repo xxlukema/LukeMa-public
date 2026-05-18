@@ -1,0 +1,43 @@
+---- Step 3 of 6 ----
+INSERT
+INTO
+    spring_security_user
+    (
+        user_id,
+        username,
+        password,
+        enabled,
+        insert_timestamp,
+        last_update_timestamp
+    )
+    values
+    (
+        nextval('spring_security_user_pk_seq'),
+        'admin',
+        'My-Encoded-admin.',
+        true,
+        now(),
+        now()
+    );
+--
+INSERT
+INTO
+    spring_security_user
+    (
+        user_id,
+        username,
+        password,
+        enabled,
+        insert_timestamp,
+        last_update_timestamp
+    )
+    values
+    (
+        nextval('spring_security_user_pk_seq'),
+        'user',
+        'My-Encoded-user.',
+        true,
+        now(),
+        now()
+    );
+--

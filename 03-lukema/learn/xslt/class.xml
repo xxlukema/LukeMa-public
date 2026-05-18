@@ -1,0 +1,13 @@
+
+<?xml-stylesheet type="text/xsl" href="student_style.xsl"?>
+<class>
+  <student>
+    <fname>Luke</fname>
+    <lname>Ma</lname>
+    <address>
+      <street>6321 Beryl Rd</street>
+      <city>Alexandra</city>
+      <state>VA</state>
+    </address>
+  </student>
+</class>

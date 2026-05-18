@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "typescript",
+      "node"
+    ]
+  },
+  "include": ["**/*.ts"]
+}

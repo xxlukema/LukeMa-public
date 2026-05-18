@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+   <import resource="SpringBeanConfig-Common.xml" />
+
+<!--                    -->
+<!--     Bean Setup     -->
+<!--                    -->
+   <bean id="personDAO" parent="baseProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.dao.PersonDAO</value>
+      </property>
+
+      <property name="targetName">
+         <value>personDAOTarget</value>
+      </property>
+   </bean>
+
+   <bean id="personDAOTarget" class="com.learn.dao.PersonDAOImpl">
+      <property name="sessionFactory">
+         <ref bean="sessionFactory" />
+      </property>
+   </bean>
+
+<!-- For Declarative Transaction Management -->
+   <bean id="personService" parent="baseTransactionProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.service.PersonService</value>
+      </property>
+
+      <property name="target">
+         <ref bean="personServiceTarget" />
+      </property>
+   </bean>
+
+   <bean id="personServiceTarget" class="com.learn.service.PersonServiceImpl">
+      <property name="personDAO">
+         <ref bean="personDAO" />
+      </property>
+   </bean>
+
+<!--                         -->
+<!--     My Common Setup     -->
+<!--                         -->
+   <bean id="commonDAOTarget" class="com.learn.dao.CommonDAOImpl">
+      <property name="sessionFactory">
+         <ref bean="sessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="commonDAO" parent="baseProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.dao.CommonDAO</value>
+      </property>
+
+      <property name="targetName">
+         <value>commonDAOTarget</value>
+      </property>
+   </bean>
+</beans>
+

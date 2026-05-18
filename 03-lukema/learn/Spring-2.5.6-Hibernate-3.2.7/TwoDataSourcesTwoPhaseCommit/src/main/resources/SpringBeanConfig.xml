@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+<!--                    -->
+<!--     Bean Setup     -->
+<!--                    -->
+   <bean id="personDAO" class="com.learn.oracle.dao.impl.PersonDAOImpl">
+      <property name="sessionFactory">
+         <ref bean="oracleSessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="widgetDAO" class="com.learn.mysql.dao.impl.WidgetDAOImpl">
+      <property name="sessionFactory">
+         <ref bean="mysqlSessionFactory" />
+      </property>
+   </bean>
+
+<!-- For Declarative Transaction Management -->
+   <bean id="myService" class="com.learn.service.impl.MyServiceImpl">
+      <property name="personDAO">
+         <ref bean="personDAO" />
+      </property>
+      
+      <property name="widgetDAO">
+         <ref bean="widgetDAO" />
+      </property>      
+   </bean>
+
+<!--                             -->
+<!--     Spring Common Setup     -->
+<!--                             -->
+   <bean id="mysqlTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+      <property name="sessionFactory">
+         <ref bean="mysqlSessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="oracleTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+      <property name="sessionFactory">
+         <ref bean="oracleSessionFactory" />
+      </property>
+   </bean>
+   
+<!--                             -->
+<!--     Spring Common Setup     -->
+<!--                             -->
+   <aop:config>
+      <aop:pointcut id="serviceOperation" expression="execution(* com..service.*Service.*(..))" />
+
+      <aop:advisor advice-ref="txOracleAdvice" pointcut-ref="serviceOperation" />
+      
+      <aop:advisor advice-ref="txMySQLAdvice" pointcut-ref="serviceOperation" />
+   </aop:config>
+
+   <tx:advice id="txOracleAdvice" transaction-manager="oracleTransactionManager">
+      <tx:attributes>
+         <tx:method name="list" read-only="true" />
+
+         <tx:method name="save*" read-only="false" rollback-for="AppException" />
+
+         <tx:method name="*" />
+      </tx:attributes>
+   </tx:advice>
+   
+   <tx:advice id="txMySQLAdvice" transaction-manager="mysqlTransactionManager">
+      <tx:attributes>
+         <tx:method name="list" read-only="true" />
+
+         <tx:method name="save*" read-only="false" rollback-for="AppException" />
+
+         <tx:method name="*" />
+      </tx:attributes>
+   </tx:advice>
+   
+   <bean id="mysqlSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+      <property name="configLocation">
+         <value>classpath:hibernate-mysql.cfg.xml</value>
+      </property>
+   </bean>
+
+   <bean id="oracleSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+      <property name="configLocation">
+         <value>classpath:hibernate-oracle.cfg.xml</value>
+      </property>
+   </bean>
+
+</beans>

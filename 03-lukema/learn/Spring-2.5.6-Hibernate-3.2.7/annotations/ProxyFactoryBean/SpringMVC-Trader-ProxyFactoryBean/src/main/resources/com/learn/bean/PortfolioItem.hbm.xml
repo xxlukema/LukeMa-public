@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.learn.bean" default-lazy="false" default-cascade="all-delete-orphan">
+   <class name="PortfolioItem" table="Portfolio_Item" >
+      <id name="id" type="long" column="id">
+         <generator class="native">
+            <param name="sequence">PortfolioItem_Id_Seq</param>
+         </generator>
+      </id>
+      
+      <many-to-one name="portfolio" column="portfolio_id" not-null="true" />
+      
+      <property name="symbol" length="20" />
+      
+      <property name="shares" />
+      
+   </class>
+</hibernate-mapping>
+

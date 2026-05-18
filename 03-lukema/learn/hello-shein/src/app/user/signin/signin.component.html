@@ -1,0 +1,151 @@
+<section fxLayout (capsLock)="capsOn=$event">
+
+  <div fxFlex></div>
+  <form [formGroup]="formGroup" fxFlex="none" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="0.5em"
+    style="width: 32em; text-align: center;">
+
+    <h1 fxFlex>
+      Welcom
+    </h1>
+
+    @if(firstname) {
+    <section>
+      <div>
+        {{firstname}}
+      </div>
+
+      <div>
+        <span> Not you?</span>
+        &nbsp;
+        <a href="" (click)="switchUser(); false;">Switch account</a>
+      </div>
+
+      <br>
+    </section>
+    }
+
+    <div fxFlex fxLayout fxLayoutAlign="center center">
+      <span fxFlex="none" class="label required" style="width: 12em;">
+        email or phone number
+      </span>
+      <input fxFlex="18em" type="text" matInput appearance="outline" formControlName="username"
+        (keyup.enter)="onSubmit()" (keyup)="onKeyUp()">
+    </div>
+
+    <!--
+    @if(formGroup.get('username')?.invalid) {
+    <div class="error">
+      Error: {{usernameErr}}
+    </div>
+    }
+    -->
+
+    <div fxFlex fxLayout fxLayoutAlign="center center">
+      <span fxFlex="none" class="label required" style="width: 12em;">
+        Password
+      </span>
+      <input fxFlex="15.8em" type="password" autocomplete="false" matInput appearance="outline"
+        formControlName="password" (keyup.enter)="onSubmit()" #password (keyup)="onKeyUp()">
+      <i fxFlex="none" (click)="password.type=(password.type==='password')?'text':'password'" class="eye fa-solid"
+        [class]="(password.type=='password')?'fa-eye':'fa-eye-slash'"
+        [style.cursor]="formGroup.valid ? 'pointer' : 'default'"></i>
+    </div>
+
+    @if(errMsg != '') {
+    <div>
+      <span class="error"> ERROR: {{errMsg}}.</span>
+      &nbsp;
+      <span>Go to <a routerLink="/register" routerLinkActive="active">Register</a> Page?</span>
+    </div>
+    }
+
+    @if(capsOn) {
+    <div class="warn">
+      Warn: Caps Locked!
+    </div>
+    }
+
+    <input class="button" fxFlex type="button" mat-raised-button color="primary" value="Sign in"
+      [disabled]="!formGroup.valid || errMsg != ''" (click)="onSubmit()">
+
+    <div>
+      <a href="" (click)="false;">Need help signing in? (TODO)</a>
+    </div>
+
+    <div fxLayout fxLayoutAlign="center center" fxLayoutGap="1em">
+      <div fxFlex="auto"></div>
+      <input fxFlex="1.5em" type="checkbox" id="staySignedIn" formControlName="staySignedIn" (change)="onChange()"
+        [checked]="staySignedIn">
+      <label fxFlex="auto" for="staySignedIn" style="text-align: left;">Stay signed in</label><br>
+    </div>
+
+    <div fxLayout fxLayoutAlign="center center">
+      <div fxFlex="auto" style="border-bottom: 0.5px dotted black; height: 0px;"></div>
+      <div fxFlex="10">or</div>
+      <div fxFlex="auto" style="border-bottom: 0.5px dotted black; height: 0px;"></div>
+    </div>
+
+    <div class="pill2" fxLayout fxLayoutAlign="center" matTooltipPosition="above" matTooltip="TODO: Implement."
+      style="cursor: not-allowed; background-color: lightgray;">
+      <div fxFlex="4em">
+        <img src="assets/imgs/Google-logo.svg.png" alt="" style="height: 1.2em;">
+      </div>
+      <div fxFlex>Continue with Google</div>
+    </div>
+
+    <div class="pill2" fxLayout fxLayoutAlign="center" matTooltipPosition="above" matTooltip="TODO: Implement."
+      style="cursor: not-allowed; background-color: lightgray;">
+      <div fxFlex="4em">
+        <img src="assets/imgs/wechat-icon-2.png" alt="" style="height: 1.2em;">
+      </div>
+      <div fxFlex>Continue with WeChat</div>
+    </div>
+
+    <div class="pill2" fxLayout fxLayoutAlign="center" matTooltipPosition="above" matTooltip="TODO: Implement."
+      style="cursor: not-allowed; background-color: lightgray;">
+      <div fxFlex="4em">
+        <img src="assets/imgs/qq-icon-2.png" alt="" style="height: 1.2em;">
+      </div>
+      <div fxFlex>Continue with QQ</div>
+    </div>
+
+    <div>
+      Using a public or shared device?
+    </div>
+
+    <div>
+      Uncheck to protect your account.
+    </div>
+
+    <div>
+      <a style="cursor: pointer;" routerLinkActive="active" (click)="showLearnMore = !showLearnMore; false;">
+        Learn more
+        @if(showLearnMore) {
+        <i class="fa-solid fa-chevron-up fa-md"></i>
+        } @else {
+        <i class="fa-solid fa-chevron-down fa-md"></i>
+        }
+      </a>
+    </div>
+
+    @if(showLearnMore) {
+    <div>
+      <div fxLayout style="color: white; background-color: #3665F3; padding: 1em;">
+        <div fxFlex="none"><i class="fa-solid fa-circle-info fa-md"></i></div>
+        &nbsp;
+        &nbsp;
+        <div fxFlex style="text-align: left; font-size: small;">
+          With this box checked, we'll keep you signed in, making it easier to bid and buy. You'll also be all set to
+          pay if you've saved your payment info. You can always turn off this feature in My Prove You Can. We may ask you to sign
+          in again for some activities, such as making changes to your account.
+        </div>
+      </div>
+    </div>
+    }
+
+  </form>
+
+  <div fxFlex></div>
+
+
+</section>

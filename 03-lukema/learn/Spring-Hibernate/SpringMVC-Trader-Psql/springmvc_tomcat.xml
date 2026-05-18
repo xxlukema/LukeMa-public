@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project name="SpringMVC-Trader" default="deploy_web" basedir=".">
+   <import file="../../build_tomcat.xml" />
+</project>
+

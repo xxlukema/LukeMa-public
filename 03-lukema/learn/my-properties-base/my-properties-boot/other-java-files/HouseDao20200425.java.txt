@@ -1,0 +1,371 @@
+package com.learn.dao;
+
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+import com.learn.pojo.House;
+
+import lombok.extern.log4j.Log4j2;
+
+
+@Log4j2
+public class HouseDao20200425 {
+
+    private static List<House> HOUSE_LIST = null;
+
+    private static final Lock LOCK = new ReentrantLock();
+
+    public static final String DATE_UPDATED = "12/02/2018";
+
+    public static final String DATE_FORMAT = "MM/dd/yyyy";
+
+    public static List<House> getAllHouseList() {
+
+        if (HOUSE_LIST == null) {
+
+            try {
+                LOCK.tryLock(2, TimeUnit.MINUTES);
+                if (HOUSE_LIST == null) {
+
+                    List<House> tempList = new ArrayList<>();
+
+                    /**
+                     * 1. Regal Oak Way
+                     */
+                    House house = new House();
+                    tempList.add(house);
+
+                    house.setId(1);
+                    house.setDescription("Primary Residence");
+                    house.setAddress("1307 Regal Oak Way");
+                    house.setCity("Sugar Land");
+                    house.setState("TX");
+                    house.setZip("77479");
+                    house.setPurchaseDate("02/01/2011");
+                    house.setPurchasePrice(410_000);
+                    house.setCurrentPrice(476_191);
+                    house.setMortgageBank("FlagStar Bank");
+                    house.setInitialPrincipalBalance(393_495);
+                    house.setInterestRate(4.50f);
+                    house.setMaturityDate("03/01/2047");
+                    // house.setMonthlyPrincipalPayment(545f);
+                    // house.setMonthlyInterestPayment(1_507f);
+                    house.setMonthlyCountyPropertyTax(1_246f);
+                    house.setMonthlyMUDTax(177f);
+                    house.setMonthlyLIDTax(243f);
+                    house.setMonthlyInsurancePayment(143f);
+                    house.setMonthlyHOAPayment(68f);
+                    house.setActualMonthlyEscrow(1_389f);
+                    house.setSquareFootage(3_950);
+                    house.setLotSizeSquareFeet(8_776);
+                    house.setTaxId("8707110010200907");
+                    house.setLotDemesion("");
+
+                    /**
+                     * 2. Horseshoe Falls
+                     */
+                    house = new House();
+                    tempList.add(house);
+
+                    house.setId(2);
+                    house.setDescription("Rental Property");
+                    house.setAddress("5623 Horseshoe Falls");
+                    house.setCity("Missouri City");
+                    house.setState("TX");
+                    house.setZip("77459");
+                    house.setPurchaseDate("04/30/2007");
+                    house.setPurchasePrice(256_000);
+                    house.setCurrentPrice(304_468);
+                    house.setMortgageBank("Chase Mortgage");
+                    house.setInitialPrincipalBalance(218_627);
+                    house.setInterestRate(4.615f);
+                    house.setMaturityDate("05/01/2047");
+                    // house.setMonthlyPrincipalPayment(292f);
+                    // house.setMonthlyInterestPayment(858f);
+                    house.setMonthlyCountyPropertyTax(706f);
+                    house.setMonthlyMUDTax(191f);
+                    house.setMonthlyLIDTax(102f);
+                    house.setMonthlyInsurancePayment(92f);
+                    house.setMonthlyHOAPayment(87f);
+                    house.setActualMonthlyEscrow(797f);
+                    house.setMonthlyRentIncome(2_200f);
+                    house.setSquareFootage(2_950);
+                    house.setLotSizeSquareFeet(6_600);
+                    house.setTaxId("8131010010150907");
+                    house.setLotDemesion("");
+
+                    /**
+                     * 3. 22nd Ave
+                     */
+                    house = new House();
+                    tempList.add(house);
+
+                    house.setId(3);
+                    house.setDescription("Rental Property");
+                    house.setAddress("6421 22nd Ave");
+                    house.setCity("Phoenix");
+                    house.setState("AZ");
+                    house.setZip("85041");
+                    house.setPurchaseDate("06/22/2011");
+                    house.setPurchasePrice(57_000);
+                    house.setCurrentPrice(198_393);
+                    house.setMortgageBank("Wells Fargo Home Mortgage");
+                    house.setInitialPrincipalBalance(54_445);
+                    house.setInterestRate(4.37f);
+                    house.setMaturityDate("01/01/2043");
+                    // house.setMonthlyPrincipalPayment(101f);
+                    // house.setMonthlyInterestPayment(204f);
+                    house.setMonthlyCountyPropertyTax(89f);
+                    house.setMonthlyInsurancePayment(41f);
+                    house.setMonthlyHOAPayment(37f);
+                    house.setActualMonthlyEscrow(153f);
+                    house.setMonthlyManagementChargeRate(0.08f);
+                    house.setMonthlyRentIncome(1_200f);
+                    house.setSquareFootage(1_218);
+                    house.setLotSizeSquareFeet(6_050);
+                    house.setTaxId("105-86-028");
+                    house.setLotDemesion("");
+
+                    /**
+                     * 4. Westchester
+                     */
+                    house = new House();
+                    tempList.add(house);
+
+                    house.setId(4);
+                    house.setDescription("Rental Property");
+                    house.setAddress("4530 E Westchester Dr");
+                    house.setCity("Chandler");
+                    house.setState("AZ");
+                    house.setZip("85249");
+                    house.setPurchaseDate("01/11/2013");
+                    house.setPurchasePrice(196_000);
+                    house.setCurrentPrice(322_089);
+                    house.setMortgageBank("Cenlar MTG");
+                    house.setInitialPrincipalBalance(121_316);
+                    house.setInterestRate(3.75f);
+                    house.setMaturityDate("02/01/2043");
+                    // house.setMonthlyPrincipalPayment(245f);
+                    // house.setMonthlyInterestPayment(391f);
+                    house.setMonthlyCountyPropertyTax(155f);
+                    house.setMonthlyInsurancePayment(42f);
+                    house.setMonthlyHOAPayment(40f);
+                    house.setActualMonthlyEscrow(207f);
+                    house.setMonthlyManagementChargeRate(0.08f);
+                    house.setMonthlyRentIncome(1_500f);
+                    house.setSquareFootage(2_082);
+                    house.setLotSizeSquareFeet(7_150);
+                    house.setTaxId("313-09-574");
+                    house.setLotDemesion("54 x 128");
+
+                    /**
+                     * 5. Chestnut
+                     */
+                    house = new House();
+                    tempList.add(house);
+
+                    house.setId(5);
+                    house.setDescription("Rental Property");
+                    house.setAddress("1369 E Chestnut Dr");
+                    house.setCity("Gilbert");
+                    house.setState("AZ");
+                    house.setZip("85298");
+                    house.setPurchaseDate("01/24/2013");
+                    house.setPurchasePrice(220_000);
+                    house.setCurrentPrice(327_952);
+                    house.setMortgageBank("Cenlar MTG");
+                    house.setInitialPrincipalBalance(135_840);
+                    house.setInterestRate(3.625f);
+                    house.setMaturityDate("02/01/2043");
+                    // house.setMonthlyPrincipalPayment(279f);
+                    // house.setMonthlyInterestPayment(423f);
+                    house.setMonthlyCountyPropertyTax(165f);
+                    house.setMonthlyInsurancePayment(47f);
+                    house.setMonthlyHOAPayment(68f);
+                    house.setActualMonthlyEscrow(224f);
+                    house.setMonthlyManagementChargeRate(0.08f);
+                    house.setMonthlyRentIncome(1_450f);
+                    house.setSquareFootage(1_845);
+                    house.setLotSizeSquareFeet(7_088);
+                    house.setTaxId("304-72-138");
+                    house.setLotDemesion("50 x 130");
+
+                    /**
+                     * 6. La Costa
+                     */
+                    house = new House();
+                    tempList.add(house);
+
+                    house.setId(6);
+                    house.setDescription("Rental Property");
+                    house.setAddress("937 E La Costa Pl");
+                    house.setCity("Chandler");
+                    house.setState("AZ");
+                    house.setZip("85249");
+                    house.setPurchaseDate("01/29/2013");
+                    house.setPurchasePrice(241_000);
+                    house.setCurrentPrice(357_024);
+                    house.setMortgageBank("Cenlar MTG");
+                    house.setInitialPrincipalBalance(149_168);
+                    house.setInterestRate(3.75f);
+                    house.setMaturityDate("02/01/2043");
+                    // house.setMonthlyPrincipalPayment(301f);
+                    // house.setMonthlyInterestPayment(481f);
+                    house.setMonthlyCountyPropertyTax(194f);
+                    house.setMonthlyInsurancePayment(41f);
+                    house.setMonthlyHOAPayment(159f);
+                    house.setActualMonthlyEscrow(247f);
+                    house.setMonthlyManagementChargeRate(0.08f);
+                    house.setMonthlyRentIncome(1_450f);
+                    house.setSquareFootage(2_031);
+                    house.setLotSizeSquareFeet(8_140);
+                    house.setTaxId("303-58-521");
+                    house.setLotDemesion("55 x 148");
+
+                    /**
+                     * 7. Cupertino
+                     */
+                    house = new House();
+                    tempList.add(house);
+
+                    house.setId(7);
+                    house.setDescription("Rental Property");
+                    house.setAddress("3750 S Cupertino Dr");
+                    house.setCity("Gilbert");
+                    house.setState("AZ");
+                    house.setZip("85297");
+                    house.setPurchaseDate("01/28/2013");
+                    house.setPurchasePrice(225_000);
+                    house.setCurrentPrice(360_092);
+                    house.setMortgageBank("Cenlar MTG");
+                    house.setInitialPrincipalBalance(139_265);
+                    house.setInterestRate(3.75f);
+                    house.setMaturityDate("02/01/2043");
+                    // house.setMonthlyPrincipalPayment(281f);
+                    // house.setMonthlyInterestPayment(449f);
+                    house.setMonthlyCountyPropertyTax(211f);
+                    house.setMonthlyInsurancePayment(54f);
+                    house.setMonthlyHOAPayment(38f);
+                    house.setActualMonthlyEscrow(287f);
+                    house.setMonthlyManagementChargeRate(0.08f);
+                    house.setMonthlyRentIncome(1_700f);
+                    house.setSquareFootage(2_457);
+                    house.setLotSizeSquareFeet(9_975);
+                    house.setTaxId("309-24-795");
+                    house.setLotDemesion("70 x 120");
+
+                    /**
+                     * 8. Indian Wells
+                     */
+                    house = new House();
+                    tempList.add(house);
+
+                    house.setId(8);
+                    house.setDescription("Rental Property");
+                    house.setAddress("720 E Indian Wells Pl");
+                    house.setCity("Chandler");
+                    house.setState("AZ");
+                    house.setZip("85249");
+                    house.setPurchaseDate("02/22/2013");
+                    house.setPurchasePrice(250_590);
+                    house.setCurrentPrice(400_525);
+                    house.setMortgageBank("Chase Mortgage");
+                    house.setInitialPrincipalBalance(232_679);
+                    house.setInterestRate(4.625f);
+                    house.setMaturityDate("04/01/2047");
+                    // house.setMonthlyPrincipalPayment(313f);
+                    // house.setMonthlyInterestPayment(914f);
+                    house.setMonthlyCountyPropertyTax(229f);
+                    house.setMonthlyInsurancePayment(78f);
+                    house.setMonthlyHOAPayment(159f);
+                    house.setActualMonthlyEscrow(307f);
+                    house.setMonthlyManagementChargeRate(0.08f);
+                    house.setMonthlyRentIncome(1_700f);
+                    house.setSquareFootage(2_458);
+                    house.setLotSizeSquareFeet(8_775);
+                    house.setTaxId("303-58-389");
+                    house.setLotDemesion("65 x 135");
+
+                    HOUSE_LIST = tempList;
+                }
+            } catch (InterruptedException e) {
+            } finally {
+                LOCK.unlock();
+            }
+        }
+
+        calculateMonthlyPayment();
+
+        return HOUSE_LIST;
+    }
+
+    private static void calculateMonthlyPayment() {
+        HOUSE_LIST.forEach((house) -> {
+            float monthlyRate = house.getInterestRate() / 100 / 12;
+            Date maturityDate = null;
+            try {
+                maturityDate = new SimpleDateFormat(DATE_FORMAT).parse(house.getMaturityDate());
+            } catch (ParseException e) {
+                log.error(() -> "Unable to format maturity date.", e);
+            }
+
+            Date dateUpdated = null;
+            try {
+                dateUpdated = new SimpleDateFormat(DATE_FORMAT).parse(DATE_UPDATED);
+            } catch (ParseException e) {
+                log.error(() -> "Unable to format update date.", e);
+            }
+
+            if (!(maturityDate == null || dateUpdated == null)) {
+
+                LocalDate startDateInclusive = dateUpdated.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                LocalDate endDateExclusive = maturityDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+                // LOG.info(startDateInclusive + " " + endDateExclusive);
+
+                Period age = Period.between(startDateInclusive, endDateExclusive);
+
+                int numberOfMonthToMaturity = age.getYears() * 12 + age.getMonths();
+
+                float monthlyPayment = (float) (monthlyRate / (1 - Math.pow((1 + monthlyRate), -1.0 * numberOfMonthToMaturity)))
+                        * house.getInitialPrincipalBalance();
+
+                float monthlyInterest = house.getInitialPrincipalBalance() * monthlyRate;
+                float monthlyPrincipal = monthlyPayment - monthlyInterest;
+
+                float remainingPrincipalBalance = house.getInitialPrincipalBalance() * (float) (Math.pow((1 + monthlyRate), numberOfMonthToMaturity) -
+                        Math.pow((1 + monthlyRate), numberOfMonthToMaturity)) / (float) (Math.pow((1 + monthlyRate), numberOfMonthToMaturity) - 1);
+
+                house.setRemainingPrincipalBalance((int) remainingPrincipalBalance);
+
+                log.info("Item: " + house.getId() + " numberOfMonthToMaturity: " + numberOfMonthToMaturity + " Monthly Payment: "
+                        + (int) monthlyPayment + " principal: " + (int) monthlyPrincipal + " interest: " + (int) monthlyInterest
+                        + " remainingPrincipalBalance: " + (int) remainingPrincipalBalance);
+
+                house.setMonthlyInterestPayment(monthlyInterest);
+                house.setMonthlyPrincipalPayment(monthlyPrincipal);
+            }
+        });
+    }
+
+    public static House getHouseById(int id) {
+        for (House house : HOUSE_LIST) {
+            if (house.getId() == id) {
+                return house;
+            }
+        }
+
+        return null;
+    }
+
+}

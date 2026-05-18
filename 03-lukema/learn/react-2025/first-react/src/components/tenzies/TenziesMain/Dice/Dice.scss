@@ -1,0 +1,20 @@
+.dice {
+  border: 2px solid black;
+  height: 4rem;
+  width: 4rem;
+  color: black;
+  background-color: wheat;
+
+  /** box-shadow: none|x-offset y-offset blur spread color |inset|initial|inherit; */
+  box-shadow: 2px 3px 8px 2px #935858;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  &:enabled {
+    background-color: white;
+  }
+}

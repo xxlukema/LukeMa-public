@@ -1,0 +1,94 @@
+Hi Ben. For changes Pranav mentioned in his email, do I need to modify anything with ecorr_service? 
+Also in the morning's scrum, has asked about the progress of sendMessage add a button.
+
+This is the story he was talking about
+CRM-7427 
+
+I see it. 
+Is that a new endpoint? Or an existing endpoint? 
+
+I would say we could use the old one since the only things changing are a few values
+Key off surveyInstanceId. If it exists, use the current logic, if it doesn't swap to adding the PortalServiceRequest object
+You can reuse the frontend send-message page as well, you just might have to pass it a new parameter to tell the difference between card message and general message
+The button only appears in the head just before Log Out if there are no active surveys too
+
+I see. Thanks, Ben.
+
+Ken also said in the morning that we should update our resume. Is that the experience in our profile?
+
+I don't know, that was the first time I heard that as well. I think it might just be a normal resume, but I'm confirming with Jazmin
+
+OK. Thanks, Ben. Ken mentioned it twice. Once at the 9:00 am scrum, and another time in 9:30 am scrum. 
+
+Hi Ben. Suhaib asks about the ticket number of the send message drop down we fixed earlier this week. 
+
+Hi Ben. It's Quentinn Roby asking for resume. Please send your resume by the end of today.
+
+Quentinn said he doesn't know why they are collecting the resume. Hope everything is good.
+
+
+===============
+
+When user logs into the Respondent Portal, they should see a send message button that allows the user the ability to send a general message 
+not tied to a survey or when all surveys are closed out. 
+
+- Send Message Button only appears when no survey cards are present
+- If no survey is selected, the only topic that can be selected is General.
+
+
+=======================
+
+[‎4/‎13/‎2020 5:05 PM] Benjamin Daniel Orosz (CENSUS/CNMP CTR): 
+Oh, I see what that is. That explains why that wasn't working
+[‎4/‎13/‎2020 5:06 PM] Xianliu Luke Ma (CENSUS/CNMP CTR): 
+Change it to getName will work
+[‎4/‎13/‎2020 5:06 PM] Benjamin Daniel Orosz (CENSUS/CNMP CTR): 
+I tried to filter out Odyssey cards in the backend as a last minute change before we deployed. It didn't end up working so I had to do it in the webapp. This is why it didn't work
+[‎4/‎13/‎2020 5:07 PM] Xianliu Luke Ma (CENSUS/CNMP CTR): 
+If we don't fix, it is String type compare with a SurveyType. Different type will retruns false.
+[‎4/‎13/‎2020 5:08 PM] Benjamin Daniel Orosz (CENSUS/CNMP CTR): 
+When you' done with what you're working on now, go ahead and fix this and remove ODSY logic from the webapp. Make sure Odyssey parent cards don't get through to the front end
+
+
+=================
+
+Hi Pranav. I have completed "Send Message" implementation and deployed it to DEV/TEST. You can run some tests see if it works as expected. Census email is down. So I am unable to read your email of last week about the corresponding changes on pega side. 
+oh awesome
+were you able to make the changes to the parameters being passed?
+let me send the sample payload here
+
+{"caseTypeID":"USCB-ECORR-Work-Interaction-Web",
+"processID":"CPMInteraction",
+"CaseComments":[],
+"CaseAttachments":[],
+"content":
+{"UserAccountID":"6244",
+"ServiceCaseType":"PortalServiceRequest",
+"PortalServiceRequestTemplate":
+{"Description":"Whats going on with this covid stuff",
+"Email":"cpasstest1@yopmail.com",
+"Name":"cpasstest1 cpasstest1",
+"Phone":"574-360-9806",
+"Subject":"HELP ME NOW!!!",
+"Subtopic":"SSST75",
+"Type":"Question",
+"Topic":"ARTS17",},
+"ServiceCaseAttachments":[]}}
+
+
+Changes
+-Value for ServiceCaseType parameter updated to "PortalServiceRequest"
+-"SurveySpecificServiceRequestTemplate" updated to "PortalServiceRequestTemplate"
+-No SurveyInstanceID param 
+
+jw123@yopmail.com /pw: Securepassword@
+
+
+description: "q2"
+email: "lukema@yopmail.com"
+name: "Luke Ma"
+phone: "832-111-0000"
+subject: "s2"
+subtopicObj: "General"
+surveyInstanceId: null
+type: "Question"

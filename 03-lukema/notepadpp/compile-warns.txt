@@ -1,0 +1,30 @@
+C:\git\sfta_new_a22497\SFTA\APP\cfg\build>mbuild.cmd
+
+C:\git\sfta_new_a22497\SFTA\APP\cfg\build>mvn clean package -DANT_EXEC=C:\ant\bin\ant.bat  -DENV=pc -DTARGET=redeploy-all
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for com.freddiemac.A22497:sfta:pom:0.0.2-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: commons-logging:commons-logging:jar -> duplicate declaration of version
+ 1.0.4 @ line 532, column 14
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: commons-codec:commons-codec:jar -> duplicate declaration of version 1.3
+ @ line 598, column 14
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.freddiemac.A22497:eds-jaxb-generated:jar -> duplicate declaration o
+f version 1.0.0 @ line 1310, column 14
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.freddiemac.A22497:xdoclet-jsf-module:jar -> duplicate declaration o
+f version 1.2.2 @ line 1743, column 14
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING]
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building sfta 0.0.2-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for com.freddiemac.A22497:PhoenixSFTA_RuleApp:jar:1.5.19 is invalid, transitive dependencies (if any) will not be available, enable debug logg
+ing for more details
+Downloading from artifactory: https://ecit-nprepo/artifactory/Central-Dev-Repo/com/freddiemac/phoenixcore/phx_xxx_osl/1.0.8/phx_xxx_osl-1.0.8.pom
+[WARNING] The POM for com.freddiemac.phoenixcore:phx_xxx_osl:jar:1.0.8 is missing, no dependency information available
+[WARNING] The POM for com.oracle.weblogic:javax.javaee-api:jar:12.2.1-0-0 is invalid, transitive dependencies (if any) will not be available, enable debug loggi
+ng for more details
+[INFO]

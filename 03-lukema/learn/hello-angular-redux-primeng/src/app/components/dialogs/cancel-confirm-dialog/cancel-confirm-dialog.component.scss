@@ -1,0 +1,24 @@
+@mixin myPanel() {
+    .mat-dialog-container {
+        background-color: lightskyblue;
+        overflow: hidden;
+    }
+}
+
+.myapp-dialog {
+    @include myPanel();
+
+    .mat-dialog-container {
+        padding: 0 0 34px 0;
+    }
+}
+
+.mat-icon-close {
+    cursor: pointer;
+    color: white;
+}
+
+span.vcenter {
+    display: inline-flex;
+    align-items: center;
+}

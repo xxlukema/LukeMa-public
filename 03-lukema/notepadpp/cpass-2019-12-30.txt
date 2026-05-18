@@ -1,0 +1,8 @@
+1.x radio -- Forgot Password Page and Registration Page
+2. show (not hide) password
+3. Warning on bottom of the Sign in page
+4. Forgot My Password to "Reset Password"
+
+
+
+

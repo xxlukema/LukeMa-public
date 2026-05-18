@@ -1,0 +1,24 @@
+<pluginMetadata>
+   <mojos>
+      <mojo>
+         <goal>hello</goal>
+
+         <call>hello</call>
+
+         <description>Say Hello, World.</description>
+         
+         <requiresProject>false</requiresProject> 
+      </mojo>
+
+      <mojo>
+         <goal>backup</goal>
+
+         <call>backup</call>
+
+         <description>Backup this node into D:\archive</description>
+         
+         <requiresProject>false</requiresProject>
+      </mojo>
+   </mojos>
+</pluginMetadata>
+

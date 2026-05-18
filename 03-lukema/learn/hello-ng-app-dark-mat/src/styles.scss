@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use '@angular/material' as mat;
+
+@import "@angular/material/theming";
+
+@include mat.core();
+
+$angular-primary: mat.define-palette(mat.$teal-palette, 500, 100, 900);
+$angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$angular-warn: mat.define-palette(mat.$red-palette);
+
+$angular-default-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($angular-default-theme);
+
+$angular-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+
+@import "./assets/scss/variable";
+
+.darkMode {
+  @include mat.all-component-colors($angular-dark-theme);
+
+  a {
+    color: $blue; /** from "./assets/scss/variable" */
+  }
+
+  h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+    color: $white; /** from "./assets/scss/variable" */
+  }
+}
+
+/** initial dark-mode many years ago */
+
+/** @import "./assets/scss/variable"; */
+
+html,
+.breadcrumb,
+body {
+  margin: 0;
+  height: 100%;
+  /* background-color: #3a4248; */
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/** This has to bo be in global def */
+.dark-mode {
+  color: $white !important;
+  background-color: $black !important;
+
+  hr {
+    border-top-color: lightblue;
+  }
+}
+
+.normal-mode {
+  color: $black !important;
+  background-color: $gray-400 !important;
+
+  hr {
+    border-top-color: rgba(0, 0, 0, .3);
+  }
+}
+
+/** following styles copied from 5g-ui */
+
+.mat-input-element,
+textarea,
+input {
+  &:valid {
+    border-color: #0095a8;
+    border-width: 1px;
+  }
+
+  &:not(:placeholder-shown):invalid {
+    border-color: #c24641;
+    border-width: 2px;
+  }
+
+  &:required {
+    background-color: lightcyan;
+  }
+
+  &:hover,
+  &:focus {
+    border-width: 2px;
+
+    &:valid {
+      border-color: #0095a8;
+    }
+
+    &:invalid {
+      border-color: #c24641;
+    }
+  }
+
+  border-style: solid;
+  height: 1.8em;
+  font-size: 16px;
+  margin: 5px 0;
+  padding: 0.3em;
+}
+
+.ng-pristine:not(.ng-touched) {
+  border-color: #0095a8 !important;
+  border-width: 1px !important;
+}

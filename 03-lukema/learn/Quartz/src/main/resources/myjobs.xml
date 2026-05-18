@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<job-scheduling-data version="2.0"
+	xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData 
+    http://www.quartz-scheduler.org/xml/job_scheduling_data_2_0.xsd">
+
+	<schedule>
+
+		<job>
+			<name>my-job</name>
+			<group>MYJOB_GROUP</group>
+			<job-class>com.learn.job.MyJob</job-class>
+		</job>
+		<job>
+			<name>my-quartz-job</name>
+			<group>MYJOB_GROUP</group>
+			<job-class>com.learn.job.QuartzJob</job-class>
+		</job>
+
+		<trigger>
+			<cron>
+				<name>my-trigger-1</name>
+				<group>MYTRIGGER_GROUP</group>
+				<job-name>my-job</job-name>
+				<job-group>MYJOB_GROUP</job-group>
+				<cron-expression>13 * * * * ?</cron-expression>
+			</cron>
+		</trigger>
+		<trigger>
+			<cron>
+				<name>my-trigger-2</name>
+				<group>MYTRIGGER_GROUP</group>
+				<job-name>my-quartz-job</job-name>
+				<job-group>MYJOB_GROUP</job-group>
+				<cron-expression>*/23 * * * * ?</cron-expression>
+			</cron>
+		</trigger>
+	</schedule>
+</job-scheduling-data>

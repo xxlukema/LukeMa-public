@@ -1,0 +1,26 @@
+/* Begin: @import does not work */
+/* @import '../css/indi_tokens'; */
+/* @import url(../css/my.css); */
+/* End: @import does not work */
+
+body {
+	font-family: "Source Sans Pro", sans-serif !important;
+}
+
+h1 {
+	color: red;
+}
+
+h2 {
+	color: #FF0000;
+}
+
+footer {
+	margin-top: 60px;
+}
+
+table,
+th,
+td {
+	border: 1px solid black;
+}

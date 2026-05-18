@@ -1,0 +1,39 @@
+services:
+  postgres:
+      image: postgres:latest
+      container_name: postgres-lma
+      volumes:
+        - /c/postgresql/data:/var/lib/postgresql/data
+      environment:
+        POSTGRES_DB: keycloak
+        POSTGRES_USER: keycloak
+        POSTGRES_PASSWORD: password
+      networks:
+        - keycloaknet
+  keycloak:
+      image: quay.io/keycloak/keycloak:16.1.1
+      container_name: keycloak-lma
+      volumes:
+        - ./standalone/configuration/application.keystore:/opt/jboss/keycloak/standalone/configuration/application.keystore
+      environment:
+        DB_VENDOR: POSTGRES
+        DB_ADDR: postgres
+        DB_DATABASE: keycloak
+        DB_USER: keycloak
+        DB_SCHEMA: public
+        DB_PASSWORD: password
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: admin
+        #JDBC_PARAMS: "ssl=true"
+      ports:
+        - 9443:8443
+        - 9990:9990
+      depends_on:
+        - postgres
+      networks:
+        - keycloaknet
+
+networks:
+  keycloaknet:
+    name: keycloaknet-lma
+

@@ -1,0 +1,48 @@
+<project>
+   <target name="appc">
+      <path id="classpath">
+         <pathelement location="/bea/weblogic81/server/lib/weblogic.jar" />
+
+         <pathelement location="/repo/log4j/log4j/1.2.13/log4j-1.2.13.jar" />
+
+         <pathelement location="/bea/jdk142_11/lib/tools.jar" />
+      </path>
+
+      <path id="weblogic.classpath">
+         <pathelement path="${plugin.dependencyClasspath}" />
+      </path>
+
+      <java classname="weblogic.appc" fork="yes" failonerror="true">
+         <classpath>
+            <path refid="weblogic.classpath" />
+         </classpath>
+
+         <arg value="-verbose" />
+
+         <arg value="-forceGeneration" />
+
+         <arg value="target/${finalName}.jar" />
+      </java>
+
+      <move file="${finalName}_client.jar" todir="target" failonerror="false" />
+   </target>
+
+   <target name="ear">
+      <echo>####project###${localRepository}####</echo>
+
+      <path id="weblogic.classpath">
+         <pathelement path="${maven.compile.classpath}" />
+      </path>
+
+      <property name="mypath" refid="weblogic.classpath" />
+
+      <echo>###${maven.compile.classpath}####</echo>
+
+<!--
+      <ear destfile="${outputDirectory}/${finalName}.ear" appxml="target/classes/application.xml">
+         <fileset dir="target" includes="*.jar,*.war" excludes="*_client.jar" />
+      </ear>
+      -->
+   </target>
+</project>
+

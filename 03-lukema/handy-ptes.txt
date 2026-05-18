@@ -1,0 +1,73 @@
+git clone -b develop https://bitbucket.apps.dev.pcloud.io/scm/nms/nms-tmlru-term-sample-stat-svc
+git clone -b develop https://bitbucket.apps.dev.pcloud.io/scm/nms/nms-tmlru-edge-sample-stat-svc
+git clone -b develop https://bitbucket.apps.dev.pcloud.io/scm/nms/nms-edge-sample-stat-svc
+git clone -b develop https://bitbucket.apps.dev.pcloud.io/scm/nms/nms-core-sample-stat-svc
+git clone -b develop https://bitbucket.apps.dev.pcloud.io/scm/nms/nms-svc-parent
+
+
+# create `feature/PTESNMS-5636-sample` branch from `develop` branch
+# step 1. clone `develop` branch
+git clone -b develop https://bitbucket.apps.dev.pcloud.io/scm/nms/nms-svc-parent
+# step 2. create new branch `feature/PTESNMS-5636-sample` from `develop` branch
+cd nms-svc-parent/
+git checkout -b feature/PTESNMS-5636-sample develop
+
+
+
+for i in *; do cd $i;     git branch bugfix/PTESNMS-5453-unused-imports; cd -; done
+for i in *; do cd $i;     git switch bugfix/PTESNMS-5453-unused-imports; cd -; done
+
+
+mvn test -Dtest=ConfigFileServiceTest#testSetUrls
+
+TM LRU: Terminal Modem Line Replaceable Unit
+KILF: Key Loading and Initialization Facility
+SC: System Controller
+CS: Core Switch
+ECU: Encryption Controll Unit
+
+py PATSSIM_JSON_Generator.py 127.0.0.1 CORE Sample_PATSSIM_Generator_Config.ini
+
+#
+device_ip=10.52.134.169
+py PATSSIM_JSON_Generator.py ${device_ip=10.52.134.169} CORE Sample_PATSSIM_Generator_Config.ini
+
+snmpget -v3 -l noAuthNoPriv -u usernoauth ${device_ip} .1.3.6.1.4.1.55000.10.2.6.3.0
+snmpset -v3 -l noAuthNoPriv -u usernoauth ${device_ip} .1.3.6.1.4.1.55000.10.2.6.3.0 i 1
+
+README.md: /home/lma/libs/nms-svc-parent/sessionscripts/README.md
+
+[ "$1" ] && exec < "$1"
+echo yes $1
+
+
+PROJNAME=nms
+KUBERNETES_CLUSTER=apps.blk.dev
+DDSHOST=nms-dds-$PROJNAME.$KUBERNETES_CLUSTER.pcloud.io
+# DDSHOST=nms-dds-$PROJNAME.$KUBERNETES_CLUSTER.pcloud.io
+DBSHOST=nms-dbs-nms.apps.blk.dev.pcloud.io
+# DBSHOST=nms-dbs-nms.apps.blk.dev.pcloud.io
+SESSIONS=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33
+CORE_SESSIONS=1,2,3,4,14,15,19,20
+EDGE_SESSIONS=5,6,7,8
+TM_SESSIONS=9,10,11,12,13,16,17
+PERFORMANCE_SESSIONS=18
+MSK_SESSIONS=21
+JH_DEFAULT_SESSIONS=22
+JH_23FLCHANNEL_SESSIONS=23
+JH_ALLFLBMC_SESSIONS=24
+JH_BASE_CORE_SESSIONS=25
+JH_BASE_TMLRU_SESSIONS=26
+JH_BASE_EDGE_SESSIONS=27
+JH_TERMINAL_LOG_OFF_SESSIONS=28
+JH_LOG_ON_C_SESSIONS=29
+JH_LOG_ON_E_SESSIONS=30
+JH_LOG_ON_T_SESSIONS=31
+TEMP_CORE_SESSION=32
+TEMP_EDGE_SESSION=33
+COREIP=172.16.210.12
+EDGEIP=172.16.210.11
+TMLRUIP=10.200.1.203
+
+
+

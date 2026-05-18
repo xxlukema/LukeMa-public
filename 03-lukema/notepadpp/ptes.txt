@@ -1,0 +1,27 @@
+
+\\expdisd01\Advanced Systems Programs\Programs\USAF SMC PTES\Product Engineering\MMS Development
+
+
+mattermost
+Jenkins
+Rancher
+
+https://sonarqube-cicd.apps.dev.pcloud.io/sonar/projects
+https://sonarqube-cicd.apps.dev.pcloud.io/sonar/sessions/
+
+
+Device Service
+
+Owner: PATS
+Contact Organization: PATS
+Visibility Organization: System
+
+deviceClass has (logicalName contains 'PATS') and componentRoot has (name contains 'hubsim-core-0-aws' or name contains 'hubsim-edge-0-aws')
+
+deviceClass has (logicalName contains 'PATS') and componentRoot has (name contains 'hubsim-core-0-hns' or name contains 'hubsim-edge-0-hns')
+
+deviceClass has (logicalName contains 'PATS' and class eq 'Forward Link Channels') and componentRoot has (name contains 'hubsim-core-0-hns' or name contains 'hubsim-edge-0-hns')
+
+SonarCube
+
+To force scan after merge request pushes: modify the `sonar.projectVersion` to `{env.semVer}` or `{env.semVerSourceBuildTag}` in the `sonar-project.properties` file and do a push

@@ -1,0 +1,29 @@
+
+When Synchronization is Required:
+
+
+Note however that volatile has been incompletely implemented in most JVMs. 
+Using volatile may not help to achieve the results you desire (yes this 
+is a JVM bug, but its been low priority until recently).
+
+1. You need to synchronize or make volatile variables holding data that will 
+   be shared between threads.
+
+2. NOTE THE TIP "volatile primitive datatypes have atomic ++ operations" HAS 
+   BEEN SHOWN TO BE INVALID
+
+3. volatile fields can be slower than non-volatile fields, because the 
+   system is forced to store to memory rather than use registers. But they 
+   may be useful to avoid concurrency problems.
+
+4. Volatile variables are always synchronized with the main memory copy.
+
+5. The volatile modifier requests the Java VM to always access the shared 
+   copy of the variable so the its most current value is always read. If two 
+   or more threads access a member variable, AND one or more threads might 
+   change that variable's value, AND ALL of the threads do not use 
+   synchronization (methods or blocks) to read and/or write the value, then 
+   that member variable must be declared volatile to ensure all threads see 
+   the changed value.
+
+

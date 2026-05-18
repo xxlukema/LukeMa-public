@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.learn.bean" default-lazy="true">
+   <class name="Payment" table="PAYMENT">
+      <id name="id" column="PAYMENT_ID" type="java.lang.Long" >
+         <generator class="hilo">
+            <param name="table">Payment_hi_value</param>
+            <param name="column">next_value</param>
+            <param name="max_lo">100</param>
+         </generator>
+      </id>
+      
+      <property name="type" column="PAYMENT_TYPE" length="20" type="string" not-null="true" />
+
+      <property name="amount" column="AMOUNT" type="java.lang.Float" not-null="true" />
+
+      <joined-subclass name="CreditPayment" table="CREDIT_PAYMENT">
+         <key column="CREDIT_PAYMENT_ID" />
+
+         <property name="creditCardType" column="CC_TYPE" length="20" type="string" />
+      </joined-subclass>
+
+      <joined-subclass name="CheckPayment" table="CHECK_PAYMENT">
+         <key column="CHECK_PAYMENT_ID" />
+
+         <property name="bankName" column="BANK_NAME" length="20" type="string" />
+      </joined-subclass>
+   </class>
+</hibernate-mapping>
+

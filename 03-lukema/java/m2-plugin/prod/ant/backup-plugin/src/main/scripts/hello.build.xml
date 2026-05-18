@@ -1,0 +1,44 @@
+<project>
+   <property name="destdir" value="D:/archive" />
+
+   <target name="hello">
+      <echo>Hello, World?????</echo>
+   </target>
+
+   <target name="backup">
+      <tstamp>
+         <format property="touch.time" pattern="yyyyMMdd" locale="en" />
+      </tstamp>
+
+      <basename property="node.name" file="${basedir}" />
+
+      <property name="destfile" value="${destdir}/${node.name}-${touch.time}.jar" />
+
+      <delete file="${destfile}" />
+
+      <jar destfile="${destfile}">
+         <fileset dir="..">
+            <include name="${node.name}/**" />
+
+            <exclude name="**/target/**" />
+
+            <exclude name="**/build/**" />
+
+            <exclude name="**/bin/**" />
+
+            <exclude name="**/classes/**" />
+
+            <exclude name="**/.metadata/**" />
+
+            <exclude name="**/.svn/**" />
+
+            <exclude name="**/target-eclipse/**" />
+
+            <exclude name="**/CVS/**" />
+
+            <exclude name="**/dist/**" />
+         </fileset>
+      </jar>
+   </target>
+</project>
+

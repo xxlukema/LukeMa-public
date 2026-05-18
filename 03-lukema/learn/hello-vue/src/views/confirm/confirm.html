@@ -1,0 +1,15 @@
+<section class="confirm">
+
+  <h3>Confirm Dialog</h3>
+
+  <button @click="launch">Launch Confirm Dialog</button>
+
+  <p>confirmed = {{confirmed}}</p>
+
+  <div>
+    <ConfirmDialog ref="confirmRef" @event-confirm="confirm" @event-cancel="cancel" title="Unsaved Data Change Confirm"
+                   body="You have unsaved data changes on this page" cancelLabel="Cancel" confirmLabel="Confirm">
+    </ConfirmDialog>
+  </div>
+
+</section>

@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: elasticsearch-statefulset
+  namespace: efk-logging
+  # [EFK]<https://www.digitalocean.com/community/tutorials/how-to-set-up-an-elasticsearch-fluentd-and-kibana-efk-logging-stack-on-kubernetes>
+spec:
+  serviceName: elasticsearch-service
+  replicas: 2
+  selector:
+    matchLabels:
+      app: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          # image: docker.elastic.co/elasticsearch/elasticsearch:7.17.8
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+          # image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: "1"
+            requests:
+              memory: 256Mi
+              cpu: "0.2"
+          ports:
+            - containerPort: 9200
+              name: rest
+              protocol: TCP
+            - containerPort: 9300
+              name: inter-node
+              protocol: TCP
+          volumeMounts:
+            - name: data
+              mountPath: /usr/share/elasticsearch/data
+          env:
+            - name: cluster.name
+              value: k8s-logs
+            - name: node.name
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: discovery.seed_hosts
+              value: "elasticsearch-statefulset-0.elasticsearch-service,elasticsearch-statefulset-1.elasticsearch-service"
+            - name: cluster.initial_master_nodes
+              value: "elasticsearch-statefulset-0,elasticsearch-statefulset-1"
+            - name: ES_JAVA_OPTS
+              value: "-Xms512m -Xmx1024m"
+      initContainers:
+        - name: fix-permissions
+          image: busybox
+          command:
+            ["sh", "-c", "chown -R 1000:1000 /usr/share/elasticsearch/data"]
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - name: data
+              mountPath: /usr/share/elasticsearch/data
+        - name: increase-vm-max-map
+          image: busybox
+          command: ["sysctl", "-w", "vm.max_map_count=262144"]
+          securityContext:
+            privileged: true
+        - name: increase-fd-ulimit
+          image: busybox
+          command: ["sh", "-c", "ulimit -n 65536"]
+          securityContext:
+            privileged: true
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+        # name: elasticsearch-data  # <== Do not change this name unless you set up a volume mount for the data path.
+        labels:
+          app: elasticsearch
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: ""
+        # storageClassName: standard
+        # storageClassName: do-block-storage
+        resources:
+          # limits:
+          #  storage: 30Gi
+          requests:
+            storage: 10Gi  # <== default 1Gi

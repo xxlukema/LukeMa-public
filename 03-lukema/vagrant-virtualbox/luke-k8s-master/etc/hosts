@@ -1,0 +1,4 @@
+192.168.1.200   ubuntu-k8s-master ubuntu-k8s-master.learn.com
+192.168.1.201   lma-k8s-worker1   lma-k8s-worker1.learn.com
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6

@@ -1,0 +1,39 @@
+<!doctype  HTML  PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+   <title>Get Mac Address</title>
+
+   <script id="clientEventHandlersJS" language="javascript">
+
+   function Button1_onclick()
+   {
+      var locator = new ActiveXObject("WbemScripting.SWbemLocator");
+      var service = locator.ConnectServer(".");
+      var properties = service.ExecQuery("SELECT MACAddress FROM Win32_NetworkAdapterConfiguration Where IPEnabled = True");
+      var e = new Enumerator (properties);
+      document.write("<table border=1>");
+      dispHeading();
+      for ( ;!e.atEnd();e.moveNext () )
+      {
+         var p = e.item ();
+         document.write("<tr>");
+         document.write("<td>" + p.MACAddress + "</td>");
+         document.write("</tr>");
+      }
+      document.write("</table>");
+   }
+
+   function dispHeading()
+   {
+      document.write("<thead>");
+      document.write("<td>MACAddress</td>");
+      document.write("</thead>");
+   }
+   
+   </script>
+</head>
+<body>
+<input id="Button1" type="button" value="Button" name="Button1" language="javascript" onclick="return Button1_onclick();">
+</body>
+</html>

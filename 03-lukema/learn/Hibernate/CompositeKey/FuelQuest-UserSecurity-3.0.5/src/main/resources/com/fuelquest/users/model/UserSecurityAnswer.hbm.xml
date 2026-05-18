@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.fuelquest.users.model.UserSecurityAnswer" table="USER_SECURITY_ANSWERS">
+      <composite-id name="id" class="com.fuelquest.users.model.UserSecurityAnswerPK">
+         <key-many-to-one name="user" class="com.fuelquest.users.model.User">
+            <column name="user_id" />
+         </key-many-to-one>
+
+         <key-many-to-one name="userSecurityQuestion" class="com.fuelquest.users.model.UserSecurityQuestion">
+            <column name="security_question_id" />
+         </key-many-to-one>
+      </composite-id>
+
+      <property name="answer" type="string">
+         <column name="answer" length="150" not-null="true" unique="true" />
+      </property>
+
+      <many-to-one name="createdBy" class="com.fuelquest.users.model.User">
+         <column name="created_by" not-null="true" />
+      </many-to-one>
+
+      <property name="createDate" type="date">
+         <column name="create_date" not-null="true" />
+      </property>
+
+      <many-to-one name="lastUpdatedBy" class="com.fuelquest.users.model.User">
+         <column name="last_updated_by" not-null="true" />
+      </many-to-one>
+
+      <property name="lastUpdateDate" type="date">
+         <column name="last_update_date" not-null="true" />
+      </property>
+   </class>
+</hibernate-mapping>
+

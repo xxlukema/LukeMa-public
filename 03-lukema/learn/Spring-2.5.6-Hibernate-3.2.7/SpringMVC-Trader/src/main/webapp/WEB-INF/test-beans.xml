@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="date" class="java.util.Date">
+	</bean>
+
+	<bean id="logonFormController" class="com.learn.test.MyController">
+		<property name="indexView">
+			<value>index.jsp</value>
+		</property>
+		
+		<property name="searchResultsView">
+			<value>results.jsp</value>
+		</property>
+	</bean>
+</beans>

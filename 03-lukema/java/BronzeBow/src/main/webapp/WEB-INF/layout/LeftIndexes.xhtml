@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition>
+		<h:panelGrid columns="2" styleClass="wgrid">
+			<f:facet name="header">
+				<h:outputText value="Indexes" />
+			</f:facet>
+
+			<h:commandLink value="Dow"
+				actionListener="#{taController.symbolLinkClickedActionListener}"
+				action="#{taController.drawChart}"
+				disabled="true">
+				<f:attribute name="#{taController.symbolString}"
+					value="^dji" />
+			</h:commandLink>
+
+			<h:commandLink value="Nasdaq"
+				actionListener="#{taController.symbolLinkClickedActionListener}"
+				action="#{taController.drawChart}">
+				<f:attribute name="#{taController.symbolString}"
+					value="^ixic" />
+			</h:commandLink>
+
+			<h:commandLink value="SP500"
+				actionListener="#{taController.symbolLinkClickedActionListener}"
+				action="#{taController.drawChart}">
+				<f:attribute name="#{taController.symbolString}"
+					value="^gspc" />
+			</h:commandLink>
+
+			<h:commandLink value="SPY"
+				actionListener="#{taController.symbolLinkClickedActionListener}"
+				action="#{taController.drawChart}">
+				<f:attribute name="#{taController.symbolString}"
+					value="spy" />
+			</h:commandLink>
+
+			<h:commandLink value="Silver"
+				actionListener="#{taController.symbolLinkClickedActionListener}"
+				action="#{taController.drawChart}">
+				<f:attribute name="#{taController.symbolString}"
+					value="slv" />
+			</h:commandLink>
+
+			<h:commandLink value="Gld"
+				actionListener="#{taController.symbolLinkClickedActionListener}"
+				action="#{taController.drawChart}">
+				<f:attribute name="#{taController.symbolString}"
+					value="gld" />
+			</h:commandLink>
+
+			<h:commandLink value="qqq"
+				actionListener="#{taController.symbolLinkClickedActionListener}"
+				action="#{taController.drawChart}">
+				<f:attribute name="#{taController.symbolString}"
+					value="qqq" />
+			</h:commandLink>
+		</h:panelGrid>
+	</ui:composition>
+
+</html>
+

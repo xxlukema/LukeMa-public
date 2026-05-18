@@ -1,0 +1,7 @@
+{
+    "/my-properties-boot": {
+        "target": "https://localhost:8443/",
+        "secure": false,
+        "logLevel": "info"
+    }
+}

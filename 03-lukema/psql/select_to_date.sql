@@ -1,0 +1,1 @@
+select to_date('2015-06-29 PM 12-02-32', 'YYYY-MM-DD AM HH24-MI-SS');

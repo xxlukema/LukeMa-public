@@ -1,0 +1,9 @@
+FROM quay.io/keycloak/keycloak:latest
+
+# ADD works for trees
+# ADD ./standalone/configuration /opt/jboss/keycloak/standalone/configuration
+COPY ./standalone/configuration/*.* /opt/jboss/keycloak/standalone/configuration
+# COPY ./standalone/configuration/application.keystore /opt/jboss/keycloak/standalone/configuration/application.keystore
+
+EXPOSE 8443
+EXPOSE 9990

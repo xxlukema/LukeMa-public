@@ -1,0 +1,12 @@
+
+cd $PROD_HOME
+
+if [ ! -f client.properties ]
+then
+   cp ../properties/client.properties .
+   cp ../properties/oasys.properties .
+fi
+
+CLASSPATH=.:$TEST_HOME:$DEV_HOME/build:../lib/lib.oasys/OasysRMI.jar:$WL_HOME/classes:$WL_HOME/lib/weblogicaux.jar
+
+java sbc.webcct.beans.session.stateless.oasys.TestSLOasys

@@ -1,0 +1,4 @@
+172.17.27.241   luke-k8s-master luke-k8s-master.learn.com
+172.17.28.241   luke-k8s-worker1 luke-k8s-worker1.learn.com
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6

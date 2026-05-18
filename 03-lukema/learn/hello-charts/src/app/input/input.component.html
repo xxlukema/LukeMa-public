@@ -1,0 +1,22 @@
+<section>
+    <header>Form Input</header>
+    <form [formGroup]="inputFormGroup" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your name</mat-label>
+                <input matInput placeholder="Luke Ma" formControlName="name" required>
+                <mat-error *ngIf="inputFormGroup.invalid">{{errorName}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" formControlName="email" required>
+                <mat-error *ngIf="inputFormGroup.invalid">{{errorEmail}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div style="margin-top: 1em;">
+            <button type="submit" [disabled]="!inputFormGroup.valid">Submit</button>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,76 @@
+
+
+0. Run setup
+
+   (One time only) \\expdisd01\Advanced Systems Programs\Programs\2020 DoD NMS\Engineering\Tools\setupdev.bat
+
+1. Start DB in em6
+
+    lma@engddevvm6
+	
+    cd /user/lma/nms-git/nms-core/docker/SQL
+	
+	    git pull
+
+        # cleanup cache
+        ./restart.sh -c
+		
+		# start psql
+        ./restart.sh
+
+2. Builld jaras:
+
+   in nms-core:
+   
+      install.bat
+	  
+	  # m clean package --- This will not work. "spring.bat -a --https --keycloak" will fail.
+	  
+	  # install.bat is a must, and it required module "activedash". Therefore:
+	  # (1) Rename activedash/pom2.xml to activedash/pom.xml
+	  # (2) Uncomment <module>activedash</module> from reactor pom.xml
+	  # (3) Run "install.bat"
+	  # (4) Comment out <module>activedash</module> from reactor pom.xml
+	  # (5) Rename activedash/pom.xml to activedash/pom2.xml
+	  
+	  
+3. spring
+
+   Also in nms-core:
+   
+      spring.bat -a --https --keycloak
+	  # If JAR not found errors occur, run "m clean package" and then retry.
+
+4. Stop spring:
+
+    Also in nms-core:
+   
+      spring.bat -k
+
+5. Spring status check:
+
+    sping.bat -s
+
+6. Init Load data to psql
+
+    test.bat -load -https -keycloak
+
+
+
+	
+
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+

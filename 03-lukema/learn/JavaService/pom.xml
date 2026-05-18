@@ -1,0 +1,192 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.learn</groupId>
+
+   <artifactId>learn-service</artifactId>
+
+   <packaging>jar</packaging>
+
+   <version>1.0</version>
+
+   <name>Maven Quick Start Archetype</name>
+
+   <url>http://maven.apache.org</url>
+
+   <dependencies>
+      <dependency>
+         <groupId>javax.j2ee</groupId>
+
+         <artifactId>j2ee</artifactId>
+
+         <version>1.4</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.microsoft.jdbc.base</groupId>
+
+         <artifactId>msbase</artifactId>
+
+         <version>2.2</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.microsoft.jdbc.sql</groupId>
+
+         <artifactId>mssqlserver</artifactId>
+
+         <version>2.2</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.microsoft.jdbc.util</groupId>
+
+         <artifactId>msutil</artifactId>
+
+         <version>2.2</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.co</groupId>
+
+         <artifactId>TAFE2JobDBTools</artifactId>
+
+         <version>20060628</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.co.messaging</groupId>
+
+         <artifactId>MessagingUtilities</artifactId>
+
+         <version>1.0</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.co.messaging</groupId>
+
+         <artifactId>MessagingLinkJobDAO</artifactId>
+
+         <version>1.0</version>
+      </dependency>
+
+      <dependency>
+         <groupId>log4j</groupId>
+
+         <artifactId>log4j</artifactId>
+
+         <version>1.2.13</version>
+      </dependency>
+
+      <dependency>
+         <groupId>soap</groupId>
+
+         <artifactId>soap</artifactId>
+
+         <version>2.3.1</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.co</groupId>
+
+         <artifactId>tools</artifactId>
+
+         <version>20060706</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.co</groupId>
+
+         <artifactId>StandbyList</artifactId>
+
+         <version>20060425</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.co</groupId>
+
+         <artifactId>PBT</artifactId>
+
+         <version>20060425</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.ibm.mq</groupId>
+
+         <artifactId>com.ibm.mqjms</artifactId>
+
+         <version>20060425</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.ibm.mq</groupId>
+
+         <artifactId>com.ibm.mq</artifactId>
+
+         <version>20060425</version>
+      </dependency>
+
+      <dependency>
+         <groupId>com.ibm.websphere</groupId>
+
+         <artifactId>xsd.bean.runtime</artifactId>
+
+         <version>20060425</version>
+      </dependency>
+
+      <dependency>
+         <groupId>junit</groupId>
+
+         <artifactId>junit</artifactId>
+
+         <version>3.8.1</version>
+
+         <scope>test</scope>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+
+            <configuration>
+               <archive>
+                  <manifest>
+                     <mainClass>com.learn.App</mainClass>
+
+                     <packageName>com.learn</packageName>
+
+<!--manifestFile>${basedir}/src/main/resources/META-INF/MANIFEST.MF</manifestFile-->
+                     <addClasspath>true</addClasspath>
+
+                     <addExtensions>false</addExtensions>
+
+                     <classpathPrefix>lib/</classpathPrefix>
+                  </manifest>
+               </archive>
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+
+            <executions>
+               <execution>
+                  <phase>compile-1</phase>
+
+                  <configuration>
+                     <tasks>
+                        <exec executable="run.bat" />
+                     </tasks>
+                  </configuration>
+
+                  <goals>
+                     <goal>run</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
+</project>

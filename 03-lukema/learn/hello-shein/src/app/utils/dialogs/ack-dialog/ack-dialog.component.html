@@ -1,0 +1,17 @@
+<section>
+  <div fxLayout="row" style="color: white; background-color: darkblue;">
+    <span fxFlex="auto" class="vcenter" style="padding: 0 0.5em;">{{ackDialogData.title}}</span>
+    <span fxFlex="none" class="vcenter mat-icon-close">
+      <mat-icon (click)="close(true)">close</mat-icon>
+    </span>
+  </div>
+
+  <mat-dialog-content>
+    <p style="padding: 0 0.5em;">{{ackDialogData.content}}</p>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayout="row" fxLayoutAlign="center center">
+    <button fxFlex="none" mat-raised-button color="primary"
+      (click)="ack()">{{ackDialogData.ackButtonLabel}}</button>
+  </mat-dialog-actions>
+</section>

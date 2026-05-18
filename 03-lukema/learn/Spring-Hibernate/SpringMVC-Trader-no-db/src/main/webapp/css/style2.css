@@ -1,0 +1,180 @@
+.normal {
+	FONT-SIZE: 12px; COLOR: #333333; FONT-FAMILY: Verdana, Arial
+}
+.navigate {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: blue; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.navigate:hover {
+	BACKGROUND: blue; COLOR: #ffffff
+}
+.drilldown {
+	FONT-SIZE: 10px; COLOR: #666666; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.drilldownhot {
+	FONT-SIZE: 10px; COLOR: #ff9933; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.special {
+	FONT-SIZE: 10px; COLOR: blue; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.success {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: blue; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.bigspecial {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.error {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.submit {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND: #ff9933; TEXT-TRANSFORM: uppercase; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial
+}
+.login {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Verdana, Arial
+}
+.select {
+	FONT-SIZE: 10pt; COLOR: #333333; FONT-FAMILY: Times New Roman, Verdana, Arial
+}
+INPUT {
+	FONT-SIZE: 8pt; COLOR: #666666; FONT-FAMILY: 8pt, Verdana, Arial, Helvetica, color: #666666
+}
+SELECT {
+	FONT-SIZE: 8pt; COLOR: #666666; FONT-FAMILY: 8pt, Verdana, Arial, Helvetica, color: #666666
+}
+TEXTAREA {
+	FONT-SIZE: 8pt; COLOR: #666666; FONT-FAMILY: 8pt, Verdana, Arial, Helvetica, color: #666666
+}
+.title {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #ff9933; FONT-STYLE: italic; FONT-FAMILY: Verdana, Arial; LETTER-SPACING: 1pt
+}
+.up {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff9933; TEXT-DECORATION: none; font-faily: Verdana, Arial
+}
+A.up {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff9933; TEXT-DECORATION: none; font-faily: Verdana, Arial
+}
+.subhead {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #003366; FONT-FAMILY: Verdana, Arial; LETTER-SPACING: 0pt
+}
+.subhead2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #003366; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.tbldescrip {
+	FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.searchheadtxt {
+	FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.tblvalue {
+	FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+.searchvaluetxt {
+	FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+.maincolor {
+	BACKGROUND: #99ccff
+}
+.accentcolor1 {
+	BACKGROUND: #003366
+}
+.tblheadcolor {
+	BACKGROUND: #003366
+}
+.accentcolor2 {
+	BACKGROUND: #f0f0f0
+}
+.tblcolor2 {
+	BACKGROUND: #f0f0f0
+}
+.accentcolor3 {
+	BACKGROUND: #cccccc
+}
+.tblcolor3 {
+	BACKGROUND: #cccccc
+}
+.menu1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #333333; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.menu1 {
+	COLOR: #333333
+}
+A.menu1:visited {
+	COLOR: #333333
+}
+A.menu1:hover {
+	BACKGROUND: #666666; COLOR: #ffffff
+}
+.menu {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #003366; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.menuline {
+	FONT-WEIGHT: bold; FONT-SIZE: 8px; COLOR: #333333; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.menupage {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND: #003366; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.menu:hover {
+	BACKGROUND: #003366; COLOR: #ffffff
+}
+A.menupage:hover {
+	BACKGROUND: #003366; COLOR: #ffffff
+}
+.subnavdrophead {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.subnavdrop {
+	FONT-SIZE: 10px; COLOR: #333333; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+.subnav {
+	FONT-SIZE: 11px; COLOR: #666666; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.subnav {
+	COLOR: #666666
+}
+A.subnav:hover {
+	BACKGROUND: #cccccc; COLOR: #666666
+}
+A:unknown {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+A:unknown {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000
+}
+A.link {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A.link:unknown {
+	COLOR: #003366; TEXT-DECORATION: none
+}
+A.link:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+.news {
+	FONT-SIZE: 10px; COLOR: #666666; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.news {
+	COLOR: #666666
+}
+A.news:hover {
+	BACKGROUND: #cccccc; COLOR: #666666
+}
+.newssource {
+	FONT-SIZE: 10px; COLOR: #e57323; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.newssource {
+	COLOR: #e57323; TEXT-DECORATION: none
+}
+A.newssource:hover {
+	BACKGROUND: #e57323; COLOR: #ffffff
+}
+.graynav {
+	FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none
+}
+A.graynav {
+	COLOR: #333333
+}
+A.graynav:hover {
+	BACKGROUND: #666666; COLOR: #ffffff
+}

@@ -1,0 +1,99 @@
+/* JavaScript Bible, Fourth Edition by Danny Goodman
+
+John Wiley & Sons CopyRight 2001 */
+
+<html>
+<head>
+   <style TYPE="text/css">
+   #mySPAN {font-style:italic}
+   </style>
+   <script LANGUAGE="JavaScript">
+   // assemble a couple event object properties
+
+   function getEventProps()
+   {
+      var msg = ""
+      var elem = event.srcElement
+      msg += "event.srcElement.tagName: " + elem.tagName + "\n"
+      msg += "event.srcElement.id: " + elem.id + "\n"
+      msg += "event button: " + event.button
+      return msg
+   }
+   // onClick event handlers for body, myP, and mySPAN
+   function bodyClick()
+   {
+      var msg = "Click event processed in BODY\n\n"
+      msg += getEventProps()
+      alert(msg)
+      checkCancelBubble()
+   }
+   function pClick()
+   {
+      var msg = "Click event processed in P\n\n"
+      msg += getEventProps()
+      alert(msg)
+      checkCancelBubble()
+   }
+   function spanClick()
+   {
+      var msg = "Click event processed in SPAN\n\n"
+      msg += getEventProps()
+      alert(msg)
+      checkCancelBubble()
+   }
+   // cancel event bubbling if check box is checked
+   function checkCancelBubble()
+   {
+      event.cancelBubble = document.controls.bubbleOn.checked
+   }
+   // assign onClick event handlers to three elements
+   function init()
+   {
+      document.body.onclick = bodyClick
+      document.all.myP.onclick = pClick
+      document.all.mySPAN.onclick = spanClick
+   }
+   // invoke fireEvent() on object whose ID is passed as parameter
+   function doFire(objID)
+   {
+      var newEvt = document.createEventObject()
+      newEvt.button = 3
+      document.all(objID).fireEvent("onclick", newEvt)
+      // don't let button clicks bubble
+      event.cancelBubble = true
+   }
+   </script>
+</head>
+<body ID="myBODY" onLoad="init()">
+<h1>fireEvent() Method</h1>
+<hr>
+<p ID="myP">
+This is a paragraph 
+<span ID="mySPAN">
+(with a nested SPAN)
+</span>
+that receives click events.
+</span>
+</p>
+<hr>
+<p>
+<b>Control Panel</b>
+</p>
+<form NAME="controls">
+   <p>
+   <input TYPE="checkbox" NAME="bubbleOn" onClick="event.cancelBubble=true">
+   Cancel event bubbling.
+   </p>
+   <p>
+   <input TYPE="button" VALUE="Fire Click Event on BODY" onClick="doFire('myBODY')">
+   </p>
+   <p>
+   <input TYPE="button" VALUE="Fire Click Event on myP" onClick="doFire('myP')">
+   </p>
+   <p>
+   <input TYPE="button" VALUE="Fire Click Event on mySPAN" onClick="doFire('mySPAN')">
+   </p>
+</form>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+
+
+args=$*
+
+if [ ! $# -eq 1 ]
+then
+   echo
+   echo "      Usage: $0 str"
+   echo
+
+   exit
+fi
+
+gg
+
+
+   for i in `find . -name "*.java" | grep -v /bin/ | grep -v metadata | grep -v target | grep -v build`
+   do
+      grep -i "$args" $i > /dev/null
+
+      if [ $? -eq 0 ]
+      then
+         echo -------------------------------------------------------------
+         echo $i
+
+         grep -i "$args" $i
+      fi
+   done
+

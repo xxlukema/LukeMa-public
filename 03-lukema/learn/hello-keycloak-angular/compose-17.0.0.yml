@@ -1,0 +1,56 @@
+volumes:
+  postgres_data:
+      driver: local
+
+services:
+  postgres:
+      image: postgres:latest
+      container_name: postgres-lma
+      # restart: on-failure
+      volumes:
+        - /c/postgresql/data:/var/lib/postgresql/data
+      environment:
+        POSTGRES_DB: keycloak
+        POSTGRES_USER: keycloak
+        POSTGRES_PASSWORD: password
+      networks:
+        - keycloaknet
+  keycloak:
+      # build: .
+      # image: mykeycloak:latest
+      image: quay.io/keycloak/keycloak:17.0.0
+      container_name: keycloak-lma
+      # restart: on-failure
+      volumes:
+        - ./tls/server.crt:/opt/keycloak/conf/server.crt:ro
+        - ./tls/server.key:/opt/keycloak/conf/server.key:ro
+        - ./conf/keycloak.conf:/opt/keycloak/conf/keycloak.conf:ro
+      environment:
+        DB: postgres
+        DB_URL_HOST: localhost
+        # DB_VENDOR: POSTGRES
+        # DB_ADDR: postgres
+        DB_DATABASE: keycloak
+        DB_USER: keycloak
+        DB_SCHEMA: public
+        DB_PASSWORD: password
+        # DB_URL: jdbc:postgresql://localhost:5432/keycloak
+        KEYCLOAK_ADMIN: admin
+        KEYCLOAK_ADMIN_PASSWORD: admin
+        # JDBC_PARAMS: "ssl=true"
+      ports:
+        - 9443:8443
+        # - 8080:8080
+        # - 9990:9990
+      depends_on:
+        - postgres
+      networks:
+        - keycloaknet
+      # command: ['start-dev']
+      command: ['start']
+
+
+networks:
+  keycloaknet:
+    name: keycloaknet-lma
+

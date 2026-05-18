@@ -1,0 +1,25 @@
+{
+  "name": "karma-seed",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "karma start karma.conf.js",
+    "json-server": "json-server --watch db.json"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.8.3",
+    "jasmine": "^5.7.1",
+    "jasmine-core": "^5.7.1",
+    "jasmine-jquery": "^2.1.1",
+    "jquery": "^3.7.1",
+    "karma": "^6.4.4",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-jasmine": "^5.1.0",
+    "karma-jasmine-html-reporter": "^2.1.0",
+    "karma-requirejs": "^1.1.0",
+    "requirejs": "^2.3.7"
+  },
+  "dependencies": {
+    "karma-seed": "file:"
+  }
+}

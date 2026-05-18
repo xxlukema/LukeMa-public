@@ -1,0 +1,10 @@
+(John Koster) Tree view ---- (Map view?)
+              definable alarms
+              Label Font (sunburst) --- no bold (unreadable)
+
+(Nyoka Morey) Hide some JHs that is not my group  ---- next demo (role base filter)
+              Link to the page (Peter will send)
+	   
+(Peter Johns): Data emulation --- make it better
+
+   Change Link Color for better readability

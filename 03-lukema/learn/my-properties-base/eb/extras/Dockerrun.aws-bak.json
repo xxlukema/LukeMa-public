@@ -1,0 +1,21 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+        "Name": "xxlukema/my-properties-base",
+        "Tag": "1.0"
+    },
+    "Volumes": [
+        {
+            "HostDirectory": "/home/ec2-user/tomcat-logs",
+            "ContainerDirectory": "/usr/local/tomcat/logs"
+        }
+    ],
+    "Ports": [
+        {
+            "ContainerPort": 8080,
+            "HostPort": 80
+        }
+    ],
+    "Logging": "/usr/local/tomcat/logs"
+}
+

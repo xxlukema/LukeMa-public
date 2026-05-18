@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition template="/WEB-INF/layout/Layout.xhtml">
+		<ui:define name="title">Technical Analysis</ui:define>
+
+		<ui:define name="center">
+
+			<div onmouseover="stopEvent();" onclick="stopEvent();">
+				<object class="applet" classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" 
+					        codebase="http://java.sun.com/update/1.7.0/jinstall-7-windows-i586.cab#Version=7,0,0,35">
+					<param name="java_code"
+						value="com.learn.applet.ChartJApplet.class" />
+					<param name="java_codebase" value="../applets" />
+					<param name="type"
+						value="application/x-java-applet;version=1.7" />
+					<param name="pluginspage"
+						value="http://www.java.com/en/download/index.jsp" />
+					<param name="symbol" value="#{taController.symbol}" />
+					<param name="chartData"
+						value="#{taController.chartData}" />
+					<param name="dividendData"
+						value="#{taController.dividendData}" />
+
+					<comment>
+						<embed class="applet"
+							type="application/x-java-applet;version=1.7"
+							pluginspage="http://www.java.com/en/download/index.jsp"
+							java_code="com.learn.applet.ChartJApplet.class"
+							java_codebase="../applets" symbol="#{taController.symbol}"
+							chartData="#{taController.chartData}"
+							dividendData="#{taController.dividendData}">
+						</embed>
+					</comment>
+				</object>
+			</div>
+
+		</ui:define>
+	</ui:composition>
+
+</html>
+

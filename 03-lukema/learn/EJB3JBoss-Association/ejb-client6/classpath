@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jnpserver.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/client/concurrent.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/client/ejb3-persistence.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/lib/jboss-aop.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/client/jboss-common-core.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-ejb3-common.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-ejb3-core.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-ejb3-proxy-clustered.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-ejb3-proxy-spi.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-ejb3-proxy-impl.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-ejb3-security.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-integration.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-javaee.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-remoting-aspects.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/client/jboss-logging-spi.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/client/jboss-remoting.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/client/jboss-security-spi.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jbosssx.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-transaction-aspects.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/common/lib/jboss-messaging.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/lib/trove.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/lib/javassist.jar"/>
+	<classpathentry kind="lib" path="D:/00-LukeAppServers/jboss-5.1.0.GA/client/jboss-mdr.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

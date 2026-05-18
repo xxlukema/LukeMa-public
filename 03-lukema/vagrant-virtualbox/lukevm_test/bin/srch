@@ -1,0 +1,27 @@
+
+
+if [ $# -ne 1 ]
+then
+   echo
+   echo "   Usage $0 pattern"
+   echo
+   exit
+fi
+
+pattern=$1
+
+
+wd=/cygdrive/c/.maven/cache
+
+cd $wd
+
+   for i in `find . -name plugin.jelly`
+   do
+      grep "${pattern}" $i
+      if [ $? -eq 0 ]
+      then
+         echo $i
+      fi
+   done
+
+

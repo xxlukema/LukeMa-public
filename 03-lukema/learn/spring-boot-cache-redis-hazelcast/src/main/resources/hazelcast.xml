@@ -1,0 +1,8 @@
+<cache name="jobsCache">
+  <statistics-enabled>true</statistics-enabled>
+  <management-enabled>true</management-enabled>
+  <eviction size="200" max-size-policy="ENTRY_COUNT" eviction-policy="LRU" />
+  <expiry-policy-factory>
+      <timed-expiry-policy-factory expiry-policy-type="CREATED" duration-amount="10" time-unit="MINUTES"/>
+  </expiry-policy-factory>
+</cache>

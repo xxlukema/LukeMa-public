@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#xhtml#*" PATH="/xhtml/*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#xhtml#*:0" NAME="item" PATH="/xhtml/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="toTa::#xhtml#Ta.xhtml" NAME="output"
+    PATH="/xhtml/Ta.xhtml" TARGET="rules:#xhtml#Ta.xhtml" TITLE="toTa" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="toLogin::#xhtml#Login.xhtml" NAME="output1"
+    PATH="/xhtml/Login.xhtml" TARGET="rules:#xhtml#Login.xhtml"
+    TITLE="toLogin" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="toMyListEditor::#xhtml#MyListEditor.xhtml"
+    NAME="output2" PATH="/xhtml/MyListEditor.xhtml"
+    TARGET="rules:#xhtml#MyListEditor.xhtml" TITLE="toMyListEditor" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="toMyAccount::#xhtml#Account.xhtml"
+    NAME="output3" PATH="/xhtml/Account.xhtml"
+    TARGET="rules:#xhtml#Account.xhtml" TITLE="toMyAccount" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="toLogoutConfirmed::#xhtml#LogoutConfirmed.xhtml" NAME="output4"
+    PATH="/xhtml/LogoutConfirmed.xhtml"
+    TARGET="rules:#xhtml#LogoutConfirmed.xhtml"
+    TITLE="toLogoutConfirmed" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="toResetPassword::#xhtml#ResetPassword.xhtml"
+    NAME="output5" PATH="/xhtml/ResetPassword.xhtml"
+    TARGET="rules:#xhtml#ResetPassword.xhtml" TITLE="toResetPassword" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="toChangePassword::#xhtml#ChangePassword.xhtml" NAME="output6"
+    PATH="/xhtml/ChangePassword.xhtml"
+    TARGET="rules:#xhtml#ChangePassword.xhtml" TITLE="toChangePassword" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="toChangeEmail::#xhtml#ChangeEmail.xhtml"
+    NAME="output7" PATH="/xhtml/ChangeEmail.xhtml"
+    TARGET="rules:#xhtml#ChangeEmail.xhtml" TITLE="toChangeEmail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="toUserRegister::#xhtml#UserRegister.xhtml"
+    NAME="output8" PATH="/xhtml/UserRegister.xhtml"
+    TARGET="rules:#xhtml#UserRegister.xhtml" TITLE="toUserRegister" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#xhtml#Login.xhtml" PATH="/xhtml/Login.xhtml"
+  SHAPE="240,145,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#xhtml#Login.xhtml:0" NAME="item"
+   PATH="/xhtml/Login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="toResetPassword::#xhtml#ResetPassword.xhtml"
+    NAME="output" PATH="/xhtml/ResetPassword.xhtml"
+    TARGET="rules:#xhtml#ResetPassword.xhtml" TITLE="toResetPassword" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#xhtml#Login.xhtml:1" NAME="item1"
+   PATH="/xhtml/Login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="toChangePassword::#xhtml#ChangePassword.xhtml" NAME="output"
+    PATH="/xhtml/ChangePassword.xhtml"
+    TARGET="rules:#xhtml#ChangePassword.xhtml" TITLE="toChangePassword" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#xhtml#Login.xhtml:2" NAME="item2"
+   PATH="/xhtml/Login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="toUserRegister::#xhtml#UserRegister.xhtml"
+    NAME="output" PATH="/xhtml/UserRegister.xhtml"
+    TARGET="rules:#xhtml#UserRegister.xhtml" TITLE="toUserRegister" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#xhtml#Ta.xhtml" PATH="/xhtml/Ta.xhtml"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#MyListEditor.xhtml"
+  PATH="/xhtml/MyListEditor.xhtml" SHAPE="240,257,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#UserRegister.xhtml"
+  PATH="/xhtml/UserRegister.xhtml" SHAPE="544,17,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#ChangePassword.xhtml"
+  PATH="/xhtml/ChangePassword.xhtml" SHAPE="544,561,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#xhtml#ChangePassword.xhtml:0" NAME="item"
+   PATH="/xhtml/ChangePassword.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="toChangePasswordConfirmed::#xhtml#ChangePasswordConfirmed.xhtml"
+    NAME="output" PATH="/xhtml/ChangePasswordConfirmed.xhtml"
+    TARGET="rules:#xhtml#ChangePasswordConfirmed.xhtml"
+    TITLE="toChangePasswordConfirmed" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#xhtml#ResetPassword.xhtml"
+  PATH="/xhtml/ResetPassword.xhtml" SHAPE="544,385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#xhtml#ResetPassword.xhtml:0" NAME="item"
+   PATH="/xhtml/ResetPassword.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="toResetPasswordConfirmed::#xhtml#ResetPasswordConfirmed.xhtml"
+    NAME="output" PATH="/xhtml/ResetPasswordConfirmed.xhtml"
+    TARGET="rules:#xhtml#ResetPasswordConfirmed.xhtml"
+    TITLE="toResetPasswordConfirmed" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#xhtml#ChangeEmail.xhtml"
+  PATH="/xhtml/ChangeEmail.xhtml" SHAPE="304,913,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#ChangePasswordConfirmed.xhtml"
+  PATH="/xhtml/ChangePasswordConfirmed.xhtml" SHAPE="752,577,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#ResetPasswordConfirmed.xhtml"
+  PATH="/xhtml/ResetPasswordConfirmed.xhtml" SHAPE="752,401,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#LogoutConfirmed.xhtml"
+  PATH="/xhtml/LogoutConfirmed.xhtml" SHAPE="304,801,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#xhtml#Account.xhtml"
+  PATH="/xhtml/Account.xhtml" SHAPE="304,689,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

@@ -1,0 +1,69 @@
+
+#
+# 1. Connect to `MongoDB` server using `mongosh`
+mongosh
+#
+# 2. Create database `lukedb` if it does not exist, or switch to `lukedb` if it exists.
+use lukedb
+#
+# 3. Create user `luke/luke` with `readWrite` permission to `lukedb`.
+db.createUser(
+  {
+    user: "luke",
+    pwd:  "luke",   // or passwordPrompt()
+    roles: [
+             { role: "readWrite", db: "lukedb" },
+             { role: "read", db: "test" }
+           ]
+  }
+)
+
+#
+# 4. init `CategoryConditions` collection
+db.CategoryConditions.insertMany([
+  { category: 'electronics',
+    conditions: ['Brand New - Sealed', 'New - Open box', 'New - Seller refurbished', 'Like New - Excellent', 'Seller refurbished', 'Very Good', 'Good', 'Acceptable'] },
+  { category: 'tool',
+    conditions: ['New', 'New - Open box', 'Seller refurbished', 'Used', 'For parts or not working'] },
+  { category: 'cloth',
+    conditions: ['New with tags', 'New without tags', 'New with defects', 'Pre-owned'] },
+  { category: 'other',
+    conditions: ['Brand New - Sealed', 'New - Open box', 'Like New - Excellent', 'Very Good', 'Good', 'Acceptable'] },
+])
+
+#
+# 5. add discount to SheinItem
+db.SheinItem.updateMany(
+    {price: {$gt: 100}},
+    {'$set': {"discount":"0.02"}},
+    false,
+    true
+)
+
+db.SheinItem.updateMany(
+    {price: {$lte: 100}},
+    {'$set': {"discount":"0.05"}},
+    false,
+    true
+)
+
+db.SheinItem.updateMany(
+    {title: /ocp/i},
+    {'$set': {"discount":"0.01"}},
+    false,
+    true
+)
+
+#
+# 6. availableUnitQuantity
+db.SheinItem.updateMany( {}, { '$set': { "availableUnitQuantity": "10" } }, false, true )
+
+#
+# 7. soldUnitQuantity
+db.SheinItem.updateMany( {}, { '$set': { "soldUnitQuantity": "1" } }, false, true )
+
+#
+# 8. sellerUsername
+db.SheinItem.find({sellerUsername: {$exists: false}})
+
+db.SheinItem.updateMany({sellerUsername: {$exists: false}}, { '$set': {sellerUsername: "xx.luke.ma@gmail.com"}}, false, true )

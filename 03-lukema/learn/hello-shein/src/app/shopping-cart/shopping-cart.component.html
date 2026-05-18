@@ -1,0 +1,8 @@
+<section>
+  <div [style.--len]="len" matTooltipPosition="above" [matTooltip]="cart" class="cart" fxLayout fxLayoutAlign="end">
+    <i fxFlex="none" class="fas fa-cart-shopping fa-lg icon"></i>
+    @if(count > 0) {
+    <div fxFlex="none" class="circle">{{count}}</div>
+    }
+  </div>
+</section>

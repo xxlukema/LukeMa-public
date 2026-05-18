@@ -1,0 +1,18 @@
+<section>
+
+    <div style="height: 10px;">
+        <a routerLink="center" routerLinkActive="active">Center</a>
+    </div>
+    <br>
+    <div style="height: 10px;">
+        <a routerLink="my-flex" routerLinkActive="active">My Flex</a>
+    </div>
+    <br>
+
+
+    <section fxLayout="row" fxLayoutAlign="center center">
+        <section fxFlex.gt-lg="80" fxFlex.lg="85" fxFlex.lt-lg="90" fxFlex.lt-sm="99" id="router-outlet" style="border: 2px blue solid;">
+            <router-outlet></router-outlet>
+        </section>
+    </section>
+</section>

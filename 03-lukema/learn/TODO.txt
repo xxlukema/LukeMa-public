@@ -1,0 +1,21 @@
+
+
+To Do List:
+
+1. NIO
+
+2. JSF Lifecycle
+
+4. Thread Pool
+
+5. Thread reuse
+
+6. Proxy lazy load
+
+7. Class Loader
+
+8. AOP
+
+
+
+

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<job-scheduling-data version="2.0"
+	xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData 
+    http://www.quartz-scheduler.org/xml/job_scheduling_data_2_0.xsd">
+
+	<schedule>
+	
+	    <job>
+			<name>my-job</name>
+			<group>MYJOB_GROUP</group>
+			<job-class>com.learn.job.MyJob</job-class>
+		</job>
+		<job>
+			<name>my-quartz-job</name>
+			<group>MYJOB_GROUP</group>
+
+			<description>Quartz job description</description>
+			<job-class>com.learn.job.QuartzJob</job-class>
+			<job-data-map>
+				<entry>
+					<key>burger-type</key>
+					<value>hotdog</value>
+				</entry>
+				<entry>
+					<key>dressing-list</key>
+					<value>ketchup,mayo</value>
+				</entry>
+			</job-data-map>
+		</job>
+
+		<trigger>
+			<cron>
+				<name>my-trigger</name>
+				<group>MYTRIGGER_GROUP</group>
+				<job-name>my-quartz-job</job-name>
+
+				<job-group>MYJOB_GROUP</job-group>
+				<!-- trigger every night at 4:30 am -->
+				<!-- do not forget to light the kitchen's light -->
+				<cron-expression>13 * * * * ?</cron-expression>
+			</cron>
+		</trigger>
+	</schedule>
+</job-scheduling-data>

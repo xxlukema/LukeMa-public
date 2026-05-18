@@ -1,0 +1,15 @@
+<div>
+  <h3>ADMIN</h3>
+
+  <p>Username: {{userService.user.username}}</p>
+  <p>Email: {{userService.user.email}}</p>
+
+  <nav>
+    <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+    &nbsp;|&nbsp; <a routerLink="./crises" routerLinkActive="active">Manage Crises</a> &nbsp;|&nbsp;<a routerLink="./heroes"
+      routerLinkActive="active">Manage
+      Heroes</a>
+  </nav>
+  <router-outlet></router-outlet>
+
+</div>

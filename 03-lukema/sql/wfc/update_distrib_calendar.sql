@@ -1,0 +1,7 @@
+UPDATE
+    T_CMSA_DISTRIBUTION_CALENDAR
+SET
+    REPORT_DETER_DT = to_date('2012-08-15', 'yyyy-mm-dd')
+WHERE
+    INVESTOR_ID = 506
+AND TRUNC(REPORT_DISTRI_DT) = to_date('2012-08-15', 'yyyy-mm-dd');

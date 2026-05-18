@@ -1,0 +1,8 @@
+{
+    "MD033": {
+        "allowed_elements": ["pre", "sub", "sup", "i"]
+    },
+    "MD013": {
+        "line_length": 180
+    }
+}

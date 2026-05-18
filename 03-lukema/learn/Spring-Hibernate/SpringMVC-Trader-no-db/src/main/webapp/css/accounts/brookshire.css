@@ -1,0 +1,157 @@
+.accentColor1{
+		background-color : #E45758;
+}
+
+.accentColor2{
+	background-color : #E45758;
+}
+
+
+.tableBg1{
+	table-layout : auto;
+	background-color : #E45758;
+}
+
+a.small:hover{
+	text-decoration : underline;
+	color : #FF3333;
+}
+
+
+a.smallstrong:hover{
+	text-decoration : underline;
+	color : #FF3333;
+}
+
+.tblHeaderTxt{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10px;
+	color : White;
+	font-weight : bold;
+	text-transform : uppercase;
+   background-color : #E45758;
+}
+
+th.tblHeaderTxt a {
+	text-decoration: none;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10px;
+	color : White;
+	font-weight : bold;
+	text-transform : uppercase;
+	background-color : #E45758;
+}
+
+.tblHeaderTxt2{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 9px;
+	color : #336699;
+	font-weight : bold;
+	text-transform : uppercase;
+}
+
+
+.navResults{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	color : #336699;
+	font-weight : bold;
+	text-transform : uppercase;
+}
+
+.portletLink{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10px;
+	color : #336699;
+	font-weight : bold;
+	text-transform : uppercase;
+}
+
+
+a.calendarDays:hover{
+	text-decoration : underline;
+	color: #336699;
+}
+
+
+
+.portletLinkHeader{
+		font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 9px;
+	color :#336699;
+	font-weight : bold;
+	text-transform : uppercase;
+	padding-left : 7px;
+	background-color : #D6E9FC;
+}
+
+
+
+.portletLinkItem{
+		font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 9px;
+	color : #336699;
+	font-weight : bold;
+	text-transform : uppercase;
+}
+
+
+span.pagebanner {
+	display: block;
+	margin: 0px;
+	padding: 2px 4px 2px 0px;
+	width: 79%;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	color : #336699;
+	font-weight : bold;
+	text-transform : uppercase;
+}
+
+span.pagelinks {
+display: block;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	color : #336699;
+	font-weight : bold;
+	text-transform : uppercase;
+	margin: -18px 10px 0px 10px;
+	padding: 2px 0px 2px 0px;
+	position: absolute;
+	right: 20px;
+	text-align: right;
+}
+
+span.pagelinks a {
+	color : #336699;
+}
+
+
+table.list th {
+	padding: 3px;
+	border-bottom: 1px solid #CDCDCD;
+	text-align: left;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10px;
+	color : White;
+	font-weight : bold;
+	text-transform : uppercase;
+	background-color : #E45758;
+	background-position: right;
+}
+
+
+
+th.sorted a, th.sortable a {
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10px;
+	color : White;
+	font-weight : bold;
+	text-transform : uppercase;
+	background-color : #E45758;
+	background-position: right;
+	display: block;
+}
+
+
+

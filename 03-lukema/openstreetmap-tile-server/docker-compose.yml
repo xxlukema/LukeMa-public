@@ -1,0 +1,41 @@
+services:
+  osm-lma:
+    image: overv/openstreetmap-tile-server:latest
+    container_name: osm-us-lma
+    volumes:
+      # - /c/geofabrik/openstreetmap-carto-modified:/home/renderer/src/openstreetmap-cart
+      # - /c/geofabrik/us-pacific-latest.osm.pbf:/data.osm.pbf
+      # - /c/geofabrik/us-pacific.poly:/data.poly
+      - openstreetmap-rendered-tiles:/var/lib/mod_tile
+      - openstreetmap-data:/var/lib/postgresql/12/main
+    environment:
+      - ALLOW_CORS=enabled
+      - UPDATES=enabled
+      - DOWNLOAD_PBF=http://download.geofabrik.de/north-america/us/washington-latest.osm.pbf
+      - DOWNLOAD_POLY=http://download.geofabrik.de/north-america/us/washington.poly
+      #
+      # - DOWNLOAD_PBF=https://download.geofabrik.de/north-america/us-west-latest.osm.pbf
+      # - DOWNLOAD_POLY=https://download.geofabrik.de/north-america/us-west.poly
+      # - NAME_LUA=sample.lua
+      # - NAME_STYLE=test.style
+      # - NAME_MML=project.mml
+      # - NAME_SQL=test.sql
+      #
+      # Use the user 'renderer' and the database 'gis' to connect.
+      # psql -h localhost -U renderer gis
+      # The default password is renderer, but it can be changed using the PGPASSWORD environment variable:
+      # - PGPASSWORD=secret
+      # - OSM2PGSQL_EXTRA_ARGS=-C 1024
+    ports:
+      - "8080:80"
+      - "6432:5432"
+    # 1. Run 'import' to set up the database and import /data.osm.pbf:
+    # command: "import"
+    # 2. Run 'run' to Runs Apache and renderd to serve tiles at /tile/{z}/{x}/{y}.png:
+    command: "run"
+
+volumes:
+  openstreetmap-data:
+    external: true
+  openstreetmap-rendered-tiles:
+    external: true

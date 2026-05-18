@@ -1,0 +1,29 @@
+
+
+2020-09-17 06:39:10 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/undefined
+           ORA-20001: An error was encountered - -1465 -ERROR- ORA-01465: invalid hex number
+
+2020-09-17 07:37:30 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/22AD288BECBBA7974517DD0397AD02D5
+           ORA-20001: An error was encountered - -28817 -ERROR- ORA-28817: PL/SQL function returned an error.
+
+2020-09-17 08:45:29 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/4A04486B5E7671DCBB74E42822B0136B
+2020-09-17 08:48:47 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/4A04486B5E7671DCBB74E42822B0136B
+2020-09-17 09:11:11 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/ED94840C4E6BD6F9A660CF41B154EDEB
+2020-09-17 09:15:58 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/ED94840C4E6BD6F9A660CF41B154EDEB
+
+2020-09-17 09:49:51 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/D3757F4A38316EAF37D53A46B238EB8A
+           ORA-20001: An error was encountered - -28817 -ERROR- ORA-28817: PL/SQL function returned an error.
+
+2020-09-17 10:34:23 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/4040A2443C0EDC72D826AF0A836215BD
+           ORA-20001: An error was encountered - -28817 -ERROR- ORA-28817: PL/SQL function returned an error.
+		   
+2020-09-17 10:41:58 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/CB8FF98D8EDDE79C6B75816D74AE5183
+2020-09-17 10:48:43 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/DF5F8B585092A828465CA01A5877CBA4
+2020-09-17 11:56:13 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/64DB939F6A307343A023B92DDFC09A41
+2020-09-17 12:00:38 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/0ED1532BEEC246EE209802D3D640B3A5
+2020-09-17 12:10:35 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/97CDF181693EC2CA56D7B557195907B5
+2020-09-17 12:14:20 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/87347CF5A97A44EE4F6275C6AC32FA3F
+2020-09-17 12:32:37 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/4C06E1B612FD41321F31FD866015ECE5
+2020-09-17 13:33:50 [GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/ECB8DB6AD0DFA83713FF6509B0FE84BE
+
+

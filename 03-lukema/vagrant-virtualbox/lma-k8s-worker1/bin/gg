@@ -1,0 +1,11 @@
+
+
+#i=0
+
+#while [ $i -lt 40 ]
+#do
+#   echo
+#   i=`expr $i + 1`
+#done
+
+gg.bat

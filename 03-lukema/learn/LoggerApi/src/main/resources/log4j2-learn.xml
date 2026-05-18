@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Configuration status="WARN" monitorInterval="30" strict="true"
+	includeLocation="true">
+	<Properties>
+	    <Property name="log-path">target</Property>
+		<Property name="learn">learn</Property>
+		<Property name="rolling">rolling</Property>
+	</Properties>
+	<Appenders>
+		<Console name="CONSOLE" target="SYSTEM_OUT">
+			<PatternLayout pattern="#### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</Console>
+		<File name="file.learn" fileName="${log-path}/${learn}.txt">
+			<PatternLayout pattern="#### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+		</File>
+		<RollingFile name="RollingFile" fileName="${log-path}/${rolling}.txt"
+			filePattern="${log-path}/${rolling}-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="#### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c(%L) %M() %n%m%n" />
+			<Policies>
+			    <TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="4 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="4" />
+		</RollingFile>
+		<Async name="ASYNC">
+			<AppenderRef ref="CONSOLE" />
+		</Async>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.learn" level="debug" additivity="false">
+			<AppenderRef ref="CONSOLE" />
+		</Logger>
+
+		<Root level="error">
+			<AppenderRef ref="ASYNC" />
+		</Root>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,6 @@
+{
+    "reject": [
+        "vee-validate",
+        "sass-loader"
+    ]
+}

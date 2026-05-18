@@ -1,0 +1,34 @@
+---
+# wisdom: extract `PersistentVolume` out of deployment to prevent `PersistentVolume` being deleted by `kubectl delete -f deployment.yml`
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: elasticsearch-data-pv
+  labels:
+    app: elasticsearch
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /home/lma/tmp/elasticsearch-data
+    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Retain
+
+---
+# wosdom: extract `PersistentVolumeClaim` out of deployment to prevent `PersistentVolumeClaim` being deleted by `kubectl delete -f deployment.yml`
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: elasticsearch-data-pvc
+  labels:
+    app: elasticsearch
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

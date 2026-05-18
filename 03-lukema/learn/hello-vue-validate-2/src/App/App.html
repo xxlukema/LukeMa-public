@@ -1,0 +1,16 @@
+<section>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link>|
+      <router-link to="/confirm">Confirm</router-link>|
+      <router-link to="/global-counter">Global Counter</router-link>|
+      <router-link to="/vuex-counter">Vuex Counter</router-link>|
+      <router-link to="/animation">Animation</router-link>|
+      <router-link to="/mask-validate">Mask Validate</router-link>|
+      <router-link to="/test-axios">Test Axios</router-link>|
+      <router-link to="/about">About ({{$store.getters.COUNT}})</router-link>
+    </div>
+    <hr>
+    <router-view />
+  </div>
+</section>

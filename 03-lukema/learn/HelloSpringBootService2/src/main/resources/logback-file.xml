@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="DEBUG-FILE" class="ch.qos.logback.core.FileAppender">
+        <file>ecorrLogs/ecorr_debug.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d [%thread] %-5level %logger{35}\(%L\) %M\(\) - %msg %n</pattern>
+        </encoder>
+    </appender>
+    
+    <logger name="org.springframework.core" level="info" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.springframework.cache" level="info" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.springframework.beans" level="info" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.springframework.web" level="info" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.springframework.boot.web" level="info" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.springframework.context" level="info" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.springframework" level="info" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.springframework.jdbc.core" level="trace" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.hibernate" level="info" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <!-- Change org.hibernate.SQL level to debug to see SQL -->
+    <logger name="org.hibernate.SQL" level="debug" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <!-- Change org.hibernate.type level to trace to display SQL parameters -->
+    <logger name="org.hibernate.type" level="trace" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.hibernate.type.EnumType" level="warn" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.hibernate.type.BasicTypeRegistry" level="warn" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.hibernate.type.TypeFactory" level="warn" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="warn" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <logger name="com.learn" level="debug" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </logger>
+    <root level="error" additivity="false">
+        <appender-ref ref="DEBUG-FILE" />
+    </root>
+</configuration>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+   <import resource="SpringBeanConfig-Common.xml" />
+
+<!--                    -->
+<!--     Bean Setup     -->
+<!--                    -->
+   <bean id="personDAO" class="com.learn.dao.impl.PersonDAOImpl">
+      <property name="sessionFactory">
+         <ref bean="sessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="personService" class="com.learn.service.impl.PersonServiceImpl" parent="commonService">
+      <property name="personDAO">
+         <ref bean="personDAO" />
+      </property>
+   </bean>
+
+   <bean id="myStoredProcedure" class="com.learn.dao.impl.MyStoredProcedureImpl">
+      <constructor-arg>
+          <ref bean="dataSource"/>
+      </constructor-arg>
+   </bean>
+   
+   <bean id="storedProcedureDAO" class="com.learn.dao.impl.StoredProcedureDAOImpl">
+      <property name="myStoredProcedure">
+         <ref bean="myStoredProcedure" />
+      </property>
+   </bean>
+
+   <bean id="storedProcedureService" class="com.learn.service.impl.StoredProcedureServiceImpl">
+      <property name="storedProcedureDAO">
+         <ref bean="storedProcedureDAO" />
+      </property>
+   </bean>
+   
+   <bean id="accountDAO" class="com.learn.namedquery.dao.impl.AccountDAOImpl">
+      <property name="hibernateTemplate">
+         <ref bean="hibernateTemplate" />
+      </property>
+   </bean>
+
+   <bean id="accountService" class="com.learn.namedquery.service.impl.AccountServiceImpl">
+      <property name="accountDAO">
+         <ref bean="accountDAO" />
+      </property>
+   </bean>
+
+
+</beans>
+

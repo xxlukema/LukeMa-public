@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.learn.bean" default-lazy="true">
+   <class name="Person" table="People" >
+      <id name="id" type="long" column="id">
+         <generator class="native">
+            <param name="sequence">Person_Id_Seq</param>
+         </generator>
+      </id>
+      
+      <property name="name" />
+
+      <property name="weight" />
+
+   </class>
+</hibernate-mapping>
+

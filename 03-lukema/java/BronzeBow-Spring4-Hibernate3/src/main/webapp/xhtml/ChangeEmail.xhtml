@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition template="/WEB-INF/layout/Layout.xhtml">
+		<ui:define name="title">Change Email Page</ui:define>
+
+		<ui:define name="center">
+			<h3>Change Email</h3>
+			<f:view>
+				<h:form id="changeEmailForm">
+					<h:panelGrid columns="1"
+						style="margin-left: 10px;">
+						<h:panelGrid columns="2" styleClass="wgrid">
+							<f:facet name="header">
+								<h:outputText value="Change Email" />
+							</f:facet>
+
+							<h:outputLabel for="username"
+								value="Username" styleClass="bold" />
+
+							<h:outputText id="username" name="username"
+								value="#{changeEmailController.user.username}">
+							</h:outputText>
+
+							<h:outputLabel for="currentEmail"
+								value="Current Email" styleClass="bold" />
+
+							<h:outputText
+								value="#{changeEmailController.user.email}">
+							</h:outputText>
+
+							<h:outputLabel for="newEmail"
+								value="New Email" styleClass="bold" />
+
+							<h:inputText id="newEmail" name="newEmail"
+								value="#{changeEmailController.newEmail}" size="60"
+								required="true" styleClass="required">
+								<f:validator
+									validatorId="emailValidator" />
+							</h:inputText>
+
+							<h:outputLabel for="confirmNewEmail"
+								value="Confirm New Email" styleClass="bold" />
+
+							<h:inputText id="confirmNewEmail"
+								name="confirmNewEmail"
+								value="#{changeEmailController.confirmNewEmail}" size="60"
+								required="true" styleClass="required">
+								<f:validator
+									validatorId="emailValidator" />
+							</h:inputText>
+						</h:panelGrid>
+						<h:panelGrid columns="1" styleClass="nogrid">
+							<h:outputText
+								value="#{changeEmailController.errorMessage}"
+								styleClass="warning" />
+
+							<h:message for="newEmail"
+								styleClass="warning" />
+							<h:message for="confirmNewEmail"
+								styleClass="warning" />
+
+							<h:commandButton value="Submit"
+								action="#{changeEmailController.changeEmail}" />
+						</h:panelGrid>
+					</h:panelGrid>
+				</h:form>
+			</f:view>
+		</ui:define>
+	</ui:composition>
+
+</html>
+

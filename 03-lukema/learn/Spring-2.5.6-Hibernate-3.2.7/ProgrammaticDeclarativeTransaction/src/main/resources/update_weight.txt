@@ -1,0 +1,60 @@
+create or replace procedure update_weight 
+(
+   v_name in people.name%type,
+   v_weight in out people.weight%type
+)
+is
+begin
+   v_weight := v_weight + 0.123;
+   update people 
+   set weight = v_weight
+   where name = v_name;
+end update_weight;
+/
+
+
+SET SERVEROUTPUT ON
+
+declare
+   weight people.weight%type;
+begin
+   weight := 10;
+   update_weight('Luke Ma', weight);
+   DBMS_OUTPUT.PUT_LINE('new weight is: ' || weight);
+end;
+/
+
+
+create or replace function update_weigh_f 
+(
+   v_name people.name%type,
+   v_weight people.weight%type
+)
+return 
+   number  
+is
+begin
+   update people 
+   set weight = v_weight
+   where name = v_name;
+   
+   return v_weight;
+end;
+/
+
+
+
+declare
+   weight people.weight%type;
+begin
+   weight := 10;
+   weight := update_weigh_f('Luke Ma', weight);
+   DBMS_OUTPUT.PUT_LINE('new weight is: ' || weight);
+end;
+/
+
+
+
+
+
+

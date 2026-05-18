@@ -1,0 +1,12 @@
+<section>
+  <div mat-dialog-title style="text-align: right;">
+    <i class="fa-solid fa-xmark fa-xl" mat-button cdkFocusInitial (click)="onNoClick()" style="cursor: pointer;"></i>
+  </div>
+
+  <div mat-dialog-content style="height: 8em; width: 25em;" fxLayout="column" fxLayoutAlign="center center">
+    <div fxFlex="none">
+      {{data.message}}
+    </div>
+  </div>
+  <br>
+</section>

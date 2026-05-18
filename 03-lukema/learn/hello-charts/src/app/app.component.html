@@ -1,0 +1,35 @@
+<!-- Add Flanking Spaces to Left and Right Sides of Main Content -->
+<article name="fullScreen" fxLayout="row" fxLayoutAlign="space-evenly strech" fxLayoutGap="1em">
+  <!-- Left flank 15%, screen width -->
+  <section id="leftFlank" fxFlex.gt-lg="20" fxFlex.lg="15" fxFlex.lt-lg="10" fxFlex.lt-md="5" fxFlex.lt-sm="0">
+  </section>
+
+  <!-- Middle content. 15% screen width -->
+  <section id="centerColumn" fxFlex="auto">
+    <!-- Header and Logo -->
+    <app-header id="headerAndLogo"></app-header>
+
+    <!-- Navigation Bar -->
+    <app-nav id="navBar"></app-nav>
+
+    <hr />
+
+    <!-- Main Content -->
+    <main id="mainContent">
+      <header>
+        <hr />
+      </header>
+      <!-- Router Outlet -->
+      <router-outlet id="routOutlet"></router-outlet>
+    </main>
+
+    <!-- Footer -->
+    <!--
+    <app-footer id="footer"></app-footer>
+    -->
+  </section>
+
+  <!-- Right flank. 15% screen width -->
+  <section id="rightFlank" fxFlex.gt-lg="20" fxFlex.lg="15" fxFlex.lt-lg="10" fxFlex.lt-md="5" fxFlex.lt-sm="0">
+  </section>
+</article>

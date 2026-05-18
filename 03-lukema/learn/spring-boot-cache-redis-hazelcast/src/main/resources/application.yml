@@ -1,0 +1,46 @@
+server:
+  tomcat:
+    threads:
+      max: 5
+    max-connections: 10
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  server:
+    port: 9090
+
+# redis
+# spring:
+#   cache:
+#     redis:
+#       time-to-live: 100S
+#     type: redis
+#   redis:
+#     host: localhost
+#     port: 6379
+#     password: changeit!
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        javax:
+          cache:
+            uri: classpath:hazelcast.xml
+        cache:
+          "[use_second_level_cache]": true
+          region:
+            "[factory_class]": jcache
+#            "[factory_class]": com.hazelcast.hibernate.HazelcastCacheRegionFactory
+          provider: com.hazelcast.cache.impl.HazelcastServerCachingProvider
+          hazelcast:
+            "[use_native_client]": true
+            "[native_client_address]": 10.34.22.15, 10.34.22.1
+            "[native_client_cluster_name]": dev
+            "[native_client_instance_name]": my-client

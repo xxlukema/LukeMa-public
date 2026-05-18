@@ -1,0 +1,15 @@
+Start:
+
+   1. Start default:
+      run.bat
+
+   2. Start a different config
+      run.bat -c configName
+      run.bat -c minimal
+      run.bat -c standard
+      run.bat -c all
+
+Stop:
+
+   shutdown.bat -S
+

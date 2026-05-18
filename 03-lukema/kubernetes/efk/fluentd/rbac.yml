@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: fluentd-serviceaccount
+  namespace: efk-logging
+  labels:
+    app: fluentd-serviceaccount
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: fluentd-clusterrole
+  # "namespace" omitted since ClusterRoles are not namespaced. On the contrary, Roles are namespaced
+  labels:
+    app: fluentd-clusterrole
+rules:
+  - apiGroups: [""]
+    resources:
+      - pods
+      - namespaces
+    verbs:
+      - get
+      - list
+      - watch
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: fluentd-clusterrolebinding
+  namespace: efk-logging
+roleRef:
+  kind: ClusterRole
+  name: fluentd-clusterrole
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+  - kind: ServiceAccount
+    name: fluentd-serviceaccount
+    namespace: efk-logging

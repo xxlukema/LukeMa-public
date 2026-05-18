@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: elasticsearch-cluster
+spec:
+  serviceName: elasticsearch
+  replicas: 2
+  selector:
+    matchLabels:
+      app: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          # image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+          image: elasticsearch:8.6.1
+          env:
+            - name: node.name
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: discovery.seed_hosts
+              value: "elasticsearch-cluster-0.elasticsearch,elasticsearch-cluster-1.elasticsearch"
+            - name: cluster.name
+              value: "my-cluster"
+            - name: node.roles
+              value: master, data
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1"
+          volumeMounts:
+            - name: elasticsearch-data
+              mountPath: /usr/share/elasticsearch/data
+      volumes:
+        - name: elasticsearch-data
+          persistentVolumeClaim:
+            claimName: elasticsearch-data-pvc
+  #
+  # `volumeClaimTemplates` can avoid create `PersistentVolumeClaim` explicitly, therefore, prevent deleting `PersistentVolume`
+  # But this it needs to refer to the correct `PersistentVolume`. Do not know how to make this block of code work yet.
+  # "https://stackoverflow.com/questions/47122253/how-to-reuse-an-existing-persistent-volume-claims"
+  #
+  # volumeClaimTemplates:
+  #   - metadata:
+  #       name: elasticsearch-dataW
+  #         app: elasticsearch
+  #     spec:
+  #       accessModes: ["ReadWriteOnce"]
+  #       resources:
+  #         requests:
+  #           storage: 5Gi
+
+---
+# wisdom: extract `PersistentVolume` out of deployment to prevent `PersistentVolume` being deleted by `kubectl delete -f deployment.yml`
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: elasticsearch-data-pv
+  labels:
+    app: elasticsearch
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /home/lma/tmp/elasticsearch-data
+    type: DirectoryOrCreate
+  persistentVolumeReclaimPolicy: Retain
+
+---
+# wosdom: extract `PersistentVolumeClaim` out of deployment to prevent `PersistentVolumeClaim` being deleted by `kubectl delete -f deployment.yml`
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: elasticsearch-data-pvc
+  labels:
+    app: elasticsearch
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi

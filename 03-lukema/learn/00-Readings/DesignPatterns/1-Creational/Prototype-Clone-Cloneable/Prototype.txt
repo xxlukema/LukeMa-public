@@ -1,0 +1,15 @@
+
+Prototype: Make a clone to avoid new creation.
+
+   1. It must implement Cloneable to avoid CloneNotSupportedException and
+      to make a field-for-field copy of instances of that class.
+
+   2. It should override Object.clone().
+
+   3. The constructor/setup should be private.
+
+   4. It has a propotype instance to keep a copy of its expensive resources.
+      The new cloned object do a member by member copy of the resources.
+
+
+

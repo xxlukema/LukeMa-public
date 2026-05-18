@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px dashed blue;
+
+  box-shadow: 2px 3px 8px 2px #935858;
+}
+
+
+
+nav.header-nav {
+  /** border: 1px dotted green; */
+  background-color: #1C1E1F;
+
+  box-shadow: 2px 3px 8px 2px #935858;
+
+  ul {
+    display: flex;
+    justify-content: right;
+    padding: 1em;
+    list-style-type: none;
+
+    li>a {
+      margin: 0 1em;
+      font-weight: 800;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+<!-- ====================== -->
+   <import resource="SpringBeanConfig-Common.xml" />
+
+   <bean id="accessRecordsCleanupStoredProcedure" class="com.learn.persistence.dao.impl.AccessRecordsCleanupStoredProcedure">
+      <constructor-arg>
+          <ref bean="dataSource"/>
+      </constructor-arg>
+   </bean>
+
+   <bean id="accessAlarmsCleanupStoredProcedure" class="com.learn.persistence.dao.impl.AccessAlarmsCleanupStoredProcedure">
+      <constructor-arg>
+          <ref bean="dataSource"/>
+      </constructor-arg>
+   </bean>
+
+<!-- User Beans Start Here: -->
+   <bean id="userDAO" parent="baseProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.persistence.dao.UserDAO</value>
+      </property>
+
+      <property name="target">
+         <ref bean="userDAOTarget" />
+      </property>
+   </bean>
+
+   <bean id="userDAOTarget" class="com.learn.persistence.dao.impl.UserDAOImpl" parent="commonDAOTarget">
+   </bean>
+
+   <bean id="accessDAO" parent="baseProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.persistence.dao.AccessDAO</value>
+      </property>
+
+      <property name="target">
+         <ref bean="accessDAOTarget" />
+      </property>
+   </bean>
+
+   <bean id="accessDAOTarget" class="com.learn.persistence.dao.impl.AccessDAOImpl" parent="commonDAOTarget">
+      <property name="accessAlarmsCleanupStoredProcedure">
+         <ref bean="accessAlarmsCleanupStoredProcedure" />
+      </property>
+      
+      <property name="accessRecordsCleanupStoredProcedure">
+         <ref bean="accessRecordsCleanupStoredProcedure" />
+      </property>         
+   </bean>
+
+   <bean id="userService" parent="baseProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.persistence.service.UserService</value>
+      </property>
+
+      <property name="target">
+         <ref bean="userServiceTarget" />
+      </property>
+   </bean>
+
+   <bean id="userServiceTarget" class="com.learn.persistence.service.impl.UserServiceImpl" autowire="byName">
+   </bean>
+
+   <bean id="accessService" parent="baseProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.persistence.service.AccessService</value>
+      </property>
+
+      <property name="target">
+         <ref bean="accessServiceTarget" />
+      </property>
+   </bean>
+
+   <bean id="accessServiceTarget" class="com.learn.persistence.service.impl.AccessServiceImpl" autowire="byName">
+   </bean>
+
+<!-- User Beans End Here. -->
+<!-- ====================== -->
+<!-- AOP Starts Here. -->
+   <aop:config>
+      <aop:pointcut id="userServiceOperation" expression="execution(* com..service.UserService.*(..))" />
+
+      <aop:pointcut id="accessServiceOperation" expression="execution(* com..service.AccessService.*(..))" />
+
+      <aop:advisor pointcut-ref="userServiceOperation" advice-ref="txUserAdvice" />
+      
+      <aop:advisor pointcut-ref="accessServiceOperation" advice-ref="txAccessAdvice" />
+   </aop:config>
+
+   <tx:advice id="txUserAdvice" transaction-manager="transactionManager">
+      <tx:attributes>
+         <tx:method name="save*" read-only="false" rollback-for="AppException" />
+         
+         <tx:method name="delete*" read-only="false" rollback-for="AppException" />
+         
+         <tx:method name="remove*" read-only="false" rollback-for="AppException" />
+         
+         <tx:method name="update*" read-only="false" rollback-for="AppException" />
+
+         <tx:method name="*" read-only="true" propagation="SUPPORTS" rollback-for="AppException" />
+      </tx:attributes>
+   </tx:advice>
+
+   <tx:advice id="txAccessAdvice" transaction-manager="transactionManager">
+      <tx:attributes>
+         <tx:method name="save*" read-only="false" rollback-for="AppException" />
+
+         <tx:method name="shrink*" read-only="false" rollback-for="AppException" />
+         
+         <tx:method name="delete*" read-only="false" rollback-for="AppException" />
+         
+         <tx:method name="remove*" read-only="false" rollback-for="AppException" />
+
+         <tx:method name="update*" read-only="false" rollback-for="AppException" />
+         
+         <tx:method name="*" read-only="true" propagation="SUPPORTS" rollback-for="AppException" />
+      </tx:attributes>
+   </tx:advice>
+
+<!-- AOP Ends Here. -->
+
+<!-- ====================== -->
+</beans>
+

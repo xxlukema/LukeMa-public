@@ -1,0 +1,13 @@
+<p>about works!</p>
+
+<app-loading [loading]="loading"></app-loading>
+
+@if (!loading) {
+<fieldset class="legend-class">
+  <legend>User data from Resolver</legend>
+  <div>userId: {{user.userId}}</div>
+  <div>id: {{user.id}}</div>
+  <div>title: {{user.title}}</div>
+  <div>body: {{user.body}}</div>
+</fieldset>
+}

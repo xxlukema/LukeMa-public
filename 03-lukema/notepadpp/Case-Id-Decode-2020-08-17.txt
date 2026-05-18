@@ -1,0 +1,156 @@
+
+
+
+#### 2020-08-17 13:44:30,649 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://ecorrweb.it.census.gov:80/ecorr/api/caseId/encrypt/ET-571702
+#### 2020-08-17 13:44:30,827 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://ecorrweb.it.census.gov:80/ecorr/api/secure/surveys/surveyInstances
+#### 2020-08-17 13:44:31,305 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/banners
+#### 2020-08-17 13:44:31,782 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/banners
+#### 2020-08-17 13:44:33,905 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://ecorrweb.it.census.gov:80/ecorr/api/authbank/query
+#### 2020-08-17 13:44:34,129 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/banners
+#### 2020-08-17 13:44:34,144 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/secure/settings
+#### 2020-08-17 13:44:34,432 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/secure/profiles/852775/surveys
+#### 2020-08-17 13:44:34,565 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/banners
+#### 2020-08-17 13:44:35,095 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/banners
+#### 2020-08-17 13:44:35,646 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/secure/surveys/14812295/delegates/requests
+#### 2020-08-17 13:44:35,949 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/secure/sso/profile
+#### 2020-08-17 13:44:36,087 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/banners
+#### 2020-08-17 13:44:36,121 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/secure/sso/profile
+#### 2020-08-17 13:44:37,597 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [POST] http://portal.census.gov:80/ecorr/api/secure/surveys/TZWDWCPZ794M/users/976086
+#### 2020-08-17 13:44:37,638 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/secure/surveyInstances/access
+#### 2020-08-17 13:44:37,796 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/secure/profiles/976086/surveys
+#### 2020-08-17 13:44:38,004 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/secure/surveyInstances/access
+
+#### 2020-08-17 13:44:38,068 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://portal.census.gov:80/ecorr/api/banners
+#### 2020-08-17 13:44:38,115 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - 
+
+[GET] http://ask.census.gov:80/ecorr/api/secure/pega/cases/details/ACB994F37FF6EAFB2CAE46E7D76853CC
+
+#### 2020-08-17 13:44:38,119 WARN  o.h.e.jdbc.spi.SqlExceptionHelper(44) doLog() - SQL Error: 20001, SQLState: 72000
+#### 2020-08-17 13:44:38,119 ERROR o.h.e.jdbc.spi.SqlExceptionHelper(44) doLog() - 
+
+ORA-20001: An error was encountered - -28817 -ERROR- ORA-28817: PL/SQL function returned an error.
+ORA-06512: at "SYS.DBMS_CRYPTO_FFI", line 67
+ORA-06512: at "SYS.DBMS_CRYPTO", line 44
+ORA-06512: at "AUDIT_MONITOR.APP_ENC", line 29
+ORA-06512: at "ECOR_OWNER.SP_DECRYPT_CASE_ID", line 10
+ORA-06512: at line 1
+
+#### 2020-08-17 13:44:38,122 ERROR c.e.w.c.c.ExceptionHandlingController(367) GenericRuntimeException() - RuntimeException
+org.springframework.orm.jpa.JpaSystemException: Error calling CallableStatement.getMoreResults; nested exception is org.hibernate.exception.GenericJDBCException: Error calling CallableStatement.getMoreResults
+        at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:314) ~[spring-orm-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:225) ~[spring-orm-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:417) ~[spring-orm-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:59) ~[spring-tx-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:213) ~[spring-tx-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:147) ~[spring-tx-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodIntercceptor.invoke(CrudMethodMetadataPostProcessor.java:122) ~[spring-data-jpa-1.7.3.RELEASE.jar:na]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92) ~[spring-aop-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:208) ~[spring-aop-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at com.sun.proxy.$Proxy299.getEncryptedCaseId(Unknown Source) ~[na:na]
+        at com.ecorrservices.service.impl.CaseIdServiceImpl.decryptCaseId(CaseIdServiceImpl.java:32) ~[_wl_cls_gen.jar:na]
+        at com.ecorrservices.web.controller.custom.CRMController.getCaseDetailsByCaseId(CRMController.java:418) ~[_wl_cls_gen.jar:na]
+        at sun.reflect.GeneratedMethodAccessor782.invoke(Unknown Source) ~[na:na]
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_161]
+        at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_161]
+        at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:222) ~[spring-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) ~[spring-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:814) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:737) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) [javax.servlet.javax.servlet-api.jar:3.1.0]
+        at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) [javax.servlet.javax.servlet-api.jar:3.1.0]
+        at org.springframework.web.servlet.DispatcherServlet.service(DispatcherServlet.java) ~[spring-webmvc-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:286) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:260) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:137) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:350) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.TailFilter.doFilter(TailFilter.java:25) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:78) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at com.ecorrservices.web.filter.EcorrCorsFilter.doFilter(EcorrCorsFilter.java:135) [_wl_cls_gen.jar:na]
+        at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) [spring-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) [spring-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:78) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at com.ecorrservices.web.filter.AuthenticationFilter.doFilter(AuthenticationFilter.java:146) [_wl_cls_gen.jar:na]
+        at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) [spring-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262) [spring-web-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:78) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3654) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3620) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:326) [com.oracle.weblogic.security.subject.jar:12.2.1.0]
+        at weblogic.security.service.SecurityManager.runAsForUserCode(SecurityManager.java:196) [com.oracle.weblogic.security.subject.jar:12.2.1.0]
+        at weblogic.servlet.provider.WlsSecurityProvider.runAsForUserCode(WlsSecurityProvider.java:203) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.provider.WlsSubjectHandle.run(WlsSubjectHandle.java:71) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.WebAppServletContext.doSecuredExecute(WebAppServletContext.java:2423) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2280) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2258) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.ServletRequestImpl.runInternal(ServletRequestImpl.java:1626) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1586) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.servlet.provider.ContainerSupportProviderImpl$WlsRequestExecutor.run(ContainerSupportProviderImpl.java:270) [com.oracle.weblogic.servlet.jar:12.2.1.0]
+        at weblogic.invocation.ComponentInvocationContextManager._runAs(ComponentInvocationContextManager.java:348) [com.bea.core.utils.full.jar:12.2.1.0]
+        at weblogic.invocation.ComponentInvocationContextManager.runAs(ComponentInvocationContextManager.java:333) [com.bea.core.utils.full.jar:12.2.1.0]
+        at weblogic.work.LivePartitionUtility.doRunWorkUnderContext(LivePartitionUtility.java:54) [com.oracle.weblogic.work.jar:12.2.1.0]
+        at weblogic.work.PartitionUtility.runWorkUnderContext(PartitionUtility.java:41) [com.bea.core.weblogic.workmanager.jar:12.2.1.0]
+        at weblogic.work.SelfTuningWorkManagerImpl.runWorkUnderContext(SelfTuningWorkManagerImpl.java:617) [com.bea.core.weblogic.workmanager.jar:12.2.1.0]
+        at weblogic.work.ExecuteThread.execute(ExecuteThread.java:397) [com.bea.core.weblogic.workmanager.jar:12.2.1.0]
+        at weblogic.work.ExecuteThread.run(ExecuteThread.java:346) [com.bea.core.weblogic.workmanager.jar:12.2.1.0]
+Caused by: org.hibernate.exception.GenericJDBCException: Error calling CallableStatement.getMoreResults
+        at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:54) ~[hibernate-core-4.3.8.Final.jar:4.3.8.Final]
+        at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126) ~[hibernate-core-4.3.8.Final.jar:4.3.8.Final]
+        at org.hibernate.result.internal.OutputsImpl.convert(OutputsImpl.java:96) ~[hibernate-core-4.3.8.Final.jar:4.3.8.Final]
+        at org.hibernate.result.internal.OutputsImpl.<init>(OutputsImpl.java:73) ~[hibernate-core-4.3.8.Final.jar:4.3.8.Final]
+        at org.hibernate.procedure.internal.ProcedureOutputsImpl.<init>(ProcedureOutputsImpl.java:49) ~[hibernate-core-4.3.8.Final.jar:4.3.8.Final]
+        at org.hibernate.procedure.internal.ProcedureCallImpl.buildOutputs(ProcedureCallImpl.java:426) ~[hibernate-core-4.3.8.Final.jar:4.3.8.Final]
+        at org.hibernate.procedure.internal.ProcedureCallImpl.getOutputs(ProcedureCallImpl.java:378) ~[hibernate-core-4.3.8.Final.jar:4.3.8.Final]
+        at org.hibernate.jpa.internal.StoredProcedureQueryImpl.outputs(StoredProcedureQueryImpl.java:251) ~[hibernate-entitymanager-4.3.11.Final.jar:4.3.11.Final]
+        at org.hibernate.jpa.internal.StoredProcedureQueryImpl.execute(StoredProcedureQueryImpl.java:234) ~[hibernate-entitymanager-4.3.11.Final.jar:4.3.11.Final]
+        at org.springframework.data.jpa.repository.query.JpaQueryExecution$ProcedureExecution.doExecute(JpaQueryExecution.java:296) ~[spring-data-jpa-1.7.3.RELEASE.jar:na]
+        at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:74) ~[spring-data-jpa-1.7.3.RELEASE.jar:na]
+        at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:99) ~[spring-data-jpa-1.7.3.RELEASE.jar:na]
+        at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:90) ~[spring-data-jpa-1.7.3.RELEASE.jar:na]
+        at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:415) ~[spring-data-commons-1.9.3.RELEASE.jar:na]
+        at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:393) ~[spring-data-commons-1.9.3.RELEASE.jar:na]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.data.repository.core.support.RepositoryFactorySupport$DefaultMethodInvokingMethodInterceptor.invoke(RepositoryFactorySupport.java:506) ~[spring-data-commons-1.9.3.RELEASE.jar:na]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) ~[spring-tx-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281) ~[spring-tx-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136) ~[spring-tx-4.2.3.RELEASE.jar:4.2.3.RELEASE]
+        ... 59 common frames omitted
+Caused by: java.sql.SQLException: ORA-20001: An error was encountered - -28817 -ERROR- ORA-28817: PL/SQL function returned an error.
+ORA-06512: at "SYS.DBMS_CRYPTO_FFI", line 67
+ORA-06512: at "SYS.DBMS_CRYPTO", line 44
+ORA-06512: at "AUDIT_MONITOR.APP_ENC", line 29
+ORA-06512: at "ECOR_OWNER.SP_DECRYPT_CASE_ID", line 10
+ORA-06512: at line 1
+
+        at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1059) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:522) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:257) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:587) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:220) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.T4CCallableStatement.doOall8(T4CCallableStatement.java:48) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.T4CCallableStatement.executeForRows(T4CCallableStatement.java:938) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1150) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:4798) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:4901) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.OracleCallableStatement.execute(OracleCallableStatement.java:5631) ~[ojdbc7.jar:12.1.0.2.0]
+        at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1385) ~[ojdbc7.jar:12.1.0.2.0]
+        at weblogic.jdbc.wrapper.PreparedStatement.execute(PreparedStatement.java:119) ~[com.bea.core.datasource6.jar:12.2.1.0]
+        at weblogic.jdbc.wrapper.CallableStatement_oracle_jdbc_driver_OracleCallableStatementWrapper.execute(Unknown Source) ~[CodeGenerator.class:12.2.1.0]
+        at org.hibernate.result.internal.OutputsImpl.<init>(OutputsImpl.java:69) ~[hibernate-core-4.3.8.Final.jar:4.3.8.Final]
+        ... 78 common frames omitted
+#### 2020-08-17 13:44:38,316 INFO  c.e.web.filter.AuthenticationFilter(77) doFilter() - [GET] http://ecorrweb.it.census.gov:80/ecorr/api/authbank/query
+

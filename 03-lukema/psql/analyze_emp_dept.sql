@@ -1,0 +1,2 @@
+analyze dept;
+analyze emp;

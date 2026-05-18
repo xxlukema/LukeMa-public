@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<!--                    -->
+<!--     Bean Setup     -->
+<!--                    -->
+   <bean id="personDAO" parent="baseProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.oracle.dao.PersonDAO</value>
+      </property>
+
+      <property name="targetName">
+         <value>personDAOTarget</value>
+      </property>
+   </bean>
+
+   <bean id="personDAOTarget" class="com.learn.oracle.dao.PersonDAOImpl">
+      <property name="sessionFactory">
+         <ref bean="oracleSessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="widgetDAO" parent="baseProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.mysql.dao.WidgetDAO</value>
+      </property>
+
+      <property name="targetName">
+         <value>widgetDAOTarget</value>
+      </property>
+   </bean>
+
+   <bean id="widgetDAOTarget" class="com.learn.mysql.dao.WidgetDAOImpl">
+      <property name="sessionFactory">
+         <ref bean="mysqlSessionFactory" />
+      </property>
+   </bean>
+
+<!-- For Declarative Transaction Management -->
+   <bean id="myService" parent="baseTransactionProxyFactoryBean">
+      <property name="proxyInterfaces">
+         <value>com.learn.service.MyService</value>
+      </property>
+      
+      <property name="target">
+         <ref bean="myServiceTarget" />
+      </property>
+   </bean>
+
+   <bean id="myServiceTarget" class="com.learn.service.MyServiceImpl">
+      <property name="personDAO">
+         <ref bean="personDAO" />
+      </property>
+      
+      <property name="widgetDAO">
+         <ref bean="widgetDAO" />
+      </property>      
+   </bean>
+
+<!--                             -->
+<!--     Spring Common Setup     -->
+<!--                             -->
+   <bean id="baseProxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+      <property name="interceptorNames">
+         <list>
+            <value>mysqlHibernateInterceptor</value>
+            
+            <value>oracleHibernateInterceptor</value>
+         </list>
+      </property>
+   </bean>
+
+   <bean id="baseTransactionProxyFactoryBean" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+      <!-- ???Strange: It can be either one of the TransactionManager: oracleTransactionManager/mysqlTransactionManager??? -->
+      <property name="transactionManager">
+         <ref bean="oracleTransactionManager" /> 
+      </property>
+
+      <property name="transactionAttributes">
+         <props>
+            <prop key="save*">PROPAGATION_REQUIRED,-AppException</prop>
+
+            <prop key="remove*">PROPAGATION_REQUIRED,-AppException</prop>
+
+            <prop key="update*">PROPAGATION_REQUIRED,-AppException</prop>
+      
+            <prop key="create*">PROPAGATION_REQUIRED,-AppException</prop>
+
+            <prop key="*">PROPAGATION_SUPPORTS,readOnly</prop>
+         </props>
+      </property>
+   </bean>
+
+   <bean id="mysqlTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+      <property name="sessionFactory">
+         <ref bean="mysqlSessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="oracleTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+      <property name="sessionFactory">
+         <ref bean="oracleSessionFactory" />
+      </property>
+   </bean>
+
+   <bean id="mysqlHibernateInterceptor" class="org.springframework.orm.hibernate3.HibernateInterceptor">
+      <property name="sessionFactory">
+         <ref bean="mysqlSessionFactory" />
+      </property>
+   </bean>   
+
+   <bean id="oracleHibernateInterceptor" class="org.springframework.orm.hibernate3.HibernateInterceptor">
+      <property name="sessionFactory">
+         <ref bean="oracleSessionFactory" />
+      </property>
+   </bean>
+   
+   <bean id="mysqlSessionFactory" parent="baseSessionFactory">
+      <property name="configLocation">
+         <value>classpath:hibernate-mysql.cfg.xml</value>
+      </property>
+   </bean>
+
+   <bean id="oracleSessionFactory" parent="baseSessionFactory">
+      <property name="configLocation">
+         <value>classpath:hibernate-oracle.cfg.xml</value>
+      </property>
+   </bean>
+   
+   <bean id="baseSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+      <property name="hibernateProperties">
+         <props>
+            <prop key="hibernate.connection.autocommit">true</prop>
+         </props>
+      </property>
+   </bean>
+
+</beans>
+

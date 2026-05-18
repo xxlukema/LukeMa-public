@@ -1,0 +1,29 @@
+<section>
+
+  <h2 class="text-2xl font-bold text-center mb-4">
+
+    Your browser screen is:
+
+    <span class="inline-blocke max-2xl:hidden">2xl</span>
+    <span class="hidden xl:max-2xl:inline-block">xl</span>
+    <span class="hidden lg:max-xl:inline-block">lg</span>
+    <span class="hidden md:max-lg:inline-block">md</span>
+    <span class="hidden sm:max-md:inline-block">sm</span>
+    <span class="sm:hidden">xs</span>
+
+  </h2>
+
+  <div style="text-align: center;">
+    <div>innerWidth: {{innerWidth | number}} px</div>
+    <div>innerHeight: {{innerHeight | number}} px</div>
+  </div>
+
+</section>
+
+<!--
+sm	40rem (640px)	@media (width >= 40rem) { ... }
+md	48rem (768px)	@media (width >= 48rem) { ... }
+lg	64rem (1024px)	@media (width >= 64rem) { ... }
+xl	80rem (1280px)	@media (width >= 80rem) { ... }
+2xl	96rem (1536px)	@media (width >= 96rem) { ... }
+-->

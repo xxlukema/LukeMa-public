@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+rm -f /myapp/tmp/pids/server.pid
+
+exec "$@"
+

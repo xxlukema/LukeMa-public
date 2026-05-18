@@ -1,0 +1,85 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.learn</groupId>
+
+   <artifactId>EJB3JBoss-ejbs</artifactId>
+
+   <name>${artifactId}</name>
+
+   <version>1.0</version>
+
+   <packaging>jar</packaging>
+
+   <parent>
+      <groupId>com.learn</groupId>
+
+      <artifactId>EJB3JBoss-Association</artifactId>
+
+      <version>1.0</version>
+   </parent>
+
+   <dependencies>
+      <dependency>
+         <groupId>javax.ejb</groupId>
+
+         <artifactId>ejb-api</artifactId>
+
+         <version>3.0</version>
+
+         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>org.hibernate.java-persistence</groupId>
+
+         <artifactId>jpa-api</artifactId>
+
+         <version>2.0-cr-1</version>
+
+         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>org.hibernate</groupId>
+
+         <artifactId>hibernate-entitymanager</artifactId>
+
+         <version>3.5.1-Final</version>
+      </dependency>
+
+      <dependency>
+         <groupId>javax.persistence</groupId>
+
+         <artifactId>persistence-api</artifactId>
+
+         <version>1.0</version>
+
+         <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>log4j</groupId>
+
+         <artifactId>log4j</artifactId>
+
+         <version>1.2.14</version>
+
+         <scope>provided</scope>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+
+            <configuration>
+               <archive>
+                  <addMavenDescriptor>false</addMavenDescriptor>
+               </archive>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+</project>

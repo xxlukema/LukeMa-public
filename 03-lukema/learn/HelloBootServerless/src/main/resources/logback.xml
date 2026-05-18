@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>
+        ### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c\(%L\) %M\(\) %n%m%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <!-- app logger -->
+  <logger name="com.learn" level="debug" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+
+  <!-- spring tuning -->
+  <logger name="org.springframework" level="info" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.core" level="warn" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.cache" level="warn" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.beans" level="warn" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.boot.diagnostics" level="debug" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+
+  <logger name="org.springframework.web" level="warn" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <!--
+    <logger name="org.springframework.security.web" level="warn" additivity="false">
+  <appender-ref ref="CONSOLE" />
+    </logger>
+     -->
+  <logger name="org.springframework.boot.web" level="warn" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.context" level="warn" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.jdbc.core" level="trace" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.hibernate" level="info" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <!-- Change org.hibernate.SQL level to debug to see SQL -->
+  <logger name="org.hibernate.SQL" level="debug" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <!-- Change org.hibernate.type level to trace to display SQL parameters -->
+  <logger name="org.hibernate.type" level="trace" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.hibernate.type.EnumType" level="warn" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.hibernate.type.BasicTypeRegistry" level="warn" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.hibernate.type.TypeFactory" level="warn" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="warn" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+
+  <!--  undefined -->
+  <logger name="com" level="debug" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+
+  <!-- com.zaxxer is for HikariCP (Hikari Connection Pool)
+  (https://www.baeldung.com/spring-boot-hikari) -->
+  <!-- https://github.com/brettwooldridge/HikariCP#configuration-knobs-baby -->
+  <!-- In Spring Boot 1, Tomcat JDBC Connection Pool is the default DataSource implementation -->
+  <!-- In Spring Boot 2, Hikari is the default DataSource implementation -->
+  <logger name="com.zaxxer" level="info" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <!-- tomcat pool -->
+  <logger name="org.apache.catalina.session" level="info" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+
+  <!-- com.ulisesbocchio is for Jasypt Spring Boot Encryption -->
+  <logger name="com.ulisesbocchio" level="debug" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </logger>
+
+  <!-- root -->
+  <root level="error" additivity="false">
+    <appender-ref ref="CONSOLE" />
+  </root>
+</configuration>

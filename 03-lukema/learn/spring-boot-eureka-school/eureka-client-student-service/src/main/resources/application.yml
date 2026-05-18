@@ -1,0 +1,38 @@
+server:
+  port: 8098
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 20
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+      
+spring:
+  application:
+    name: student-service
+
+# Actuator
+# management.info.env.enabled=true
+# by default, it only expose info and health. user comma delimiter. * will expose all 13 endpoints.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: beans
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: false
+# management.endpoints.web.exposure.include=health,info,env,beans
+# management.endpoints.jmx.exposure.include=health,info,env,beans
+# shutdown endpoint is disabled by default
+# curl -X POST http://localhost:8080/actuator/shutdown
+# never, authorized, always
+
+  

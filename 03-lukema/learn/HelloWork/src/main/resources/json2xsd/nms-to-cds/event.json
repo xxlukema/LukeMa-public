@@ -1,0 +1,10 @@
+{
+  "event": {
+    "organization": "PATS",
+    "deviceName": "Channel 121",
+    "severity": "Minor",
+    "name": "PTES JH Core: FL CIR Met below threshold - Minor",
+    "message": "CIR Met percentage dropped below threshold: Currently 91%, threshold is 95%",
+    "lastDetectedUtc": "2023-12-19T16:16:16Z"
+  }
+}

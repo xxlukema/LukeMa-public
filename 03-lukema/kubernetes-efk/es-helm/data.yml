@@ -1,0 +1,10 @@
+---
+# data.yaml
+---
+clusterName: "elasticsearch"
+nodeGroup: "data"
+roles:
+  master: "false"
+  ingest: "true"
+  data: "true"
+replicas: 2

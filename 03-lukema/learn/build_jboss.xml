@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build_jboss" default="deploy_ear" basedir=".">
+   <import file="./build_maven.xml" />
+
+   <property environment="env" />
+
+   <property name="JBOSS_DEFAULT" value="${env.JBOSS_HOME}/server/default" />
+
+   <property name="JBOSS_DEFAULT_TMP" value="${JBOSS_DEFAULT}/tmp" />
+
+   <property name="JBOSS_DEFAULT_LOCALHOST" value="${JBOSS_DEFAULT}/work/jboss.web/localhost" />
+
+   <property name="JBOSS_DEFAULT_LOG" value="${JBOSS_DEFAULT}/logs" />
+
+   <target name="deploy_ear" depends="clean_jboss">
+      <install_macrodef dir="." />
+   </target>
+
+   <target name="deploy_web" depends="clean_jboss">
+      <deploy_web_macrodef dir="." />
+   </target>
+
+   <target name="clean_jboss">
+      <delete verbose="false" includeemptydirs="true" quiet="true">
+         <fileset refid="tmp">
+         </fileset>
+
+         <fileset refid="log">
+         </fileset>
+
+         <fileset refid="localhost">
+         </fileset>
+      </delete>
+   </target>
+
+   <fileset id="tmp" dir="${JBOSS_DEFAULT_TMP}">
+      <include name="**/*" />
+   </fileset>
+
+   <fileset id="log" dir="${JBOSS_DEFAULT_LOG}">
+      <include name="**/*" />
+   </fileset>
+
+   <fileset id="localhost" dir="${JBOSS_DEFAULT_LOCALHOST}">
+<!-- Exclude original dirs from delete -->
+      <exclude name="_" />
+
+      <exclude name="admin-console" />
+
+      <exclude name="invoker" />
+
+      <exclude name="jbossws" />
+
+      <exclude name="jmx-console" />
+
+      <exclude name="web-console" />
+   </fileset>
+</project>
+

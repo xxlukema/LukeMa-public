@@ -1,0 +1,36 @@
+<div style="text-align: center;">
+
+    <h3>Observable
+        <button type="button" class="btn btn-primary btn-lg" *ngIf="refreshing">Please wait for 10 seconds.
+            Loading
+            <i class="fas fa-spinner fa-spin"></i></button>
+    </h3>
+
+    <div>
+        https://christianlydemann.com/four-ways-to-create-loading-spinners-in-an-angular-app/
+    </div>
+
+    <div>
+        <textarea rows="4" cols="50">{{postInput}}</textarea>
+    </div>
+    <div>
+        <textarea rows="4" cols="50">{{postResultString}}</textarea>
+    </div>
+
+    <div>
+        <button (click)="doPost()">Post Data Slow</button>&nbsp;
+        <button (click)="unsubscribe()">Unsubscribe</button>
+    </div>
+
+    <div>
+        <textarea rows="2" cols="50">{{completeMsg}}</textarea>
+    </div>
+    <div>
+        <textarea rows="2" cols="50">{{errorMsg}}</textarea>
+    </div>
+
+    <div>
+        <button (click)="clearAll()">Clear All</button>
+    </div>
+
+</div>

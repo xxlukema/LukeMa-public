@@ -1,0 +1,137 @@
+
+
+div.divDesc {
+   font-weight: bold;
+   font-family: sans-serif;
+
+   background-color: aqua;
+}
+
+
+
+div.div-base {
+   position: absolute;
+
+   top:  20px;
+   left: 10px;
+
+   min-width: 150px;
+   width:  600px;
+   height: 400px;
+
+   border-width: 2px;
+   border-color: black;
+   border-style:solid;
+
+   background-color: beige;
+}
+
+
+
+div.div-child-one {
+   position: absolute;
+
+   top:    5px;
+   left:   40px;
+   width:  200px;
+   height: 120px;
+
+   background-color: coral;
+}
+
+div.div-child-two {
+   position: relative;
+
+   top:    20px;
+   right:  40px;
+   width:  280px;
+
+   background-color: cyan;
+}
+
+div.div-child-three {
+   position: relative;
+
+   top:    0px;
+   left:   0px;
+   height: 20px;
+
+   background-color: green;
+}
+
+div.float-left {
+   float: left;
+
+   width:  100px;
+   height: 50px;
+
+   background-color: coral;
+
+   border: 2px solid black;
+}
+
+div.float-right {
+   float: right;
+
+   width:  100px;
+   height: 50px;
+
+   background-color: coral;
+
+   border: 2px solid black;
+}
+
+div.float-center {
+
+   margin-left:  100px;
+   margin-right: 100px;
+
+   height: 50px;
+
+   background-color: coral;
+
+   border: 2px dashed black;
+}
+
+
+div.inline-holder {
+   display: inline;
+}
+
+div.inline-left {
+   position: relative;
+
+   width:  100px;
+   height: 50px;
+
+   background-color: coral;
+
+   border: 2px solid black;
+
+   display: inline;
+}
+
+div.inline-right {
+   position: relative;
+
+   right:  0px
+   width:  100px;
+   height: 50px;
+
+   background-color: coral;
+
+   border: 2px solid black;
+
+   display: inline;
+}
+
+div.inline-center {
+
+   height: 50px;
+
+   background-color: coral;
+
+   border: 2px dashed black;
+
+   display: inline;
+}

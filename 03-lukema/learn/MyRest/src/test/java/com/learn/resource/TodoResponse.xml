@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE xml>
+<todoResponse>
+	<beanValidationErrors>
+		<validationErrors>
+			<invalidValue>a</invalidValue>
+			<message>Todo description size must be between 2 and 40 chars long
+			</message>
+			<messageTemplate>{todo.description.size}</messageTemplate>
+			<path>doPost.arg0.description</path>
+		</validationErrors>
+		<validationErrors>
+			<invalidValue>a</invalidValue>
+			<message>Todo description must be digits only</message>
+			<messageTemplate>{todo.description.pattern}</messageTemplate>
+			<path>doPost.arg0.description</path>
+		</validationErrors>
+		<validationErrors>
+			<message>Todo summary must not be null</message>
+			<messageTemplate>{todo.summary.notnull}</messageTemplate>
+			<path>doPost.arg0.summary</path>
+		</validationErrors>
+	</beanValidationErrors>
+	<status>BAD_REQUEST</status>
+</todoResponse>

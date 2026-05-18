@@ -1,0 +1,155 @@
+<section fxLayout="column" fxLayoutAlign="center" fxLayoutGap="0.8em">
+  <app-loading [loading]="loading"></app-loading>
+  @if(!loading && item) {
+  <div fxLayout fxLayoutGap="1em">
+    <div fxFlex="62em" fxLayout="column">
+      <!-- photos -->
+      <div fxFlex fxLayout fxLayoutGap="1em">
+        <!-- preview photo -->
+        <div #panel fxFlex="10em" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="1em"
+          class="preview-frame">
+          @for (fileName of item.imageFileNames; track $index;) {
+          <div fxFlex="none" fxLayout="column" fxLayoutAlign="center center" class="preview" (click)="selected($index)"
+            [class.selected]="$index === selectedIdx">
+            <img fxFlex [src]="imageUrlPrefix + '/' + fileName">
+          </div>
+          }
+        </div>
+        <div fxFlex class="full-view" fxLayout="column" fxLayoutAlign="center center">
+          <!-- full photo -->
+          <div fxFlex="none">
+            <img [src]="imageUrlPrefix + '/' + item.imageFileNames![selectedIdx]">
+          </div>
+
+          <!-- `< >` buttons -->
+          <div fxFlex="none" fxLayout fxLayoutAlign="space-between center" class="overlay">
+            <div fxFlex="2.5em" fxLayout="column" fxLayoutAlign="center">
+              <button fxFlex="5em" mat-button mat-raised-button [disabled]="selectedIdx == 0" (click)="decrease()">
+                <div style="font-size: 2.2em;">
+                  <i class="fa-solid fa-chevron-left fa-xl"></i>
+                </div>
+              </button>
+            </div>
+            <div fxFlex="auto"></div>
+            <div fxFlex="2.5em" fxLayout="column" fxLayoutAlign="center center">
+              <button fxFlex="5em" mat-button mat-raised-button
+                [disabled]="selectedIdx == item.imageFileNames!.length - 1" (click)="increase()">
+                <div style="font-size: 2.2em;">
+                  <i class="fa-solid fa-chevron-right fa-xl"></i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- title for not-very-large-screen -->
+      <div fxFlex class="not-very-large-screen">
+        <ng-container *ngTemplateOutlet="itemDetail"></ng-container>
+      </div>
+
+      <div fxFlex>
+        <h1>Similar sponsered items</h1>
+      </div>
+    </div>
+
+    <!-- title for  -->
+    <div fxFlex="auto" class="very-large-screen">
+      <ng-container *ngTemplateOutlet="itemDetail"></ng-container>
+    </div>
+  </div>
+
+  <div fxFlex>
+    specs
+
+  </div>
+
+  <div fxFlex>
+  </div>
+
+  }
+
+  <ng-template #itemDetail>
+    <form [formGroup]="formGroup" fxLayout="column" fxLayoutGap="1em" fxFlexAlign.gt-lg="start start">
+      <h1>
+        {{item.title}}
+      </h1>
+
+      <div class="seller-info">
+        Seller: {{nmsService.getDispalyName(item.sellerUsername ? item.sellerUsername : '')}}
+      </div>
+
+      <div>
+        <div class="emphasize">
+          US {{(price * (1 - bulkDiscount)) | currency}}/ea
+        </div>
+
+        @if(bulkDiscount != 0) {
+        <div>Save US {{(price * bulkDiscount * quantity) | currency}} ({{bulkDiscount * 100}}% off)</div>
+        } @else {
+        <div>&nbsp;</div>
+        }
+      </div>
+
+      <!--
+      <div>Or Best Offer</div>
+      -->
+
+      <div>
+        Condition: {{item.condition}}
+      </div>
+
+      <div>
+        Quantity:
+        <input type="text" matInput appearance="outline" formControlName="quantity" maxlength="5"
+          (keyup.enter)="onSubmit()" (keyup)="onKeyUpNumber($event)" style="width: 3em;">
+
+        {{item.availableUnitQuantity}} available / {{item.soldUnitQuantity}} sold
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="0.5em">
+        <div>Bulk savings:</div>
+        <div fxLayout fxLayoutGap="0.5em">
+          <div class="buy-button" (click)="buy(1)" [class.selected]="quantity == 1">
+            <div>Buy 1</div>
+            <div class="price">{{item.price | currency}}/ea</div>
+          </div>
+          <div
+            [class]="{'buy-button': item.availableUnitQuantity && item.availableUnitQuantity > 1, 'buye-more': item.availableUnitQuantity && item.availableUnitQuantity < 2}"
+            (click)="buy(2)" [class.selected]="quantity == 2">
+            <div>Buy 2</div>
+            <div class="price">{{(item.price ? item.price * (1 - discount) : 0) | currency}}/ea</div>
+          </div>
+          <div
+            [class]="{'buy-button': item.availableUnitQuantity && item.availableUnitQuantity > 2, 'buye-more': item.availableUnitQuantity && item.availableUnitQuantity < 3}"
+            (click)="buy(3)" [class.selected]="quantity == 3">
+            <div>Buy 3</div>
+            <div class="price">{{(item.price ? item.price * (1 - discount * 2) : 0) | currency}}/ea</div>
+          </div>
+          <div class="buy-more">
+            <div>4 or more for</div>
+            <div class="price">{{(item.price ? item.price * (1 - discount * 3) : 0) | currency}}/ea</div>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="0.85em" fxLayoutAlign="start center">
+        <button style="width: 85%;" mat-raised-button color="primary"
+          (click)="buyItNow();$event.preventDefault();false;" [disabled]="formGroup.invalid">
+          Buy It Now
+        </button>
+        <button style="width: 85%;" mat-raised-button color="secondary"
+          (click)="addToCart();$event.preventDefault();false;">
+          Add to cart
+        </button>
+        <button style="width: 85%;" mat-raised-button color="secondary"
+          (click)="addToWishList();$event.preventDefault();false;">
+          Add to wishlist
+        </button>
+      </div>
+
+
+    </form>
+  </ng-template>
+
+</section>

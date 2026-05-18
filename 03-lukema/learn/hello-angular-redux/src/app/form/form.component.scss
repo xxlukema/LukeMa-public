@@ -1,0 +1,35 @@
+fieldset {
+  border: 3px lightgray solid;
+  border-radius: 1em;
+  padding: 0.5em;
+  z-index: 90;
+}
+
+legend {
+  max-width: fit-content;
+  margin-left: 1em;
+  margin-top: -1.5em;
+  padding: 0.2em 0.8em;
+  font-size: 14px;
+  opacity: 1;
+  z-index: 100;
+}
+
+.keyvalues {
+  white-space: nowrap;
+  cursor: default;
+  padding: 5px;
+
+  div {
+    .fieldname {
+      display: inline-block;
+      text-align: right;
+      min-width: 5em;
+      margin-right: 5px;
+    }
+
+    &:hover {
+      background-color: #c7d4dd;
+    }
+  }
+}

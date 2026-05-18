@@ -1,0 +1,16 @@
+<template>
+    <div>
+        <input id="method" type="text" value="post" placeholder="REST method (post, get)" />
+        <input id="id" type="text" value="1" placeholder="Id (1)" />
+    </div>
+    <div>
+        <input id="getState" type="button" value="Get State Info" onclick="console.log('You clicked me.');" /> State Info:
+        <span id="result">placeholder</span>
+    </div>
+    <div>
+        <label for="localStorage">localStorage name: </label><span id='localStorage'></span>
+    </div>
+    <div>
+        <label for="sessionStorage">sessionStorage name: </label><span id='sessionStorage'></span>
+    </div>
+</template>

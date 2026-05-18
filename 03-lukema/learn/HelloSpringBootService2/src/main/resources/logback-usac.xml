@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="RAD" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <Append>false</Append>
+    <File>/var/logs/rad.log</File>
+    <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+      <providers>
+        <timestamp>
+          <timeZone>UTC</timeZone>
+        </timestamp>
+        <pattern>
+          <pattern>
+            {
+            "level": "%level",
+            "service": "rad",
+            "thread": "%thread",
+            "class": "%logger{40}",
+            "message": "%message"
+            }
+          </pattern>
+        </pattern>
+      </providers>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>INFO</level>
+    </filter>
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+      <maxIndex>9</maxIndex>
+      <FileNamePattern>/var/logs/rad.log.%i</FileNamePattern>
+    </rollingPolicy>
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <MaxFileSize>10MB</MaxFileSize>
+    </triggeringPolicy>
+  </appender>
+  <appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
+    <syslogHost>localhost</syslogHost>
+    <Facility>LOCAL0</Facility>
+    <SuffixPattern>tomcat: [%t] [%-5p] %c - %m%n</SuffixPattern>
+  </appender>
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>
+        ### %d{yyyy-MM-dd HH:mm:ss} [%-5p] %c\(%L\) %M\(\) %n%m%n
+      </pattern>
+    </encoder>
+  </appender>
+  <logger name="org.springframework.core" level="INFO" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.cache" level="INFO" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.beans" level="INFO" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.web" level="INFO" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.context" level="INFO" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.springframework.jdbc.core" level="TRACE" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.hibernate" level="INFO" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <!-- Change org.hibernate.SQL level to debug to see SQL -->
+  <logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <!-- Change org.hibernate.type level to trace to display SQL parameters -->
+  <logger name="org.hibernate.type" level="TRACE" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.hibernate.type.EnumType" level="WARN" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.hibernate.type.BasicTypeRegistry" level="WARN" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.hibernate.type.TypeFactory" level="WARN" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="WARN" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.usac.nlad" level="INFO" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.usac.li" level="INFO" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <logger name="org.usac.li.microservice" level="DEBUG" additivity="false">
+    <appender-ref ref="RAD" />
+    <appender-ref ref="SYSLOG" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+  <root level="error" additivity="false">
+    <appender-ref ref="RAD" />
+  </root>
+</configuration>

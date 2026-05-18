@@ -1,0 +1,65 @@
+<div>
+  <h2>Login Page</h2>
+  <p appChangeBgColor>{{message}}</p>
+
+  <form class="form-horizontal" *ngIf="!userService.isLoggedIn">
+    <div class="form-group has-success has-feedback">
+      <label class="col-sm-3 control-label" for="username">
+        Username</label>
+      <div class="col-sm-9">
+        <input type="text" id="username" #name="ngModel" minlength="2" forbiddenName="bob" class="form-control" name="username"
+          [(ngModel)]="username" placeholder="* Username" title="* Username" (keyup.enter)="loginAndRedirectToAdmin()"
+          required="true" />
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+    </div>
+    <div class="form-group has-warning has-feedback">
+      <label class="col-sm-3 control-label" for="password">
+        Password</label>
+      <div class="col-sm-9">
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" placeholder="* Password"
+          title="* Password" (keyup.enter)="loginAndRedirectToAdmin()" required="true" />
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+    </div>
+    <div class="form-group has-warning has-feedback">
+      <label class="col-sm-3 control-label" for="keepMeLoggedIn">
+        Keep Me Logged In</label>
+      <div class="col-sm-1" style="text-align: left;">
+        <input type="checkbox" class="form-control" id="keepMeLoggedIn" name="keepMeLoggedIn" [(ngModel)]="keepMeLoggedIn"
+          title="Keep Me Logged In" required="false" />
+      </div>
+      <div class="col-sm-8"></div>
+    </div>
+
+    <div *ngIf="name.errors" style="color: lime; background-color: green;">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+      </div>
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors.minlength">
+        Name must be at least 2 characters long.
+      </div>
+      <div *ngIf="name.errors.forbiddenName">
+        Name cannot be Bob.
+      </div>
+    </div>
+
+    <div class="form-group" style="margin-top: 10px;">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-offset-right-4">
+        <button (click)="loginAndRedirectToAdmin()" class="btn btn-primary btn-sm">Login and Redirect to Admin</button>
+        or
+        <a routerLink="/signup" routerLinkActive="active">
+          <button class="btn btn-warning btn-sm">New User Sign Up</button>
+        </a>
+      </div>
+    </div>
+  </form>
+
+  <div *ngIf="userService.isLoggedIn">
+    <div>You are already logged in. Your username is: {{userService.user.username}}</div>
+    <button (click)="logout()">Logout</button>
+  </div>
+</div>
