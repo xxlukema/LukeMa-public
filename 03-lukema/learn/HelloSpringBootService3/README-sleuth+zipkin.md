@@ -1,5 +1,0 @@
-# Sleuth + Zipkin
-
-## Sleuth
-
-## Zipkin

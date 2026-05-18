@@ -1,8 +1,0 @@
-[BASIC]
-# Good variable names which should always be accepted, separated by a comma.
-good-names=n, i, j, k, ex, Run, df, l, l1, l2, l3
-
-[MESSAGES CONTROL]
-disable=line-too-long,
-        invalid-name,
-		    too-few-public-methods
