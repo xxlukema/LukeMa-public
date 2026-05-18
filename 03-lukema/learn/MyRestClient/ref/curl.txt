@@ -1,4 +1,0 @@
-
-curl -X PUT -H "Accept: application/xml" http://verima:1234@tweety.adpt-tech.net:8080/bcpbx-api/rest/v1/order/123456/foc_date -d "2015-12-12"
-
-curl -X PUT -H "Accept: application/xml" http://localhost:9090/MyRest/rest/todo/foc -d "2015-12-12-p"

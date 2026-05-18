@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<event>
-  <organization>PATS</organization>
-  <deviceName>Channel 121</deviceName>
-  <severity>Minor</severity>
-  <name>Channel 121</name>
-  <message>CIR Met percentage dropped below threshold: Currently 91%, threshold is 95%</message>
-  <lastDetectedUtc>2023-12-19T16:16:16Z</lastDetectedUtc>
-</event>
