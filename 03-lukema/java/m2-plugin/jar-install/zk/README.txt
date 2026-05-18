@@ -1,3 +1,0 @@
-
-Same as xjavadocs README
-

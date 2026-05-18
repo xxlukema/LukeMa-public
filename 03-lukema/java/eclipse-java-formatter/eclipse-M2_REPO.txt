@@ -1,9 +1,0 @@
-
-http://maven.apache.org/guides/mini/guide-ide-eclipse.html
-
-
-M2_REPO for eclipse:
-
-mvn -Declipse.workspace=<path-to-eclipse-workspace> eclipse:add-maven-repo
-
-Or, Window > Preferences > Java > Build Path > Classpath Variables page.

@@ -1,6 +1,0 @@
-Note The format of the -vm option - it is important to be exact:
-
-    * The -vm option and its value (the path) must be on separate lines.
-    * The value must be the full absolute path to the Java executable, not just to the Java home directory.
-    * The -vm option must occur before the -vmargs option, since everything 
-        after -vmargs is passed directly to the JVM. 

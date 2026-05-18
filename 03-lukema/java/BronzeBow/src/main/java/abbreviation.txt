@@ -1,7 +1,0 @@
-
-CMO            Chande Momentum Oscillator
-OBV            On Balance Volume
-PVT            Price and Volume Trend
-STD            Standard Deviation
-VMA            Variable Moving Average
-
