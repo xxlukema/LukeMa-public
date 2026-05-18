@@ -1,7 +1,0 @@
-
-Chain-Of-Responsibility consists of Command object(s) and processing objects.
-
-1. Each processor should not modify the command, so that the processors can 
-   process the command regardless of the sequence/order.
-
-

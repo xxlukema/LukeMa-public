@@ -1,5 +1,0 @@
-
-Factory: Factory Pattern creates concrete subclasses to be created at Runtime. 
-
-
-

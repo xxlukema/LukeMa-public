@@ -1,7 +1,0 @@
-
-State: Represent the state of an object. This is a clean way for an 
-object to partially change its type at runtime.
-
-The state pattern can be used to replace switch() statements and if {} 
-statements which can be difficult to maintain and are less type-safe. 
-

@@ -1,5 +1,0 @@
-
-
-Double click or duplicated submission problem can be resolved by using p:commandButton.
-
-

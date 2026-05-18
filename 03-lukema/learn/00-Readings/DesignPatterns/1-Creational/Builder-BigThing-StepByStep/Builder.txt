@@ -1,9 +1,0 @@
-
-Builder: builds complex objects from simple ones step-by-step. 
-
-Example: Fast Food Order Builder
-   Step 1: Select one burger from CheeseBurger, BigMac, or BigJack;
-   Step 2: Select a drink from Coke, Water, or OrangeJuice;
-   Step 3: Print order items and total price.
-   
-
