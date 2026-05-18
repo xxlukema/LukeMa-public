@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="build_ejb3" default="deploy_ear" basedir=".">
-   <import file="../build_maven.xml" />
-
-   <import file="../build_jboss.xml" />
-</project>
-
