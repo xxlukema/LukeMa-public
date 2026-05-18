@@ -1,3 +1,0 @@
-I want to serve images from a restful service. What are the best ways to save images in backend server?
-
-The best ways to save images in backend server?

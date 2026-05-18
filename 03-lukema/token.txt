@@ -1,6 +1,0 @@
-ubuntu-k8s-master
-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
-
-docker hub
-xxlukema
-dckr_pat_thq9NPKYyfMKRsQSeEuQGaE6leg

@@ -1,5 +1,0 @@
-
-
-curl -i -k -X GET https://api.github.com/users/seeschweiler
-
-https://medium.com/codingthesmartway-com-blog/angular-4-3-httpclient-accessing-rest-web-services-with-angular-2305b8fd654b
