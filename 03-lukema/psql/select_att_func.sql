@@ -1,1 +1,0 @@
-SELECT * from att_usage.att_call_summary();

@@ -1,3 +1,0 @@
-1|Luke|Ma
-2|Hong|Lin
-3||Smith

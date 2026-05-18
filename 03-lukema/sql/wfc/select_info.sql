@@ -1,6 +1,0 @@
-SELECT
-    *
-FROM
-    T_CMSA_SERVICER
-WHERE
-    SERVICER_NAME LIKE '%Luke%';

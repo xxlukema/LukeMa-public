@@ -1,4 +1,0 @@
-SELECT
-    *
-FROM
-    T_CMSA_PERIODIC_LOAN_BAK;

@@ -1,1 +1,0 @@
-cluster emp USING idx_emp_deptid;

@@ -1,6 +1,0 @@
-ALTER TABLE
-    MO_GMI_STG_PRMS_IM ADD PARTITION D20110525 VALUES
-    (
-        '25-May-2011'
-    );
-

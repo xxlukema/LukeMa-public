@@ -1,1 +1,0 @@
-select CV_UCN_TO_SPN('790572770000') from dual;

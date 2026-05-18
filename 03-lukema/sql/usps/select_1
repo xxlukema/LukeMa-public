@@ -1,1 +1,0 @@
-select count(1) from UWS_TABLE_SUMMARY_CACHE_T

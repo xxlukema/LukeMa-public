@@ -1,6 +1,0 @@
-SELECT
-    COUNT(*)
-FROM
-    uws_utility_monthly_fac_mv
-WHERE
-    fiscal_year_month BETWEEN '201610' AND '201809'

@@ -1,4 +1,0 @@
-
-grep milis 1.txt | grep Proc | grep " [1-9][0-9][0-9][0-9]"
-
-
