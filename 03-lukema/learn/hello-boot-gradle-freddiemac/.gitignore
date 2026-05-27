@@ -5,7 +5,6 @@
 /.project
 /.svn
 *.log
-/bin
 /.settings/**
 !/.settings/org.eclipse.jdt.core.prefs
 /.springBeans
@@ -14,4 +13,7 @@
 /.apt_generated_tests/
 /.factorypath
 /.sts4-cache/
-app/build
+**/build/
+**/bin/
+**/gradle/
+**/.vscode/

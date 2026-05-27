@@ -25,7 +25,7 @@ dependencyResolutionManagement {
 }
 */
 
-rootProject.name = "hello-boot-gradle"
+rootProject.name = "hello-boot-gradle-freddiemac"
 // include("lib")
 include("app")
 
