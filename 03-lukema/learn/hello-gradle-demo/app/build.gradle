@@ -8,33 +8,57 @@
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
-    application
+    // application
+    id 'org.springframework.boot' version '4.0.6'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'java'
 }
+
+apply plugin: 'application'
+
+group = 'com.learn'
+version = '0.0.1-SNAPSHOT'
 
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
-dependencies {
-    // This dependency is used by the application.
-    implementation(libs.guava)
+configurations.all {
+    exclude group: "org.apache.logging.log4j", module: "log4j-to-slf4j"
+    exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
 }
 
-testing {
-    suites {
-        // Configure the built-in test suite
-        val test by getting(JvmTestSuite::class) {
-            // Use JUnit Jupiter test framework
-            useJUnitJupiter("5.10.0")
-        }
+dependencies {
+    // tag::actuator[]
+    implementation ('org.springframework.boot:spring-boot-starter-actuator') {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
     }
+    // end::actuator[]
+    implementation ('org.springframework.boot:spring-boot-starter-web') {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+    
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    
+    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
+    setSourceCompatibility(JavaVersion.VERSION_25)
+    setTargetCompatibility(JavaVersion.VERSION_25)
     toolchain {
-        languageVersion = JavaLanguageVersion.of(23)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
 
@@ -75,15 +99,15 @@ tasks.register("taskY") {
     }
 }
 
-repeat(4) { counter ->
-    tasks.register("task$counter") {
-        doLast {
-            println("I'm task number $counter")
-        }
-    }
-}
+// repeat(4) { counter ->
+//     tasks.register("task$counter") {
+//         doLast {
+//             println("I'm task number $counter")
+//         }
+//     }
+// }
 
-tasks.named("task0") { dependsOn("task2", "task3") }
+// tasks.named("task0") { dependsOn("task2", "task3") }
 
 tasks.named("hello") {
     doFirst {
@@ -104,30 +128,4 @@ tasks.named("hello") {
     }
 }
 
-
-/**
- * gradle -q hello2
- * gradle help --task hello2
- */
-
-// Extend the DefaultTask class to create a HelloTask class
-abstract class HelloTask : DefaultTask() {
-    @TaskAction
-    fun hello() {
-        println("hello from HelloTask")
-    }
-}
-
-// Register the hello Task with type HelloTask
-tasks.register<HelloTask>("hello2") {
-    group = "Custom tasks"
-    description = "A lovely greeting task."
-}
-
-tasks.register("hello3") {
-   doLast {
-      val ver="1.2.3"
-      println("hello ${ver}")
-   }
-}
 
